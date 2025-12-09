@@ -3,6 +3,7 @@ import sys
 from clang import cindex
 #cindex.Config.set_library_file('/opt/homebrew/Cellar/llvm/20.1.2/lib/libclang.dylib')
 #cindex.Config.set_library_file('/usr/lib/llvm-12/lib/libclang.so.1')
+cindex.Config.set_library_file(f"{os.environ['CONDA_PREFIX']}/lib/libclang.so")
 from clang.cindex import Index, CursorKind, TranslationUnit
 
 
