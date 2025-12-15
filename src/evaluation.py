@@ -11,7 +11,7 @@ from tqdm import tqdm
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import Levenshtein
 
-from utils import DS_FILE, PT_FILE, EVAL_FILE, RESULT_FILE, MODEL, IMP_FILE
+from utils import DS_FILE, PT_FILE, EVAL_FILE, RESULT_DIR, RESULT_FILE, MODEL, IMP_FILE
 
 def load_config():
     with open("config.yaml", "r") as f:
@@ -189,6 +189,8 @@ def main():
     if not os.path.exists(PT_FILE):
         print(f"错误：找不到提示文件 {PT_FILE}")
         return
+
+    os.makedirs(RESULT_DIR, exist_ok=True)
     
     dataset = load_jsonl(DS_FILE)
     prompts = load_jsonl(PT_FILE)
