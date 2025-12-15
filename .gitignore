@@ -1,6 +1,7 @@
 __MACOSX/
-CEval/
 .vscode/
+CEval/c_repo/
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

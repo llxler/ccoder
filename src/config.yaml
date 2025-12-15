@@ -23,13 +23,13 @@ starcoder_repo: "bigcode/starcoder"
 starcoder_max_token: 8192
 
 # codellama-7b
-#codellama7b_repo: "meta-llama/CodeLlama-7b-Python-hf"
-codellama7b_repo: "/Users/austinxu/Desktop/api/model/CodeLlama-7b-hf"
+codellama7b_repo: "meta-llama/CodeLlama-7b-Python-hf"
+# codellama7b_repo: "CodeLlama-7b-hf"
 codellama_max_token: 8192
 
 # deepseek-coder
-# deepseek_repo: "deepseek-ai/deepseek-coder-6.7b-base"
-deepseekcoder_repo: "/mnt/silver/xuaochong/model/deepseek-coder-6.7b-base"
+deepseek_repo: "deepseek-ai/deepseek-coder-6.7b-base"
+# deepseekcoder_repo: "deepseek-coder-6.7b-base"
 deepseek_max_token: 8192
 
 # GPT-3.5
