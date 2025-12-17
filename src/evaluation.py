@@ -215,6 +215,14 @@ def main():
     print(f"总样本数: {num_samples}, 批大小: {batch_size}, 总批次: {num_batches}")
     
     for i in tqdm(range(0, num_samples, batch_size), desc="处理批次"):
+        
+        if i < 970:
+            continue
+        
+        # 处理一部分
+        if i > 1280:
+            break
+        
         current_batch = dataset[i:i+batch_size]
         batch_ids = [sample.get("id", "") for sample in current_batch]
         batch_inputs = [sample.get("input", "") for sample in current_batch]
