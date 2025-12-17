@@ -16,8 +16,8 @@ DS_GRAPH_DIR = os.path.join(DS_BASE_DIR, f"{FILE}_graph")
 PT_FILE = os.path.join(DS_BASE_DIR, f"{FILE}_{MODEL}_prompt.jsonl")
 BASE_DIR = os.path.abspath("../")
 
-# RESULT_DIR = os.path.join(BASE_DIR, f"results/{MODEL}")
-RESULT_DIR = os.path.join(BASE_DIR, f"results_rag/{MODEL}") # langchain_rag
+RESULT_DIR = os.path.join(BASE_DIR, f"results/{MODEL}")
+# RESULT_DIR = os.path.join(BASE_DIR, f"results_rag/{MODEL}") # langchain_rag
 
 EVAL_FILE = os.path.join(RESULT_DIR, f"{FILE}_{MODEL}_eval.txt")
 RESULT_FILE = os.path.join(RESULT_DIR, f"{FILE}_{MODEL}_result.json")

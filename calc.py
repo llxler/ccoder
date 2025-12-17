@@ -5,7 +5,7 @@ from pathlib import Path
 # ======================
 # 配置
 # ======================
-JSON_PATH = "/home/sub4-wy/lxl/ccoder/results_rag/codellama7b/c_codellama7b_result.json"
+JSON_PATH = "results/codellama7b/c_codellama7b_result.json"
 
 # ======================
 # 指标函数

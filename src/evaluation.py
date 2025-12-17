@@ -216,12 +216,12 @@ def main():
     
     for i in tqdm(range(0, num_samples, batch_size), desc="处理批次"):
         
-        if i < 970:
-            continue
+        # if i < 970:
+        #     continue
         
-        # 处理一部分
-        if i > 1280:
-            break
+        # # 处理一部分
+        # if i > 1280:
+        #     break
         
         current_batch = dataset[i:i+batch_size]
         batch_ids = [sample.get("id", "") for sample in current_batch]
