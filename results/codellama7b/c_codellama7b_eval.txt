@@ -1,0 +1,10 @@
+评估结果汇总
+==================================================
+
+1. 原始输入评估结果 (raw_res):
+   - Exact Match: 0.2473
+   - Edit Similarity: 0.3917
+
+2. 提示输入评估结果 (prompt_res):
+   - Exact Match: 0.2451
+   - Edit Similarity: 0.3874
