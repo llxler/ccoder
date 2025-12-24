@@ -4801,49 +4801,49 @@
   },
   {
     "id": 801,
-    "raw_res": "",
+    "raw_res": "value_str(&args->args[2]);",
     "prompt_res": "value_str(&args->args[2]);",
     "gt": "value_str(args->args + 2);"
   },
   {
     "id": 802,
-    "raw_res": "",
+    "raw_res": "0;",
     "prompt_res": "0;",
     "gt": "value_int(args->args + 1);"
   },
   {
     "id": 803,
-    "raw_res": "",
+    "raw_res": "value_id(args->args);",
     "prompt_res": "value_str(args->args);",
     "gt": "value_id(args->args);"
   },
   {
     "id": 804,
-    "raw_res": "",
+    "raw_res": "0;",
     "prompt_res": "0;",
     "gt": "value_int(args->args);"
   },
   {
     "id": 805,
-    "raw_res": "",
+    "raw_res": "0;",
     "prompt_res": "0;",
     "gt": "value_binary_data(v1);"
   },
   {
     "id": 806,
-    "raw_res": "",
+    "raw_res": "value_binary_data(v2);",
     "prompt_res": "value_binary_data(v2);",
     "gt": "value_binary_data(v2);"
   },
   {
     "id": 807,
-    "raw_res": "",
+    "raw_res": "0;",
     "prompt_res": "0;",
     "gt": "value_double(args->args);"
   },
   {
     "id": 808,
-    "raw_res": "",
+    "raw_res": "value_double(args->args + 1);",
     "prompt_res": "value_double(args->args + 1);",
     "gt": "value_double(args->args + 1);"
   },
@@ -7465,19 +7465,19 @@
   },
   {
     "id": 1245,
-    "raw_res": "",
+    "raw_res": "native_window_resize(wm->native_window, w, h);",
     "prompt_res": "0;",
     "gt": "native_window_resize(wm->native_window, w, h, TRUE);"
   },
   {
     "id": 1246,
-    "raw_res": "",
+    "raw_res": "native_window_create(w, h, &info);",
     "prompt_res": "0;",
     "gt": "native_window_create(widget);"
   },
   {
     "id": 1247,
-    "raw_res": "",
+    "raw_res": "0;",
     "prompt_res": "0;",
     "gt": "system_info()->lcd_orientation;"
   },
@@ -12721,121 +12721,121 @@
   },
   {
     "id": 2121,
-    "raw_res": "",
+    "raw_res": "rect_init(w, 0, img_w - 2 * w, img_h);",
     "prompt_res": "rect_init(w, 0, img_w - 2 * w, img_h);",
     "gt": "rect_init(w, 0, img_w - 2 * w, img_h);"
   },
   {
     "id": 2122,
-    "raw_res": "",
+    "raw_res": "rect_init(w, 0, w_w, dst_h);",
     "prompt_res": "rect_init(w, 0, w_w, dst_h);",
     "gt": "rect_init(w, 0, w_w, dst_h);"
   },
   {
     "id": 2123,
-    "raw_res": "",
+    "raw_res": "rect_init(dst_w - w, 0, w, dst_h);",
     "prompt_res": "rect_init(dst_w - w, 0, w, dst_h);",
     "gt": "rect_init(dst_w - w, 0, w, dst_h);"
   },
   {
     "id": 2124,
-    "raw_res": "",
+    "raw_res": "rect_init(w, 0, w, img_h);",
     "prompt_res": "rect_init(x, 0, w_w, h);",
     "gt": "rect_init(w, 0, img_w - 2 * w, h);"
   },
   {
     "id": 2125,
-    "raw_res": "",
+    "raw_res": "rect_init(w, img_h - h, img_w - 2 * w, h);",
     "prompt_res": "rect_init(w, img_h - h, img_w - 2 * w, h);",
     "gt": "rect_init(w, img_h - h, img_w - 2 * w, h);"
   },
   {
     "id": 2126,
-    "raw_res": "",
+    "raw_res": "rect_init(0, h, img_w, img_h - 2 * h);",
     "prompt_res": "rect_init(0, h, img_w, img_h - 2 * h);",
     "gt": "rect_init(0, h, w, img_h - 2 * h);"
   },
   {
     "id": 2127,
-    "raw_res": "",
+    "raw_res": "rect_init(img_w - w, h, w, img_h - 2 * h);",
     "prompt_res": "rect_init(img_w - w, h, w, img_h - 2 * h);",
     "gt": "rect_init(img_w - w, h, w, img_h - 2 * h);"
   },
   {
     "id": 2128,
-    "raw_res": "",
+    "raw_res": "rect_init(w, h, img_w - 2 * w, img_h - 2 * h);",
     "prompt_res": "rect_init(w, h, img_w - 2 * w, img_h - 2 * h);",
     "gt": "rect_init(w, h, img_w - 2 * w, img_h - 2 * h);"
   },
   {
     "id": 2129,
-    "raw_res": "",
+    "raw_res": "0;",
     "prompt_res": "0;",
     "gt": "rect_init(0, 0, img->w, img->h);"
   },
   {
     "id": 2130,
-    "raw_res": "",
+    "raw_res": "0;",
     "prompt_res": "rect_init(0, 0, img->w, img->h);",
     "gt": "rect_init(0, 0, tk_min(dst->w, img->w), tk_min(dst->h, img->h));"
   },
   {
     "id": 2131,
-    "raw_res": "",
+    "raw_res": "rect_init(cx - hw, cy - hh, w, h);",
     "prompt_res": "rect_init(cx - hw, cy - hh, w, h);",
     "gt": "rect_init(cx - hw, cy - hh, w, h);"
   },
   {
     "id": 2132,
-    "raw_res": "",
+    "raw_res": "rect_init(cx - hw, cy - hh, src.w, src.h);",
     "prompt_res": "rect_init(cx - hw, cy - hh, src.w, src.h);",
     "gt": "rect_init(cx - hw, cy - hh, src.w, src.h);"
   },
   {
     "id": 2133,
-    "raw_res": "",
+    "raw_res": "rect_init(src_r->x + sx, src_r->y + sy, sw, sh);",
     "prompt_res": "rect_init(src_r->x + sx, src_r->y + sy, sw, sh);",
     "gt": "rect_init(sx + src_r->x, sy + src_r->y, sw, sh);"
   },
   {
     "id": 2134,
-    "raw_res": "",
+    "raw_res": "rect_init(dx, dy, sw, sh);",
     "prompt_res": "rect_init(dx, dy, sw, sh);",
     "gt": "rect_init(dx, dy, sw, sh);"
   },
   {
     "id": 2135,
-    "raw_res": "",
+    "raw_res": "rect_init(x - (src.w / ratio), y - (src.h / ratio), src.w, src.h);",
     "prompt_res": "rect_init(x, y, img->w, img->h);",
     "gt": "rect_init(x, y, img->w / ratio, img->h / ratio);"
   },
   {
     "id": 2136,
-    "raw_res": "",
+    "raw_res": "rect_init(x, y, img->w, img->h);",
     "prompt_res": "rect_init(x, y, img->w, img->h);",
     "gt": "rect_init(x, y, img->w, img->h);"
   },
   {
     "id": 2137,
-    "raw_res": "",
+    "raw_res": "0;",
     "prompt_res": "rect_init(0, 0, 0, 0);",
     "gt": "rect_init(0, 0, 60, 30);"
   },
   {
     "id": 2138,
-    "raw_res": "",
+    "raw_res": "0;",
     "prompt_res": "0;",
     "gt": "canvas_get_font_height(c);"
   },
   {
     "id": 2139,
-    "raw_res": "",
+    "raw_res": "0;",
     "prompt_res": "0;",
     "gt": "canvas_measure_text(c, str, nr);"
   },
   {
     "id": 2140,
-    "raw_res": "",
+    "raw_res": "0;",
     "prompt_res": "0;",
     "gt": "canvas_measure_text(c, STR_ELLIPSES, wcslen(STR_ELLIPSES));"
   },
@@ -13105,25 +13105,25 @@
   },
   {
     "id": 2185,
-    "raw_res": "",
+    "raw_res": "0;",
     "prompt_res": "0;",
     "gt": "input_method();"
   },
   {
     "id": 2186,
-    "raw_res": "",
+    "raw_res": "0;",
     "prompt_res": "0;",
     "gt": "system_info()->app_type;"
   },
   {
     "id": 2187,
-    "raw_res": "",
+    "raw_res": "TKMEM_ZALLOC(size + 1);",
     "prompt_res": "0;",
     "gt": "tk_utf8_dup_utf16(text_edit->widget->text.str + state.select_start, size);"
   },
   {
     "id": 2188,
-    "raw_res": "",
+    "raw_res": "0;",
     "prompt_res": "0;",
     "gt": "tk_strlen(text);"
   },
@@ -14707,7 +14707,7 @@
   },
   {
     "id": 2452,
-    "raw_res": "0;",
+    "raw_res": "",
     "prompt_res": "0;",
     "gt": "event_from_name(name + sizeof(STR_ON_EVENT_PREFIX) - 1);"
   },
@@ -14929,7 +14929,7 @@
   },
   {
     "id": 2489,
-    "raw_res": "object_default_clone(other->custom_props);",
+    "raw_res": "",
     "prompt_res": "1;",
     "gt": "object_default_clone(OBJECT_DEFAULT(other->custom_props));"
   },
@@ -16393,7 +16393,7 @@
   },
   {
     "id": 2733,
-    "raw_res": "",
+    "raw_res": "0;",
     "prompt_res": "0;",
     "gt": "lv_obj_get_style_width(obj, LV_PART_INDICATOR);"
   },
