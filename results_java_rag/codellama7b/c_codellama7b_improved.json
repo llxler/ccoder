@@ -1,0 +1,1550 @@
+[
+  {
+    "id": 29,
+    "pkg": "Calendar",
+    "fpath": "src/com/android/car/calendar/CarCalendarActivity.java",
+    "input": "/*\n * Copyright 2020 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.calendar;\n\nimport android.content.ContentResolver;\nimport android.content.pm.PackageManager;\nimport android.os.Bundle;\nimport android.os.StrictMode;\nimport android.telephony.TelephonyManager;\nimport android.util.Log;\n\nimport androidx.annotation.NonNull;\nimport androidx.annotation.Nullable;\nimport androidx.annotation.VisibleForTesting;\nimport androidx.fragment.app.FragmentActivity;\nimport androidx.lifecycle.",
+    "raw_res": "Lifecycle;",
+    "prompt_res": "ViewModel;",
+    "gt": "ViewModel;"
+  },
+  {
+    "id": 89,
+    "pkg": "Calendar",
+    "fpath": "src/com/android/car/calendar/common/CalendarFormatter.java",
+    "input": "/*\n * Copyright 2020 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.calendar.common;\n\nimport static android.text.format.DateUtils.FORMAT_ABBREV_ALL;\nimport static android.text.format.DateUtils.FORMAT_NO_YEAR;\nimport static android.text.format.DateUtils.FORMAT_SHOW_TIME;\n\nimport android.content.Context;\nimport android.icu.text.DisplayContext;\nimport android.icu.text.RelativeDateTimeFormatter;\nimport android.icu.util.",
+    "raw_res": "Calendar;",
+    "prompt_res": "ULocale;",
+    "gt": "ULocale;"
+  },
+  {
+    "id": 96,
+    "pkg": "Calendar",
+    "fpath": "src/com/android/car/calendar/common/Dialer.java",
+    "input": "/*\n * Copyright 2020 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.calendar.common;\n\nimport android.content.Context;\nimport android.content.Intent;\nimport android.content.pm.PackageManager;\nimport android.net.Uri;\nimport android.telephony.",
+    "raw_res": "TelephonyManager;",
+    "prompt_res": "PhoneNumberUtils;",
+    "gt": "PhoneNumberUtils;"
+  },
+  {
+    "id": 112,
+    "pkg": "Cluster",
+    "fpath": "ClusterHomeSample/src/com/android/car/cluster/home/ClusterHomeActivity.java",
+    "input": "/*\n * Copyright (C) 2021 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.cluster.home;\n\nimport android.app.Activity;\nimport android.car.Car;\nimport android.car.cluster.",
+    "raw_res": "common.CarAppWidgetProvider;",
+    "prompt_res": "ClusterActivityState;",
+    "gt": "ClusterActivityState;"
+  },
+  {
+    "id": 113,
+    "pkg": "Cluster",
+    "fpath": "ClusterHomeSample/src/com/android/car/cluster/home/ClusterHomeActivity.java",
+    "input": "/*\n * Copyright (C) 2021 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.cluster.home;\n\nimport android.app.Activity;\nimport android.car.Car;\nimport android.car.cluster.ClusterActivityState;\nimport android.content.",
+    "raw_res": "Context;",
+    "prompt_res": "Intent;",
+    "gt": "Intent;"
+  },
+  {
+    "id": 159,
+    "pkg": "Cluster",
+    "fpath": "ClusterHomeSample/src/com/android/car/cluster/home/ClusterMusicActivity.java",
+    "input": "/*\n * Copyright (C) 2021 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.cluster.home;\n\nimport android.app.Activity;\nimport android.app.ActivityManager;\nimport android.app.",
+    "raw_res": "ActivityManager.RunningTaskInfo;",
+    "prompt_res": "IActivityManager;",
+    "gt": "IActivityManager;"
+  },
+  {
+    "id": 161,
+    "pkg": "Cluster",
+    "fpath": "ClusterHomeSample/src/com/android/car/cluster/home/ClusterMusicActivity.java",
+    "input": "/*\n * Copyright (C) 2021 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.cluster.home;\n\nimport android.app.Activity;\nimport android.app.ActivityManager;\nimport android.app.IActivityManager;\nimport android.os.Bundle;\nimport android.os.",
+    "raw_res": "Handler;",
+    "prompt_res": "RemoteException;",
+    "gt": "RemoteException;"
+  },
+  {
+    "id": 164,
+    "pkg": "Cluster",
+    "fpath": "ClusterHomeSample/src/com/android/car/cluster/home/ClusterMusicActivity.java",
+    "input": "/*\n * Copyright (C) 2021 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.cluster.home;\n\nimport android.app.Activity;\nimport android.app.ActivityManager;\nimport android.app.IActivityManager;\nimport android.os.Bundle;\nimport android.os.RemoteException;\nimport android.util.Log;\nimport android.view.View;\nimport android.view.",
+    "raw_res": "ViewGroup;",
+    "prompt_res": "WindowManager;",
+    "gt": "WindowManager;"
+  },
+  {
+    "id": 170,
+    "pkg": "Cluster",
+    "fpath": "ClusterHomeSample/src/com/android/car/cluster/home/ClusterPhoneActivity.java",
+    "input": "/*\n * Copyright (C) 2021 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.cluster.home;\n\nimport android.app.Activity;\nimport android.app.ActivityManager;\nimport android.app.IActivityManager;\nimport android.os.Bundle;\nimport android.os.",
+    "raw_res": "Handler;",
+    "prompt_res": "RemoteException;",
+    "gt": "RemoteException;"
+  },
+  {
+    "id": 173,
+    "pkg": "Cluster",
+    "fpath": "ClusterHomeSample/src/com/android/car/cluster/home/ClusterPhoneActivity.java",
+    "input": "/*\n * Copyright (C) 2021 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.cluster.home;\n\nimport android.app.Activity;\nimport android.app.ActivityManager;\nimport android.app.IActivityManager;\nimport android.os.Bundle;\nimport android.os.RemoteException;\nimport android.util.Log;\nimport android.view.View;\nimport android.view.",
+    "raw_res": "ViewGroup;",
+    "prompt_res": "WindowManager;",
+    "gt": "WindowManager;"
+  },
+  {
+    "id": 176,
+    "pkg": "Cluster",
+    "fpath": "ClusterHomeSample/src/com/android/car/cluster/home/FakeFreeNavigationActivity.java",
+    "input": "/*\n * Copyright (C) 2021 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.cluster.home;\n\nimport android.app.Activity;\nimport android.car.Car;\nimport android.car.cluster.",
+    "raw_res": "common.CarAppWidgetProvider;",
+    "prompt_res": "ClusterActivityState;",
+    "gt": "ClusterActivityState;"
+  },
+  {
+    "id": 177,
+    "pkg": "Cluster",
+    "fpath": "ClusterHomeSample/src/com/android/car/cluster/home/FakeFreeNavigationActivity.java",
+    "input": "/*\n * Copyright (C) 2021 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.cluster.home;\n\nimport android.app.Activity;\nimport android.car.Car;\nimport android.car.cluster.ClusterActivityState;\nimport android.content.",
+    "raw_res": "Context;",
+    "prompt_res": "Intent;",
+    "gt": "Intent;"
+  },
+  {
+    "id": 181,
+    "pkg": "Cluster",
+    "fpath": "ClusterHomeSample/src/com/android/car/cluster/home/FakeFreeNavigationActivity.java",
+    "input": "/*\n * Copyright (C) 2021 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.cluster.home;\n\nimport android.app.Activity;\nimport android.car.Car;\nimport android.car.cluster.ClusterActivityState;\nimport android.content.Intent;\nimport android.graphics.Rect;\nimport android.os.Bundle;\nimport android.util.Log;\nimport android.widget.",
+    "raw_res": "Toast;",
+    "prompt_res": "ImageView;",
+    "gt": "ImageView;"
+  },
+  {
+    "id": 185,
+    "pkg": "CompanionDeviceSupport",
+    "fpath": "libs/connecteddevice/src/com/google/android/connecteddevice/model/AssociatedDevice.java",
+    "input": "/*\n * Copyright (C) 2020 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.google.android.connecteddevice.model;\n\nimport android.os.",
+    "raw_res": "Build;",
+    "prompt_res": "Parcel;",
+    "gt": "Parcel;"
+  },
+  {
+    "id": 192,
+    "pkg": "CompanionDeviceSupport",
+    "fpath": "libs/connecteddevice/src/com/google/android/connecteddevice/model/ConnectedDevice.java",
+    "input": "/*\n * Copyright (C) 2020 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.google.android.connecteddevice.model;\n\nimport android.os.",
+    "raw_res": "Build;",
+    "prompt_res": "Parcel;",
+    "gt": "Parcel;"
+  },
+  {
+    "id": 197,
+    "pkg": "CompanionDeviceSupport",
+    "fpath": "libs/connecteddevice/src/com/google/android/connecteddevice/model/DeviceMessage.java",
+    "input": "/*\n * Copyright (C) 2020 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.google.android.connecteddevice.model;\n\nimport android.os.",
+    "raw_res": "Build;",
+    "prompt_res": "Parcel;",
+    "gt": "Parcel;"
+  },
+  {
+    "id": 207,
+    "pkg": "CompanionDeviceSupport",
+    "fpath": "libs/connecteddevice/src/com/google/android/connecteddevice/model/StartAssociationResponse.java",
+    "input": "/*\n * Copyright (C) 2021 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.google.android.connecteddevice.model;\n\nimport android.os.",
+    "raw_res": "Build;",
+    "prompt_res": "Parcel;",
+    "gt": "Parcel;"
+  },
+  {
+    "id": 215,
+    "pkg": "CompanionDeviceSupport",
+    "fpath": "libs/connecteddevice/src/com/google/android/connecteddevice/transport/ble/BlePeripheralManager.java",
+    "input": "/*\n * Copyright (C) 2020 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.google.android.connecteddevice.transport.ble;\n\nimport android.bluetooth.BluetoothDevice;\nimport android.bluetooth.BluetoothGattCharacteristic;\nimport android.bluetooth.BluetoothGattServer;\nimport android.bluetooth.BluetoothGattService;\nimport android.bluetooth.le.",
+    "raw_res": "AdvertiseSettings;",
+    "prompt_res": "AdvertiseCallback;",
+    "gt": "AdvertiseCallback;"
+  },
+  {
+    "id": 243,
+    "pkg": "CompanionDeviceSupport",
+    "fpath": "libs/encryptionrunner/src/com/google/android/encryptionrunner/Ukey2EncryptionRunner.java",
+    "input": "/*\n * Copyright (C) 2020 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.google.android.encryptionrunner;\n\nimport android.util.Log;\nimport androidx.annotation.",
+    "raw_res": "NonNull;",
+    "prompt_res": "IntDef;",
+    "gt": "IntDef;"
+  },
+  {
+    "id": 259,
+    "pkg": "Dialer",
+    "fpath": "src/com/android/car/hvac/BootCompleteReceiver.java",
+    "input": "/*\n * Copyright (c) 2016, The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.android.car.hvac;\n\nimport android.content.",
+    "raw_res": "Context;",
+    "prompt_res": "BroadcastReceiver;",
+    "gt": "BroadcastReceiver;"
+  },
+  {
+    "id": 268,
+    "pkg": "Dialer",
+    "fpath": "src/com/android/car/hvac/DataStore.java",
+    "input": "/*\n * Copyright (c) 2016, The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.android.car.hvac;\n\nimport android.os.SystemClock;\nimport android.util.Log;\nimport android.util.SparseArray;\nimport android.util.SparseBooleanArray;\nimport android.util.SparseIntArray;\nimport android.util.",
+    "raw_res": "SparseIntArray;",
+    "prompt_res": "SparseLongArray;",
+    "gt": "SparseLongArray;"
+  },
+  {
+    "id": 301,
+    "pkg": "Dialer",
+    "fpath": "src/com/android/car/hvac/HvacUiService.java",
+    "input": "/*\n * Copyright (c) 2016, The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.android.car.hvac;\n\nimport android.app.",
+    "raw_res": "Activity;",
+    "prompt_res": "Service;",
+    "gt": "Service;"
+  },
+  {
+    "id": 318,
+    "pkg": "Dialer",
+    "fpath": "src/com/android/car/hvac/HvacUiService.java",
+    "input": "/*\n * Copyright (c) 2016, The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.android.car.hvac;\n\nimport android.app.Service;\nimport android.car.Car;\nimport android.content.BroadcastReceiver;\nimport android.content.ComponentName;\nimport android.content.Context;\nimport android.content.Intent;\nimport android.content.IntentFilter;\nimport android.content.ServiceConnection;\nimport android.content.res.Resources;\nimport android.graphics.PixelFormat;\nimport android.os.Handler;\nimport android.os.IBinder;\nimport android.os.UserHandle;\nimport android.util.DisplayMetrics;\nimport android.util.Log;\nimport android.view.Gravity;\nimport android.view.LayoutInflater;\nimport android.view.",
+    "raw_res": "MotionEvent;",
+    "prompt_res": "View;",
+    "gt": "View;"
+  },
+  {
+    "id": 353,
+    "pkg": "Hvac",
+    "fpath": "src/com/android/car/hvac/BootCompleteReceiver.java",
+    "input": "/*\n * Copyright (c) 2016, The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.android.car.hvac;\n\nimport android.content.",
+    "raw_res": "Context;",
+    "prompt_res": "BroadcastReceiver;",
+    "gt": "BroadcastReceiver;"
+  },
+  {
+    "id": 362,
+    "pkg": "Hvac",
+    "fpath": "src/com/android/car/hvac/DataStore.java",
+    "input": "/*\n * Copyright (c) 2016, The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.android.car.hvac;\n\nimport android.os.SystemClock;\nimport android.util.Log;\nimport android.util.SparseArray;\nimport android.util.SparseBooleanArray;\nimport android.util.SparseIntArray;\nimport android.util.",
+    "raw_res": "SparseIntArray;",
+    "prompt_res": "SparseLongArray;",
+    "gt": "SparseLongArray;"
+  },
+  {
+    "id": 395,
+    "pkg": "Hvac",
+    "fpath": "src/com/android/car/hvac/HvacUiService.java",
+    "input": "/*\n * Copyright (c) 2016, The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.android.car.hvac;\n\nimport android.app.",
+    "raw_res": "Activity;",
+    "prompt_res": "Service;",
+    "gt": "Service;"
+  },
+  {
+    "id": 412,
+    "pkg": "Hvac",
+    "fpath": "src/com/android/car/hvac/HvacUiService.java",
+    "input": "/*\n * Copyright (c) 2016, The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.android.car.hvac;\n\nimport android.app.Service;\nimport android.car.Car;\nimport android.content.BroadcastReceiver;\nimport android.content.ComponentName;\nimport android.content.Context;\nimport android.content.Intent;\nimport android.content.IntentFilter;\nimport android.content.ServiceConnection;\nimport android.content.res.Resources;\nimport android.graphics.PixelFormat;\nimport android.os.Handler;\nimport android.os.IBinder;\nimport android.os.UserHandle;\nimport android.util.DisplayMetrics;\nimport android.util.Log;\nimport android.view.Gravity;\nimport android.view.LayoutInflater;\nimport android.view.",
+    "raw_res": "MotionEvent;",
+    "prompt_res": "View;",
+    "gt": "View;"
+  },
+  {
+    "id": 474,
+    "pkg": "LensPicker",
+    "fpath": "src/com/android/support/car/lenspicker/LensPickerAdapter.java",
+    "input": "/*\n * Copyright (C) 2015 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.android.support.car.lenspicker;\n\nimport android.content.Context;\nimport android.content.Intent;\nimport android.content.SharedPreferences;\nimport android.content.pm.ApplicationInfo;\nimport android.content.pm.PackageManager;\nimport android.content.pm.ResolveInfo;\nimport android.graphics.drawable.Drawable;\nimport android.os.AsyncTask;\nimport android.util.Log;\nimport android.view.LayoutInflater;\nimport android.view.View;\nimport android.view.ViewGroup;\n\nimport androidx.car.widget.PagedListView;\nimport androidx.recyclerview.widget.RecyclerView;\n\nimport java.util.ArrayList;\nimport java.util.List;\n\n/**\n * Lens picker adapter that provides the data fed into lens picker list.\n *\n */\npublic class LensPickerAdapter extends RecyclerView.Adapter<LensPickerRow>\n        implements PagedListView.ItemCap{\n    private static final String TAG = \"LensPickerAdapter\";\n\n    private final Context mContext;\n    private final LensPickerSelectionHandler mSelectionHandler;\n    private final List<LensPickerItem> mItems = new ArrayList<>();\n\n    private LoadTask mLoader;\n    private PackageManager mPackageManager;\n    private SharedPreferences mSharedPrefs;\n    private List<",
+    "raw_res": "ResolveInfo> mLensList;",
+    "prompt_res": "ResolveInfo> mResolveInfos;",
+    "gt": "ResolveInfo> mResolveInfos;"
+  },
+  {
+    "id": 534,
+    "pkg": "LinkViewer",
+    "fpath": "src/com/android/car/linkviewer/LinkViewerActivity.java",
+    "input": "/*\n * Copyright 2018 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\n\npackage com.android.car.linkviewer;\n\nimport static com.android.car.ui.core.CarUi.requireToolbar;\nimport static com.android.car.ui.toolbar.Toolbar.State.SUBPAGE;\n\nimport android.app.Activity;\nimport android.content.",
+    "raw_res": "Context;",
+    "prompt_res": "Intent;",
+    "gt": "Intent;"
+  },
+  {
+    "id": 559,
+    "pkg": "LinkViewer",
+    "fpath": "src/com/android/car/linkviewer/LinkViewerActivity.java",
+    "input": "/*\n * Copyright 2018 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\n\npackage com.android.car.linkviewer;\n\nimport static com.android.car.ui.core.CarUi.requireToolbar;\nimport static com.android.car.ui.toolbar.Toolbar.State.SUBPAGE;\n\nimport android.app.Activity;\nimport android.content.Intent;\nimport android.graphics.Bitmap;\nimport android.graphics.Color;\nimport android.graphics.drawable.BitmapDrawable;\nimport android.os.Bundle;\nimport android.util.Log;\nimport android.widget.ImageView;\nimport android.widget.TextView;\n\nimport com.android.car.ui.toolbar.ToolbarController;\n\nimport com.google.zxing.WriterException;\nimport com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;\nimport com.google.zxing.qrcode.encoder.ByteMatrix;\nimport com.google.zxing.qrcode.encoder.Encoder;\nimport com.google.zxing.qrcode.encoder.QRCode;\n\n/**\n * LinkViewerActivity responds to intents to display an HTTP or HTTPS URL by showing the link and\n * also a QR code.\n *\n */\npublic class LinkViewerActivity extends Activity {\n    private static final String TAG = LinkViewerActivity.class.getSimpleName();\n\n    private TextView mUrlText;\n    private ImageView mUrlImage;\n\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        super.onCreate(savedInstanceState);\n\n        ToolbarController toolbar = requireToolbar(this);\n        toolbar.setTitle(R.string.app_name);\n        toolbar.setState(SUBPAGE);\n\n        String url = getUrlFromIntent(getIntent());\n        if (url == null) {\n            finish();\n            return;\n        }\n\n        setContentView(R.layout.link_viewer_activity);\n        mUrlText = findViewById(R.id.url_text);\n        mUrlImage = findViewById(R.id.url_image);\n\n        showUrl(url);\n    }\n\n    private static String getUrlFromIntent(Intent intent) {\n        return intent != null ? intent.getDataString() : null;\n    }\n\n    private void showUrl(String url) {\n        mUrlText.setText(url);\n\n        QRCode qrCode;\n        try {\n            qrCode = ",
+    "raw_res": "Encoder.encode(url, ErrorCorrectionLevel.L);",
+    "prompt_res": "Encoder.encode(url, ErrorCorrectionLevel.H);",
+    "gt": "Encoder.encode(url, ErrorCorrectionLevel.H);"
+  },
+  {
+    "id": 568,
+    "pkg": "LocalMediaPlayer",
+    "fpath": "src/com/android/car/media/localmediaplayer/DataModel.java",
+    "input": "/*\n * Copyright (c) 2016, The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.android.car.media.localmediaplayer;\n\nimport android.content.",
+    "raw_res": "Context;",
+    "prompt_res": "ContentResolver;",
+    "gt": "ContentResolver;"
+  },
+  {
+    "id": 605,
+    "pkg": "LocalMediaPlayer",
+    "fpath": "src/com/android/car/media/localmediaplayer/Player.java",
+    "input": "/*\n * Copyright (c) 2016, The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.android.car.media.localmediaplayer;\n\nimport android.app.Notification;\nimport android.app.NotificationChannel;\nimport android.app.NotificationManager;\nimport android.app.PendingIntent;\nimport android.content.Context;\nimport android.content.Intent;\nimport android.content.SharedPreferences;\nimport android.media.AudioManager;\nimport android.media.AudioManager.OnAudioFocusChangeListener;\nimport android.media.MediaDescription;\nimport android.media.MediaMetadata;\nimport android.media.",
+    "raw_res": "session.MediaController;",
+    "prompt_res": "MediaPlayer;",
+    "gt": "MediaPlayer;"
+  },
+  {
+    "id": 631,
+    "pkg": "LocalMediaPlayer",
+    "fpath": "src/com/android/car/media/localmediaplayer/Utils.java",
+    "input": "/*\n * Copyright (c) 2016, The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.android.car.media.localmediaplayer;\n\nimport android.content.",
+    "raw_res": "Context;",
+    "prompt_res": "ContentResolver;",
+    "gt": "ContentResolver;"
+  },
+  {
+    "id": 638,
+    "pkg": "Media",
+    "fpath": "src/com/android/car/media/MediaActivity.java",
+    "input": "/*\n * Copyright (C) 2016 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.android.car.media;\n\nimport static android.car.media.",
+    "raw_res": "CarMediaManager.ACTION_MEDIA_SESSION_ACTIVE;",
+    "prompt_res": "CarMediaManager.MEDIA_SOURCE_MODE_BROWSE;",
+    "gt": "CarMediaManager.MEDIA_SOURCE_MODE_BROWSE;"
+  },
+  {
+    "id": 710,
+    "pkg": "Media",
+    "fpath": "src/com/android/car/media/MediaActivityController.java",
+    "input": "/*\n * Copyright (C) 2020 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.media;\n\nimport static android.view.accessibility.AccessibilityNodeInfo.ACTION_FOCUS;\n\nimport static com.android.car.apps.common.util.ViewUtils.showHideViewAnimated;\nimport static com.android.car.ui.utils.ViewUtils.LazyLayoutView;\n\nimport android.car.content.pm.CarPackageManager;\nimport android.content.Context;\nimport android.support.v4.media.MediaBrowserCompat;\nimport android.util.Log;\nimport android.view.View;\nimport android.view.ViewGroup;\nimport android.view.inputmethod.InputMethodManager;\n\nimport androidx.annotation.NonNull;\nimport androidx.annotation.Nullable;\nimport androidx.fragment.app.FragmentActivity;\nimport androidx.lifecycle.Observer;\nimport androidx.lifecycle.ViewModelProviders;\nimport androidx.recyclerview.widget.LinearLayoutManager;\nimport androidx.recyclerview.widget.RecyclerView;\n\nimport com.android.car.apps.common.util.FutureData;\nimport com.android.car.apps.common.util.ViewUtils;\nimport com.android.car.apps.common.util.ViewUtils.ViewAnimEndListener;\nimport com.android.car.media.common.MediaItemMetadata;\nimport com.android.car.media.common.browse.MediaBrowserViewModelImpl;\nimport com.android.car.media.common.browse.",
+    "raw_res": "MediaItem;",
+    "prompt_res": "MediaItemsRepository;",
+    "gt": "MediaItemsRepository;"
+  },
+  {
+    "id": 713,
+    "pkg": "Media",
+    "fpath": "src/com/android/car/media/MediaActivityController.java",
+    "input": "/*\n * Copyright (C) 2020 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.media;\n\nimport static android.view.accessibility.AccessibilityNodeInfo.ACTION_FOCUS;\n\nimport static com.android.car.apps.common.util.ViewUtils.showHideViewAnimated;\nimport static com.android.car.ui.utils.ViewUtils.LazyLayoutView;\n\nimport android.car.content.pm.CarPackageManager;\nimport android.content.Context;\nimport android.support.v4.media.MediaBrowserCompat;\nimport android.util.Log;\nimport android.view.View;\nimport android.view.ViewGroup;\nimport android.view.inputmethod.InputMethodManager;\n\nimport androidx.annotation.NonNull;\nimport androidx.annotation.Nullable;\nimport androidx.fragment.app.FragmentActivity;\nimport androidx.lifecycle.Observer;\nimport androidx.lifecycle.ViewModelProviders;\nimport androidx.recyclerview.widget.LinearLayoutManager;\nimport androidx.recyclerview.widget.RecyclerView;\n\nimport com.android.car.apps.common.util.FutureData;\nimport com.android.car.apps.common.util.ViewUtils;\nimport com.android.car.apps.common.util.ViewUtils.ViewAnimEndListener;\nimport com.android.car.media.common.MediaItemMetadata;\nimport com.android.car.media.common.browse.MediaBrowserViewModelImpl;\nimport com.android.car.media.common.browse.MediaItemsRepository;\nimport com.android.car.media.common.browse.MediaItemsRepository.MediaItemsLiveData;\nimport com.android.car.media.common.source.MediaBrowserConnector.BrowsingState;\nimport com.android.car.media.common.source.",
+    "raw_res": "MediaItem;",
+    "prompt_res": "MediaSource;",
+    "gt": "MediaSource;"
+  },
+  {
+    "id": 715,
+    "pkg": "Media",
+    "fpath": "src/com/android/car/media/MediaActivityController.java",
+    "input": "/*\n * Copyright (C) 2020 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.media;\n\nimport static android.view.accessibility.AccessibilityNodeInfo.ACTION_FOCUS;\n\nimport static com.android.car.apps.common.util.ViewUtils.showHideViewAnimated;\nimport static com.android.car.ui.utils.ViewUtils.LazyLayoutView;\n\nimport android.car.content.pm.CarPackageManager;\nimport android.content.Context;\nimport android.support.v4.media.MediaBrowserCompat;\nimport android.util.Log;\nimport android.view.View;\nimport android.view.ViewGroup;\nimport android.view.inputmethod.InputMethodManager;\n\nimport androidx.annotation.NonNull;\nimport androidx.annotation.Nullable;\nimport androidx.fragment.app.FragmentActivity;\nimport androidx.lifecycle.Observer;\nimport androidx.lifecycle.ViewModelProviders;\nimport androidx.recyclerview.widget.LinearLayoutManager;\nimport androidx.recyclerview.widget.RecyclerView;\n\nimport com.android.car.apps.common.util.FutureData;\nimport com.android.car.apps.common.util.ViewUtils;\nimport com.android.car.apps.common.util.ViewUtils.ViewAnimEndListener;\nimport com.android.car.media.common.MediaItemMetadata;\nimport com.android.car.media.common.browse.MediaBrowserViewModelImpl;\nimport com.android.car.media.common.browse.MediaItemsRepository;\nimport com.android.car.media.common.browse.MediaItemsRepository.MediaItemsLiveData;\nimport com.android.car.media.common.source.MediaBrowserConnector.BrowsingState;\nimport com.android.car.media.common.source.MediaSource;\nimport com.android.car.media.widgets.AppBarController;\nimport com.android.car.ui.FocusParkingView;\nimport com.android.car.ui.baselayout.",
+    "raw_res": "BaseLayout;",
+    "prompt_res": "Insets;",
+    "gt": "Insets;"
+  },
+  {
+    "id": 721,
+    "pkg": "Media",
+    "fpath": "src/com/android/car/media/ViewControllerBase.java",
+    "input": "/*\n * Copyright 2019 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.media;\n\n\nimport static android.car.media.",
+    "raw_res": "CarMediaManager.ACTION_MEDIA_SESSION_ACTIVE;",
+    "prompt_res": "CarMediaManager.MEDIA_SOURCE_MODE_BROWSE;",
+    "gt": "CarMediaManager.MEDIA_SOURCE_MODE_BROWSE;"
+  },
+  {
+    "id": 731,
+    "pkg": "Media",
+    "fpath": "src/com/android/car/media/ViewControllerBase.java",
+    "input": "/*\n * Copyright 2019 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.media;\n\n\nimport static android.car.media.CarMediaManager.MEDIA_SOURCE_MODE_BROWSE;\n\nimport android.car.content.pm.CarPackageManager;\nimport android.content.ActivityNotFoundException;\nimport android.content.Intent;\nimport android.content.pm.ResolveInfo;\nimport android.content.res.Resources;\nimport android.graphics.drawable.BitmapDrawable;\nimport android.graphics.drawable.Drawable;\nimport android.media.audiofx.AudioEffect;\nimport android.util.Log;\nimport android.view.",
+    "raw_res": "View;",
+    "prompt_res": "LayoutInflater;",
+    "gt": "LayoutInflater;"
+  },
+  {
+    "id": 740,
+    "pkg": "Messenger",
+    "fpath": "src/com/android/car/messenger/core/interfaces/DataModel.java",
+    "input": "/*\n * Copyright (C) 2020 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.messenger.core.interfaces;\n\nimport androidx.annotation.NonNull;\nimport androidx.lifecycle.",
+    "raw_res": "Lifecycle;",
+    "prompt_res": "LiveData;",
+    "gt": "LiveData;"
+  },
+  {
+    "id": 748,
+    "pkg": "Messenger",
+    "fpath": "src/com/android/car/messenger/core/service/MessengerService.java",
+    "input": "/*\n * Copyright (C) 2021 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.messenger.core.service;\n\nimport static com.android.car.messenger.core.shared.MessageConstants.ACTION_DIRECT_SEND;\nimport static com.android.car.messenger.core.shared.MessageConstants.ACTION_MARK_AS_READ;\nimport static com.android.car.messenger.core.shared.MessageConstants.ACTION_MUTE;\nimport static com.android.car.messenger.core.shared.MessageConstants.ACTION_REPLY;\n\nimport android.app.",
+    "raw_res": "Service;",
+    "prompt_res": "Notification;",
+    "gt": "Notification;"
+  },
+  {
+    "id": 753,
+    "pkg": "Messenger",
+    "fpath": "src/com/android/car/messenger/core/service/MessengerService.java",
+    "input": "/*\n * Copyright (C) 2021 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.messenger.core.service;\n\nimport static com.android.car.messenger.core.shared.MessageConstants.ACTION_DIRECT_SEND;\nimport static com.android.car.messenger.core.shared.MessageConstants.ACTION_MARK_AS_READ;\nimport static com.android.car.messenger.core.shared.MessageConstants.ACTION_MUTE;\nimport static com.android.car.messenger.core.shared.MessageConstants.ACTION_REPLY;\n\nimport android.app.Notification;\nimport android.app.NotificationChannel;\nimport android.app.NotificationManager;\nimport android.app.Service;\nimport android.content.Intent;\nimport android.media.",
+    "raw_res": "AudioManager;",
+    "prompt_res": "AudioAttributes;",
+    "gt": "AudioAttributes;"
+  },
+  {
+    "id": 768,
+    "pkg": "Messenger",
+    "fpath": "src/com/android/car/messenger/core/util/CarStateListener.java",
+    "input": "/*\n * Copyright (C) 2020 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.messenger.core.util;\n\nimport android.bluetooth.BluetoothDevice;\nimport android.car.Car;\nimport android.car.CarProjectionManager;\nimport android.car.drivingstate.",
+    "raw_res": "CarDrivingState;",
+    "prompt_res": "CarUxRestrictions;",
+    "gt": "CarUxRestrictions;"
+  },
+  {
+    "id": 776,
+    "pkg": "Messenger",
+    "fpath": "src/com/android/car/messenger/core/util/CarStateListener.java",
+    "input": "/*\n * Copyright (C) 2020 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.messenger.core.util;\n\nimport android.bluetooth.BluetoothDevice;\nimport android.car.Car;\nimport android.car.CarProjectionManager;\nimport android.car.drivingstate.CarUxRestrictions;\nimport android.car.drivingstate.CarUxRestrictionsManager;\nimport android.car.projection.ProjectionStatus;\nimport android.content.Context;\nimport android.os.Bundle;\nimport android.os.Parcelable;\n\nimport androidx.annotation.NonNull;\nimport androidx.annotation.Nullable;\nimport androidx.lifecycle.",
+    "raw_res": "Lifecycle;",
+    "prompt_res": "LiveData;",
+    "gt": "LiveData;"
+  },
+  {
+    "id": 789,
+    "pkg": "Messenger",
+    "fpath": "src/com/android/car/messenger/impl/AppFactoryImpl.java",
+    "input": "/*\n * Copyright (C) 2020 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.messenger.impl;\n\nimport android.content.ComponentName;\nimport android.content.Context;\nimport android.content.Intent;\nimport android.content.ServiceConnection;\nimport android.content.SharedPreferences;\nimport android.os.",
+    "raw_res": "Bundle;",
+    "prompt_res": "IBinder;",
+    "gt": "IBinder;"
+  },
+  {
+    "id": 794,
+    "pkg": "Messenger",
+    "fpath": "src/com/android/car/messenger/impl/CarMessengerApp.java",
+    "input": "/*\n * Copyright (C) 2020 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.messenger.impl;\n\nimport android.app.",
+    "raw_res": "Activity;",
+    "prompt_res": "Application;",
+    "gt": "Application;"
+  },
+  {
+    "id": 811,
+    "pkg": "Messenger",
+    "fpath": "src/com/android/car/messenger/impl/datamodels/ConversationsPerDeviceFetchManager.java",
+    "input": "/*\n * Copyright (C) 2020 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.messenger.impl.datamodels;\n\nimport static android.provider.Telephony.MmsSms.CONTENT_CONVERSATIONS_URI;\nimport static android.provider.Telephony.TextBasedSmsColumns.SUBSCRIPTION_ID;\nimport static android.provider.Telephony.TextBasedSmsColumns.THREAD_ID;\n\nimport android.content.Context;\nimport android.database.ContentObserver;\nimport android.database.Cursor;\nimport android.net.Uri;\nimport android.telephony.",
+    "raw_res": "SubscriptionManager;",
+    "prompt_res": "SubscriptionInfo;",
+    "gt": "SubscriptionInfo;"
+  },
+  {
+    "id": 815,
+    "pkg": "Messenger",
+    "fpath": "src/com/android/car/messenger/impl/datamodels/ConversationsPerDeviceFetchManager.java",
+    "input": "/*\n * Copyright (C) 2020 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.messenger.impl.datamodels;\n\nimport static android.provider.Telephony.MmsSms.CONTENT_CONVERSATIONS_URI;\nimport static android.provider.Telephony.TextBasedSmsColumns.SUBSCRIPTION_ID;\nimport static android.provider.Telephony.TextBasedSmsColumns.THREAD_ID;\n\nimport android.content.Context;\nimport android.database.ContentObserver;\nimport android.database.Cursor;\nimport android.net.Uri;\nimport android.telephony.SubscriptionInfo;\n\nimport androidx.annotation.NonNull;\nimport androidx.annotation.Nullable;\nimport androidx.lifecycle.LiveData;\nimport androidx.lifecycle.",
+    "raw_res": "MutableLiveData;",
+    "prompt_res": "MediatorLiveData;",
+    "gt": "MediatorLiveData;"
+  },
+  {
+    "id": 844,
+    "pkg": "Notification",
+    "fpath": "src/com/android/car/notification/NotificationClickHandlerFactory.java",
+    "input": "/*\n * Copyright (C) 2018 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License\n */\n\npackage com.android.car.notification;\n\nimport static android.app.ActivityOptions.MODE_BACKGROUND_ACTIVITY_START_ALLOWED;\n\nimport android.annotation.Nullable;\nimport android.app.ActivityManager;\nimport android.app.ActivityOptions;\nimport android.app.Notification;\nimport android.app.",
+    "raw_res": "NotificationChannel;",
+    "prompt_res": "PendingIntent;",
+    "gt": "PendingIntent;"
+  },
+  {
+    "id": 852,
+    "pkg": "Notification",
+    "fpath": "src/com/android/car/notification/NotificationClickHandlerFactory.java",
+    "input": "/*\n * Copyright (C) 2018 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License\n */\n\npackage com.android.car.notification;\n\nimport static android.app.ActivityOptions.MODE_BACKGROUND_ACTIVITY_START_ALLOWED;\n\nimport android.annotation.Nullable;\nimport android.app.ActivityManager;\nimport android.app.ActivityOptions;\nimport android.app.Notification;\nimport android.app.PendingIntent;\nimport android.app.RemoteInput;\nimport android.content.Context;\nimport android.content.Intent;\nimport android.os.Bundle;\nimport android.os.Handler;\nimport android.os.Looper;\nimport android.os.RemoteException;\nimport android.os.",
+    "raw_res": "SystemClock;",
+    "prompt_res": "UserHandle;",
+    "gt": "UserHandle;"
+  },
+  {
+    "id": 877,
+    "pkg": "Notification",
+    "fpath": "src/com/android/car/notification/template/CarNotificationActionsView.java",
+    "input": "/*\n * Copyright (C) 2018 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.android.car.notification.template;\n\nimport android.app.Notification;\nimport android.content.Context;\nimport android.content.res.TypedArray;\nimport android.graphics.PorterDuff;\nimport android.graphics.PorterDuffColorFilter;\nimport android.graphics.drawable.Drawable;\nimport android.graphics.drawable.Icon;\nimport android.os.Build;\nimport android.os.Handler;\nimport android.os.Looper;\nimport android.util.AttributeSet;\nimport android.util.Log;\nimport android.view.View;\nimport android.widget.LinearLayout;\n\nimport androidx.annotation.",
+    "raw_res": "NonNull;",
+    "prompt_res": "ColorInt;",
+    "gt": "ColorInt;"
+  },
+  {
+    "id": 896,
+    "pkg": "Notification",
+    "fpath": "src/com/android/car/notification/template/CarNotificationBodyView.java",
+    "input": "/*\n * Copyright (C) 2018 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.notification.template;\n\nimport android.annotation.",
+    "raw_res": "Nullable;",
+    "prompt_res": "ColorInt;",
+    "gt": "ColorInt;"
+  },
+  {
+    "id": 908,
+    "pkg": "Notification",
+    "fpath": "src/com/android/car/notification/template/CarNotificationBodyView.java",
+    "input": "/*\n * Copyright (C) 2018 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.notification.template;\n\nimport android.annotation.ColorInt;\nimport android.annotation.Nullable;\nimport android.content.Context;\nimport android.content.pm.PackageManager;\nimport android.content.res.TypedArray;\nimport android.graphics.drawable.Drawable;\nimport android.graphics.drawable.Icon;\nimport android.os.Bundle;\nimport android.os.Handler;\nimport android.os.Looper;\nimport android.service.notification.StatusBarNotification;\nimport android.text.TextUtils;\nimport android.util.",
+    "raw_res": "Log;",
+    "prompt_res": "AttributeSet;",
+    "gt": "AttributeSet;"
+  },
+  {
+    "id": 917,
+    "pkg": "Notification",
+    "fpath": "src/com/android/car/notification/template/CarNotificationHeaderView.java",
+    "input": "/*\n * Copyright (C) 2018 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.android.car.notification.template;\n\nimport static android.app.",
+    "raw_res": "Notification.BADGE_ICON_SMALL;",
+    "prompt_res": "Notification.EXTRA_SUBSTITUTE_APP_NAME;",
+    "gt": "Notification.EXTRA_SUBSTITUTE_APP_NAME;"
+  },
+  {
+    "id": 918,
+    "pkg": "Notification",
+    "fpath": "src/com/android/car/notification/template/CarNotificationHeaderView.java",
+    "input": "/*\n * Copyright (C) 2018 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.android.car.notification.template;\n\nimport static android.app.Notification.EXTRA_SUBSTITUTE_APP_NAME;\n\nimport android.annotation.",
+    "raw_res": "Nullable;",
+    "prompt_res": "ColorInt;",
+    "gt": "ColorInt;"
+  },
+  {
+    "id": 1006,
+    "pkg": "Provision",
+    "fpath": "src/com/android/car/provision/UserNoticeUiService.java",
+    "input": "/*\n * Copyright (C) 2022 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.provision;\n\nimport android.app.Service;\nimport android.content.Intent;\nimport android.os.Binder;\nimport android.os.Handler;\nimport android.os.IBinder;\nimport android.os.Looper;\nimport android.os.Parcel;\nimport android.os.",
+    "raw_res": "Parcelable;",
+    "prompt_res": "RemoteException;",
+    "gt": "RemoteException;"
+  },
+  {
+    "id": 1021,
+    "pkg": "Radio",
+    "fpath": "src/com/android/car/radio/DisplayController.java",
+    "input": "/*\n * Copyright (C) 2016 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.radio;\n\nimport android.animation.ValueAnimator;\nimport android.content.Context;\nimport android.hardware.radio.ProgramSelector;\nimport android.support.v4.media.session.",
+    "raw_res": "MediaSessionCompat;",
+    "prompt_res": "PlaybackStateCompat;",
+    "gt": "PlaybackStateCompat;"
+  },
+  {
+    "id": 1078,
+    "pkg": "Radio",
+    "fpath": "src/com/android/car/radio/RadioController.java",
+    "input": "/*\n * Copyright (C) 2016 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.radio;\n\nimport android.hardware.radio.ProgramSelector;\nimport android.hardware.radio.RadioManager.ProgramInfo;\nimport android.hardware.radio.RadioMetadata;\nimport android.support.v4.media.session.PlaybackStateCompat;\nimport android.view.View;\n\nimport androidx.annotation.NonNull;\nimport androidx.annotation.Nullable;\nimport androidx.lifecycle.",
+    "raw_res": "Lifecycle;",
+    "prompt_res": "LiveData;",
+    "gt": "LiveData;"
+  },
+  {
+    "id": 1102,
+    "pkg": "Radio",
+    "fpath": "src/com/android/car/radio/service/RadioAppServiceWrapper.java",
+    "input": "/**\n * Copyright (C) 2018 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.radio.service;\n\nimport android.content.ComponentName;\nimport android.content.Context;\nimport android.content.Intent;\nimport android.content.ServiceConnection;\nimport android.hardware.radio.ProgramSelector;\nimport android.hardware.radio.RadioManager.",
+    "raw_res": "RadioManagerCallback;",
+    "prompt_res": "ProgramInfo;",
+    "gt": "ProgramInfo;"
+  },
+  {
+    "id": 1109,
+    "pkg": "Radio",
+    "fpath": "src/com/android/car/radio/service/RadioAppServiceWrapper.java",
+    "input": "/**\n * Copyright (C) 2018 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.radio.service;\n\nimport android.content.ComponentName;\nimport android.content.Context;\nimport android.content.Intent;\nimport android.content.ServiceConnection;\nimport android.hardware.radio.ProgramSelector;\nimport android.hardware.radio.RadioManager.ProgramInfo;\nimport android.os.IBinder;\nimport android.os.RemoteException;\nimport android.support.v4.media.session.PlaybackStateCompat;\n\nimport androidx.annotation.IntDef;\nimport androidx.annotation.NonNull;\nimport androidx.annotation.Nullable;\nimport androidx.lifecycle.",
+    "raw_res": "Lifecycle;",
+    "prompt_res": "LiveData;",
+    "gt": "LiveData;"
+  },
+  {
+    "id": 1119,
+    "pkg": "RotaryController",
+    "fpath": "src/com/android/car/rotary/DumpUtils.java",
+    "input": "/*\n * Copyright (C) 2021 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.rotary;\n\nimport android.content.ComponentName;\nimport android.graphics.",
+    "raw_res": "drawable.Drawable;",
+    "prompt_res": "Rect;",
+    "gt": "Rect;"
+  },
+  {
+    "id": 1162,
+    "pkg": "RotaryController",
+    "fpath": "src/com/android/car/rotary/NodeCopier.java",
+    "input": "/*\n * Copyright 2020 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.rotary;\n\nimport android.view.accessibility.",
+    "raw_res": "AccessibilityEvent;",
+    "prompt_res": "AccessibilityNodeInfo;",
+    "gt": "AccessibilityNodeInfo;"
+  },
+  {
+    "id": 1167,
+    "pkg": "RotaryController",
+    "fpath": "src/com/android/car/rotary/SurfaceViewHelper.java",
+    "input": "/*\n * Copyright 2021 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.rotary;\n\nimport android.content.Intent;\nimport android.content.pm.PackageManager;\nimport android.content.pm.ResolveInfo;\nimport android.text.TextUtils;\nimport android.view.accessibility.",
+    "raw_res": "AccessibilityEvent;",
+    "prompt_res": "AccessibilityNodeInfo;",
+    "gt": "AccessibilityNodeInfo;"
+  },
+  {
+    "id": 1173,
+    "pkg": "RotaryController",
+    "fpath": "src/com/android/car/rotary/TreeTraverser.java",
+    "input": "/*\n * Copyright (C) 2020 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.rotary;\n\nimport android.view.accessibility.",
+    "raw_res": "AccessibilityEvent;",
+    "prompt_res": "AccessibilityNodeInfo;",
+    "gt": "AccessibilityNodeInfo;"
+  },
+  {
+    "id": 1238,
+    "pkg": "Settings",
+    "fpath": "src/com/android/car/settings/common/PreferenceController.java",
+    "input": "/*\n * Copyright 2018 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.settings.common;\n\nimport static com.android.car.settings.common.PreferenceXmlParser.PREF_AVAILABILITY_STATUS_HIDDEN;\n",
+    "raw_res": "import static com.android.car.settings.common.PreferenceXmlParser.PREF_AVAILABILITY_STATUS_NOT_AVAILABLE;",
+    "prompt_res": "import static com.android.car.settings.common.PreferenceXmlParser.PREF_AVAILABILITY_STATUS_READ;",
+    "gt": "import static com.android.car.settings.common.PreferenceXmlParser.PREF_AVAILABILITY_STATUS_READ;"
+  },
+  {
+    "id": 1257,
+    "pkg": "Settings",
+    "fpath": "src/com/android/car/settings/common/SeekBarPreference.java",
+    "input": "/*\n * Copyright (C) 2018 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.settings.common;\n\nimport android.content.Context;\nimport android.content.res.",
+    "raw_res": "Resources;",
+    "prompt_res": "TypedArray;",
+    "gt": "TypedArray;"
+  },
+  {
+    "id": 1265,
+    "pkg": "Settings",
+    "fpath": "src/com/android/car/settings/common/SeekBarPreference.java",
+    "input": "/*\n * Copyright (C) 2018 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.settings.common;\n\nimport android.content.Context;\nimport android.content.res.TypedArray;\nimport android.os.Parcel;\nimport android.os.Parcelable;\nimport android.util.AttributeSet;\nimport android.util.Log;\nimport android.view.KeyEvent;\nimport android.view.MotionEvent;\nimport android.view.View;\nimport android.widget.",
+    "raw_res": "FrameLayout;",
+    "prompt_res": "SeekBar;",
+    "gt": "SeekBar;"
+  },
+  {
+    "id": 1267,
+    "pkg": "Settings",
+    "fpath": "src/com/android/car/settings/common/SeekBarPreference.java",
+    "input": "/*\n * Copyright (C) 2018 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.settings.common;\n\nimport android.content.Context;\nimport android.content.res.TypedArray;\nimport android.os.Parcel;\nimport android.os.Parcelable;\nimport android.util.AttributeSet;\nimport android.util.Log;\nimport android.view.KeyEvent;\nimport android.view.MotionEvent;\nimport android.view.View;\nimport android.widget.SeekBar;\nimport android.widget.TextView;\n\nimport androidx.preference.PreferenceViewHolder;\n\nimport com.android.car.settings.R;\nimport com.android.car.ui.preference.",
+    "raw_res": "CarPreference;",
+    "prompt_res": "CarUiPreference;",
+    "gt": "CarUiPreference;"
+  },
+  {
+    "id": 1315,
+    "pkg": "Settings",
+    "fpath": "src/com/android/car/settings/deeplink/DeepLinkHomepageActivity.java",
+    "input": "/*\n * Copyright (C) 2024 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.settings.deeplink;\n\nimport static android.provider.Settings.ACTION_SETTINGS_EMBED_DEEP_LINK_ACTIVITY;\nimport static android.provider.Settings.EXTRA_SETTINGS_EMBEDDED_DEEP_LINK_HIGHLIGHT_MENU_KEY;\nimport static android.provider.Settings.EXTRA_SETTINGS_EMBEDDED_DEEP_LINK_INTENT_URI;\n\nimport static com.android.car.settings.CarSettingsApplication.CAR_SETTINGS_PACKAGE_NAME;\n\nimport android.annotation.NonNull;\nimport android.content.ComponentName;\nimport android.content.Intent;\nimport android.content.pm.ActivityInfo;\nimport android.net.Uri;\nimport android.util.Log;\n\nimport androidx.window.embedding.SplitRule;\n\nimport com.android.car.settings.activityembedding.",
+    "raw_res": "ActivityEmbeddingManager;",
+    "prompt_res": "ActivityEmbeddingRulesController;",
+    "gt": "ActivityEmbeddingRulesController;"
+  },
+  {
+    "id": 1325,
+    "pkg": "Settings",
+    "fpath": "src/com/android/car/settings/language/LanguageBasePreferenceController.java",
+    "input": "/*\n * Copyright (C) 2018 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.settings.language;\n\nimport android.car.drivingstate.CarUxRestrictions;\nimport android.content.Context;\n\nimport androidx.preference.Preference;\nimport androidx.preference.",
+    "raw_res": "PreferenceScreen;",
+    "prompt_res": "PreferenceGroup;",
+    "gt": "PreferenceGroup;"
+  },
+  {
+    "id": 1326,
+    "pkg": "Settings",
+    "fpath": "src/com/android/car/settings/language/LanguageBasePreferenceController.java",
+    "input": "/*\n * Copyright (C) 2018 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.settings.language;\n\nimport android.car.drivingstate.CarUxRestrictions;\nimport android.content.Context;\n\nimport androidx.preference.Preference;\nimport androidx.preference.PreferenceGroup;\n\nimport com.android.car.settings.common.FragmentController;\nimport com.android.car.settings.common.PreferenceController;\nimport com.android.internal.app.",
+    "raw_res": "AlertingPreferences;",
+    "prompt_res": "LocalePicker;",
+    "gt": "LocalePicker;"
+  },
+  {
+    "id": 1333,
+    "pkg": "Settings",
+    "fpath": "tests/multivalent/src/com/android/car/settings/enterprise/BaseAdminGrantedPermissionsApplicationListPreferenceControllerTestCase.java",
+    "input": "/*\n * Copyright (C) 2021 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.settings.enterprise;\n\nimport static com.android.car.settings.common.PreferenceController.AVAILABLE;\nimport static com.android.car.settings.common.PreferenceController.AVAILABLE_FOR_VIEWING;\nimport static com.android.car.settings.common.PreferenceController.CONDITIONALLY_UNAVAILABLE;\n",
+    "raw_res": "import static com.android.car.settings.common.PreferenceController.UNAVAILABLE;",
+    "prompt_res": "import static com.android.car.settings.common.PreferenceController.DISABLED_FOR_PROFILE;",
+    "gt": "import static com.android.car.settings.common.PreferenceController.DISABLED_FOR_PROFILE;"
+  },
+  {
+    "id": 1336,
+    "pkg": "Settings",
+    "fpath": "tests/multivalent/src/com/android/car/settings/enterprise/BaseAdminGrantedPermissionsApplicationListPreferenceControllerTestCase.java",
+    "input": "/*\n * Copyright (C) 2021 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.settings.enterprise;\n\nimport static com.android.car.settings.common.PreferenceController.AVAILABLE;\nimport static com.android.car.settings.common.PreferenceController.AVAILABLE_FOR_VIEWING;\nimport static com.android.car.settings.common.PreferenceController.CONDITIONALLY_UNAVAILABLE;\nimport static com.android.car.settings.common.PreferenceController.DISABLED_FOR_PROFILE;\n\nimport static com.google.common.truth.Truth.assertWithMessage;\n\n",
+    "raw_res": "import android.content.Context;",
+    "prompt_res": "import static org.mockito.ArgumentMatchers.any;",
+    "gt": "import static org.mockito.ArgumentMatchers.any;"
+  },
+  {
+    "id": 1360,
+    "pkg": "Settings",
+    "fpath": "tests/multivalent/src/com/android/car/settings/enterprise/BaseEnterprisePreferenceControllerTestCase.java",
+    "input": "/*\n * Copyright (C) 2021 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.android.car.settings.enterprise;\n\nimport static com.google.common.truth.Truth.assertThat;\nimport static com.google.common.truth.Truth.assertWithMessage;\n\nimport static org.mockito.ArgumentMatchers.any;\n",
+    "raw_res": "import static org.mockito.ArgumentMatchers.eq;",
+    "prompt_res": "import static org.mockito.ArgumentMatchers.notNull;",
+    "gt": "import static org.mockito.ArgumentMatchers.notNull;"
+  },
+  {
+    "id": 1362,
+    "pkg": "Settings",
+    "fpath": "tests/multivalent/src/com/android/car/settings/enterprise/BaseEnterprisePreferenceControllerTestCase.java",
+    "input": "/*\n * Copyright (C) 2021 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.android.car.settings.enterprise;\n\nimport static com.google.common.truth.Truth.assertThat;\nimport static com.google.common.truth.Truth.assertWithMessage;\n\nimport static org.mockito.ArgumentMatchers.any;\nimport static org.mockito.ArgumentMatchers.notNull;\n",
+    "raw_res": "import static org.mockito.Mockito.doAnswer;",
+    "prompt_res": "import static org.mockito.Mockito.never;",
+    "gt": "import static org.mockito.Mockito.never;"
+  },
+  {
+    "id": 1363,
+    "pkg": "Settings",
+    "fpath": "tests/multivalent/src/com/android/car/settings/enterprise/BaseEnterprisePreferenceControllerTestCase.java",
+    "input": "/*\n * Copyright (C) 2021 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.android.car.settings.enterprise;\n\nimport static com.google.common.truth.Truth.assertThat;\nimport static com.google.common.truth.Truth.assertWithMessage;\n\nimport static org.mockito.ArgumentMatchers.any;\nimport static org.mockito.ArgumentMatchers.notNull;\nimport static org.mockito.",
+    "raw_res": "Mockito.doAnswer;",
+    "prompt_res": "Mockito.never;",
+    "gt": "Mockito.never;"
+  },
+  {
+    "id": 1366,
+    "pkg": "Settings",
+    "fpath": "tests/multivalent/src/com/android/car/settings/enterprise/BaseEnterprisePreferenceControllerTestCase.java",
+    "input": "/*\n * Copyright (C) 2021 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.android.car.settings.enterprise;\n\nimport static com.google.common.truth.Truth.assertThat;\nimport static com.google.common.truth.Truth.assertWithMessage;\n\nimport static org.mockito.ArgumentMatchers.any;\nimport static org.mockito.ArgumentMatchers.notNull;\nimport static org.mockito.Mockito.never;\nimport static org.mockito.Mockito.verify;\n\nimport static java.util.stream.Collectors.toList;\n\nimport android.car.drivingstate.",
+    "raw_res": "CarBatteryStatus;",
+    "prompt_res": "CarUxRestrictions;",
+    "gt": "CarUxRestrictions;"
+  },
+  {
+    "id": 1403,
+    "pkg": "Settings",
+    "fpath": "tests/multivalent/src/com/android/car/settings/enterprise/BaseEnterpriseTestCase.java",
+    "input": "/*\n * Copyright (C) 2021 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.android.car.settings.enterprise;\n\nimport static com.android.dx.mockito.inline.extended.ExtendedMockito.doReturn;\n\n",
+    "raw_res": "import android.content.Context;",
+    "prompt_res": "import static com.google.common.truth.Truth.assertWithMessage;",
+    "gt": "import static com.google.common.truth.Truth.assertWithMessage;"
+  },
+  {
+    "id": 1413,
+    "pkg": "Settings",
+    "fpath": "tests/multivalent/src/com/android/car/settings/enterprise/BaseEnterpriseTestCase.java",
+    "input": "/*\n * Copyright (C) 2021 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.android.car.settings.enterprise;\n\nimport static com.android.dx.mockito.inline.extended.ExtendedMockito.doReturn;\n\nimport static com.google.common.truth.Truth.assertWithMessage;\n\nimport static org.mockito.ArgumentMatchers.any;\nimport static org.mockito.ArgumentMatchers.anyBoolean;\nimport static org.mockito.ArgumentMatchers.anyInt;\nimport static org.mockito.ArgumentMatchers.eq;\n",
+    "raw_res": "import static org.mockito.Mockito.mock;",
+    "prompt_res": "import static org.mockito.Mockito.never;",
+    "gt": "import static org.mockito.Mockito.never;"
+  },
+  {
+    "id": 1414,
+    "pkg": "Settings",
+    "fpath": "tests/multivalent/src/com/android/car/settings/enterprise/BaseEnterpriseTestCase.java",
+    "input": "/*\n * Copyright (C) 2021 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.android.car.settings.enterprise;\n\nimport static com.android.dx.mockito.inline.extended.ExtendedMockito.doReturn;\n\nimport static com.google.common.truth.Truth.assertWithMessage;\n\nimport static org.mockito.ArgumentMatchers.any;\nimport static org.mockito.ArgumentMatchers.anyBoolean;\nimport static org.mockito.ArgumentMatchers.anyInt;\nimport static org.mockito.ArgumentMatchers.eq;\nimport static org.mockito.",
+    "raw_res": "Mockito.mock;",
+    "prompt_res": "Mockito.never;",
+    "gt": "Mockito.never;"
+  },
+  {
+    "id": 1423,
+    "pkg": "Settings",
+    "fpath": "tests/unit/src/com/android/car/settings/wifi/details/WifiDetailsBasePreferenceControllerTestCase.java",
+    "input": "/*\n * Copyright (C) 2021 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.settings.wifi.details;\n\nimport static com.google.common.truth.Truth.assertThat;\n\nimport static org.mockito.Mockito.when;\n\nimport android.car.drivingstate.",
+    "raw_res": "CarUiEvent;",
+    "prompt_res": "CarUxRestrictions;",
+    "gt": "CarUxRestrictions;"
+  },
+  {
+    "id": 1437,
+    "pkg": "Settings",
+    "fpath": "tests/unit/src/com/android/car/settings/wifi/details/WifiDetailsBasePreferenceControllerTestCase.java",
+    "input": "/*\n * Copyright (C) 2021 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.settings.wifi.details;\n\nimport static com.google.common.truth.Truth.assertThat;\n\nimport static org.mockito.Mockito.when;\n\nimport android.car.drivingstate.CarUxRestrictions;\nimport android.content.Context;\n\nimport androidx.lifecycle.LifecycleOwner;\nimport androidx.test.core.app.ApplicationProvider;\n\nimport com.android.car.settings.common.FragmentController;\nimport com.android.car.settings.common.PreferenceControllerTestUtil;\nimport com.android.car.settings.testutils.TestLifecycleOwner;\nimport com.android.wifitrackerlib.WifiEntry;\n\nimport org.junit.Before;\nimport org.junit.Test;\nimport org.mockito.Mock;\nimport org.mockito.MockitoAnnotations;\n\npublic abstract class WifiDetailsBasePreferenceControllerTestCase {\n\n    protected Context mContext = ApplicationProvider.getApplicationContext();\n    protected WifiDetailsPreference mPreference;\n    protected LifecycleOwner mLifecycleOwner;\n    protected CarUxRestrictions mCarUxRestrictions;\n\n    @Mock\n    protected FragmentController mFragmentController;\n    @Mock\n    protected WifiEntry mMockWifiEntry;\n    @Mock\n    protected WifiInfoProvider mMockWifiInfoProvider;\n\n    @Before\n    public void setUp() {\n        MockitoAnnotations.initMocks(this);\n        mLifecycleOwner = new TestLifecycleOwner();\n\n        mCarUxRestrictions = new CarUxRestrictions.Builder(/* reqOpt= */ true,\n                CarUxRestrictions.UX_RESTRICTIONS_BASELINE, /* timestamp= */ 0).build();\n\n        mPreference = new WifiDetailsPreference(mContext);\n        getController().init(mMockWifiEntry, mMockWifiInfoProvider);\n        PreferenceControllerTestUtil.assignPreference(getController(), mPreference);\n        initTest();\n    }\n\n    @Test\n    public void onCreate_connected_shouldHaveDetailTextSet() {\n        setUpConnectedState();\n        getController().onCreate(mLifecycleOwner);\n\n        assertThat(mPreference.isVisible()).isTrue();\n        assertThat(mPreference.getDetailText()).isEqualTo(getDesiredDetailText());\n    }\n\n    @Test\n    public void onWifiChanged_isNotActive_preferenceNotVisible() {\n        setUpDisconnectedState();\n        getController().onCreate(mLifecycleOwner);\n\n        assertThat(mPreference.isVisible()).isFalse();\n    }\n\n    protected void initTest() {\n    }\n\n    protected abstract ",
+    "raw_res": "WifiDetailsBasePreferenceController getController();",
+    "prompt_res": "WifiDetailsBasePreferenceController<WifiDetailsPreference> getController();",
+    "gt": "WifiDetailsBasePreferenceController<WifiDetailsPreference> getController();"
+  },
+  {
+    "id": 1471,
+    "pkg": "SettingsIntelligence",
+    "fpath": "src/com/android/settings/intelligence/search/car/CarSearchFragment.java",
+    "input": "/*\n * Copyright (C) 2020 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.settings.intelligence.search.car;\n\nimport static android.provider.Settings.EXTRA_SETTINGS_EMBEDDED_DEEP_LINK_INTENT_URI;\n\nimport static com.android.car.ui.core.CarUi.requireInsets;\nimport static com.android.car.ui.core.CarUi.requireToolbar;\nimport static com.android.car.ui.utils.CarUiUtils.drawableToBitmap;\n\nimport android.app.Activity;\nimport android.content.Context;\nimport android.content.Intent;\nimport android.content.pm.PackageManager;\nimport android.content.pm.ResolveInfo;\nimport android.graphics.Bitmap;\nimport android.graphics.drawable.BitmapDrawable;\nimport android.graphics.drawable.Drawable;\nimport android.net.Uri;\nimport android.os.Bundle;\nimport android.text.TextUtils;\nimport android.util.Log;\nimport android.view.View;\nimport android.view.inputmethod.InputMethodManager;\n\nimport androidx.annotation.NonNull;\nimport androidx.loader.app.LoaderManager;\nimport androidx.loader.content.Loader;\n\nimport com.android.car.ui.imewidescreen.CarUiImeSearchListItem;\nimport com.android.car.ui.preference.PreferenceFragment;\nimport com.android.car.ui.recyclerview.CarUiContentListItem;\nimport com.android.car.ui.recyclerview.",
+    "raw_res": "CarUiRecyclerViewAdapter;",
+    "prompt_res": "CarUiRecyclerView;",
+    "gt": "CarUiRecyclerView;"
+  },
+  {
+    "id": 1495,
+    "pkg": "SettingsIntelligence",
+    "fpath": "src/com/android/settings/intelligence/search/car/CarSearchResultsAdapter.java",
+    "input": "/*\n * Copyright (C) 2020 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.settings.intelligence.search.car;\n\nimport android.content.Context;\nimport android.view.LayoutInflater;\nimport android.view.View;\nimport android.view.ViewGroup;\n\nimport androidx.recyclerview.widget.DiffUtil;\nimport androidx.recyclerview.widget.RecyclerView;\n\nimport com.android.settings.intelligence.R;\nimport com.android.settings.intelligence.search.ResultPayload;\nimport com.android.settings.intelligence.search.",
+    "raw_res": "SearchResultAdapter;",
+    "prompt_res": "SearchResult;",
+    "gt": "SearchResult;"
+  },
+  {
+    "id": 1500,
+    "pkg": "SettingsIntelligence",
+    "fpath": "src/com/android/settings/intelligence/search/car/CarSearchViewHolder.java",
+    "input": "/*\n * Copyright (C) 2020 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.settings.intelligence.search.car;\n\nimport android.content.Context;\nimport android.view.View;\nimport android.widget.",
+    "raw_res": "TextView;",
+    "prompt_res": "ImageView;",
+    "gt": "ImageView;"
+  },
+  {
+    "id": 1514,
+    "pkg": "SettingsIntelligence",
+    "fpath": "src/com/android/settings/intelligence/search/savedqueries/car/CarSavedQueryController.java",
+    "input": "/*\n * Copyright (C) 2020 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.settings.intelligence.search.savedqueries.car;\n\nimport android.content.Context;\nimport android.os.Bundle;\nimport android.util.Log;\nimport android.view.MenuItem;\n\nimport androidx.annotation.NonNull;\nimport androidx.loader.app.LoaderManager;\nimport androidx.loader.content.Loader;\n\nimport com.android.car.ui.imewidescreen.CarUiImeSearchListItem;\nimport com.android.car.ui.recyclerview.CarUiContentListItem;\nimport com.android.car.ui.toolbar.SearchConfig;\nimport com.android.car.ui.toolbar.ToolbarController;\nimport com.android.settings.intelligence.R;\nimport com.android.settings.intelligence.overlay.FeatureFactory;\nimport com.android.settings.intelligence.search.SearchCommon;\nimport com.android.settings.intelligence.search.",
+    "raw_res": "SearchConfigProvider;",
+    "prompt_res": "SearchFeatureProvider;",
+    "gt": "SearchFeatureProvider;"
+  },
+  {
+    "id": 1515,
+    "pkg": "SettingsIntelligence",
+    "fpath": "src/com/android/settings/intelligence/search/savedqueries/car/CarSavedQueryController.java",
+    "input": "/*\n * Copyright (C) 2020 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.settings.intelligence.search.savedqueries.car;\n\nimport android.content.Context;\nimport android.os.Bundle;\nimport android.util.Log;\nimport android.view.MenuItem;\n\nimport androidx.annotation.NonNull;\nimport androidx.loader.app.LoaderManager;\nimport androidx.loader.content.Loader;\n\nimport com.android.car.ui.imewidescreen.CarUiImeSearchListItem;\nimport com.android.car.ui.recyclerview.CarUiContentListItem;\nimport com.android.car.ui.toolbar.SearchConfig;\nimport com.android.car.ui.toolbar.ToolbarController;\nimport com.android.settings.intelligence.R;\nimport com.android.settings.intelligence.overlay.FeatureFactory;\nimport com.android.settings.intelligence.search.SearchCommon;\nimport com.android.settings.intelligence.search.SearchFeatureProvider;\nimport com.android.settings.intelligence.search.",
+    "raw_res": "SearchFeatureProvider.SearchQueryListener;",
+    "prompt_res": "SearchResult;",
+    "gt": "SearchResult;"
+  },
+  {
+    "id": 1524,
+    "pkg": "SettingsIntelligence",
+    "fpath": "src/com/android/settings/intelligence/search/savedqueries/car/CarSavedQueryViewHolder.java",
+    "input": "/*\n * Copyright (C) 2020 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.settings.intelligence.search.savedqueries.car;\n\nimport android.view.",
+    "raw_res": "LayoutInflater;",
+    "prompt_res": "View;",
+    "gt": "View;"
+  },
+  {
+    "id": 1537,
+    "pkg": "SystemUI",
+    "fpath": "src/com/android/systemui/CarSystemUIActivityBinder.java",
+    "input": "/*\n * Copyright (C) 2023 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.systemui;\n\nimport android.app.",
+    "raw_res": "ActivityManager;",
+    "prompt_res": "Activity;",
+    "gt": "Activity;"
+  },
+  {
+    "id": 1547,
+    "pkg": "SystemUI",
+    "fpath": "src/com/android/systemui/car/userpicker/DialogManager.java",
+    "input": "/*\n * Copyright (C) 2023 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.systemui.car.userpicker;\n\nimport static com.android.systemui.car.userpicker.UserEventManager.getMaxSupportedUsers;\n\nimport android.annotation.IntDef;\nimport android.app.AlertDialog;\nimport android.app.Dialog;\nimport android.content.Context;\nimport android.util.",
+    "raw_res": "AttributeSet;",
+    "prompt_res": "Log;",
+    "gt": "Log;"
+  },
+  {
+    "id": 1548,
+    "pkg": "SystemUI",
+    "fpath": "src/com/android/systemui/car/userpicker/DialogManager.java",
+    "input": "/*\n * Copyright (C) 2023 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.systemui.car.userpicker;\n\nimport static com.android.systemui.car.userpicker.UserEventManager.getMaxSupportedUsers;\n\nimport android.annotation.IntDef;\nimport android.app.AlertDialog;\nimport android.app.Dialog;\nimport android.content.Context;\nimport android.util.Log;\nimport android.util.",
+    "raw_res": "SparseArray;",
+    "prompt_res": "Slog;",
+    "gt": "Slog;"
+  },
+  {
+    "id": 1555,
+    "pkg": "SystemUI",
+    "fpath": "src/com/android/systemui/car/userpicker/UserEventManager.java",
+    "input": "/*\n * Copyright (C) 2023 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.systemui.car.userpicker;\n\nimport static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_CREATED;\n",
+    "raw_res": "import static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_DELETED;",
+    "prompt_res": "import static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_INVISIBLE;",
+    "gt": "import static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_INVISIBLE;"
+  },
+  {
+    "id": 1556,
+    "pkg": "SystemUI",
+    "fpath": "src/com/android/systemui/car/userpicker/UserEventManager.java",
+    "input": "/*\n * Copyright (C) 2023 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.systemui.car.userpicker;\n\nimport static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_CREATED;\nimport static android.car.user.",
+    "raw_res": "CarUserManager.USER_LIFECYCLE_EVENT_TYPE_DELETED;",
+    "prompt_res": "CarUserManager.USER_LIFECYCLE_EVENT_TYPE_INVISIBLE;",
+    "gt": "CarUserManager.USER_LIFECYCLE_EVENT_TYPE_INVISIBLE;"
+  },
+  {
+    "id": 1559,
+    "pkg": "SystemUI",
+    "fpath": "src/com/android/systemui/car/userpicker/UserEventManager.java",
+    "input": "/*\n * Copyright (C) 2023 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.systemui.car.userpicker;\n\nimport static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_CREATED;\nimport static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_INVISIBLE;\nimport static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_REMOVED;\n",
+    "raw_res": "import static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_VISIBLE;",
+    "prompt_res": "import static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_STARTING;",
+    "gt": "import static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_STARTING;"
+  },
+  {
+    "id": 1560,
+    "pkg": "SystemUI",
+    "fpath": "src/com/android/systemui/car/userpicker/UserEventManager.java",
+    "input": "/*\n * Copyright (C) 2023 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.systemui.car.userpicker;\n\nimport static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_CREATED;\nimport static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_INVISIBLE;\nimport static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_REMOVED;\nimport static android.car.user.",
+    "raw_res": "CarUserManager.USER_LIFECYCLE_EVENT_TYPE_VISIBLE;",
+    "prompt_res": "CarUserManager.USER_LIFECYCLE_EVENT_TYPE_STARTING;",
+    "gt": "CarUserManager.USER_LIFECYCLE_EVENT_TYPE_STARTING;"
+  },
+  {
+    "id": 1600,
+    "pkg": "SystemUI",
+    "fpath": "src/com/android/systemui/car/userpicker/UserEventManager.java",
+    "input": "/*\n * Copyright (C) 2023 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.systemui.car.userpicker;\n\nimport static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_CREATED;\nimport static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_INVISIBLE;\nimport static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_REMOVED;\nimport static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_STARTING;\nimport static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_STOPPED;\nimport static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_STOPPING;\nimport static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_SWITCHING;\nimport static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_UNLOCKED;\nimport static android.car.user.CarUserManager.lifecycleEventTypeToString;\nimport static android.os.UserHandle.USER_ALL;\nimport static android.os.UserHandle.USER_SYSTEM;\nimport static android.os.UserManager.SWITCHABILITY_STATUS_OK;\nimport static android.os.UserManager.isHeadlessSystemUserMode;\n\nimport android.annotation.MainThread;\nimport android.annotation.Nullable;\nimport android.annotation.UserIdInt;\nimport android.app.ActivityManager;\nimport android.car.SyncResultCallback;\nimport android.car.user.CarUserManager;\nimport android.car.user.CarUserManager.UserLifecycleListener;\nimport android.car.user.UserCreationResult;\nimport android.car.user.UserLifecycleEventFilter;\nimport android.car.user.UserStartRequest;\nimport android.car.user.UserStartResponse;\nimport android.car.user.UserStopRequest;\nimport android.car.user.UserStopResponse;\nimport android.car.user.UserSwitchRequest;\nimport android.car.user.UserSwitchResult;\nimport android.car.util.concurrent.AsyncFuture;\nimport android.content.BroadcastReceiver;\nimport android.content.Context;\nimport android.content.Intent;\nimport android.content.IntentFilter;\nimport android.content.pm.UserInfo;\nimport android.os.",
+    "raw_res": "Bundle;",
+    "prompt_res": "Handler;",
+    "gt": "Handler;"
+  },
+  {
+    "id": 1605,
+    "pkg": "SystemUI",
+    "fpath": "src/com/android/systemui/car/userpicker/UserEventManager.java",
+    "input": "/*\n * Copyright (C) 2023 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.systemui.car.userpicker;\n\nimport static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_CREATED;\nimport static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_INVISIBLE;\nimport static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_REMOVED;\nimport static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_STARTING;\nimport static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_STOPPED;\nimport static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_STOPPING;\nimport static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_SWITCHING;\nimport static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_UNLOCKED;\nimport static android.car.user.CarUserManager.lifecycleEventTypeToString;\nimport static android.os.UserHandle.USER_ALL;\nimport static android.os.UserHandle.USER_SYSTEM;\nimport static android.os.UserManager.SWITCHABILITY_STATUS_OK;\nimport static android.os.UserManager.isHeadlessSystemUserMode;\n\nimport android.annotation.MainThread;\nimport android.annotation.Nullable;\nimport android.annotation.UserIdInt;\nimport android.app.ActivityManager;\nimport android.car.SyncResultCallback;\nimport android.car.user.CarUserManager;\nimport android.car.user.CarUserManager.UserLifecycleListener;\nimport android.car.user.UserCreationResult;\nimport android.car.user.UserLifecycleEventFilter;\nimport android.car.user.UserStartRequest;\nimport android.car.user.UserStartResponse;\nimport android.car.user.UserStopRequest;\nimport android.car.user.UserStopResponse;\nimport android.car.user.UserSwitchRequest;\nimport android.car.user.UserSwitchResult;\nimport android.car.util.concurrent.AsyncFuture;\nimport android.content.BroadcastReceiver;\nimport android.content.Context;\nimport android.content.Intent;\nimport android.content.IntentFilter;\nimport android.content.pm.UserInfo;\nimport android.os.Handler;\nimport android.os.Looper;\nimport android.os.UserHandle;\nimport android.os.UserManager;\nimport android.util.Log;\nimport android.util.",
+    "raw_res": "SparseArray;",
+    "prompt_res": "Slog;",
+    "gt": "Slog;"
+  },
+  {
+    "id": 1619,
+    "pkg": "SystemUI",
+    "fpath": "src/com/android/systemui/car/userpicker/UserPickerController.java",
+    "input": "/*\n * Copyright (C) 2023 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.systemui.car.userpicker;\n\nimport static android.car.CarOccupantZoneManager.INVALID_USER_ID;\nimport static android.car.user.CarUserManager.USER_LIFECYCLE_EVENT_TYPE_UNLOCKED;\nimport static android.car.user.CarUserManager.lifecycleEventTypeToString;\nimport static android.view.",
+    "raw_res": "View.GONE;",
+    "prompt_res": "Display.INVALID_DISPLAY;",
+    "gt": "Display.INVALID_DISPLAY;"
+  },
+  {
+    "id": 1661,
+    "pkg": "SystemUpdater",
+    "fpath": "src/com/android/car/systemupdater/UpdateLayoutFragment.java",
+    "input": "/*\n * Copyright (C) 2018 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.android.car.systemupdater;\n\nimport android.app.Notification;\nimport android.app.NotificationChannel;\nimport android.app.NotificationManager;\nimport android.app.PendingIntent;\nimport android.content.ComponentName;\nimport android.content.Context;\nimport android.content.Intent;\nimport android.os.AsyncTask;\nimport android.os.",
+    "raw_res": "Build;",
+    "prompt_res": "Bundle;",
+    "gt": "Bundle;"
+  },
+  {
+    "id": 1668,
+    "pkg": "SystemUpdater",
+    "fpath": "src/com/android/car/systemupdater/UpdateLayoutFragment.java",
+    "input": "/*\n * Copyright (C) 2018 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.android.car.systemupdater;\n\nimport android.app.Notification;\nimport android.app.NotificationChannel;\nimport android.app.NotificationManager;\nimport android.app.PendingIntent;\nimport android.content.ComponentName;\nimport android.content.Context;\nimport android.content.Intent;\nimport android.os.AsyncTask;\nimport android.os.Bundle;\nimport android.os.Handler;\nimport android.os.PowerManager;\nimport android.os.UpdateEngine;\nimport android.os.UpdateEngineCallback;\nimport android.text.format.Formatter;\nimport android.util.Log;\nimport android.view.",
+    "raw_res": "View;",
+    "prompt_res": "LayoutInflater;",
+    "gt": "LayoutInflater;"
+  },
+  {
+    "id": 1706,
+    "pkg": "Templates",
+    "fpath": "Host/app/apphost/src/main/java/com/android/car/libraries/apphost/common/HostResourceIds.java",
+    "input": "/*\n * Copyright (C) 2021 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.libraries.apphost.common;\n\nimport androidx.annotation.ColorRes;\nimport androidx.annotation.DrawableRes;\nimport androidx.annotation.",
+    "raw_res": "IdRes;",
+    "prompt_res": "NonNull;",
+    "gt": "NonNull;"
+  },
+  {
+    "id": 1711,
+    "pkg": "Templates",
+    "fpath": "Host/app/apphost/src/main/java/com/android/car/libraries/apphost/common/SurfaceInfoProvider.java",
+    "input": "/*\n * Copyright (C) 2021 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.car.libraries.apphost.common;\n\nimport android.graphics.",
+    "raw_res": "drawable.Drawable;",
+    "prompt_res": "Rect;",
+    "gt": "Rect;"
+  },
+  {
+    "id": 1741,
+    "pkg": "Templates",
+    "fpath": "Host/app/src/main/java/com/android/car/templates/host/TemplatesHostApplication.java",
+    "input": "/*\n * Copyright (C) 2021 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.android.car.templates.host;\n\nimport android.app.",
+    "raw_res": "Activity;",
+    "prompt_res": "Application;",
+    "gt": "Application;"
+  },
+  {
+    "id": 1772,
+    "pkg": "AndroidCarTracker",
+    "fpath": "app/src/main/java/com/davidmagalhaes/androidcartracker/YourService.java",
+    "input": "package com.davidmagalhaes.androidcartracker;\n\nimport android.app.",
+    "raw_res": "Activity;",
+    "prompt_res": "Service;",
+    "gt": "Service;"
+  },
+  {
+    "id": 1812,
+    "pkg": "AndroidCarTracker",
+    "fpath": "app/src/main/java/com/davidmagalhaes/androidcartracker/alarm/GpsSenderAlarm.java",
+    "input": "package com.davidmagalhaes.androidcartracker.alarm;\n\nimport android.Manifest;\nimport android.app.AlarmManager;\nimport android.app.PendingIntent;\nimport android.content.",
+    "raw_res": "Context;",
+    "prompt_res": "BroadcastReceiver;",
+    "gt": "BroadcastReceiver;"
+  },
+  {
+    "id": 1815,
+    "pkg": "AndroidCarTracker",
+    "fpath": "app/src/main/java/com/davidmagalhaes/androidcartracker/alarm/GpsSenderAlarm.java",
+    "input": "package com.davidmagalhaes.androidcartracker.alarm;\n\nimport android.Manifest;\nimport android.app.AlarmManager;\nimport android.app.PendingIntent;\nimport android.content.BroadcastReceiver;\nimport android.content.Context;\nimport android.content.Intent;\nimport android.content.",
+    "raw_res": "IntentFilter;",
+    "prompt_res": "SharedPreferences;",
+    "gt": "SharedPreferences;"
+  },
+  {
+    "id": 1818,
+    "pkg": "AndroidCarTracker",
+    "fpath": "app/src/main/java/com/davidmagalhaes/androidcartracker/alarm/GpsSenderAlarm.java",
+    "input": "package com.davidmagalhaes.androidcartracker.alarm;\n\nimport android.Manifest;\nimport android.app.AlarmManager;\nimport android.app.PendingIntent;\nimport android.content.BroadcastReceiver;\nimport android.content.Context;\nimport android.content.Intent;\nimport android.content.SharedPreferences;\nimport android.content.pm.PackageManager;\nimport android.location.Location;\nimport android.location.",
+    "raw_res": "LocationManager;",
+    "prompt_res": "LocationListener;",
+    "gt": "LocationListener;"
+  },
+  {
+    "id": 1821,
+    "pkg": "AndroidCarTracker",
+    "fpath": "app/src/main/java/com/davidmagalhaes/androidcartracker/alarm/GpsSenderAlarm.java",
+    "input": "package com.davidmagalhaes.androidcartracker.alarm;\n\nimport android.Manifest;\nimport android.app.AlarmManager;\nimport android.app.PendingIntent;\nimport android.content.BroadcastReceiver;\nimport android.content.Context;\nimport android.content.Intent;\nimport android.content.SharedPreferences;\nimport android.content.pm.PackageManager;\nimport android.location.Location;\nimport android.location.LocationListener;\nimport android.location.LocationManager;\nimport android.os.Bundle;\nimport android.os.",
+    "raw_res": "Handler;",
+    "prompt_res": "PowerManager;",
+    "gt": "PowerManager;"
+  },
+  {
+    "id": 1841,
+    "pkg": "AndroidCarTracker",
+    "fpath": "app/src/main/java/com/davidmagalhaes/androidcartracker/alarm/MotionSensorAlarm.java",
+    "input": "package com.davidmagalhaes.androidcartracker.alarm;\n\nimport android.Manifest;\nimport android.app.AlarmManager;\nimport android.app.PendingIntent;\nimport android.content.",
+    "raw_res": "Context;",
+    "prompt_res": "BroadcastReceiver;",
+    "gt": "BroadcastReceiver;"
+  },
+  {
+    "id": 1844,
+    "pkg": "AndroidCarTracker",
+    "fpath": "app/src/main/java/com/davidmagalhaes/androidcartracker/alarm/MotionSensorAlarm.java",
+    "input": "package com.davidmagalhaes.androidcartracker.alarm;\n\nimport android.Manifest;\nimport android.app.AlarmManager;\nimport android.app.PendingIntent;\nimport android.content.BroadcastReceiver;\nimport android.content.Context;\nimport android.content.Intent;\nimport android.content.",
+    "raw_res": "IntentFilter;",
+    "prompt_res": "SharedPreferences;",
+    "gt": "SharedPreferences;"
+  },
+  {
+    "id": 1854,
+    "pkg": "AndroidCarTracker",
+    "fpath": "app/src/main/java/com/davidmagalhaes/androidcartracker/alarm/MotionSensorAlarm.java",
+    "input": "package com.davidmagalhaes.androidcartracker.alarm;\n\nimport android.Manifest;\nimport android.app.AlarmManager;\nimport android.app.PendingIntent;\nimport android.content.BroadcastReceiver;\nimport android.content.Context;\nimport android.content.Intent;\nimport android.content.SharedPreferences;\nimport android.content.pm.PackageManager;\nimport android.hardware.Sensor;\nimport android.hardware.SensorEvent;\nimport android.hardware.SensorEventListener;\nimport android.hardware.SensorManager;\nimport android.location.Location;\nimport android.location.LocationListener;\nimport android.location.LocationManager;\nimport android.os.Bundle;\nimport android.os.",
+    "raw_res": "Handler;",
+    "prompt_res": "PowerManager;",
+    "gt": "PowerManager;"
+  },
+  {
+    "id": 1875,
+    "pkg": "Realtime-Vehicle-Tracking",
+    "fpath": "Realtime-Vehicle-Tracking-master/app/src/main/java/com/viral/locationdemo/GPS_Service.java",
+    "input": "package com.viral.locationdemo;\n\nimport android.app.",
+    "raw_res": "Activity;",
+    "prompt_res": "Service;",
+    "gt": "Service;"
+  },
+  {
+    "id": 1876,
+    "pkg": "Realtime-Vehicle-Tracking",
+    "fpath": "Realtime-Vehicle-Tracking-master/app/src/main/java/com/viral/locationdemo/GPS_Service.java",
+    "input": "package com.viral.locationdemo;\n\nimport android.app.Service;\nimport android.content.",
+    "raw_res": "Intent;",
+    "prompt_res": "Context;",
+    "gt": "Context;"
+  },
+  {
+    "id": 1906,
+    "pkg": "Realtime-Vehicle-Tracking",
+    "fpath": "Realtime-Vehicle-Tracking-master/app/src/main/java/com/viral/locationdemo/MainActivity.java",
+    "input": "package com.viral.locationdemo;\n\nimport android.Manifest;\nimport android.content.Intent;\nimport android.content.pm.PackageManager;\nimport android.os.Build;\nimport android.support.annotation.NonNull;\nimport android.support.v4.content.ContextCompat;\nimport android.support.v7.app.AppCompatActivity;\nimport android.os.Bundle;\nimport android.view.View;\nimport android.widget.AdapterView;\nimport android.widget.ArrayAdapter;\nimport android.widget.",
+    "raw_res": "ListView;",
+    "prompt_res": "Button;",
+    "gt": "Button;"
+  },
+  {
+    "id": 1925,
+    "pkg": "SpeedoLimit",
+    "fpath": "SpeedoLimit-master/app/src/main/java/com/adarshpanig/speedolimit/FontManager.java",
+    "input": "package com.adarshpanig.speedolimit;\nimport android.content.res.",
+    "raw_res": "Resources;",
+    "prompt_res": "AssetManager;",
+    "gt": "AssetManager;"
+  },
+  {
+    "id": 1926,
+    "pkg": "SpeedoLimit",
+    "fpath": "SpeedoLimit-master/app/src/main/java/com/adarshpanig/speedolimit/FontManager.java",
+    "input": "package com.adarshpanig.speedolimit;\nimport android.content.res.AssetManager;\nimport android.graphics.",
+    "raw_res": "Bitmap;",
+    "prompt_res": "Typeface;",
+    "gt": "Typeface;"
+  },
+  {
+    "id": 1953,
+    "pkg": "SpeedoLimit",
+    "fpath": "SpeedoLimit-master/app/src/main/java/com/adarshpanig/speedolimit/MainActivity.java",
+    "input": "package com.adarshpanig.speedolimit;\nimport androidx.annotation.NonNull;\nimport androidx.annotation.NonNull;\nimport androidx.appcompat.app.AppCompatActivity;\nimport androidx.core.app.ActivityCompat;\nimport androidx.core.content.ContextCompat;\n\nimport android.content.",
+    "raw_res": "Intent;",
+    "prompt_res": "Context;",
+    "gt": "Context;"
+  },
+  {
+    "id": 1984,
+    "pkg": "SpeedoLimit",
+    "fpath": "SpeedoLimit-master/app/src/main/java/com/adarshpanig/speedolimit/SplashScreen.java",
+    "input": "package com.adarshpanig.speedolimit;\n\nimport androidx.appcompat.app.AppCompatActivity;\n\nimport android.content.Intent;\nimport android.graphics.drawable.",
+    "raw_res": "Drawable;",
+    "prompt_res": "AnimationDrawable;",
+    "gt": "AnimationDrawable;"
+  },
+  {
+    "id": 1989,
+    "pkg": "SpeedoLimit",
+    "fpath": "SpeedoLimit-master/app/src/main/java/com/adarshpanig/speedolimit/SplashScreen.java",
+    "input": "package com.adarshpanig.speedolimit;\n\nimport androidx.appcompat.app.AppCompatActivity;\n\nimport android.content.Intent;\nimport android.graphics.drawable.AnimationDrawable;\nimport android.media.MediaPlayer;\nimport android.os.Bundle;\nimport android.os.Handler;\nimport android.view.View;\nimport android.view.",
+    "raw_res": "Window;",
+    "prompt_res": "WindowManager;",
+    "gt": "WindowManager;"
+  },
+  {
+    "id": 2041,
+    "pkg": "TaxiAndroidOpen-Morocco",
+    "fpath": "TaxiAndroidOpen-Morocco/src/main/java/com/opentaxi/android/MainActivity.java",
+    "input": "package com.opentaxi.android;\n\nimport android.Manifest;\nimport android.app.Activity;\nimport android.app.AlertDialog;\nimport android.app.Dialog;\nimport android.content.Context;\nimport android.content.DialogInterface;\nimport android.content.Intent;\nimport android.content.IntentSender;\nimport android.content.res.Configuration;\nimport android.location.Location;\nimport android.net.ConnectivityManager;\nimport android.net.NetworkInfo;\nimport android.net.wifi.WifiManager;\nimport android.os.Bundle;\nimport android.support.design.widget.NavigationView;\nimport android.support.design.widget.Snackbar;\nimport android.support.v4.view.GravityCompat;\nimport android.support.v4.widget.DrawerLayout;\nimport android.support.v7.app.ActionBarDrawerToggle;\nimport android.support.v7.app.AppCompatActivity;\nimport android.support.v7.widget.Toolbar;\nimport android.telephony.TelephonyManager;\nimport android.util.Log;\nimport android.util.TypedValue;\nimport android.view.Gravity;\nimport android.view.Menu;\nimport android.view.MenuItem;\nimport android.view.View;\nimport android.view.inputmethod.InputMethodManager;\nimport android.widget.Button;\nimport android.widget.FrameLayout;\nimport android.widget.TextView;\nimport com.facebook.login.LoginManager;\nimport com.google.android.gms.common.ConnectionResult;\nimport com.google.android.gms.common.ErrorDialogFragment;\nimport com.google.android.gms.common.GoogleApiAvailability;\nimport com.google.android.gms.common.api.Status;\nimport com.google.android.gms.location.*;\nimport com.joanzapata.iconify.IconDrawable;\nimport com.joanzapata.iconify.fonts.",
+    "raw_res": "FontAwesomeIcons;",
+    "prompt_res": "MaterialIcons;",
+    "gt": "MaterialIcons;"
+  },
+  {
+    "id": 2076,
+    "pkg": "TaxiAndroidOpen-Morocco",
+    "fpath": "TaxiAndroidOpen-Morocco/src/main/java/com/opentaxi/android/MessageActivity.java",
+    "input": "package com.opentaxi.android;\n\nimport android.app.Activity;\nimport android.content.",
+    "raw_res": "Context;",
+    "prompt_res": "Intent;",
+    "gt": "Intent;"
+  },
+  {
+    "id": 2083,
+    "pkg": "TaxiAndroidOpen-Morocco",
+    "fpath": "TaxiAndroidOpen-Morocco/src/main/java/com/opentaxi/android/MessageActivity.java",
+    "input": "package com.opentaxi.android;\n\nimport android.app.Activity;\nimport android.content.Intent;\nimport android.util.Log;\nimport android.view.View;\nimport android.view.WindowManager;\nimport android.widget.Button;\nimport android.widget.TextView;\nimport com.opentaxi.rest.RestClient;\nimport com.stil.generated.mysql.tables.pojos.",
+    "raw_res": "Booking;",
+    "prompt_res": "Messages;",
+    "gt": "Messages;"
+  },
+  {
+    "id": 2087,
+    "pkg": "TaxiAndroidOpen-Morocco",
+    "fpath": "TaxiAndroidOpen-Morocco/src/main/java/com/opentaxi/android/MessageActivity.java",
+    "input": "package com.opentaxi.android;\n\nimport android.app.Activity;\nimport android.content.Intent;\nimport android.util.Log;\nimport android.view.View;\nimport android.view.WindowManager;\nimport android.widget.Button;\nimport android.widget.TextView;\nimport com.opentaxi.rest.RestClient;\nimport com.stil.generated.mysql.tables.pojos.Messages;\nimport com.taxibulgaria.enums.RequestAcceptStatus;\nimport com.taxibulgaria.enums.RequestStatus;\nimport com.taxibulgaria.rest.models.NewCRequestDetails;\nimport com.taxibulgaria.rest.models.NewRequestDetails;\n",
+    "raw_res": "import com.taxibulgaria.rest.models.RequestDetails;",
+    "prompt_res": "import org.androidannotations.annotations.*;",
+    "gt": "import org.androidannotations.annotations.*;"
+  },
+  {
+    "id": 2097,
+    "pkg": "UberCarAnimation",
+    "fpath": "UberCarAnimation-master/app/src/main/java/com/developers/uberanimation/DriverModeActivity.java",
+    "input": "package com.developers.uberanimation;\n\n\nimport android.animation.ValueAnimator;\nimport android.support.v4.app.",
+    "raw_res": "Fragment;",
+    "prompt_res": "FragmentActivity;",
+    "gt": "FragmentActivity;"
+  },
+  {
+    "id": 2100,
+    "pkg": "UberCarAnimation",
+    "fpath": "UberCarAnimation-master/app/src/main/java/com/developers/uberanimation/DriverModeActivity.java",
+    "input": "package com.developers.uberanimation;\n\n\nimport android.animation.ValueAnimator;\nimport android.support.v4.app.FragmentActivity;\nimport android.os.Bundle;\nimport android.util.Log;\nimport android.view.animation.",
+    "raw_res": "Animation;",
+    "prompt_res": "LinearInterpolator;",
+    "gt": "LinearInterpolator;"
+  },
+  {
+    "id": 2109,
+    "pkg": "UberCarAnimation",
+    "fpath": "UberCarAnimation-master/app/src/main/java/com/developers/uberanimation/DriverModeActivity.java",
+    "input": "package com.developers.uberanimation;\n\n\nimport android.animation.ValueAnimator;\nimport android.support.v4.app.FragmentActivity;\nimport android.os.Bundle;\nimport android.util.Log;\nimport android.view.animation.LinearInterpolator;\n\nimport com.developers.uberanimation.utils.MQTTHelper;\nimport com.google.android.gms.maps.CameraUpdate;\nimport com.google.android.gms.maps.CameraUpdateFactory;\nimport com.google.android.gms.maps.GoogleMap;\nimport com.google.android.gms.maps.OnMapReadyCallback;\nimport com.google.android.gms.maps.SupportMapFragment;\nimport com.google.android.gms.maps.model.BitmapDescriptorFactory;\nimport com.google.android.gms.maps.model.CameraPosition;\nimport com.google.android.gms.maps.model.LatLng;\nimport com.google.android.gms.maps.model.",
+    "raw_res": "Marker;",
+    "prompt_res": "LatLngBounds;",
+    "gt": "LatLngBounds;"
+  },
+  {
+    "id": 2131,
+    "pkg": "UberCarAnimation",
+    "fpath": "UberCarAnimation-master/app/src/main/java/com/developers/uberanimation/MapsActivity.java",
+    "input": "package com.developers.uberanimation;\n\nimport android.animation.ValueAnimator;\nimport android.content.Intent;\nimport android.graphics.Color;\nimport android.os.Handler;\nimport android.support.design.widget.FloatingActionButton;\nimport android.support.design.widget.Snackbar;\nimport android.support.v4.app.",
+    "raw_res": "Fragment;",
+    "prompt_res": "FragmentActivity;",
+    "gt": "FragmentActivity;"
+  },
+  {
+    "id": 2135,
+    "pkg": "UberCarAnimation",
+    "fpath": "UberCarAnimation-master/app/src/main/java/com/developers/uberanimation/MapsActivity.java",
+    "input": "package com.developers.uberanimation;\n\nimport android.animation.ValueAnimator;\nimport android.content.Intent;\nimport android.graphics.Color;\nimport android.os.Handler;\nimport android.support.design.widget.FloatingActionButton;\nimport android.support.design.widget.Snackbar;\nimport android.support.v4.app.FragmentActivity;\nimport android.os.Bundle;\nimport android.util.Log;\nimport android.view.View;\nimport android.view.animation.",
+    "raw_res": "Animation;",
+    "prompt_res": "LinearInterpolator;",
+    "gt": "LinearInterpolator;"
+  },
+  {
+    "id": 2144,
+    "pkg": "UberCarAnimation",
+    "fpath": "UberCarAnimation-master/app/src/main/java/com/developers/uberanimation/MapsActivity.java",
+    "input": "package com.developers.uberanimation;\n\nimport android.animation.ValueAnimator;\nimport android.content.Intent;\nimport android.graphics.Color;\nimport android.os.Handler;\nimport android.support.design.widget.FloatingActionButton;\nimport android.support.design.widget.Snackbar;\nimport android.support.v4.app.FragmentActivity;\nimport android.os.Bundle;\nimport android.util.Log;\nimport android.view.View;\nimport android.view.animation.LinearInterpolator;\nimport android.widget.Button;\nimport android.widget.EditText;\nimport android.widget.LinearLayout;\nimport com.developers.uberanimation.models.Result;\nimport com.developers.uberanimation.models.Route;\nimport com.developers.uberanimation.models.events.BeginJourneyEvent;\nimport com.developers.uberanimation.models.events.CurrentJourneyEvent;\nimport com.developers.uberanimation.models.events.EndJourneyEvent;\nimport com.developers.uberanimation.utils.JourneyEventBus;\nimport com.google.android.gms.maps.CameraUpdate;\nimport com.google.android.gms.maps.CameraUpdateFactory;\nimport com.google.android.gms.maps.GoogleMap;\nimport com.google.android.gms.maps.OnMapReadyCallback;\nimport com.google.android.gms.maps.SupportMapFragment;\nimport com.google.android.gms.maps.model.",
+    "raw_res": "LatLng;",
+    "prompt_res": "BitmapDescriptorFactory;",
+    "gt": "BitmapDescriptorFactory;"
+  },
+  {
+    "id": 2145,
+    "pkg": "UberCarAnimation",
+    "fpath": "UberCarAnimation-master/app/src/main/java/com/developers/uberanimation/MapsActivity.java",
+    "input": "package com.developers.uberanimation;\n\nimport android.animation.ValueAnimator;\nimport android.content.Intent;\nimport android.graphics.Color;\nimport android.os.Handler;\nimport android.support.design.widget.FloatingActionButton;\nimport android.support.design.widget.Snackbar;\nimport android.support.v4.app.FragmentActivity;\nimport android.os.Bundle;\nimport android.util.Log;\nimport android.view.View;\nimport android.view.animation.LinearInterpolator;\nimport android.widget.Button;\nimport android.widget.EditText;\nimport android.widget.LinearLayout;\nimport com.developers.uberanimation.models.Result;\nimport com.developers.uberanimation.models.Route;\nimport com.developers.uberanimation.models.events.BeginJourneyEvent;\nimport com.developers.uberanimation.models.events.CurrentJourneyEvent;\nimport com.developers.uberanimation.models.events.EndJourneyEvent;\nimport com.developers.uberanimation.utils.JourneyEventBus;\nimport com.google.android.gms.maps.CameraUpdate;\nimport com.google.android.gms.maps.CameraUpdateFactory;\nimport com.google.android.gms.maps.GoogleMap;\nimport com.google.android.gms.maps.OnMapReadyCallback;\nimport com.google.android.gms.maps.SupportMapFragment;\nimport com.google.android.gms.maps.model.BitmapDescriptorFactory;\nimport com.google.android.gms.maps.model.",
+    "raw_res": "LatLng;",
+    "prompt_res": "CameraPosition;",
+    "gt": "CameraPosition;"
+  },
+  {
+    "id": 2147,
+    "pkg": "UberCarAnimation",
+    "fpath": "UberCarAnimation-master/app/src/main/java/com/developers/uberanimation/MapsActivity.java",
+    "input": "package com.developers.uberanimation;\n\nimport android.animation.ValueAnimator;\nimport android.content.Intent;\nimport android.graphics.Color;\nimport android.os.Handler;\nimport android.support.design.widget.FloatingActionButton;\nimport android.support.design.widget.Snackbar;\nimport android.support.v4.app.FragmentActivity;\nimport android.os.Bundle;\nimport android.util.Log;\nimport android.view.View;\nimport android.view.animation.LinearInterpolator;\nimport android.widget.Button;\nimport android.widget.EditText;\nimport android.widget.LinearLayout;\nimport com.developers.uberanimation.models.Result;\nimport com.developers.uberanimation.models.Route;\nimport com.developers.uberanimation.models.events.BeginJourneyEvent;\nimport com.developers.uberanimation.models.events.CurrentJourneyEvent;\nimport com.developers.uberanimation.models.events.EndJourneyEvent;\nimport com.developers.uberanimation.utils.JourneyEventBus;\nimport com.google.android.gms.maps.CameraUpdate;\nimport com.google.android.gms.maps.CameraUpdateFactory;\nimport com.google.android.gms.maps.GoogleMap;\nimport com.google.android.gms.maps.OnMapReadyCallback;\nimport com.google.android.gms.maps.SupportMapFragment;\nimport com.google.android.gms.maps.model.BitmapDescriptorFactory;\nimport com.google.android.gms.maps.model.CameraPosition;\nimport com.google.android.gms.maps.model.LatLng;\nimport com.google.android.gms.maps.model.",
+    "raw_res": "Marker;",
+    "prompt_res": "LatLngBounds;",
+    "gt": "LatLngBounds;"
+  },
+  {
+    "id": 2173,
+    "pkg": "UberCarAnimation",
+    "fpath": "UberCarAnimation-master/app/src/main/java/com/developers/uberanimation/MapsActivity.java",
+    "input": "package com.developers.uberanimation;\n\nimport android.animation.ValueAnimator;\nimport android.content.Intent;\nimport android.graphics.Color;\nimport android.os.Handler;\nimport android.support.design.widget.FloatingActionButton;\nimport android.support.design.widget.Snackbar;\nimport android.support.v4.app.FragmentActivity;\nimport android.os.Bundle;\nimport android.util.Log;\nimport android.view.View;\nimport android.view.animation.LinearInterpolator;\nimport android.widget.Button;\nimport android.widget.EditText;\nimport android.widget.LinearLayout;\nimport com.developers.uberanimation.models.Result;\nimport com.developers.uberanimation.models.Route;\nimport com.developers.uberanimation.models.events.BeginJourneyEvent;\nimport com.developers.uberanimation.models.events.CurrentJourneyEvent;\nimport com.developers.uberanimation.models.events.EndJourneyEvent;\nimport com.developers.uberanimation.utils.JourneyEventBus;\nimport com.google.android.gms.maps.CameraUpdate;\nimport com.google.android.gms.maps.CameraUpdateFactory;\nimport com.google.android.gms.maps.GoogleMap;\nimport com.google.android.gms.maps.OnMapReadyCallback;\nimport com.google.android.gms.maps.SupportMapFragment;\nimport com.google.android.gms.maps.model.BitmapDescriptorFactory;\nimport com.google.android.gms.maps.model.CameraPosition;\nimport com.google.android.gms.maps.model.LatLng;\nimport com.google.android.gms.maps.model.LatLngBounds;\nimport com.google.android.gms.maps.model.Marker;\nimport com.google.android.gms.maps.model.MarkerOptions;\nimport com.google.android.gms.maps.model.Polyline;\nimport com.google.android.gms.maps.model.PolylineOptions;\nimport com.google.android.gms.maps.model.SquareCap;\nimport java.util.ArrayList;\nimport java.util.List;\nimport io.reactivex.SingleObserver;\nimport io.reactivex.android.schedulers.AndroidSchedulers;\nimport io.reactivex.disposables.Disposable;\nimport io.reactivex.functions.Consumer;\nimport io.reactivex.schedulers.Schedulers;\nimport retrofit2.Retrofit;\nimport retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;\nimport retrofit2.converter.gson.GsonConverterFactory;\nimport static com.google.android.gms.maps.model.JointType.ROUND;\n\npublic class MapsActivity extends FragmentActivity implements OnMapReadyCallback {\n\n    private static final String TAG = MapsActivity.class.getSimpleName();\n    private SupportMapFragment mapFragment;\n    private GoogleMap mMap;\n    private List<LatLng> polyLineList;\n    private Marker marker;\n    private float v;\n    private double lat, lng;\n    private Handler handler;\n    private LatLng startPosition, endPosition;\n    private int index, next;\n    private LatLng sydney;\n    private Button button;\n    private EditText destinationEditText;\n    private String destination;\n    private LinearLayout linearLayout;\n    private PolylineOptions polylineOptions, blackPolylineOptions;\n    private Polyline blackPolyline, greyPolyLine;\n    private ApiInterface apiInterface;\n    private ",
+    "raw_res": "ValueAnimator animator;",
+    "prompt_res": "Disposable disposable;",
+    "gt": "Disposable disposable;"
+  },
+  {
+    "id": 2178,
+    "pkg": "Vehicle-In-Motion",
+    "fpath": "Vehicle-In-Motion-master/app/src/main/java/net/accedegh/locationupdates/GPSTracker.java",
+    "input": "package net.accedegh.locationupdates;\n\nimport android.Manifest;\nimport android.app.AlertDialog.Builder;\nimport android.app.",
+    "raw_res": "Dialog;",
+    "prompt_res": "Service;",
+    "gt": "Service;"
+  },
+  {
+    "id": 2200,
+    "pkg": "Vehicle-In-Motion",
+    "fpath": "Vehicle-In-Motion-master/app/src/main/java/net/accedegh/locationupdates/Map.java",
+    "input": "package net.accedegh.locationupdates;\n\nimport android.",
+    "raw_res": "app.Activity;",
+    "prompt_res": "Manifest;",
+    "gt": "Manifest;"
+  },
+  {
+    "id": 2224,
+    "pkg": "Vehicle-In-Motion",
+    "fpath": "Vehicle-In-Motion-master/app/src/main/java/net/accedegh/locationupdates/Map.java",
+    "input": "package net.accedegh.locationupdates;\n\nimport android.Manifest;\nimport android.animation.ValueAnimator;\nimport android.app.Dialog;\nimport android.content.pm.PackageManager;\nimport android.graphics.Bitmap;\nimport android.graphics.drawable.BitmapDrawable;\nimport android.location.Location;\nimport android.support.v4.app.ActivityCompat;\nimport android.support.v4.app.FragmentActivity;\nimport android.os.Bundle;\nimport android.util.Log;\nimport android.view.animation.LinearInterpolator;\nimport android.widget.Toast;\nimport com.google.android.gms.common.ConnectionResult;\nimport com.google.android.gms.common.GoogleApiAvailability;\nimport com.google.android.gms.common.GooglePlayServicesUtil;\nimport com.google.android.gms.common.api.GoogleApiClient;\nimport com.google.android.gms.location.LocationListener;\nimport com.google.android.gms.location.LocationRequest;\nimport com.google.android.gms.location.LocationServices;\nimport com.google.android.gms.maps.CameraUpdateFactory;\nimport com.google.android.gms.maps.GoogleMap;\nimport com.google.android.gms.maps.OnMapReadyCallback;\nimport com.google.android.gms.maps.SupportMapFragment;\nimport com.google.android.gms.maps.model.",
+    "raw_res": "BitmapDescriptor;",
+    "prompt_res": "BitmapDescriptorFactory;",
+    "gt": "BitmapDescriptorFactory;"
+  },
+  {
+    "id": 2239,
+    "pkg": "Vehicle-Monitoring-And-Routing-System",
+    "fpath": "Vehicle-Monitoring-And-Routing-System-master/VMARS_Driver/app/src/main/java/com/vmars/updated/BackgroundTask.java",
+    "input": "package com.vmars.updated;\n\nimport android.app.AlertDialog;\nimport android.content.",
+    "raw_res": "DialogInterface;",
+    "prompt_res": "Context;",
+    "gt": "Context;"
+  },
+  {
+    "id": 2241,
+    "pkg": "Vehicle-Monitoring-And-Routing-System",
+    "fpath": "Vehicle-Monitoring-And-Routing-System-master/VMARS_Driver/app/src/main/java/com/vmars/updated/BackgroundTask.java",
+    "input": "package com.vmars.updated;\n\nimport android.app.AlertDialog;\nimport android.content.Context;\nimport android.content.DialogInterface;\nimport android.os.",
+    "raw_res": "Bundle;",
+    "prompt_res": "AsyncTask;",
+    "gt": "AsyncTask;"
+  },
+  {
+    "id": 2276,
+    "pkg": "Vehicle-Monitoring-And-Routing-System",
+    "fpath": "Vehicle-Monitoring-And-Routing-System-master/VMARS_Driver/app/src/main/java/com/vmars/updated/MapsActivity.java",
+    "input": "package com.vmars.updated;\n\nimport java.io.BufferedReader;\nimport java.io.IOException;\nimport java.io.InputStream;\nimport java.io.InputStreamReader;\nimport java.net.HttpURLConnection;\nimport java.net.URL;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.HashMap;\nimport java.util.List;\nimport java.util.Timer;\nimport java.util.TimerTask;\n\nimport org.json.JSONObject;\n\nimport android.app.AlertDialog;\nimport android.app.Notification;\nimport android.app.NotificationManager;\nimport android.app.PendingIntent;\nimport android.content.Context;\nimport android.content.DialogInterface;\nimport android.content.Intent;\nimport android.graphics.",
+    "raw_res": "Bitmap;",
+    "prompt_res": "Color;",
+    "gt": "Color;"
+  },
+  {
+    "id": 2289,
+    "pkg": "Vehicle-Monitoring-And-Routing-System",
+    "fpath": "Vehicle-Monitoring-And-Routing-System-master/VMARS_Driver/app/src/main/java/com/vmars/updated/MapsActivity.java",
+    "input": "package com.vmars.updated;\n\nimport java.io.BufferedReader;\nimport java.io.IOException;\nimport java.io.InputStream;\nimport java.io.InputStreamReader;\nimport java.net.HttpURLConnection;\nimport java.net.URL;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.HashMap;\nimport java.util.List;\nimport java.util.Timer;\nimport java.util.TimerTask;\n\nimport org.json.JSONObject;\n\nimport android.app.AlertDialog;\nimport android.app.Notification;\nimport android.app.NotificationManager;\nimport android.app.PendingIntent;\nimport android.content.Context;\nimport android.content.DialogInterface;\nimport android.content.Intent;\nimport android.graphics.Color;\nimport android.location.Criteria;\nimport android.location.Location;\nimport android.location.LocationListener;\nimport android.location.LocationManager;\nimport android.media.Ringtone;\nimport android.media.RingtoneManager;\nimport android.net.ConnectivityManager;\nimport android.net.NetworkInfo;\nimport android.net.Uri;\nimport android.os.AsyncTask;\nimport android.os.Bundle;\nimport android.os.Handler;\nimport android.support.v4.app.",
+    "raw_res": "NotificationCompat;",
+    "prompt_res": "FragmentActivity;",
+    "gt": "FragmentActivity;"
+  },
+  {
+    "id": 2301,
+    "pkg": "Vehicle-Monitoring-And-Routing-System",
+    "fpath": "Vehicle-Monitoring-And-Routing-System-master/VMARS_Driver/app/src/main/java/com/vmars/updated/MapsActivity.java",
+    "input": "package com.vmars.updated;\n\nimport java.io.BufferedReader;\nimport java.io.IOException;\nimport java.io.InputStream;\nimport java.io.InputStreamReader;\nimport java.net.HttpURLConnection;\nimport java.net.URL;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.HashMap;\nimport java.util.List;\nimport java.util.Timer;\nimport java.util.TimerTask;\n\nimport org.json.JSONObject;\n\nimport android.app.AlertDialog;\nimport android.app.Notification;\nimport android.app.NotificationManager;\nimport android.app.PendingIntent;\nimport android.content.Context;\nimport android.content.DialogInterface;\nimport android.content.Intent;\nimport android.graphics.Color;\nimport android.location.Criteria;\nimport android.location.Location;\nimport android.location.LocationListener;\nimport android.location.LocationManager;\nimport android.media.Ringtone;\nimport android.media.RingtoneManager;\nimport android.net.ConnectivityManager;\nimport android.net.NetworkInfo;\nimport android.net.Uri;\nimport android.os.AsyncTask;\nimport android.os.Bundle;\nimport android.os.Handler;\nimport android.support.v4.app.FragmentActivity;\nimport android.telephony.SmsManager;\nimport android.util.Log;\nimport android.view.Menu;\nimport android.view.View;\nimport android.view.View.OnClickListener;\nimport android.widget.Button;\nimport android.widget.Toast;\n\nimport com.google.android.gms.maps.GoogleMap;\nimport com.google.android.gms.maps.GoogleMap.OnMapClickListener;\nimport com.google.android.gms.maps.GoogleMap.OnMapLongClickListener;\nimport com.google.android.gms.maps.SupportMapFragment;\nimport com.google.android.gms.maps.model.",
+    "raw_res": "LatLng;",
+    "prompt_res": "BitmapDescriptorFactory;",
+    "gt": "BitmapDescriptorFactory;"
+  },
+  {
+    "id": 2315,
+    "pkg": "VehicleApp",
+    "fpath": "VehicleApp-master/app/src/main/java/com/example/moon/vehicleapp/GMapV2Direction.java",
+    "input": "package com.example.moon.vehicleapp;\n\n/**\n * Created by MOON on 23-11-2016.\n */\n\nimport android.util.Log;\n\nimport com.google.android.gms.maps.model.LatLng;\n\nimport org.apache.http.",
+    "raw_res": "HttpEntity;",
+    "prompt_res": "HttpResponse;",
+    "gt": "HttpResponse;"
+  },
+  {
+    "id": 2317,
+    "pkg": "VehicleApp",
+    "fpath": "VehicleApp-master/app/src/main/java/com/example/moon/vehicleapp/GMapV2Direction.java",
+    "input": "package com.example.moon.vehicleapp;\n\n/**\n * Created by MOON on 23-11-2016.\n */\n\nimport android.util.Log;\n\nimport com.google.android.gms.maps.model.LatLng;\n\nimport org.apache.http.HttpResponse;\nimport org.apache.http.client.HttpClient;\nimport org.apache.http.client.methods.",
+    "raw_res": "HttpGet;",
+    "prompt_res": "HttpPost;",
+    "gt": "HttpPost;"
+  },
+  {
+    "id": 2323,
+    "pkg": "VehicleApp",
+    "fpath": "VehicleApp-master/app/src/main/java/com/example/moon/vehicleapp/MainActivity.java",
+    "input": "package com.example.moon.vehicleapp;\n\nimport android.app.ProgressDialog;\nimport android.content.Intent;\nimport android.os.Bundle;\nimport android.support.annotation.",
+    "raw_res": "Nullable;",
+    "prompt_res": "NonNull;",
+    "gt": "NonNull;"
+  },
+  {
+    "id": 2342,
+    "pkg": "VehicleApp",
+    "fpath": "VehicleApp-master/app/src/main/java/com/example/moon/vehicleapp/MapsActivity.java",
+    "input": "package com.example.moon.vehicleapp;\n\nimport android.*;\nimport android.content.pm.PackageManager;\nimport android.graphics.",
+    "raw_res": "Bitmap;",
+    "prompt_res": "Color;",
+    "gt": "Color;"
+  },
+  {
+    "id": 2369,
+    "pkg": "VehicleApp",
+    "fpath": "VehicleApp-master/app/src/main/java/com/example/moon/vehicleapp/MapsActivity.java",
+    "input": "package com.example.moon.vehicleapp;\n\nimport android.*;\nimport android.content.pm.PackageManager;\nimport android.graphics.Color;\nimport android.location.Location;\nimport android.location.LocationManager;\nimport android.os.AsyncTask;\nimport android.os.Message;\nimport android.support.v4.app.FragmentActivity;\nimport android.os.Bundle;\nimport android.util.Log;\n\nimport com.google.android.gms.maps.CameraUpdate;\nimport com.google.android.gms.maps.CameraUpdateFactory;\nimport com.google.android.gms.maps.GoogleMap;\nimport com.google.android.gms.maps.MapFragment;\nimport com.google.android.gms.maps.OnMapReadyCallback;\nimport com.google.android.gms.maps.SupportMapFragment;\nimport com.google.android.gms.maps.model.CameraPosition;\nimport com.google.android.gms.maps.model.LatLng;\nimport com.google.android.gms.maps.model.MarkerOptions;\nimport com.google.android.gms.maps.model.Polyline;\nimport com.google.android.gms.maps.model.PolylineOptions;\nimport com.google.firebase.auth.FirebaseAuth;\nimport com.google.firebase.database.DataSnapshot;\nimport com.google.firebase.database.DatabaseError;\nimport com.google.firebase.database.DatabaseReference;\nimport com.google.firebase.database.FirebaseDatabase;\nimport com.google.firebase.database.ValueEventListener;\n\nimport org.apache.http.HttpResponse;\nimport org.apache.http.client.HttpClient;\nimport org.apache.http.client.methods.",
+    "raw_res": "HttpGet;",
+    "prompt_res": "HttpPost;",
+    "gt": "HttpPost;"
+  },
+  {
+    "id": 2415,
+    "pkg": "WattsNearby",
+    "fpath": "WattsNearby-master/app/src/main/java/re/sourcecode/android/wattsnearby/MainMapActivity.java",
+    "input": "package re.sourcecode.android.wattsnearby;\n\nimport android.Manifest;\nimport android.annotation.SuppressLint;\nimport android.content.ContentValues;\nimport android.content.Context;\nimport android.content.Intent;\nimport android.content.pm.PackageManager;\nimport android.content.res.Resources;\nimport android.location.Location;\nimport android.net.ConnectivityManager;\nimport android.net.NetworkInfo;\nimport android.os.Build;\nimport android.os.Looper;\n\nimport androidx.annotation.NonNull;\n\nimport com.google.android.material.bottomsheet.BottomSheetDialogFragment;\nimport com.google.android.material.floatingactionbutton.FloatingActionButton;\n\nimport androidx.core.app.ActivityCompat;\nimport androidx.loader.app.LoaderManager;\nimport androidx.core.content.ContextCompat;\n\nimport com.google.android.material.snackbar.Snackbar;\n\nimport android.os.Bundle;\n\nimport androidx.loader.content.Loader;\nimport androidx.appcompat.app.AppCompatActivity;\nimport androidx.preference.PreferenceManager;\n\nimport android.util.Log;\nimport android.view.Gravity;\nimport android.view.Menu;\nimport android.view.MenuItem;\nimport android.view.View;\nimport android.widget.ProgressBar;\nimport android.widget.Toast;\n\n\nimport com.google.android.gms.ads.AdRequest;\nimport com.google.android.gms.ads.AdView;\nimport com.google.android.gms.ads.MobileAds;\nimport com.google.android.gms.common.",
+    "raw_res": "api.ApiException;",
+    "prompt_res": "ConnectionResult;",
+    "gt": "ConnectionResult;"
+  },
+  {
+    "id": 2457,
+    "pkg": "WattsNearby",
+    "fpath": "WattsNearby-master/app/src/main/java/re/sourcecode/android/wattsnearby/widget/CollectionWidget.java",
+    "input": "package re.sourcecode.android.wattsnearby.widget;\n\nimport android.annotation.SuppressLint;\nimport android.annotation.TargetApi;\nimport android.app.PendingIntent;\nimport android.appwidget.AppWidgetManager;\nimport android.appwidget.AppWidgetProvider;\nimport android.content.",
+    "raw_res": "Context;",
+    "prompt_res": "ComponentName;",
+    "gt": "ComponentName;"
+  },
+  {
+    "id": 2548,
+    "pkg": "AndrOBD",
+    "fpath": "AndrOBD-master/androbd/src/main/java/com/fr3ts0n/ecu/gui/androbd/BtCommService.java",
+    "input": "/*\n * (C) Copyright 2015 by fr3ts0n <erwin.scheuch-heilig@gmx.at>\n *\n * This program is free software; you can redistribute it and/or\n * modify it under the terms of the GNU General Public License as\n * published by the Free Software Foundation; either version 2 of\n * the License, or (at your option) any later version.\n *\n * This program is distributed in the hope that it will be useful,\n * but WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n * GNU General Public License for more details.\n * You should have received a copy of the GNU General Public License\n * along with this program; if not, write to the Free Software\n * Foundation, Inc., 59 Temple Place, Suite 330, Boston,\n * MA 02111-1307 USA\n */\n\npackage com.fr3ts0n.ecu.gui.androbd;\n\nimport android.annotation.SuppressLint;\nimport android.bluetooth.BluetoothAdapter;\nimport android.bluetooth.BluetoothDevice;\nimport android.bluetooth.BluetoothSocket;\nimport android.content.",
+    "raw_res": "BroadcastReceiver;",
+    "prompt_res": "Context;",
+    "gt": "Context;"
+  },
+  {
+    "id": 2580,
+    "pkg": "AndrOBD",
+    "fpath": "AndrOBD-master/androbd/src/main/java/com/fr3ts0n/ecu/gui/androbd/ObdItemAdapter.java",
+    "input": "/*\n * (C) Copyright 2015 by fr3ts0n <erwin.scheuch-heilig@gmx.at>\n *\n * This program is free software; you can redistribute it and/or\n * modify it under the terms of the GNU General Public License as\n * published by the Free Software Foundation; either version 2 of\n * the License, or (at your option) any later version.\n *\n * This program is distributed in the hope that it will be useful,\n * but WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n * GNU General Public License for more details.\n * You should have received a copy of the GNU General Public License\n * along with this program; if not, write to the Free Software\n * Foundation, Inc., 59 Temple Place, Suite 330, Boston,\n * MA 02111-1307 USA\n */\n\npackage com.fr3ts0n.ecu.gui.androbd;\n\nimport android.content.Context;\nimport android.content.SharedPreferences;\nimport android.graphics.PorterDuff;\nimport android.preference.PreferenceManager;\nimport android.view.LayoutInflater;\nimport android.view.View;\nimport android.view.ViewGroup;\nimport android.widget.",
+    "raw_res": "BaseAdapter;",
+    "prompt_res": "ArrayAdapter;",
+    "gt": "ArrayAdapter;"
+  },
+  {
+    "id": 2603,
+    "pkg": "AndrOBD",
+    "fpath": "AndrOBD-master/library/src/main/java/com/fr3ts0n/ecu/gui/application/ObdDataPlotter.java",
+    "input": "/*\n * (C) Copyright 2015 by fr3ts0n <erwin.scheuch-heilig@gmx.at>\n *\n * This program is free software; you can redistribute it and/or\n * modify it under the terms of the GNU General Public License as\n * published by the Free Software Foundation; either version 2 of\n * the License, or (at your option) any later version.\n *\n * This program is distributed in the hope that it will be useful,\n * but WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n * GNU General Public License for more details.\n * You should have received a copy of the GNU General Public License\n * along with this program; if not, write to the Free Software\n * Foundation, Inc., 59 Temple Place, Suite 330, Boston,\n * MA 02111-1307 USA\n */\n\npackage com.fr3ts0n.ecu.gui.application;\n\nimport org.jfree.chart.ChartFactory;\nimport org.jfree.chart.ChartPanel;\nimport org.jfree.chart.JFreeChart;\nimport org.jfree.chart.axis.AxisLocation;\nimport org.jfree.chart.axis.DateAxis;\nimport org.jfree.chart.axis.NumberAxis;\nimport org.jfree.chart.labels.StandardXYToolTipGenerator;\nimport org.jfree.chart.labels.XYToolTipGenerator;\nimport org.jfree.chart.plot.DefaultDrawingSupplier;\nimport org.jfree.chart.plot.XYPlot;\nimport org.jfree.chart.renderer.xy.",
+    "raw_res": "XYLineAndShapeRenderer;",
+    "prompt_res": "XYItemRenderer;",
+    "gt": "XYItemRenderer;"
+  },
+  {
+    "id": 2628,
+    "pkg": "CarServerArch",
+    "fpath": "SDK/src/main/java/com/fwk/sdk/SdkAppGlobal.java",
+    "input": "package com.fwk.sdk;\n\nimport static com.fwk.sdk.utils.SdkLogUtils.TAG_FWK;\n\nimport android.app.",
+    "raw_res": "Activity;",
+    "prompt_res": "Application;",
+    "gt": "Application;"
+  },
+  {
+    "id": 2671,
+    "pkg": "CarServerArch",
+    "fpath": "app/src/main/java/com/fwk/service/SimpleApp.java",
+    "input": "package com.fwk.service;\n\nimport android.app.",
+    "raw_res": "Service;",
+    "prompt_res": "Application;",
+    "gt": "Application;"
+  },
+  {
+    "id": 2693,
+    "pkg": "CarServerArch",
+    "fpath": "app/src/main/java/com/fwk/service/binder/HvacBinder.java",
+    "input": "package com.fwk.service.binder;\n\nimport android.os.RemoteException;\nimport android.util.Log;\n\nimport com.fwk.sdk.HvacCallback;\nimport com.fwk.sdk.",
+    "raw_res": "HvacService;",
+    "prompt_res": "HvacInterface;",
+    "gt": "HvacInterface;"
+  },
+  {
+    "id": 2700,
+    "pkg": "OpenXC-Caravan",
+    "fpath": "OpenXC-Caravan-master/app/src/main/java/com/openxc/openxccaravan/CaravanCreate.java",
+    "input": "package com.openxc.openxccaravan;\n\nimport android.app.Activity;\nimport android.content.",
+    "raw_res": "Context;",
+    "prompt_res": "ComponentName;",
+    "gt": "ComponentName;"
+  },
+  {
+    "id": 2709,
+    "pkg": "OpenXC-Caravan",
+    "fpath": "OpenXC-Caravan-master/app/src/main/java/com/openxc/openxccaravan/CaravanCreate.java",
+    "input": "package com.openxc.openxccaravan;\n\nimport android.app.Activity;\nimport android.content.ComponentName;\nimport android.content.Context;\nimport android.content.Intent;\nimport android.content.ServiceConnection;\nimport android.os.Bundle;\nimport android.os.IBinder;\nimport android.util.Log;\nimport android.view.View;\nimport android.widget.CompoundButton;\nimport android.widget.",
+    "raw_res": "Switch;",
+    "prompt_res": "EditText;",
+    "gt": "EditText;"
+  },
+  {
+    "id": 2710,
+    "pkg": "OpenXC-Caravan",
+    "fpath": "OpenXC-Caravan-master/app/src/main/java/com/openxc/openxccaravan/CaravanCreate.java",
+    "input": "package com.openxc.openxccaravan;\n\nimport android.app.Activity;\nimport android.content.ComponentName;\nimport android.content.Context;\nimport android.content.Intent;\nimport android.content.ServiceConnection;\nimport android.os.Bundle;\nimport android.os.IBinder;\nimport android.util.Log;\nimport android.view.View;\nimport android.widget.CompoundButton;\nimport android.widget.EditText;\nimport android.widget.Toast;\n\nimport com.openxc.VehicleManager;\nimport com.openxc.messages.",
+    "raw_res": "VehicleMessage;",
+    "prompt_res": "SimpleVehicleMessage;",
+    "gt": "SimpleVehicleMessage;"
+  },
+  {
+    "id": 2715,
+    "pkg": "OpenXC-Caravan",
+    "fpath": "OpenXC-Caravan-master/app/src/main/java/com/openxc/openxccaravan/CaravanType.java",
+    "input": "package com.openxc.openxccaravan;\n\nimport android.app.Activity;\nimport android.content.",
+    "raw_res": "Context;",
+    "prompt_res": "ComponentName;",
+    "gt": "ComponentName;"
+  },
+  {
+    "id": 2722,
+    "pkg": "OpenXC-Caravan",
+    "fpath": "OpenXC-Caravan-master/app/src/main/java/com/openxc/openxccaravan/CaravanType.java",
+    "input": "package com.openxc.openxccaravan;\n\nimport android.app.Activity;\nimport android.content.ComponentName;\nimport android.content.Context;\nimport android.content.Intent;\nimport android.content.ServiceConnection;\nimport android.os.IBinder;\n//import android.support.v7.app.AppCompatActivity;\nimport android.os.Bundle;\nimport android.util.Log;\nimport android.view.View;\n\nimport com.openxc.VehicleManager;\nimport com.openxc.messages.",
+    "raw_res": "VehicleMessage;",
+    "prompt_res": "SimpleVehicleMessage;",
+    "gt": "SimpleVehicleMessage;"
+  },
+  {
+    "id": 2732,
+    "pkg": "OpenXC-Caravan",
+    "fpath": "OpenXC-Caravan-master/app/src/main/java/com/openxc/openxccaravan/MainFragment.java",
+    "input": "package com.openxc.openxccaravan;\n\nimport android.os.Bundle;\nimport android.app.",
+    "raw_res": "Activity;",
+    "prompt_res": "Fragment;",
+    "gt": "Fragment;"
+  },
+  {
+    "id": 2747,
+    "pkg": "OpenXC-Caravan",
+    "fpath": "OpenXC-Caravan-master/app/src/main/java/com/openxc/openxccaravan/MemberAdapter.java",
+    "input": "package com.openxc.openxccaravan;\n\nimport android.app.Activity;\nimport android.content.Context;\nimport android.support.annotation.NonNull;\nimport android.view.LayoutInflater;\nimport android.view.View;\nimport android.view.ViewGroup;\nimport android.widget.ArrayAdapter;\nimport android.widget.",
+    "raw_res": "ImageView;",
+    "prompt_res": "TextView;",
+    "gt": "TextView;"
+  },
+  {
+    "id": 2753,
+    "pkg": "OpenXC-Caravan",
+    "fpath": "OpenXC-Caravan-master/app/src/main/java/com/openxc/openxccaravan/VehicleDetails.java",
+    "input": "package com.openxc.openxccaravan;\n\nimport android.app.Activity;\nimport android.content.",
+    "raw_res": "Context;",
+    "prompt_res": "ComponentName;",
+    "gt": "ComponentName;"
+  },
+  {
+    "id": 2764,
+    "pkg": "OpenXC-Caravan",
+    "fpath": "OpenXC-Caravan-master/app/src/main/java/com/openxc/openxccaravan/VehicleDetails.java",
+    "input": "package com.openxc.openxccaravan;\n\nimport android.app.Activity;\nimport android.content.ComponentName;\nimport android.content.Context;\nimport android.content.Intent;\nimport android.content.ServiceConnection;\nimport android.os.IBinder;\n//import android.support.v7.app.AppCompatActivity;\nimport android.os.Bundle;\nimport android.util.Log;\nimport android.view.View;\nimport android.widget.ArrayAdapter;\nimport android.widget.EditText;\nimport android.widget.Spinner;\nimport android.widget.Toast;\n\nimport com.openxc.VehicleManager;\nimport com.openxc.messages.",
+    "raw_res": "VehicleMessage;",
+    "prompt_res": "SimpleVehicleMessage;",
+    "gt": "SimpleVehicleMessage;"
+  },
+  {
+    "id": 2787,
+    "pkg": "flink-vehicle-telematics",
+    "fpath": "flink-vehicle-telematics-master/src/main/java/fediazgon/AverageSpeedControl.java",
+    "input": "package fediazgon;\n\nimport fediazgon.events.AvgSpeedEvent;\nimport fediazgon.events.PositionEvent;\nimport org.apache.flink.api.java.functions.KeySelector;\nimport org.apache.flink.api.java.tuple.Tuple3;\nimport org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;\nimport org.apache.flink.streaming.api.functions.timestamps.AscendingTimestampExtractor;\nimport org.apache.flink.streaming.api.functions.windowing.WindowFunction;\nimport org.apache.flink.streaming.api.windowing.assigners.EventTimeSessionWindows;\nimport org.apache.flink.streaming.api.windowing.time.Time;\nimport org.apache.flink.streaming.api.windowing.windows.",
+    "raw_res": "SessionWindowTimePolicy;",
+    "prompt_res": "TimeWindow;",
+    "gt": "TimeWindow;"
+  },
+  {
+    "id": 2795,
+    "pkg": "flink-vehicle-telematics",
+    "fpath": "flink-vehicle-telematics-master/src/main/java/fediazgon/events/AvgSpeedEvent.java",
+    "input": "package fediazgon.events;\n\nimport org.apache.flink.api.java.tuple.",
+    "raw_res": "Tuple2;",
+    "prompt_res": "Tuple6;",
+    "gt": "Tuple6;"
+  },
+  {
+    "id": 2803,
+    "pkg": "mafscaling-2.7.1",
+    "fpath": "mafscaling-2.7.1/src/com/vgi/mafscaling/ACompCalc.java",
+    "input": "package com.vgi.mafscaling;\n\nimport java.awt.BasicStroke;\nimport java.awt.Color;\nimport java.awt.Component;\nimport java.awt.Cursor;\nimport java.awt.Desktop;\nimport java.awt.Font;\nimport java.awt.GridBagConstraints;\nimport java.awt.GridBagLayout;\nimport java.awt.Insets;\nimport java.awt.Stroke;\nimport java.awt.event.ActionEvent;\nimport java.awt.event.ActionListener;\nimport java.awt.event.ComponentAdapter;\nimport java.awt.event.ComponentEvent;\nimport java.awt.event.MouseAdapter;\nimport java.awt.event.MouseEvent;\nimport java.io.File;\nimport java.net.URI;\nimport java.text.DecimalFormat;\nimport java.util.ArrayList;\nimport java.util.List;\nimport javax.swing.BorderFactory;\nimport javax.swing.ButtonGroup;\nimport javax.swing.JButton;\nimport javax.swing.JCheckBox;\nimport javax.swing.JComboBox;\nimport javax.swing.JFileChooser;\nimport javax.swing.JLabel;\nimport javax.swing.JOptionPane;\nimport javax.swing.JPanel;\nimport javax.swing.JRadioButton;\nimport javax.swing.JScrollPane;\nimport javax.swing.JTable;\nimport javax.swing.JTextPane;\nimport javax.swing.ListSelectionModel;\nimport javax.swing.SwingConstants;\nimport javax.swing.border.LineBorder;\nimport javax.swing.event.HyperlinkEvent;\nimport javax.swing.event.HyperlinkListener;\nimport javax.swing.event.ListSelectionEvent;\nimport javax.swing.event.ListSelectionListener;\nimport javax.swing.table.DefaultTableCellRenderer;\nimport javax.swing.table.DefaultTableColumnModel;\nimport javax.swing.table.DefaultTableModel;\nimport javax.swing.table.JTableHeader;\nimport javax.swing.table.TableCellEditor;\nimport javax.swing.table.TableColumn;\nimport javax.swing.text.JTextComponent;\nimport org.apache.log4j.Logger;\nimport org.jfree.chart.",
+    "raw_res": "ChartPanel;",
+    "prompt_res": "ChartFactory;",
+    "gt": "ChartFactory;"
+  },
+  {
+    "id": 2807,
+    "pkg": "mafscaling-2.7.1",
+    "fpath": "mafscaling-2.7.1/src/com/vgi/mafscaling/ACompCalc.java",
+    "input": "package com.vgi.mafscaling;\n\nimport java.awt.BasicStroke;\nimport java.awt.Color;\nimport java.awt.Component;\nimport java.awt.Cursor;\nimport java.awt.Desktop;\nimport java.awt.Font;\nimport java.awt.GridBagConstraints;\nimport java.awt.GridBagLayout;\nimport java.awt.Insets;\nimport java.awt.Stroke;\nimport java.awt.event.ActionEvent;\nimport java.awt.event.ActionListener;\nimport java.awt.event.ComponentAdapter;\nimport java.awt.event.ComponentEvent;\nimport java.awt.event.MouseAdapter;\nimport java.awt.event.MouseEvent;\nimport java.io.File;\nimport java.net.URI;\nimport java.text.DecimalFormat;\nimport java.util.ArrayList;\nimport java.util.List;\nimport javax.swing.BorderFactory;\nimport javax.swing.ButtonGroup;\nimport javax.swing.JButton;\nimport javax.swing.JCheckBox;\nimport javax.swing.JComboBox;\nimport javax.swing.JFileChooser;\nimport javax.swing.JLabel;\nimport javax.swing.JOptionPane;\nimport javax.swing.JPanel;\nimport javax.swing.JRadioButton;\nimport javax.swing.JScrollPane;\nimport javax.swing.JTable;\nimport javax.swing.JTextPane;\nimport javax.swing.ListSelectionModel;\nimport javax.swing.SwingConstants;\nimport javax.swing.border.LineBorder;\nimport javax.swing.event.HyperlinkEvent;\nimport javax.swing.event.HyperlinkListener;\nimport javax.swing.event.ListSelectionEvent;\nimport javax.swing.event.ListSelectionListener;\nimport javax.swing.table.DefaultTableCellRenderer;\nimport javax.swing.table.DefaultTableColumnModel;\nimport javax.swing.table.DefaultTableModel;\nimport javax.swing.table.JTableHeader;\nimport javax.swing.table.TableCellEditor;\nimport javax.swing.table.TableColumn;\nimport javax.swing.text.JTextComponent;\nimport org.apache.log4j.Logger;\nimport org.jfree.chart.ChartFactory;\nimport org.jfree.chart.ChartPanel;\nimport org.jfree.chart.JFreeChart;\nimport org.jfree.chart.axis.NumberAxis;\nimport org.jfree.chart.labels.",
+    "raw_res": "StandardCategoryLabelRenderer;",
+    "prompt_res": "StandardXYSeriesLabelGenerator;",
+    "gt": "StandardXYSeriesLabelGenerator;"
+  },
+  {
+    "id": 2877,
+    "pkg": "Android-Automotive-Info-App",
+    "fpath": "car-ui-lib/src/main/java/com/android/car/ui/recyclerview/CarUiRecyclerView.java",
+    "input": "/*\n * Copyright (C) 2019 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.android.car.ui.recyclerview;\n\nimport static com.android.car.ui.utils.CarUiUtils.findViewByRefId;\nimport static com.android.car.ui.utils.RotaryConstants.ROTARY_CONTAINER;\nimport static com.android.car.ui.utils.RotaryConstants.ROTARY_HORIZONTALLY_SCROLLABLE;\nimport static com.android.car.ui.utils.RotaryConstants.ROTARY_VERTICALLY_SCROLLABLE;\n\nimport static java.lang.annotation.RetentionPolicy.SOURCE;\n\nimport android.car.drivingstate.CarUxRestrictions;\nimport android.content.Context;\nimport android.content.res.TypedArray;\nimport android.graphics.Rect;\nimport android.os.Parcelable;\nimport android.text.TextUtils;\nimport android.util.AttributeSet;\nimport android.util.Log;\nimport android.view.InputDevice;\nimport android.view.LayoutInflater;\nimport android.view.MotionEvent;\nimport android.view.View;\nimport android.view.ViewGroup;\nimport android.view.ViewPropertyAnimator;\nimport android.widget.FrameLayout;\nimport android.widget.LinearLayout;\n\nimport androidx.annotation.",
+    "raw_res": "NonNull;",
+    "prompt_res": "IntDef;",
+    "gt": "IntDef;"
+  },
+  {
+    "id": 2908,
+    "pkg": "Android-Automotive-Info-App",
+    "fpath": "car-ui-lib/src/main/java/com/android/car/ui/utils/CarUiUtils.java",
+    "input": "/*\n * Copyright (C) 2019 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.android.car.ui.utils;\n\nimport static com.android.car.ui.utils.RotaryConstants.ROTARY_HORIZONTALLY_SCROLLABLE;\nimport static com.android.car.ui.utils.RotaryConstants.ROTARY_VERTICALLY_SCROLLABLE;\n\nimport android.app.Activity;\nimport android.content.Context;\nimport android.content.ContextWrapper;\nimport android.content.res.Resources;\nimport android.content.res.TypedArray;\nimport android.graphics.Bitmap;\nimport android.graphics.Canvas;\nimport android.graphics.drawable.",
+    "raw_res": "Drawable;",
+    "prompt_res": "BitmapDrawable;",
+    "gt": "BitmapDrawable;"
+  },
+  {
+    "id": 2933,
+    "pkg": "aosp_platform_packages_apps_Car_SystemUI",
+    "fpath": "src/com/android/systemui/CarComponentBinder.java",
+    "input": "/*\n * Copyright (C) 2019 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.systemui;\n\nimport com.android.systemui.dagger.DefaultActivityBinder;\nimport com.android.systemui.dagger.DefaultBroadcastReceiverBinder;\nimport com.android.systemui.dagger.",
+    "raw_res": "DefaultBroadcastReceiverComponent;",
+    "prompt_res": "DefaultServiceBinder;",
+    "gt": "DefaultServiceBinder;"
+  },
+  {
+    "id": 2939,
+    "pkg": "aosp_platform_packages_apps_Car_SystemUI",
+    "fpath": "src/com/android/systemui/CarSysUIComponent.java",
+    "input": "/*\n * Copyright (C) 2019 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.systemui;\n\nimport com.android.systemui.dagger.DependencyProvider;\nimport com.android.systemui.dagger.SysUIComponent;\nimport com.android.systemui.dagger.SysUISingleton;\nimport com.android.systemui.dagger.SystemUIModule;\nimport com.android.wm.shell.RootTaskDisplayAreaOrganizer;\n\nimport java.util.Optional;\n\nimport dagger.",
+    "raw_res": "Binds;",
+    "prompt_res": "BindsInstance;",
+    "gt": "BindsInstance;"
+  },
+  {
+    "id": 2953,
+    "pkg": "aosp_platform_packages_apps_Car_SystemUI",
+    "fpath": "src/com/android/systemui/CarSystemUIModule.java",
+    "input": "/*\n * Copyright (C) 2019 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.systemui;\n\nimport static com.android.systemui.Dependency.ALLOW_NOTIFICATION_LONG_PRESS_NAME;\nimport static com.android.systemui.Dependency.LEAK_REPORT_EMAIL_NAME;\n\nimport android.content.Context;\nimport android.hardware.SensorPrivacyManager;\nimport android.os.Handler;\nimport android.os.PowerManager;\nimport android.window.DisplayAreaOrganizer;\n\nimport com.android.keyguard.KeyguardViewController;\nimport com.android.systemui.broadcast.BroadcastDispatcher;\nimport com.android.systemui.car.CarDeviceProvisionedController;\nimport com.android.systemui.car.CarDeviceProvisionedControllerImpl;\nimport com.android.systemui.car.keyguard.CarKeyguardViewController;\nimport com.android.systemui.car.notification.NotificationShadeWindowControllerImpl;\nimport com.android.systemui.car.statusbar.DozeServiceHost;\nimport com.android.systemui.car.volume.CarVolumeDialogComponent;\nimport com.android.systemui.dagger.GlobalRootComponent;\nimport com.android.systemui.dagger.",
+    "raw_res": "RootComponent;",
+    "prompt_res": "SysUISingleton;",
+    "gt": "SysUISingleton;"
+  },
+  {
+    "id": 2964,
+    "pkg": "aosp_platform_packages_apps_Car_SystemUI",
+    "fpath": "src/com/android/systemui/CarSystemUIModule.java",
+    "input": "/*\n * Copyright (C) 2019 The Android Open Source Project\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *      http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.android.systemui;\n\nimport static com.android.systemui.Dependency.ALLOW_NOTIFICATION_LONG_PRESS_NAME;\nimport static com.android.systemui.Dependency.LEAK_REPORT_EMAIL_NAME;\n\nimport android.content.Context;\nimport android.hardware.SensorPrivacyManager;\nimport android.os.Handler;\nimport android.os.PowerManager;\nimport android.window.DisplayAreaOrganizer;\n\nimport com.android.keyguard.KeyguardViewController;\nimport com.android.systemui.broadcast.BroadcastDispatcher;\nimport com.android.systemui.car.CarDeviceProvisionedController;\nimport com.android.systemui.car.CarDeviceProvisionedControllerImpl;\nimport com.android.systemui.car.keyguard.CarKeyguardViewController;\nimport com.android.systemui.car.notification.NotificationShadeWindowControllerImpl;\nimport com.android.systemui.car.statusbar.DozeServiceHost;\nimport com.android.systemui.car.volume.CarVolumeDialogComponent;\nimport com.android.systemui.dagger.GlobalRootComponent;\nimport com.android.systemui.dagger.SysUISingleton;\nimport com.android.systemui.dagger.qualifiers.Background;\nimport com.android.systemui.dagger.qualifiers.Main;\nimport com.android.systemui.demomode.DemoModeController;\nimport com.android.systemui.dock.DockManager;\nimport com.android.systemui.dock.DockManagerImpl;\nimport com.android.systemui.doze.DozeHost;\nimport com.android.systemui.plugins.qs.QSFactory;\nimport com.android.systemui.plugins.statusbar.StatusBarStateController;\nimport com.android.systemui.power.EnhancedEstimates;\nimport com.android.systemui.power.EnhancedEstimatesImpl;\nimport com.android.systemui.power.dagger.",
+    "raw_res": "PowerComponent;",
+    "prompt_res": "PowerModule;",
+    "gt": "PowerModule;"
+  }
+]
