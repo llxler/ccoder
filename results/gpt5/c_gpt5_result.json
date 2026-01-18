@@ -1,0 +1,8 @@
+[
+  {
+    "id": 1,
+    "raw_res": "",
+    "prompt_res": "",
+    "gt": "import static com.google.common.base.Preconditions.checkNotNull;"
+  }
+]
