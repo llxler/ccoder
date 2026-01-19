@@ -1,5 +1,8 @@
 import requests
 import json
+import os
+
+API_KEY = os.getenv("OPENAI_API_KEY")
 
 def check_openrouter_quota(api_key):
     url = "https://openrouter.ai/api/v1/auth/key"
@@ -53,6 +56,5 @@ def test_generation(api_key):
         print(f"Generation error: {e}")
 
 if __name__ == "__main__":
-    API_KEY = "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"
     check_openrouter_quota(API_KEY)
     # test_generation(API_KEY) # Optional: uncomment to test actual generation

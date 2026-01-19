@@ -19,6 +19,10 @@ MODEL_API_NAME = "openai/gpt-5.1"
 MODEL_SHORT_NAME = "gpt5" # Used for file naming
 FILE_PREFIX = "c"
 
+API_KEY = os.getenv("OPENAI_API_KEY")
+print(API_KEY)
+exit()
+
 # Construct paths 
 # We assume the prompts might serve as a base, or we might need to point to a specific prompt file.
 # For this script, I'll define the result directories based on the new model name.
@@ -55,7 +59,7 @@ def get_openai_client():
 
     return OpenAI(
         base_url="https://openrouter.ai/api/v1",
-        api_key="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",
+        api_key=API_KEY,
     )
 
 def generate_single_completion(client, prompt, model_name):
