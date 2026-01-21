@@ -1,0 +1,122 @@
+[
+  {
+    "id": 21,
+    "raw_res": "UserHandle;",
+    "prompt_res": "Bundle;",
+    "gt": "Bundle;"
+  },
+  {
+    "id": 22,
+    "raw_res": "UserHandle;",
+    "prompt_res": "UserHandle;",
+    "gt": "StrictMode;"
+  },
+  {
+    "id": 23,
+    "raw_res": "TelephonyManager;",
+    "prompt_res": "TelephonyManager;",
+    "gt": "TelephonyManager;"
+  },
+  {
+    "id": 24,
+    "raw_res": "Log;",
+    "prompt_res": "Log;",
+    "gt": "Log;"
+  },
+  {
+    "id": 25,
+    "raw_res": "NonNull;",
+    "prompt_res": "Nullable;",
+    "gt": "NonNull;"
+  },
+  {
+    "id": 26,
+    "raw_res": "Nullable;",
+    "prompt_res": "Nullable;",
+    "gt": "Nullable;"
+  },
+  {
+    "id": 27,
+    "raw_res": "VisibleForTesting;",
+    "prompt_res": "VisibleForTesting;",
+    "gt": "VisibleForTesting;"
+  },
+  {
+    "id": 28,
+    "raw_res": "FragmentActivity;",
+    "prompt_res": "FragmentActivity;",
+    "gt": "FragmentActivity;"
+  },
+  {
+    "id": 29,
+    "raw_res": "ViewModelProvider;",
+    "prompt_res": "ViewModelProvider;",
+    "gt": "ViewModel;"
+  },
+  {
+    "id": 30,
+    "raw_res": "ViewModelProvider;",
+    "prompt_res": "ViewModelProvider;",
+    "gt": "ViewModelProvider;"
+  },
+  {
+    "id": 31,
+    "raw_res": "CarUi;",
+    "prompt_res": "CarUi;",
+    "gt": "CarUi;"
+  },
+  {
+    "id": 32,
+    "raw_res": "ToolbarController;",
+    "prompt_res": "ToolbarController;",
+    "gt": "ToolbarController;"
+  },
+  {
+    "id": 33,
+    "raw_res": "ImmutableList;",
+    "prompt_res": "ImmutableList;",
+    "gt": "HashMultimap;"
+  },
+  {
+    "id": 34,
+    "raw_res": "Clock mClock = Clock.systemDefaultZone();",
+    "prompt_res": "ViewModelProvider.Factory mViewModelFactory;",
+    "gt": "Multimap<String, Runnable> mPermissionToCallbacks = HashMultimap.create();"
+  },
+  {
+    "id": 35,
+    "raw_res": "Bundle savedInstanceState)",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 36,
+    "raw_res": "ContentResolver mResolver;",
+    "prompt_res": "ContentResolver mResolver;",
+    "gt": "ContentResolver mResolver;"
+  },
+  {
+    "id": 37,
+    "raw_res": "TelephonyManager mTelephonyManager;",
+    "prompt_res": "TelephonyManager mTelephonyManager;",
+    "gt": "TelephonyManager mTelephonyManager;"
+  },
+  {
+    "id": 38,
+    "raw_res": "public final class CalendarUtils",
+    "prompt_res": "public class CarCalendarView extends android.widget.FrameLayout",
+    "gt": "import static com.google.common.base.Verify.verify;"
+  },
+  {
+    "id": 39,
+    "raw_res": "Preconditions.checkNotNull;",
+    "prompt_res": "Preconditions.checkNotNull;",
+    "gt": "Verify.verify;"
+  },
+  {
+    "id": 40,
+    "raw_res": "content.Context;",
+    "prompt_res": "content.Context;",
+    "gt": "Manifest;"
+  }
+]

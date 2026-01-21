@@ -20,13 +20,11 @@ MODEL_SHORT_NAME = "gpt5" # Used for file naming
 FILE_PREFIX = "c"
 
 API_KEY = os.getenv("OPENAI_API_KEY")
-print(API_KEY)
-exit()
 
 # Construct paths 
 # We assume the prompts might serve as a base, or we might need to point to a specific prompt file.
 # For this script, I'll define the result directories based on the new model name.
-RESULT_DIR = os.path.join(BASE_DIR, f"results/{MODEL_SHORT_NAME}")
+RESULT_DIR = os.path.join(BASE_DIR, f"results_gpt_java/{MODEL_SHORT_NAME}")
 # Ensure directory exists
 if not os.path.exists(RESULT_DIR):
     os.makedirs(RESULT_DIR, exist_ok=True)
@@ -64,10 +62,11 @@ def get_openai_client():
 
 def generate_single_completion(client, prompt, model_name):
     # System prompt to guide the model to behave like a completion engine
-    system_prompt = "You are a code completion engine. You must complete the code starting exactly where the user input ends. Do NOT repeat the user input. Output only the completion code."
+    system_prompt = "You are a code completion engine. You must complete the code starting exactly where the user input ends. Do NOT repeat the user input. Output only the completion code. Keep the output concise, only generation one statement or block."
     
     try:
         # Single API call to reduce latency and thinking time
+        # print(f"DEBUG PROMPT: {prompt[:100]!r}...")
         messages = [
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": prompt}
@@ -76,10 +75,13 @@ def generate_single_completion(client, prompt, model_name):
         response = client.chat.completions.create(
             model=model_name,
             messages=messages,
+            # max_tokens=128,
+            stop=["\n\n"],
             # Removed extra reasoning loop and parameters
         )
         
         content = response.choices[0].message.content
+        # print(f"DEBUG RAW: {content!r}")
         
         # Post-processing to remove prompt overlap if present
         # This occurs if the model repeats the last few lines of the prompt
@@ -141,6 +143,7 @@ def generate_completion_batch(client, prompts, model_name, max_workers=4):
         for future in futures:
             try:
                 res = future.result()
+                print(f"GPT Output: {res!r}") # Debug output
                 
                 # Preprocess step similar to original logic
                 processed_text = process_c_completion(res, add_log=True)
@@ -157,32 +160,6 @@ def process_c_completion(completion, add_log=False):
     
     original = completion.strip()
     
-    # Check if code is wrapped in markdown code blocks
-    if "```" in original:
-        lines = original.split('\n')
-        code_lines = []
-        in_code_block = False
-        for line in lines:
-            if "```" in line:
-                if in_code_block:
-                    in_code_block = False # End of block
-                else:
-                    in_code_block = True # Start of block (or language specifier)
-                continue
-            if in_code_block:
-                code_lines.append(line)
-        
-        # If we extracted something, use it. Otherwise fall back to parsing.
-        if code_lines:
-            completion = "\n".join(code_lines)
-            original = completion.strip() # Update original to match extracted code
-        else:
-            # Maybe it was just ```c ... ``` without closing or something
-            pass
-
-    # Truncation logic aligned exactly with evaluation.py
-    # Aggressive truncation: stop at the first semicolon found outside of strings/comments.
-    # This is effective for datasets where the ground truth is typically a single statement.
     in_string = False        
     in_char = False          
     in_line_comment = False  
@@ -238,11 +215,18 @@ def process_c_completion(completion, add_log=False):
             continue
             
         if char == ';':
-            # Stop indiscriminately at the first semicolon outside strings/comments
             result = completion[:i+1].strip()  
+            if add_log and len(result) < len(original):
+                print(f"截断: '{original}' -> '{result}'")
             return result
-            
-    return completion.strip()
+        
+        if char == '{':
+            result = completion[:i].strip()
+            if add_log and len(result) < len(original):
+                print(f"截断 (brace): '{original}' -> '{result}'")
+            return result
+    
+    return original
 
 def compute_exact_match(prediction, ground_truth):
     return 1 if prediction.strip() == ground_truth.strip() else 0
@@ -291,8 +275,8 @@ def main():
     prompts = load_jsonl(PT_FILE)
     
     # Testing: only use the first item TODO
-    print("TEST MODE: Processing first 4 items.")
-    dataset = dataset[:1] # Limit dataset to 4 items
+    print("TEST MODE: Processing first 5 items.")
+    # dataset = dataset[:] # Limit dataset to 5 items
     
     prompt_dict = {item.get("id", ""): item.get("prompt", "") for item in prompts}
     dataset_dict = {item.get("id", ""): item for item in dataset}
@@ -383,7 +367,7 @@ def main():
             
             results.append(result)
             
-        # Optional: Save intermediate results? 
+        # Optional: Save intermediate results
         with open(RESULT_FILE, "w", encoding="utf-8") as f:
             json.dump(results, f, ensure_ascii=False, indent=2)
     
