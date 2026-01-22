@@ -17,7 +17,10 @@ from utils import DS_BASE_DIR, BASE_DIR
 # Initial Configuration
 MODEL_API_NAME = "openai/gpt-5.1"
 MODEL_SHORT_NAME = "gpt5" # Used for file naming
-FILE_PREFIX = "c"
+
+# TODO: Change this
+FILE_PREFIX = "java"
+RAGMETHOD = "graph"
 
 API_KEY = os.getenv("OPENAI_API_KEY")
 
@@ -31,12 +34,11 @@ if not os.path.exists(RESULT_DIR):
 
 DS_FILE = os.path.join(DS_BASE_DIR, f"{FILE_PREFIX}_metadata.jsonl")
 # Default prompt file - user might need to change this if they have a specific one
-PT_FILE = os.path.join(DS_BASE_DIR, f"{FILE_PREFIX}_codellama7b_prompt.jsonl") 
+PT_FILE = os.path.join(DS_BASE_DIR, f"{FILE_PREFIX}_{RAGMETHOD}_prompt.jsonl") 
 
-EVAL_FILE = os.path.join(RESULT_DIR, f"{FILE_PREFIX}_{MODEL_SHORT_NAME}_eval.txt")
-RESULT_FILE = os.path.join(RESULT_DIR, f"{FILE_PREFIX}_{MODEL_SHORT_NAME}_result.json")
-IMP_FILE = os.path.join(RESULT_DIR, f"{FILE_PREFIX}_{MODEL_SHORT_NAME}_improved.json")
-
+EVAL_FILE = os.path.join(RESULT_DIR, f"{FILE_PREFIX}_{MODEL_SHORT_NAME}_{RAGMETHOD}_eval.txt")
+RESULT_FILE = os.path.join(RESULT_DIR, f"{FILE_PREFIX}_{MODEL_SHORT_NAME}_{RAGMETHOD}_result.json")
+IMP_FILE = os.path.join(RESULT_DIR, f"{FILE_PREFIX}_{MODEL_SHORT_NAME}_{RAGMETHOD}_improved.json")
 
 def load_config():
     if os.path.exists("config.yaml"):
@@ -258,16 +260,7 @@ def main():
     if not os.path.exists(DS_FILE):
         print(f"Error: Dataset file not found {DS_FILE}")
         return
-    
-    if not os.path.exists(PT_FILE):
-        print(f"Error: Prompt file not found {PT_FILE}")
-        # Try finding a default prompt file if the constructed one is missing
-        fallback_pt = os.path.join(DS_BASE_DIR, f"{FILE_PREFIX}_codellama7b_prompt.jsonl")
-        if os.path.exists(fallback_pt):
-            print(f"Using fallback prompt file: {fallback_pt}")
-            PT_FILE = fallback_pt
-        else:
-            return
+
 
     os.makedirs(RESULT_DIR, exist_ok=True)
     
@@ -275,8 +268,8 @@ def main():
     prompts = load_jsonl(PT_FILE)
     
     # Testing: only use the first item TODO
-    print("TEST MODE: Processing first 5 items.")
-    # dataset = dataset[:] # Limit dataset to 5 items
+    # print("TEST MODE: Processing first 5 items.")
+    # dataset = dataset[469:] # Limit dataset to 5 items
     
     prompt_dict = {item.get("id", ""): item.get("prompt", "") for item in prompts}
     dataset_dict = {item.get("id", ""): item for item in dataset}
