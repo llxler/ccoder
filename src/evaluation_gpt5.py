@@ -269,7 +269,7 @@ def main():
     
     # Testing: only use the first item TODO
     # print("TEST MODE: Processing first 5 items.")
-    # dataset = dataset[:2] # Limit dataset to 5 items
+    dataset = dataset[98:] # Limit dataset to 5 items
     
     prompt_dict = {item.get("id", ""): item.get("prompt", "") for item in prompts}
     dataset_dict = {item.get("id", ""): item for item in dataset}
