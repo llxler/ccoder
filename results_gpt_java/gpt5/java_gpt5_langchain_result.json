@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "raw_res": "",
+    "prompt_res": "ViewHolder viewHolder)",
+    "gt": "ViewHolder holder) {"
+  },
+  {
+    "id": 2,
+    "raw_res": "",
+    "prompt_res": "ViewHolder",
+    "gt": "ViewHolder {"
+  }
+]

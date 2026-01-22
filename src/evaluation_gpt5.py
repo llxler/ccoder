@@ -20,7 +20,7 @@ MODEL_SHORT_NAME = "gpt5" # Used for file naming
 
 # TODO: Change this
 FILE_PREFIX = "java"
-RAGMETHOD = "graph"
+RAGMETHOD = "langchain"
 
 API_KEY = os.getenv("OPENAI_API_KEY")
 
@@ -269,7 +269,7 @@ def main():
     
     # Testing: only use the first item TODO
     # print("TEST MODE: Processing first 5 items.")
-    # dataset = dataset[469:] # Limit dataset to 5 items
+    # dataset = dataset[:2] # Limit dataset to 5 items
     
     prompt_dict = {item.get("id", ""): item.get("prompt", "") for item in prompts}
     dataset_dict = {item.get("id", ""): item for item in dataset}
@@ -305,8 +305,12 @@ def main():
         
         batch_prompts = [prompt_dict.get(id_, "") for id_ in batch_ids]
         
-        # 1. Generate based on raw input
-        raw_preds = generate_completion_batch(client, batch_inputs, MODEL_API_NAME, max_workers=batch_size)
+        # 1. Generate based on raw input TODO: if need raw_preds
+        # raw_preds = generate_completion_batch(client, batch_inputs, MODEL_API_NAME, max_workers=batch_size)
+        # else just empty for now
+        raw_preds = []
+        for ii in range(batch_size):
+            raw_preds.append("")
         
         # 2. Generate based on enhanced detailed prompt (if available)
         valid_prompts_indices = [idx for idx, p in enumerate(batch_prompts) if p]
