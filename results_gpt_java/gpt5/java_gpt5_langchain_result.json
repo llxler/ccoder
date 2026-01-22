@@ -1,5 +1,593 @@
 [
   {
+    "id": 1,
+    "raw_res": "",
+    "prompt_res": "ViewHolder viewHolder)",
+    "gt": "ViewHolder holder) {"
+  },
+  {
+    "id": 2,
+    "raw_res": "",
+    "prompt_res": "ViewHolder",
+    "gt": "ViewHolder {"
+  },
+  {
+    "id": 3,
+    "raw_res": "",
+    "prompt_res": "ViewHolder viewHolder);",
+    "gt": "ViewHolder holder);"
+  },
+  {
+    "id": 4,
+    "raw_res": "",
+    "prompt_res": "ViewHolder createViewHolder(ViewGroup parent);",
+    "gt": "ViewHolder createViewHolder(ViewGroup parent);"
+  },
+  {
+    "id": 5,
+    "raw_res": "",
+    "prompt_res": "ViewGroup parent);",
+    "gt": "ViewGroup parent);"
+  },
+  {
+    "id": 6,
+    "raw_res": "",
+    "prompt_res": "ViewModelProvider.Factory mViewModelFactory =\n            new ViewModelProvider.Factory()",
+    "gt": "Multimap<String, Runnable> mPermissionToCallbacks = HashMultimap.create();"
+  },
+  {
+    "id": 7,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 8,
+    "raw_res": "",
+    "prompt_res": "ContentResolver mResolver;",
+    "gt": "ContentResolver mResolver;"
+  },
+  {
+    "id": 9,
+    "raw_res": "",
+    "prompt_res": "TelephonyManager mTelephonyManager;",
+    "gt": "TelephonyManager mTelephonyManager;"
+  },
+  {
+    "id": 10,
+    "raw_res": "",
+    "prompt_res": "CarUiRecyclerView mRecyclerView;",
+    "gt": "TextView mNoEventsTextView;"
+  },
+  {
+    "id": 11,
+    "raw_res": "",
+    "prompt_res": "Adapter<ViewHolder> mAdapter;",
+    "gt": "Adapter<ViewHolder> mAdapter = new EventRecyclerViewAdapter();"
+  },
+  {
+    "id": 12,
+    "raw_res": "",
+    "prompt_res": "CarUiRecyclerView mRecyclerView;",
+    "gt": "Observer<ImmutableList<Event>> mEventsObserver = this::onEventsChanged;"
+  },
+  {
+    "id": 13,
+    "raw_res": "",
+    "prompt_res": "Observer<EventsLiveData.Events> mEventsObserver =\n            new Observer<EventsLiveData.Events>()",
+    "gt": "ImmutableList<Event>> mEventsObserver = this::onEventsChanged;"
+  },
+  {
+    "id": 14,
+    "raw_res": "",
+    "prompt_res": "ViewHolder viewHolder)",
+    "gt": "ViewHolder holder) {"
+  },
+  {
+    "id": 15,
+    "raw_res": "",
+    "prompt_res": "Context mContext;",
+    "gt": "Context mContext;"
+  },
+  {
+    "id": 16,
+    "raw_res": "",
+    "prompt_res": "Context mContext;",
+    "gt": "Context mContext;"
+  },
+  {
+    "id": 17,
+    "raw_res": "",
+    "prompt_res": "Context mContext;",
+    "gt": "Context mContext;"
+  },
+  {
+    "id": 18,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 19,
+    "raw_res": "",
+    "prompt_res": "Intent intent)",
+    "gt": "Intent intent) {"
+  },
+  {
+    "id": 20,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 21,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 22,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 23,
+    "raw_res": "",
+    "prompt_res": "Car mCar;",
+    "gt": "ImageView mUnobscuredArea;"
+  },
+  {
+    "id": 24,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 25,
+    "raw_res": "",
+    "prompt_res": "Intent intent)",
+    "gt": "Intent intent) {"
+  },
+  {
+    "id": 26,
+    "raw_res": "",
+    "prompt_res": "DeviceOS deviceOs;",
+    "gt": "DeviceOS os;"
+  },
+  {
+    "id": 27,
+    "raw_res": "",
+    "prompt_res": "@NonNull Parcel in)",
+    "gt": "Parcel in) {"
+  },
+  {
+    "id": 28,
+    "raw_res": "",
+    "prompt_res": "Creator<AssociatedDevice> CREATOR =\n      new Parcelable.Creator<AssociatedDevice>()",
+    "gt": "Creator<AssociatedDevice> CREATOR =\n      new Parcelable.Creator<AssociatedDevice>() {"
+  },
+  {
+    "id": 29,
+    "raw_res": "",
+    "prompt_res": "Parcel in)",
+    "gt": "Parcel in) {"
+  },
+  {
+    "id": 30,
+    "raw_res": "",
+    "prompt_res": "Creator<ConnectedDevice> CREATOR =\n      new Creator<ConnectedDevice>()",
+    "gt": "Creator<ConnectedDevice> CREATOR =\n      new Parcelable.Creator<ConnectedDevice>() {"
+  },
+  {
+    "id": 31,
+    "raw_res": "",
+    "prompt_res": "@NonNull Parcel in)",
+    "gt": "Parcel in) {"
+  },
+  {
+    "id": 32,
+    "raw_res": "",
+    "prompt_res": "Creator<DeviceMessage> CREATOR =\n      new Parcelable.Creator<DeviceMessage>()",
+    "gt": "Creator<DeviceMessage> CREATOR =\n      new Parcelable.Creator<DeviceMessage>() {"
+  },
+  {
+    "id": 33,
+    "raw_res": "",
+    "prompt_res": "OobData(Parcel in)",
+    "gt": "Parcel in) {"
+  },
+  {
+    "id": 34,
+    "raw_res": "",
+    "prompt_res": "Parcelable.Creator<OobData> CREATOR =\n      new Parcelable.Creator<OobData>()",
+    "gt": "Creator<OobData> CREATOR =\n      new Creator<OobData>() {"
+  },
+  {
+    "id": 35,
+    "raw_res": "",
+    "prompt_res": "@NonNull Parcel in)",
+    "gt": "Parcel in) {"
+  },
+  {
+    "id": 36,
+    "raw_res": "",
+    "prompt_res": "Creator<StartAssociationResponse> CREATOR =\n      new Creator<StartAssociationResponse>()",
+    "gt": "Creator<StartAssociationResponse> CREATOR =\n      new Parcelable.Creator<StartAssociationResponse>() {"
+  },
+  {
+    "id": 37,
+    "raw_res": "",
+    "prompt_res": "IntDef(",
+    "gt": "IntDef({"
+  },
+  {
+    "id": 38,
+    "raw_res": "",
+    "prompt_res": "CipherSuite CIPHER_SUITE = Ukey2Handshake.CipherSuite.P256_SHA256;",
+    "gt": "HandshakeCipher CIPHER =\n      Ukey2Handshake.HandshakeCipher.P256_SHA512;"
+  },
+  {
+    "id": 39,
+    "raw_res": "",
+    "prompt_res": "// TODO: Implement Ukey2-based EncryptionRunner logic here.\n\n}",
+    "gt": "IntDef({"
+  },
+  {
+    "id": 40,
+    "raw_res": "",
+    "prompt_res": "D2DConnectionContext mContext;",
+    "gt": "D2DConnectionContext connectionContext;"
+  },
+  {
+    "id": 41,
+    "raw_res": "",
+    "prompt_res": "Activity",
+    "gt": "Activity {"
+  },
+  {
+    "id": 42,
+    "raw_res": "",
+    "prompt_res": "Override\n  protected void onCreate(Bundle savedInstanceState)",
+    "gt": "Override\n  protected void onCreate(Bundle savedInstanceState) {"
+  },
+  {
+    "id": 43,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 44,
+    "raw_res": "",
+    "prompt_res": "layout.activity_main);",
+    "gt": "layout.main);"
+  },
+  {
+    "id": 45,
+    "raw_res": "",
+    "prompt_res": "id.button);",
+    "gt": "id.exit);"
+  },
+  {
+    "id": 46,
+    "raw_res": "",
+    "prompt_res": "Context context, Intent intent)",
+    "gt": "Context context, Intent intent) {"
+  },
+  {
+    "id": 47,
+    "raw_res": "",
+    "prompt_res": "Intent intent)",
+    "gt": "Intent intent) {"
+  },
+  {
+    "id": 48,
+    "raw_res": "",
+    "prompt_res": "final SparseArray<Float> mTemperature = new SparseArray<>();",
+    "gt": "SparseArray<Float> mTemperature = new SparseArray<Float>();"
+  },
+  {
+    "id": 49,
+    "raw_res": "",
+    "prompt_res": "SparseBooleanArray mTemperatureAvailable = new SparseBooleanArray();",
+    "gt": "SparseBooleanArray mTemperatureAvailable = new SparseBooleanArray();"
+  },
+  {
+    "id": 50,
+    "raw_res": "",
+    "prompt_res": "SparseIntArray mAirflow = new SparseIntArray();",
+    "gt": "SparseIntArray mAirflow = new SparseIntArray();"
+  },
+  {
+    "id": 51,
+    "raw_res": "",
+    "prompt_res": "SparseLongArray mTemperatureUpdateTimesMs = new SparseLongArray();",
+    "gt": "SparseLongArray mLastTemperatureSet = new SparseLongArray();"
+  },
+  {
+    "id": 52,
+    "raw_res": "",
+    "prompt_res": "float temperature)",
+    "gt": "CarPropertyValue propValue) {"
+  },
+  {
+    "id": 53,
+    "raw_res": "",
+    "prompt_res": "Binder",
+    "gt": "Binder {"
+  },
+  {
+    "id": 54,
+    "raw_res": "",
+    "prompt_res": "Object mLock = new Object();",
+    "gt": "Car mCarApiClient;"
+  },
+  {
+    "id": 55,
+    "raw_res": "",
+    "prompt_res": "CarHvacManager mCarHvacManager;",
+    "gt": "CarHvacManager mHvacManager;"
+  },
+  {
+    "id": 56,
+    "raw_res": "",
+    "prompt_res": "Intent intent, int flags, int startId)",
+    "gt": "Intent intent, int flags, int startId) {"
+  },
+  {
+    "id": 57,
+    "raw_res": "",
+    "prompt_res": "IBinder onBind(Intent intent)",
+    "gt": "IBinder onBind(Intent intent) {"
+  },
+  {
+    "id": 58,
+    "raw_res": "",
+    "prompt_res": "CarHvacManager.CarHvacEventCallback mHardwareCallback =\n            new CarHvacManager.CarHvacEventCallback()",
+    "gt": "ServiceConnection mCarServiceConnection =\n            new ServiceConnection() {"
+  },
+  {
+    "id": 59,
+    "raw_res": "",
+    "prompt_res": "Handler handler)",
+    "gt": "Handler h) {"
+  },
+  {
+    "id": 60,
+    "raw_res": "",
+    "prompt_res": "CarPropertyConfig> carPropertyConfigList)",
+    "gt": "CarPropertyConfig> properties) {"
+  },
+  {
+    "id": 61,
+    "raw_res": "",
+    "prompt_res": "View> mAddedViews = new ArrayList<>();",
+    "gt": "View> mAddedViews = new ArrayList<>();"
+  },
+  {
+    "id": 62,
+    "raw_res": "",
+    "prompt_res": "WindowManager mWindowManager;",
+    "gt": "WindowManager mWindowManager;"
+  },
+  {
+    "id": 63,
+    "raw_res": "",
+    "prompt_res": "boolean mIsPanelVisible;",
+    "gt": "DisplayMetrics mDisplayMetrics;"
+  },
+  {
+    "id": 64,
+    "raw_res": "",
+    "prompt_res": "void onCreate()",
+    "gt": "IBinder onBind(Intent intent) {"
+  },
+  {
+    "id": 65,
+    "raw_res": "",
+    "prompt_res": "Intent intent)",
+    "gt": "Intent intent) {"
+  },
+  {
+    "id": 66,
+    "raw_res": "",
+    "prompt_res": "void disableAnimations(WindowManager.LayoutParams lp)",
+    "gt": "BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {"
+  },
+  {
+    "id": 67,
+    "raw_res": "",
+    "prompt_res": "void createTemperatureBars(LayoutInflater inflater)",
+    "gt": "ServiceConnection mServiceConnection = new ServiceConnection() {"
+  },
+  {
+    "id": 68,
+    "raw_res": "",
+    "prompt_res": "LayoutInflater inflater)",
+    "gt": "LayoutInflater inflater) {"
+  },
+  {
+    "id": 69,
+    "raw_res": "",
+    "prompt_res": "LayoutParams createTemperatureBarLayoutParams(\n            String windowTitle, int windowHeight, int gravity)",
+    "gt": "LayoutParams createTemperatureBarLayoutParams(String windowTitle,\n            int windowHeight, int gravity) {"
+  },
+  {
+    "id": 70,
+    "raw_res": "",
+    "prompt_res": "LayoutParams lp)",
+    "gt": "LayoutParams params) {"
+  },
+  {
+    "id": 71,
+    "raw_res": "",
+    "prompt_res": "final Handler sHandler = new Handler();",
+    "gt": "Handler handler = new Handler();"
+  },
+  {
+    "id": 72,
+    "raw_res": "",
+    "prompt_res": "final Context mContext;",
+    "gt": "View mPanel;"
+  },
+  {
+    "id": 73,
+    "raw_res": "",
+    "prompt_res": "FanDirectionButtons mDriverFanDirectionButtons, mPassengerFanDirectionButtons;",
+    "gt": "Drawable mAutoOnDrawable;"
+  },
+  {
+    "id": 74,
+    "raw_res": "",
+    "prompt_res": "ToggleButton mAutoButton;",
+    "gt": "ImageView mAutoButton;"
+  },
+  {
+    "id": 75,
+    "raw_res": "",
+    "prompt_res": "float mBottomPanelMaxAlpha = 1.0f;",
+    "gt": "WindowManager mWindowManager;"
+  },
+  {
+    "id": 76,
+    "raw_res": "",
+    "prompt_res": ")",
+    "gt": "Context context, View container,\n            WindowManager windowManager,\n            TemperatureBarOverlay driverTemperatureExpanded,\n            TemperatureBarOverlay passengerTemperatureExpanded,\n            TemperatureBarOverlay driverTemperatureBarCollapsed,\n            TemperatureBarOverlay passengerTemperatureBarCollapsed) {"
+  },
+  {
+    "id": 77,
+    "raw_res": "",
+    "prompt_res": "Callback mToggleButtonCallbacks = new HvacController.Callback()",
+    "gt": "Callback mToggleButtonCallbacks\n            = new HvacController.Callback() {"
+  },
+  {
+    "id": 78,
+    "raw_res": "",
+    "prompt_res": "Animator> animators,\n            List<Animator.AnimatorListener> listeners, AnimatorSet set)",
+    "gt": "Animator> animatorList,\n            List<Animator.AnimatorListener> listenerList, AnimatorSet set) {"
+  },
+  {
+    "id": 79,
+    "raw_res": "",
+    "prompt_res": "AnimatorListener> listenerList, AnimatorSet set)",
+    "gt": "AnimatorListener> listenerList, AnimatorSet set) {"
+  },
+  {
+    "id": 80,
+    "raw_res": "",
+    "prompt_res": "Builder mAnimatorSetBuilder;",
+    "gt": "AnimatorListener mAnimatorListener = new AnimatorSet.AnimatorListener() {"
+  },
+  {
+    "id": 81,
+    "raw_res": "",
+    "prompt_res": "OnClickListener mAutoButtonClickListener = new View.OnClickListener()",
+    "gt": "OnClickListener mAutoButtonClickListener = new View.OnClickListener() {"
+  },
+  {
+    "id": 82,
+    "raw_res": "",
+    "prompt_res": "OnClickListener mCollapseHvac = new View.OnClickListener()",
+    "gt": "OnClickListener mCollapseHvac = new View.OnClickListener() {"
+  },
+  {
+    "id": 83,
+    "raw_res": "",
+    "prompt_res": "Context context, Intent intent)",
+    "gt": "Context context, Intent intent) {"
+  },
+  {
+    "id": 84,
+    "raw_res": "",
+    "prompt_res": "Intent intent)",
+    "gt": "Intent intent) {"
+  },
+  {
+    "id": 85,
+    "raw_res": "",
+    "prompt_res": "final SparseArray<Float> mTemperature = new SparseArray<>();",
+    "gt": "SparseArray<Float> mTemperature = new SparseArray<Float>();"
+  },
+  {
+    "id": 86,
+    "raw_res": "",
+    "prompt_res": "SparseBooleanArray mTemperatureAvailable = new SparseBooleanArray();",
+    "gt": "SparseBooleanArray mTemperatureAvailable = new SparseBooleanArray();"
+  },
+  {
+    "id": 87,
+    "raw_res": "",
+    "prompt_res": "SparseIntArray mAirflow = new SparseIntArray();",
+    "gt": "SparseIntArray mAirflow = new SparseIntArray();"
+  },
+  {
+    "id": 88,
+    "raw_res": "",
+    "prompt_res": "SparseLongArray mTemperatureLastUpdate = new SparseLongArray();",
+    "gt": "SparseLongArray mLastTemperatureSet = new SparseLongArray();"
+  },
+  {
+    "id": 89,
+    "raw_res": "",
+    "prompt_res": "float temp)",
+    "gt": "CarPropertyValue propValue) {"
+  },
+  {
+    "id": 90,
+    "raw_res": "",
+    "prompt_res": "Binder",
+    "gt": "Binder {"
+  },
+  {
+    "id": 91,
+    "raw_res": "",
+    "prompt_res": "final Object mLock = new Object();",
+    "gt": "Car mCarApiClient;"
+  },
+  {
+    "id": 92,
+    "raw_res": "",
+    "prompt_res": "CarHvacManager mHvacManager;",
+    "gt": "CarHvacManager mHvacManager;"
+  },
+  {
+    "id": 93,
+    "raw_res": "",
+    "prompt_res": "(intent intent, int flags, int startId)",
+    "gt": "Intent intent, int flags, int startId) {"
+  },
+  {
+    "id": 94,
+    "raw_res": "",
+    "prompt_res": "IBinder onBind(Intent intent)",
+    "gt": "IBinder onBind(Intent intent) {"
+  },
+  {
+    "id": 95,
+    "raw_res": "",
+    "prompt_res": "CarHvacManager.CarHvacEventCallback mHardwareCallback =\n            new CarHvacManager.CarHvacEventCallback()",
+    "gt": "ServiceConnection mCarServiceConnection =\n            new ServiceConnection() {"
+  },
+  {
+    "id": 96,
+    "raw_res": "",
+    "prompt_res": "Handler handler)",
+    "gt": "Handler h) {"
+  },
+  {
+    "id": 97,
+    "raw_res": "",
+    "prompt_res": "CarPropertyConfig> propertyList)",
+    "gt": "CarPropertyConfig> properties) {"
+  },
+  {
+    "id": 98,
+    "raw_res": "",
+    "prompt_res": "TemperatureBarOverlay> mTemperatureBarOverlays = new ArrayList<>();",
+    "gt": "View> mAddedViews = new ArrayList<>();"
+  },
+  {
     "id": 99,
     "raw_res": "",
     "prompt_res": "HvacController mHvacController;",
