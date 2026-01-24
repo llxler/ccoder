@@ -13,22 +13,15 @@ import Levenshtein
 
 from utils import DS_BASE_DIR, BASE_DIR
 
-# Initial Configuration
-MODEL_API_NAME = "openai/gpt-5.1"
-MODEL_SHORT_NAME = "codellama" # Used for file naming
-
 # TODO: Change this
 FILE_PREFIX = "java"
 RAGMETHOD = "langchain"
-
 MODEL = "codellama7b"
-
-API_KEY = os.getenv("OPENAI_API_KEY")
 
 # Construct paths 
 # We assume the prompts might serve as a base, or we might need to point to a specific prompt file.
 # For this script, I'll define the result directories based on the new model name.
-RESULT_DIR = os.path.join(BASE_DIR, f"results_langchain_java/{MODEL_SHORT_NAME}")
+RESULT_DIR = os.path.join(BASE_DIR, f"results_langchain_{FILE_PREFIX}/{MODEL}")
 # Ensure directory exists
 if not os.path.exists(RESULT_DIR):
     os.makedirs(RESULT_DIR, exist_ok=True)
@@ -37,9 +30,9 @@ DS_FILE = os.path.join(DS_BASE_DIR, f"{FILE_PREFIX}_metadata.jsonl")
 # Default prompt file - user might need to change this if they have a specific one
 PT_FILE = os.path.join(DS_BASE_DIR, f"{FILE_PREFIX}_{RAGMETHOD}_prompt.jsonl") 
 
-EVAL_FILE = os.path.join(RESULT_DIR, f"{FILE_PREFIX}_{MODEL_SHORT_NAME}_{RAGMETHOD}_eval.txt")
-RESULT_FILE = os.path.join(RESULT_DIR, f"{FILE_PREFIX}_{MODEL_SHORT_NAME}_{RAGMETHOD}_result.json")
-IMP_FILE = os.path.join(RESULT_DIR, f"{FILE_PREFIX}_{MODEL_SHORT_NAME}_{RAGMETHOD}_improved.json")
+EVAL_FILE = os.path.join(RESULT_DIR, f"{FILE_PREFIX}_{MODEL}_{RAGMETHOD}_eval.txt")
+RESULT_FILE = os.path.join(RESULT_DIR, f"{FILE_PREFIX}_{MODEL}_{RAGMETHOD}_result.json")
+IMP_FILE = os.path.join(RESULT_DIR, f"{FILE_PREFIX}_{MODEL}_{RAGMETHOD}_improved.json")
 
 def load_config():
     with open("config.yaml", "r") as f:
@@ -66,7 +59,9 @@ def load_model_and_tokenizer(config):
     model = AutoModelForCausalLM.from_pretrained(
         model_path,
         torch_dtype=torch.float16,
-        device_map="balanced_low_0",  
+        device_map="auto",
+        low_cpu_mem_usage=True,
+        offload_folder="offload",
         trust_remote_code=True
     )
     
