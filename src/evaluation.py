@@ -11,7 +11,35 @@ from tqdm import tqdm
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import Levenshtein
 
-from utils import DS_FILE, PT_FILE, EVAL_FILE, RESULT_DIR, RESULT_FILE, MODEL, IMP_FILE
+from utils import DS_BASE_DIR, BASE_DIR
+
+# Initial Configuration
+MODEL_API_NAME = "openai/gpt-5.1"
+MODEL_SHORT_NAME = "codellama" # Used for file naming
+
+# TODO: Change this
+FILE_PREFIX = "java"
+RAGMETHOD = "langchain"
+
+MODEL = "codellama7b"
+
+API_KEY = os.getenv("OPENAI_API_KEY")
+
+# Construct paths 
+# We assume the prompts might serve as a base, or we might need to point to a specific prompt file.
+# For this script, I'll define the result directories based on the new model name.
+RESULT_DIR = os.path.join(BASE_DIR, f"results_langchain_java/{MODEL_SHORT_NAME}")
+# Ensure directory exists
+if not os.path.exists(RESULT_DIR):
+    os.makedirs(RESULT_DIR, exist_ok=True)
+
+DS_FILE = os.path.join(DS_BASE_DIR, f"{FILE_PREFIX}_metadata.jsonl")
+# Default prompt file - user might need to change this if they have a specific one
+PT_FILE = os.path.join(DS_BASE_DIR, f"{FILE_PREFIX}_{RAGMETHOD}_prompt.jsonl") 
+
+EVAL_FILE = os.path.join(RESULT_DIR, f"{FILE_PREFIX}_{MODEL_SHORT_NAME}_{RAGMETHOD}_eval.txt")
+RESULT_FILE = os.path.join(RESULT_DIR, f"{FILE_PREFIX}_{MODEL_SHORT_NAME}_{RAGMETHOD}_result.json")
+IMP_FILE = os.path.join(RESULT_DIR, f"{FILE_PREFIX}_{MODEL_SHORT_NAME}_{RAGMETHOD}_improved.json")
 
 def load_config():
     with open("config.yaml", "r") as f:
@@ -215,13 +243,6 @@ def main():
     print(f"总样本数: {num_samples}, 批大小: {batch_size}, 总批次: {num_batches}")
     
     for i in tqdm(range(0, num_samples, batch_size), desc="处理批次"):
-        
-        # if i < 970:
-        #     continue
-        
-        # # 处理一部分
-        # if i > 1280:
-        #     break
         
         current_batch = dataset[i:i+batch_size]
         batch_ids = [sample.get("id", "") for sample in current_batch]

@@ -7,8 +7,8 @@ ENABLE_DOCSTRING = True
 LAST_K_LINES = 1
 
 import os
-# MODEL = "codellama7b"
-MODEL = "deepseek"
+MODEL = "codellama7b"
+# MODEL = "deepseek"
 
 FILE = "c"
 DS_BASE_DIR = os.path.abspath("../CEval")

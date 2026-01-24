@@ -1,0 +1,9 @@
+==================================================
+
+1. Raw Input (raw_res):
+   - Exact Match: 0.2386
+   - Edit Similarity: 0.5947
+
+2. Prompt Input (prompt_res):
+   - Exact Match: 0.2620
+   - Edit Similarity: 0.6195
