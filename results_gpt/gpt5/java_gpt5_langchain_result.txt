@@ -1,0 +1,6 @@
+Evaluation Summary
+==================================================
+
+2. Prompt Input (prompt_res):
+   - Exact Match: 0.1271
+   - Edit Similarity: 0.6652
