@@ -116,6 +116,15 @@ def apply_processing(file_path):
                  item['prompt_res'] = new_prompt
                  modified_count += 1
 
+        if 'gt' in item:
+             old_gt = item['gt']
+             new_gt = process_c_completion(old_gt)
+             if old_gt != new_gt:
+                 item['gt'] = new_gt
+                 modified_count += 1
+        
+        
+
     # Generate new file path in the same directory
     dir_name = os.path.dirname(file_path)
     base_name = os.path.basename(file_path)
@@ -128,7 +137,7 @@ def apply_processing(file_path):
         json.dump(data, f, indent=4, ensure_ascii=False)
 
 if __name__ == "__main__":
-    target_file = r"D:\Desktop\ccoder\results_gpt\gpt5\java_gpt5_graph_result.json"
+    target_file = r"D:\Desktop\ccoder\results_gpt_c\gpt5\c_gpt5_langchain_result.json"
     if os.path.exists(target_file):
         apply_processing(target_file)
     else:

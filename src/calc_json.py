@@ -30,7 +30,7 @@ def compute_edit_similarity(prediction, ground_truth):
 def main():
     parser = argparse.ArgumentParser(description="Calculate EM and ES from a JSON result file.")
     # TODO
-    parser.add_argument("file_path", nargs='?', default="c_gpt5_graph_result.json", help="Path to the JSON file containing results.")
+    parser.add_argument("file_path", nargs='?', default="java_gpt5_graph_result_processed.json", help="Path to the JSON file containing results.")
     args = parser.parse_args()
 
     file_path = args.file_path
