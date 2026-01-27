@@ -137,7 +137,7 @@ def apply_processing(file_path):
         json.dump(data, f, indent=4, ensure_ascii=False)
 
 if __name__ == "__main__":
-    target_file = r"D:\Desktop\ccoder\results_gpt_c\gpt5\c_gpt5_langchain_result.json"
+    target_file = r"D:\Desktop\ccoder\results_gemini_java\gemini\java_gemini_langchain_result.json"
     if os.path.exists(target_file):
         apply_processing(target_file)
     else:

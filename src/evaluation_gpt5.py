@@ -15,11 +15,11 @@ import concurrent.futures
 from utils import DS_BASE_DIR, BASE_DIR
 
 # Initial Configuration
-MODEL_API_NAME = "openai/gpt-5.1"
-MODEL_SHORT_NAME = "gpt5" # Used for file naming
+MODEL_API_NAME = "google/gemini-3-pro-preview"
+MODEL_SHORT_NAME = "gemini" # Used for file naming
 
 # TODO: Change this
-FILE_PREFIX = "c"
+FILE_PREFIX = "java"
 RAGMETHOD = "langchain"
 
 API_KEY = os.getenv("OPENAI_API_KEY")
@@ -27,7 +27,7 @@ API_KEY = os.getenv("OPENAI_API_KEY")
 # Construct paths 
 # We assume the prompts might serve as a base, or we might need to point to a specific prompt file.
 # For this script, I'll define the result directories based on the new model name.
-RESULT_DIR = os.path.join(BASE_DIR, f"results_gpt_java/{MODEL_SHORT_NAME}")
+RESULT_DIR = os.path.join(BASE_DIR, f"results_{MODEL_SHORT_NAME}_{FILE_PREFIX}/{MODEL_SHORT_NAME}")
 # Ensure directory exists
 if not os.path.exists(RESULT_DIR):
     os.makedirs(RESULT_DIR, exist_ok=True)
@@ -306,11 +306,11 @@ def main():
         batch_prompts = [prompt_dict.get(id_, "") for id_ in batch_ids]
         
         # 1. Generate based on raw input TODO: if need raw_preds
-        # raw_preds = generate_completion_batch(client, batch_inputs, MODEL_API_NAME, max_workers=batch_size)
+        raw_preds = generate_completion_batch(client, batch_inputs, MODEL_API_NAME, max_workers=batch_size)
         # else just empty for now
-        raw_preds = []
-        for ii in range(batch_size):
-            raw_preds.append("")
+        # raw_preds = []
+        # for ii in range(batch_size):
+        #     raw_preds.append("")
         
         # 2. Generate based on enhanced detailed prompt (if available)
         valid_prompts_indices = [idx for idx, p in enumerate(batch_prompts) if p]
