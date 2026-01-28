@@ -2,9 +2,9 @@ Evaluation Summary
 ==================================================
 
 1. Raw Input (raw_res):
-   - Exact Match: 0.3897
-   - Edit Similarity: 0.6617
+   - Exact Match: 0.4407
+   - Edit Similarity: 0.7020
 
 2. Prompt Input (prompt_res):
-   - Exact Match: 0.4571
-   - Edit Similarity: 0.6968
+   - Exact Match: 0.4506
+   - Edit Similarity: 0.7086
