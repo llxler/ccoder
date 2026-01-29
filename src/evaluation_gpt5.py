@@ -19,7 +19,7 @@ MODEL_API_NAME = "google/gemini-3-pro-preview"
 MODEL_SHORT_NAME = "gemini" # Used for file naming
 
 # TODO: Change this
-FILE_PREFIX = "c"
+FILE_PREFIX = "java"
 RAGMETHOD = "graph"
 
 API_KEY = os.getenv("OPENAI_API_KEY")
@@ -269,7 +269,7 @@ def main():
     
     # Testing: only use the first item TODO
     # print("TEST MODE: Processing first 5 items.")
-    dataset = dataset[3250:] # Limit dataset to 5 items
+    # dataset = dataset[2475:] # Limit dataset to 5 items
     
     prompt_dict = {item.get("id", ""): item.get("prompt", "") for item in prompts}
     dataset_dict = {item.get("id", ""): item for item in dataset}

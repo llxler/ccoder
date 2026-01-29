@@ -1,0 +1,4250 @@
+[
+  {
+    "id": 1,
+    "raw_res": "",
+    "prompt_res": "ViewHolder holder)",
+    "gt": "ViewHolder holder) {"
+  },
+  {
+    "id": 2,
+    "raw_res": "",
+    "prompt_res": "ViewHolder",
+    "gt": "ViewHolder {"
+  },
+  {
+    "id": 3,
+    "raw_res": "",
+    "prompt_res": "ViewHolder viewHolder);",
+    "gt": "ViewHolder holder);"
+  },
+  {
+    "id": 4,
+    "raw_res": "",
+    "prompt_res": "ViewHolder createViewHolder(ViewGroup parent);",
+    "gt": "ViewHolder createViewHolder(ViewGroup parent);"
+  },
+  {
+    "id": 5,
+    "raw_res": "",
+    "prompt_res": "ViewGroup parent);",
+    "gt": "ViewGroup parent);"
+  },
+  {
+    "id": 6,
+    "raw_res": "",
+    "prompt_res": "Multimap<String, Runnable> mPermissionListeners = HashMultimap.create();",
+    "gt": "Multimap<String, Runnable> mPermissionToCallbacks = HashMultimap.create();"
+  },
+  {
+    "id": 7,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 8,
+    "raw_res": "",
+    "prompt_res": "ContentResolver mResolver;",
+    "gt": "ContentResolver mResolver;"
+  },
+  {
+    "id": 9,
+    "raw_res": "",
+    "prompt_res": "TelephonyManager mTelephonyManager;",
+    "gt": "TelephonyManager mTelephonyManager;"
+  },
+  {
+    "id": 10,
+    "raw_res": "",
+    "prompt_res": "CalendarAdapter mAdapter = new CalendarAdapter();",
+    "gt": "TextView mNoEventsTextView;"
+  },
+  {
+    "id": 11,
+    "raw_res": "",
+    "prompt_res": "Adapter mAdapter = new CalendarAdapter();",
+    "gt": "Adapter<ViewHolder> mAdapter = new EventRecyclerViewAdapter();"
+  },
+  {
+    "id": 12,
+    "raw_res": "",
+    "prompt_res": "Observer<ImmutableList<Event>> mEventsObserver = this::updateEvents;",
+    "gt": "Observer<ImmutableList<Event>> mEventsObserver = this::onEventsChanged;"
+  },
+  {
+    "id": 13,
+    "raw_res": "",
+    "prompt_res": "ImmutableList<Event>> mEventsObserver = this::updateCalendarItems;",
+    "gt": "ImmutableList<Event>> mEventsObserver = this::onEventsChanged;"
+  },
+  {
+    "id": 14,
+    "raw_res": "",
+    "prompt_res": "ViewHolder holder)",
+    "gt": "ViewHolder holder) {"
+  },
+  {
+    "id": 15,
+    "raw_res": "",
+    "prompt_res": "Context mContext;",
+    "gt": "Context mContext;"
+  },
+  {
+    "id": 16,
+    "raw_res": "",
+    "prompt_res": "Context mContext;",
+    "gt": "Context mContext;"
+  },
+  {
+    "id": 17,
+    "raw_res": "",
+    "prompt_res": "Context mContext;",
+    "gt": "Context mContext;"
+  },
+  {
+    "id": 18,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 19,
+    "raw_res": "",
+    "prompt_res": "Intent intent)",
+    "gt": "Intent intent) {"
+  },
+  {
+    "id": 20,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 21,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 22,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 23,
+    "raw_res": "",
+    "prompt_res": "ImageView mUnobscuredArea;",
+    "gt": "ImageView mUnobscuredArea;"
+  },
+  {
+    "id": 24,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 25,
+    "raw_res": "",
+    "prompt_res": "Intent intent)",
+    "gt": "Intent intent) {"
+  },
+  {
+    "id": 26,
+    "raw_res": "",
+    "prompt_res": "DeviceOS deviceOS;",
+    "gt": "DeviceOS os;"
+  },
+  {
+    "id": 27,
+    "raw_res": "",
+    "prompt_res": "Parcel in)",
+    "gt": "Parcel in) {"
+  },
+  {
+    "id": 28,
+    "raw_res": "",
+    "prompt_res": "Creator<AssociatedDevice> CREATOR =\n      new Parcelable.Creator<AssociatedDevice>()",
+    "gt": "Creator<AssociatedDevice> CREATOR =\n      new Parcelable.Creator<AssociatedDevice>() {"
+  },
+  {
+    "id": 29,
+    "raw_res": "",
+    "prompt_res": "Parcel in)",
+    "gt": "Parcel in) {"
+  },
+  {
+    "id": 30,
+    "raw_res": "",
+    "prompt_res": "Creator<ConnectedDevice> CREATOR =\n      new Parcelable.Creator<ConnectedDevice>()",
+    "gt": "Creator<ConnectedDevice> CREATOR =\n      new Parcelable.Creator<ConnectedDevice>() {"
+  },
+  {
+    "id": 31,
+    "raw_res": "",
+    "prompt_res": "Parcel in)",
+    "gt": "Parcel in) {"
+  },
+  {
+    "id": 32,
+    "raw_res": "",
+    "prompt_res": "Creator<DeviceMessage> CREATOR =\n      new Parcelable.Creator<DeviceMessage>()",
+    "gt": "Creator<DeviceMessage> CREATOR =\n      new Parcelable.Creator<DeviceMessage>() {"
+  },
+  {
+    "id": 33,
+    "raw_res": "",
+    "prompt_res": "Parcel in)",
+    "gt": "Parcel in) {"
+  },
+  {
+    "id": 34,
+    "raw_res": "",
+    "prompt_res": "Parcelable.Creator<OobData> CREATOR =\n      new Parcelable.Creator<OobData>()",
+    "gt": "Creator<OobData> CREATOR =\n      new Creator<OobData>() {"
+  },
+  {
+    "id": 35,
+    "raw_res": "",
+    "prompt_res": "Parcel in)",
+    "gt": "Parcel in) {"
+  },
+  {
+    "id": 36,
+    "raw_res": "",
+    "prompt_res": "Creator<StartAssociationResponse> CREATOR =\n      new Parcelable.Creator<StartAssociationResponse>()",
+    "gt": "Creator<StartAssociationResponse> CREATOR =\n      new Parcelable.Creator<StartAssociationResponse>() {"
+  },
+  {
+    "id": 37,
+    "raw_res": "",
+    "prompt_res": "IntDef(",
+    "gt": "IntDef({"
+  },
+  {
+    "id": 38,
+    "raw_res": "",
+    "prompt_res": "Role CLIENT_ROLE = Ukey2Handshake.Role.INITIATOR;",
+    "gt": "HandshakeCipher CIPHER =\n      Ukey2Handshake.HandshakeCipher.P256_SHA512;"
+  },
+  {
+    "id": 39,
+    "raw_res": "",
+    "prompt_res": "IntDef(",
+    "gt": "IntDef({"
+  },
+  {
+    "id": 40,
+    "raw_res": "",
+    "prompt_res": "D2DConnectionContext connectionContext;",
+    "gt": "D2DConnectionContext connectionContext;"
+  },
+  {
+    "id": 41,
+    "raw_res": "",
+    "prompt_res": "Activity",
+    "gt": "Activity {"
+  },
+  {
+    "id": 42,
+    "raw_res": "",
+    "prompt_res": "Override\n    protected void onCreate(Bundle savedInstanceState)",
+    "gt": "Override\n  protected void onCreate(Bundle savedInstanceState) {"
+  },
+  {
+    "id": 43,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 44,
+    "raw_res": "",
+    "prompt_res": "layout.activity_main);",
+    "gt": "layout.main);"
+  },
+  {
+    "id": 45,
+    "raw_res": "",
+    "prompt_res": "id.btn);",
+    "gt": "id.exit);"
+  },
+  {
+    "id": 46,
+    "raw_res": "",
+    "prompt_res": "Context context, Intent intent)",
+    "gt": "Context context, Intent intent) {"
+  },
+  {
+    "id": 47,
+    "raw_res": "",
+    "prompt_res": "Intent intent)",
+    "gt": "Intent intent) {"
+  },
+  {
+    "id": 48,
+    "raw_res": "",
+    "prompt_res": "final SparseArray<Float> mTemperature = new SparseArray<>();",
+    "gt": "SparseArray<Float> mTemperature = new SparseArray<Float>();"
+  },
+  {
+    "id": 49,
+    "raw_res": "",
+    "prompt_res": "SparseBooleanArray mTemperatureAvailable = new SparseBooleanArray();",
+    "gt": "SparseBooleanArray mTemperatureAvailable = new SparseBooleanArray();"
+  },
+  {
+    "id": 50,
+    "raw_res": "",
+    "prompt_res": "SparseIntArray mAirflow = new SparseIntArray();",
+    "gt": "SparseIntArray mAirflow = new SparseIntArray();"
+  },
+  {
+    "id": 51,
+    "raw_res": "",
+    "prompt_res": "SparseLongArray mLastTemperatureSet = new SparseLongArray();",
+    "gt": "SparseLongArray mLastTemperatureSet = new SparseLongArray();"
+  },
+  {
+    "id": 52,
+    "raw_res": "",
+    "prompt_res": "float val)",
+    "gt": "CarPropertyValue propValue) {"
+  },
+  {
+    "id": 53,
+    "raw_res": "",
+    "prompt_res": "Binder",
+    "gt": "Binder {"
+  },
+  {
+    "id": 54,
+    "raw_res": "",
+    "prompt_res": "final List<Callback> mCallbacks = new ArrayList<>();",
+    "gt": "Car mCarApiClient;"
+  },
+  {
+    "id": 55,
+    "raw_res": "",
+    "prompt_res": "CarHvacManager mHvacManager;",
+    "gt": "CarHvacManager mHvacManager;"
+  },
+  {
+    "id": 56,
+    "raw_res": "",
+    "prompt_res": "Intent intent, int flags, int startId)",
+    "gt": "Intent intent, int flags, int startId) {"
+  },
+  {
+    "id": 57,
+    "raw_res": "",
+    "prompt_res": "IBinder onBind(Intent intent)",
+    "gt": "IBinder onBind(Intent intent) {"
+  },
+  {
+    "id": 58,
+    "raw_res": "",
+    "prompt_res": "ServiceConnection mCarServiceConnection = new ServiceConnection()",
+    "gt": "ServiceConnection mCarServiceConnection =\n            new ServiceConnection() {"
+  },
+  {
+    "id": 59,
+    "raw_res": "",
+    "prompt_res": "Handler h)",
+    "gt": "Handler h) {"
+  },
+  {
+    "id": 60,
+    "raw_res": "",
+    "prompt_res": "CarPropertyConfig> carPropertyConfigs)",
+    "gt": "CarPropertyConfig> properties) {"
+  },
+  {
+    "id": 61,
+    "raw_res": "",
+    "prompt_res": "TemperatureBarOverlay> mTemperatureBarOverlays = new ArrayList<>();",
+    "gt": "View> mAddedViews = new ArrayList<>();"
+  },
+  {
+    "id": 62,
+    "raw_res": "",
+    "prompt_res": "WindowManager mWindowManager;",
+    "gt": "WindowManager mWindowManager;"
+  },
+  {
+    "id": 63,
+    "raw_res": "",
+    "prompt_res": "HvacPanelController mHvacPanelController;",
+    "gt": "DisplayMetrics mDisplayMetrics;"
+  },
+  {
+    "id": 64,
+    "raw_res": "",
+    "prompt_res": "IBinder onBind(Intent intent)",
+    "gt": "IBinder onBind(Intent intent) {"
+  },
+  {
+    "id": 65,
+    "raw_res": "",
+    "prompt_res": "Intent intent)",
+    "gt": "Intent intent) {"
+  },
+  {
+    "id": 66,
+    "raw_res": "",
+    "prompt_res": "void createTemperatureBars(LayoutInflater inflater)",
+    "gt": "BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {"
+  },
+  {
+    "id": 67,
+    "raw_res": "",
+    "prompt_res": "ServiceConnection mServiceConnection = new ServiceConnection()",
+    "gt": "ServiceConnection mServiceConnection = new ServiceConnection() {"
+  },
+  {
+    "id": 68,
+    "raw_res": "",
+    "prompt_res": "LayoutInflater inflater)",
+    "gt": "LayoutInflater inflater) {"
+  },
+  {
+    "id": 69,
+    "raw_res": "",
+    "prompt_res": "LayoutParams createTemperatureBarLayoutParams(\n            String title, int height, int gravity)",
+    "gt": "LayoutParams createTemperatureBarLayoutParams(String windowTitle,\n            int windowHeight, int gravity) {"
+  },
+  {
+    "id": 70,
+    "raw_res": "",
+    "prompt_res": "LayoutParams params)",
+    "gt": "LayoutParams params) {"
+  },
+  {
+    "id": 71,
+    "raw_res": "",
+    "prompt_res": "final Handler mHandler = new Handler();",
+    "gt": "Handler handler = new Handler();"
+  },
+  {
+    "id": 72,
+    "raw_res": "",
+    "prompt_res": "View mContainer;",
+    "gt": "View mPanel;"
+  },
+  {
+    "id": 73,
+    "raw_res": "",
+    "prompt_res": "ToggleButton mAutoButton;",
+    "gt": "Drawable mAutoOnDrawable;"
+  },
+  {
+    "id": 74,
+    "raw_res": "",
+    "prompt_res": "ToggleButton mAutoButton;",
+    "gt": "ImageView mAutoButton;"
+  },
+  {
+    "id": 75,
+    "raw_res": "",
+    "prompt_res": "HvacController mHvacController;",
+    "gt": "WindowManager mWindowManager;"
+  },
+  {
+    "id": 76,
+    "raw_res": "",
+    "prompt_res": "Context context, View container, WindowManager windowManager,\n            HvacController hvacController, boolean showCollapsed)",
+    "gt": "Context context, View container,\n            WindowManager windowManager,\n            TemperatureBarOverlay driverTemperatureExpanded,\n            TemperatureBarOverlay passengerTemperatureExpanded,\n            TemperatureBarOverlay driverTemperatureBarCollapsed,\n            TemperatureBarOverlay passengerTemperatureBarCollapsed) {"
+  },
+  {
+    "id": 77,
+    "raw_res": "",
+    "prompt_res": "Callback mToggleButtonCallbacks = new HvacController.Callback()",
+    "gt": "Callback mToggleButtonCallbacks\n            = new HvacController.Callback() {"
+  },
+  {
+    "id": 78,
+    "raw_res": "",
+    "prompt_res": "Animator> animators, List<Animator.AnimatorListener> listeners, AnimatorSet set)",
+    "gt": "Animator> animatorList,\n            List<Animator.AnimatorListener> listenerList, AnimatorSet set) {"
+  },
+  {
+    "id": 79,
+    "raw_res": "",
+    "prompt_res": "AnimatorListener> listenerList, AnimatorSet set)",
+    "gt": "AnimatorListener> listenerList, AnimatorSet set) {"
+  },
+  {
+    "id": 80,
+    "raw_res": "",
+    "prompt_res": "AnimatorListener mAnimatorListener = new AnimatorListenerAdapter()",
+    "gt": "AnimatorListener mAnimatorListener = new AnimatorSet.AnimatorListener() {"
+  },
+  {
+    "id": 81,
+    "raw_res": "",
+    "prompt_res": "OnClickListener mAutoButtonClickListener = new View.OnClickListener()",
+    "gt": "OnClickListener mAutoButtonClickListener = new View.OnClickListener() {"
+  },
+  {
+    "id": 82,
+    "raw_res": "",
+    "prompt_res": "OnClickListener mAcButtonClickListener = new View.OnClickListener()",
+    "gt": "OnClickListener mCollapseHvac = new View.OnClickListener() {"
+  },
+  {
+    "id": 83,
+    "raw_res": "",
+    "prompt_res": "Context context, Intent intent)",
+    "gt": "Context context, Intent intent) {"
+  },
+  {
+    "id": 84,
+    "raw_res": "",
+    "prompt_res": "Intent intent)",
+    "gt": "Intent intent) {"
+  },
+  {
+    "id": 85,
+    "raw_res": "",
+    "prompt_res": "final SparseArray<Float> mTemperature = new SparseArray<Float>();",
+    "gt": "SparseArray<Float> mTemperature = new SparseArray<Float>();"
+  },
+  {
+    "id": 86,
+    "raw_res": "",
+    "prompt_res": "SparseBooleanArray mTemperatureAvailable = new SparseBooleanArray();",
+    "gt": "SparseBooleanArray mTemperatureAvailable = new SparseBooleanArray();"
+  },
+  {
+    "id": 87,
+    "raw_res": "",
+    "prompt_res": "SparseIntArray mAirflow = new SparseIntArray();",
+    "gt": "SparseIntArray mAirflow = new SparseIntArray();"
+  },
+  {
+    "id": 88,
+    "raw_res": "",
+    "prompt_res": "SparseLongArray mTemperatureUpdateTime = new SparseLongArray();",
+    "gt": "SparseLongArray mLastTemperatureSet = new SparseLongArray();"
+  },
+  {
+    "id": 89,
+    "raw_res": "",
+    "prompt_res": "float temp)",
+    "gt": "CarPropertyValue propValue) {"
+  },
+  {
+    "id": 90,
+    "raw_res": "",
+    "prompt_res": "Binder",
+    "gt": "Binder {"
+  },
+  {
+    "id": 91,
+    "raw_res": "",
+    "prompt_res": "final List<Callback> mCallbacks = new ArrayList<>();",
+    "gt": "Car mCarApiClient;"
+  },
+  {
+    "id": 92,
+    "raw_res": "",
+    "prompt_res": "CarHvacManager mHvacManager;",
+    "gt": "CarHvacManager mHvacManager;"
+  },
+  {
+    "id": 93,
+    "raw_res": "",
+    "prompt_res": "Intent intent, int flags, int startId)",
+    "gt": "Intent intent, int flags, int startId) {"
+  },
+  {
+    "id": 94,
+    "raw_res": "",
+    "prompt_res": "IBinder onBind(Intent intent)",
+    "gt": "IBinder onBind(Intent intent) {"
+  },
+  {
+    "id": 95,
+    "raw_res": "",
+    "prompt_res": "ServiceConnection mCarServiceConnection = new ServiceConnection()",
+    "gt": "ServiceConnection mCarServiceConnection =\n            new ServiceConnection() {"
+  },
+  {
+    "id": 96,
+    "raw_res": "",
+    "prompt_res": "Handler h)",
+    "gt": "Handler h) {"
+  },
+  {
+    "id": 97,
+    "raw_res": "",
+    "prompt_res": "CarPropertyConfig> properties)",
+    "gt": "CarPropertyConfig> properties) {"
+  },
+  {
+    "id": 98,
+    "raw_res": "",
+    "prompt_res": "View> mAddedViews = new ArrayList<>();",
+    "gt": "View> mAddedViews = new ArrayList<>();"
+  },
+  {
+    "id": 99,
+    "raw_res": "",
+    "prompt_res": "WindowManager mWindowManager;",
+    "gt": "WindowManager mWindowManager;"
+  },
+  {
+    "id": 100,
+    "raw_res": "",
+    "prompt_res": "HvacPanelController mHvacPanelController;",
+    "gt": "DisplayMetrics mDisplayMetrics;"
+  },
+  {
+    "id": 101,
+    "raw_res": "",
+    "prompt_res": "void onCreate()",
+    "gt": "IBinder onBind(Intent intent) {"
+  },
+  {
+    "id": 102,
+    "raw_res": "",
+    "prompt_res": "Intent intent)",
+    "gt": "Intent intent) {"
+  },
+  {
+    "id": 103,
+    "raw_res": "",
+    "prompt_res": "void disableAnimations(WindowManager.LayoutParams params)",
+    "gt": "BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {"
+  },
+  {
+    "id": 104,
+    "raw_res": "",
+    "prompt_res": "ServiceConnection mServiceConnection = new ServiceConnection()",
+    "gt": "ServiceConnection mServiceConnection = new ServiceConnection() {"
+  },
+  {
+    "id": 105,
+    "raw_res": "",
+    "prompt_res": "inflater)",
+    "gt": "LayoutInflater inflater) {"
+  },
+  {
+    "id": 106,
+    "raw_res": "",
+    "prompt_res": "LayoutParams createTemperatureBarLayoutParams(String title, int windowHeight, int gravity)",
+    "gt": "LayoutParams createTemperatureBarLayoutParams(String windowTitle,\n            int windowHeight, int gravity) {"
+  },
+  {
+    "id": 107,
+    "raw_res": "",
+    "prompt_res": "LayoutParams params)",
+    "gt": "LayoutParams params) {"
+  },
+  {
+    "id": 108,
+    "raw_res": "",
+    "prompt_res": "final Handler mHandler = new Handler();",
+    "gt": "Handler handler = new Handler();"
+  },
+  {
+    "id": 109,
+    "raw_res": "",
+    "prompt_res": "View mContainer;",
+    "gt": "View mPanel;"
+  },
+  {
+    "id": 110,
+    "raw_res": "",
+    "prompt_res": "ToggleButton mAutoButton;",
+    "gt": "Drawable mAutoOnDrawable;"
+  },
+  {
+    "id": 111,
+    "raw_res": "",
+    "prompt_res": "ToggleButton mAutoButton;",
+    "gt": "ImageView mAutoButton;"
+  },
+  {
+    "id": 112,
+    "raw_res": "",
+    "prompt_res": "HvacController mHvacController;",
+    "gt": "WindowManager mWindowManager;"
+  },
+  {
+    "id": 113,
+    "raw_res": "",
+    "prompt_res": "Context context, View container, WindowManager windowManager,\n            HvacController hvacController, boolean showCollapsed)",
+    "gt": "Context context, View container,\n            WindowManager windowManager,\n            TemperatureBarOverlay driverTemperatureExpanded,\n            TemperatureBarOverlay passengerTemperatureExpanded,\n            TemperatureBarOverlay driverTemperatureBarCollapsed,\n            TemperatureBarOverlay passengerTemperatureBarCollapsed) {"
+  },
+  {
+    "id": 114,
+    "raw_res": "",
+    "prompt_res": "Callback mToggleButtonCallbacks = new HvacController.Callback()",
+    "gt": "Callback mToggleButtonCallbacks\n            = new HvacController.Callback() {"
+  },
+  {
+    "id": 115,
+    "raw_res": "",
+    "prompt_res": "Animator> animators, List<Animator.AnimatorListener> listeners, AnimatorSet set)",
+    "gt": "Animator> animatorList,\n            List<Animator.AnimatorListener> listenerList, AnimatorSet set) {"
+  },
+  {
+    "id": 116,
+    "raw_res": "",
+    "prompt_res": "AnimatorListener> listenerList, AnimatorSet set)",
+    "gt": "AnimatorListener> listenerList, AnimatorSet set) {"
+  },
+  {
+    "id": 117,
+    "raw_res": "",
+    "prompt_res": "AnimatorListener mAnimatorListener = new AnimatorListenerAdapter()",
+    "gt": "AnimatorListener mAnimatorListener = new AnimatorSet.AnimatorListener() {"
+  },
+  {
+    "id": 118,
+    "raw_res": "",
+    "prompt_res": "OnClickListener mAutoButtonClickListener = new View.OnClickListener()",
+    "gt": "OnClickListener mAutoButtonClickListener = new View.OnClickListener() {"
+  },
+  {
+    "id": 119,
+    "raw_res": "",
+    "prompt_res": "OnClickListener mAcButtonClickListener = new View.OnClickListener()",
+    "gt": "OnClickListener mCollapseHvac = new View.OnClickListener() {"
+  },
+  {
+    "id": 120,
+    "raw_res": "",
+    "prompt_res": "Adapter<LensPickerAdapter.ViewHolder>",
+    "gt": "Adapter<LensPickerRow>\n        implements PagedListView.ItemCap{"
+  },
+  {
+    "id": 121,
+    "raw_res": "",
+    "prompt_res": "ItemCap",
+    "gt": "ItemCap{"
+  },
+  {
+    "id": 122,
+    "raw_res": "",
+    "prompt_res": "Context mContext;",
+    "gt": "Context mContext;"
+  },
+  {
+    "id": 123,
+    "raw_res": "",
+    "prompt_res": "int mMaxItems = -1;",
+    "gt": "PackageManager mPackageManager;"
+  },
+  {
+    "id": 124,
+    "raw_res": "",
+    "prompt_res": "String mLaunchPackage;",
+    "gt": "SharedPreferences mSharedPrefs;"
+  },
+  {
+    "id": 125,
+    "raw_res": "",
+    "prompt_res": "ResolveInfo> mResolveInfos;",
+    "gt": "ResolveInfo> mResolveInfos;"
+  },
+  {
+    "id": 126,
+    "raw_res": "",
+    "prompt_res": "ViewGroup parent, int viewType)",
+    "gt": "ViewGroup parent, int viewType) {"
+  },
+  {
+    "id": 127,
+    "raw_res": "",
+    "prompt_res": "AsyncTask<Void, Void, List<LensPickerItem>>",
+    "gt": "AsyncTask<Void, Void, Void> {"
+  },
+  {
+    "id": 128,
+    "raw_res": "",
+    "prompt_res": "String getComponentLabel(ApplicationInfo info)",
+    "gt": "Drawable getComponentIcon(ApplicationInfo aInfo) {"
+  },
+  {
+    "id": 129,
+    "raw_res": "",
+    "prompt_res": "ApplicationInfo info)",
+    "gt": "ApplicationInfo aInfo) {"
+  },
+  {
+    "id": 130,
+    "raw_res": "",
+    "prompt_res": "String mId;",
+    "gt": "Drawable mIcon;"
+  },
+  {
+    "id": 131,
+    "raw_res": "",
+    "prompt_res": "Intent mLaunchIntent;",
+    "gt": "Intent mLaunchIntent;"
+  },
+  {
+    "id": 132,
+    "raw_res": "",
+    "prompt_res": "TextView mTextView;",
+    "gt": "View mCardView;"
+  },
+  {
+    "id": 133,
+    "raw_res": "",
+    "prompt_res": "TextView mLabel;",
+    "gt": "ImageView mIconView;"
+  },
+  {
+    "id": 134,
+    "raw_res": "",
+    "prompt_res": "TextView mLabelView;",
+    "gt": "TextView mTitleView;"
+  },
+  {
+    "id": 135,
+    "raw_res": "",
+    "prompt_res": "LensResolverAdapter mAdapter;",
+    "gt": "CheckBox mAlwaysCheckbox;"
+  },
+  {
+    "id": 136,
+    "raw_res": "",
+    "prompt_res": "Intent mIntent;",
+    "gt": "Intent mResolveIntent;"
+  },
+  {
+    "id": 137,
+    "raw_res": "",
+    "prompt_res": "Set<ComponentName> mResolvableComponents;",
+    "gt": "ComponentName[] mComponentSet;"
+  },
+  {
+    "id": 138,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 139,
+    "raw_res": "",
+    "prompt_res": "ResolveInfo> infos)",
+    "gt": "ResolveInfo> infos) {"
+  },
+  {
+    "id": 140,
+    "raw_res": "",
+    "prompt_res": "IntentFilter buildIntentFilterForResolveInfo(ResolveInfo info)",
+    "gt": "IntentFilter buildIntentFilterForResolveInfo(ResolveInfo info) {"
+  },
+  {
+    "id": 141,
+    "raw_res": "",
+    "prompt_res": "Context mContext;",
+    "gt": "View mCardView;"
+  },
+  {
+    "id": 142,
+    "raw_res": "",
+    "prompt_res": "ImageView mIcon;",
+    "gt": "ImageView mIconView;"
+  },
+  {
+    "id": 143,
+    "raw_res": "",
+    "prompt_res": "TextView mTextView;",
+    "gt": "TextView mTitleView;"
+  },
+  {
+    "id": 144,
+    "raw_res": "",
+    "prompt_res": "ResolveInfo resolveInfo);",
+    "gt": "ResolveInfo info, LensPickerItem item);"
+  },
+  {
+    "id": 145,
+    "raw_res": "",
+    "prompt_res": "Context context, LensPickerItem item, ResolverSelectionHandler handler)",
+    "gt": "Context context, ResolveInfo info, LensPickerItem item,\n            ResolverSelectionHandler selectionHandler) {"
+  },
+  {
+    "id": 146,
+    "raw_res": "",
+    "prompt_res": "static final int QR_CODE_SIZE = 512;",
+    "gt": "TextView mUrlText;"
+  },
+  {
+    "id": 147,
+    "raw_res": "",
+    "prompt_res": "ImageView mQrCode;",
+    "gt": "ImageView mUrlImage;"
+  },
+  {
+    "id": 148,
+    "raw_res": "",
+    "prompt_res": "Override\n    protected void onCreate(Bundle savedInstanceState)",
+    "gt": "Override\n    protected void onCreate(Bundle savedInstanceState) {"
+  },
+  {
+    "id": 149,
+    "raw_res": "",
+    "prompt_res": "",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 150,
+    "raw_res": "",
+    "prompt_res": "setContentView(R.layout.link_viewer_activity);",
+    "gt": "ToolbarController toolbar = requireToolbar(this);"
+  },
+  {
+    "id": 151,
+    "raw_res": "",
+    "prompt_res": "requireToolbar(this);",
+    "gt": "requireToolbar(this);"
+  },
+  {
+    "id": 152,
+    "raw_res": "",
+    "prompt_res": "string.app_name);",
+    "gt": "string.app_name);"
+  },
+  {
+    "id": 153,
+    "raw_res": "",
+    "prompt_res": "getIntent());",
+    "gt": "getIntent());"
+  },
+  {
+    "id": 154,
+    "raw_res": "",
+    "prompt_res": "Log.e(TAG, \"No URL found in intent\");",
+    "gt": "finish();"
+  },
+  {
+    "id": 155,
+    "raw_res": "",
+    "prompt_res": "layout.link_viewer_activity);",
+    "gt": "layout.link_viewer_activity);"
+  },
+  {
+    "id": 156,
+    "raw_res": "",
+    "prompt_res": "id.url_text);",
+    "gt": "id.url_text);"
+  },
+  {
+    "id": 157,
+    "raw_res": "",
+    "prompt_res": "Intent intent)",
+    "gt": "Intent intent) {"
+  },
+  {
+    "id": 158,
+    "raw_res": "",
+    "prompt_res": "Encoder.encode(url, ErrorCorrectionLevel.L);",
+    "gt": "Encoder.encode(url, ErrorCorrectionLevel.H);"
+  },
+  {
+    "id": 159,
+    "raw_res": "",
+    "prompt_res": "ErrorCorrectionLevel.M);",
+    "gt": "ErrorCorrectionLevel.H);"
+  },
+  {
+    "id": 160,
+    "raw_res": "",
+    "prompt_res": "WriterException e)",
+    "gt": "WriterException e) {"
+  },
+  {
+    "id": 161,
+    "raw_res": "",
+    "prompt_res": "Log.e(TAG, \"Error generating QR code\", e);",
+    "gt": "Log.e(TAG, \"Error encoding URL: \" + url, e);"
+  },
+  {
+    "id": 162,
+    "raw_res": "",
+    "prompt_res": "ByteMatrix matrix = qrCode.getMatrix();",
+    "gt": "BitmapDrawable drawable = new BitmapDrawable(getResources(), qrToBitmap(qrCode));"
+  },
+  {
+    "id": 163,
+    "raw_res": "",
+    "prompt_res": "getResources(), bmp);",
+    "gt": "getResources(), qrToBitmap(qrCode));"
+  },
+  {
+    "id": 164,
+    "raw_res": "",
+    "prompt_res": "static Bitmap qrToBitmap(QRCode qrCode)",
+    "gt": "Bitmap qrToBitmap(QRCode qrCode) {"
+  },
+  {
+    "id": 165,
+    "raw_res": "",
+    "prompt_res": "ByteMatrix matrix = qrCode.getMatrix();",
+    "gt": "ByteMatrix matrix = qrCode.getMatrix();"
+  },
+  {
+    "id": 166,
+    "raw_res": "",
+    "prompt_res": "Color.BLACK : Color.WHITE;",
+    "gt": "Color.WHITE\n                    : Color.TRANSPARENT;"
+  },
+  {
+    "id": 167,
+    "raw_res": "",
+    "prompt_res": "Uri ARTWORK_URI = Uri.parse(\"content://media/external/audio/albumart\");",
+    "gt": "Uri[] ALL_AUDIO_URI = new Uri[] {"
+  },
+  {
+    "id": 168,
+    "raw_res": "",
+    "prompt_res": "Context mContext;",
+    "gt": "Context mContext;"
+  },
+  {
+    "id": 169,
+    "raw_res": "",
+    "prompt_res": "ContentResolver mContentResolver;",
+    "gt": "ContentResolver mResolver;"
+  },
+  {
+    "id": 170,
+    "raw_res": "",
+    "prompt_res": "ColumnCollection mColumns = new ColumnCollection();",
+    "gt": "AsyncTask mPendingTask;"
+  },
+  {
+    "id": 171,
+    "raw_res": "",
+    "prompt_res": "DataModelListener> mListeners = new ArrayList<>();",
+    "gt": "QueueItem> mQueue = new ArrayList<>();"
+  },
+  {
+    "id": 172,
+    "raw_res": "",
+    "prompt_res": "Result<List<MediaItem>> result)",
+    "gt": "Result<List<MediaItem>> result) {"
+  },
+  {
+    "id": 173,
+    "raw_res": "",
+    "prompt_res": "MediaItem>> result)",
+    "gt": "MediaItem>> result) {"
+  },
+  {
+    "id": 174,
+    "raw_res": "",
+    "prompt_res": "InputStream openFile(String path) throws FileNotFoundException",
+    "gt": "MediaMetadata getMetadata(String key) {"
+  },
+  {
+    "id": 175,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 176,
+    "raw_res": "",
+    "prompt_res": "NotificationManager mNotificationManager;",
+    "gt": "MediaSession mSession;"
+  },
+  {
+    "id": 177,
+    "raw_res": "",
+    "prompt_res": "NotificationManager mNotificationManager;",
+    "gt": "AudioManager mAudioManager;"
+  },
+  {
+    "id": 178,
+    "raw_res": "",
+    "prompt_res": "NotificationManager mNotificationManager;",
+    "gt": "PlaybackState mErrorState;"
+  },
+  {
+    "id": 179,
+    "raw_res": "",
+    "prompt_res": "NotificationManager mNotificationManager;",
+    "gt": "CustomAction mShuffle;"
+  },
+  {
+    "id": 180,
+    "raw_res": "",
+    "prompt_res": "Song> mPlaylist = new ArrayList<>();",
+    "gt": "QueueItem> mQueue;"
+  },
+  {
+    "id": 181,
+    "raw_res": "",
+    "prompt_res": "MediaPlayer mMediaPlayer;",
+    "gt": "SharedPreferences mSharedPrefs;"
+  },
+  {
+    "id": 182,
+    "raw_res": "",
+    "prompt_res": "MediaPlayer mMediaPlayer;",
+    "gt": "NotificationManager mNotificationManager;"
+  },
+  {
+    "id": 183,
+    "raw_res": "",
+    "prompt_res": "Builder mNotificationBuilder;",
+    "gt": "Builder mPlayingNotificationBuilder;"
+  },
+  {
+    "id": 184,
+    "raw_res": "",
+    "prompt_res": "Action makeNotificationAction(String action, int icon, int text)",
+    "gt": "Action makeNotificationAction(String action, int iconId, int stringId) {"
+  },
+  {
+    "id": 185,
+    "raw_res": "",
+    "prompt_res": "Builder builder)",
+    "gt": "Builder builder) {"
+  },
+  {
+    "id": 186,
+    "raw_res": "",
+    "prompt_res": "Bundle extras)",
+    "gt": "Bundle extras) {"
+  },
+  {
+    "id": 187,
+    "raw_res": "",
+    "prompt_res": "void createNotificationChannel()",
+    "gt": "OnAudioFocusChangeListener mAudioFocusListener = new OnAudioFocusChangeListener() {"
+  },
+  {
+    "id": 188,
+    "raw_res": "",
+    "prompt_res": "OnCompletionListener mOnCompletionListener = new OnCompletionListener()",
+    "gt": "OnCompletionListener mOnCompletionListener = new OnCompletionListener() {"
+  },
+  {
+    "id": 189,
+    "raw_res": "",
+    "prompt_res": "Uri getUriForResource(Context context, int id)",
+    "gt": "Uri getUriForResource(Context context, int id) {"
+  },
+  {
+    "id": 190,
+    "raw_res": "",
+    "prompt_res": "SharedPreferences getSharedPreferences();",
+    "gt": "SharedPreferences getSharedPreferences();"
+  },
+  {
+    "id": 191,
+    "raw_res": "",
+    "prompt_res": "LiveData<Collection<UserAccount>> getAccounts();",
+    "gt": "LiveData<Collection<UserAccount>> getAccounts();"
+  },
+  {
+    "id": 192,
+    "raw_res": "",
+    "prompt_res": "Conversation>> getConversations(@NonNull UserAccount userAccount);",
+    "gt": "Conversation>> getConversations(@NonNull UserAccount userAccount);"
+  },
+  {
+    "id": 193,
+    "raw_res": "",
+    "prompt_res": "Parcel in)",
+    "gt": "Parcel in) {"
+  },
+  {
+    "id": 194,
+    "raw_res": "",
+    "prompt_res": "Creator<UserAccount> CREATOR =\n            new Creator<UserAccount>()",
+    "gt": "Creator<UserAccount> CREATOR =\n            new Creator<UserAccount>() {"
+  },
+  {
+    "id": 195,
+    "raw_res": "",
+    "prompt_res": "Service",
+    "gt": "Service {"
+  },
+  {
+    "id": 196,
+    "raw_res": "",
+    "prompt_res": "IBinder mBinder = new LocalBinder();",
+    "gt": "IBinder mBinder = new LocalBinder();"
+  },
+  {
+    "id": 197,
+    "raw_res": "",
+    "prompt_res": "Intent intent)",
+    "gt": "Intent intent) {"
+  },
+  {
+    "id": 198,
+    "raw_res": "",
+    "prompt_res": "Car mCar;",
+    "gt": "CarProjectionManager mCarProjectionManager = null;"
+  },
+  {
+    "id": 199,
+    "raw_res": "",
+    "prompt_res": "CarUxRestrictionsManager mCarUxRestrictionsManager = null;",
+    "gt": "CarUxRestrictionsManager mCarUxRestrictionsManager = null;"
+  },
+  {
+    "id": 200,
+    "raw_res": "",
+    "prompt_res": "MutableLiveData<List<ProjectionStatus>> mProjectionStatusLiveData = new MutableLiveData<>(Collections.emptyList());",
+    "gt": "MutableLiveData<CarUxRestrictions> mUxRestrictions = new MutableLiveData<>();"
+  },
+  {
+    "id": 201,
+    "raw_res": "",
+    "prompt_res": "List<ProjectionStatus>> mProjectionStatus = new MutableLiveData<>(Collections.emptyList());",
+    "gt": "CarUxRestrictions> mUxRestrictions = new MutableLiveData<>();"
+  },
+  {
+    "id": 202,
+    "raw_res": "",
+    "prompt_res": "OnUxRestrictionsChangedListener mUxRestrictionChangeListener = mUxRestrictions::postValue;",
+    "gt": "OnUxRestrictionsChangedListener\n            mCarUxRestrictionListener = mUxRestrictions::postValue;"
+  },
+  {
+    "id": 203,
+    "raw_res": "",
+    "prompt_res": "ProjectionStatus> mProjectionDetails = Collections.emptyList();",
+    "gt": "ProjectionStatus> mProjectionDetails = new ArrayList<>();"
+  },
+  {
+    "id": 204,
+    "raw_res": "",
+    "prompt_res": "LiveData<CarUxRestrictions> getUxRestrictions()",
+    "gt": "LiveData<CarUxRestrictions> getUxrRestrictions() {"
+  },
+  {
+    "id": 205,
+    "raw_res": "",
+    "prompt_res": "SharedPreferences mSharedPreferences;",
+    "gt": "SharedPreferences mSharedPreferences;"
+  },
+  {
+    "id": 206,
+    "raw_res": "",
+    "prompt_res": "ServiceConnection mServiceConnection = new ServiceConnection()",
+    "gt": "ServiceConnection mServiceConnection =\n            new ServiceConnection() {"
+  },
+  {
+    "id": 207,
+    "raw_res": "",
+    "prompt_res": "String[] PROJECTION =",
+    "gt": "Uri URI = CONTENT_CONVERSATIONS_URI;"
+  },
+  {
+    "id": 208,
+    "raw_res": "",
+    "prompt_res": "ContentObserver mContentObserver = new ContentObserver(null)",
+    "gt": "Context mContext;"
+  },
+  {
+    "id": 209,
+    "raw_res": "",
+    "prompt_res": "ContentObserver mChangeObserver =\n            new ContentObserver(null)",
+    "gt": "ContentObserver mObserver =\n            new ContentObserver(null) {"
+  },
+  {
+    "id": 210,
+    "raw_res": "",
+    "prompt_res": "Cursor getCursor(int accountId)",
+    "gt": "Cursor getCursor(int accountId) {"
+  },
+  {
+    "id": 211,
+    "raw_res": "",
+    "prompt_res": "LiveData<String> getRemovedConversationLiveData()",
+    "gt": "LiveData<String> getRemovedConversationLiveData() {"
+  },
+  {
+    "id": 212,
+    "raw_res": "",
+    "prompt_res": "Observer<UserAccountLiveData.UserAccountChangeList> onUserAccountRemovedObserver()",
+    "gt": "Observer<UserAccountLiveData.UserAccountChangeList> onUserAccountRemovedObserver() {"
+  },
+  {
+    "id": 213,
+    "raw_res": "",
+    "prompt_res": "Context mContext;",
+    "gt": "SubscriptionManager mSubscriptionManager;"
+  },
+  {
+    "id": 214,
+    "raw_res": "",
+    "prompt_res": "OnSubscriptionsChangedListener mOnSubscriptionsChangedListener =\n            new OnSubscriptionsChangedListener()",
+    "gt": "OnSubscriptionsChangedListener mOnChangeListener =\n            new OnSubscriptionsChangedListener() {"
+  },
+  {
+    "id": 215,
+    "raw_res": "",
+    "prompt_res": "SubscriptionInfo> getNullSafeSubscriptionInfoList()",
+    "gt": "SubscriptionInfo> getNullSafeSubscriptionInfoList() {"
+  },
+  {
+    "id": 216,
+    "raw_res": "",
+    "prompt_res": "Notification getNotification()",
+    "gt": "Notification getNotification() {"
+  },
+  {
+    "id": 217,
+    "raw_res": "",
+    "prompt_res": "LinearLayout",
+    "gt": "LinearLayout implements\n        PreprocessingManager.CallStateListener {"
+  },
+  {
+    "id": 218,
+    "raw_res": "",
+    "prompt_res": "CallStateListener",
+    "gt": "CallStateListener {"
+  },
+  {
+    "id": 219,
+    "raw_res": "",
+    "prompt_res": "ViewHolder",
+    "gt": "ViewHolder {"
+  },
+  {
+    "id": 220,
+    "raw_res": "",
+    "prompt_res": "CardView mCardView;",
+    "gt": "CardView mCardView;"
+  },
+  {
+    "id": 221,
+    "raw_res": "",
+    "prompt_res": "View mHeaderView;",
+    "gt": "View mInnerView;"
+  },
+  {
+    "id": 222,
+    "raw_res": "",
+    "prompt_res": "RelativeLayout",
+    "gt": "RelativeLayout {"
+  },
+  {
+    "id": 223,
+    "raw_res": "",
+    "prompt_res": "LinearLayout",
+    "gt": "LinearLayout {"
+  },
+  {
+    "id": 224,
+    "raw_res": "",
+    "prompt_res": "CarDrivingStateMonitor mCarDrivingStateMonitor;",
+    "gt": "CarDrivingStateMonitor mCarDrivingStateMonitor;"
+  },
+  {
+    "id": 225,
+    "raw_res": "",
+    "prompt_res": "final BroadcastReceiver mFinishReceiver = new BroadcastReceiver()",
+    "gt": "TextView mErrorsTextView;"
+  },
+  {
+    "id": 226,
+    "raw_res": "",
+    "prompt_res": "Spinner mDpcSpinner;",
+    "gt": "Button mFinishSetupButton;"
+  },
+  {
+    "id": 227,
+    "raw_res": "",
+    "prompt_res": "Button mProvisionManagedDeviceButton;",
+    "gt": "Spinner mDpcAppsSpinner;"
+  },
+  {
+    "id": 228,
+    "raw_res": "",
+    "prompt_res": "BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver()",
+    "gt": "BroadcastReceiver mDrivingStateExitReceiver = new BroadcastReceiver() {"
+  },
+  {
+    "id": 229,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle icicle) {"
+  },
+  {
+    "id": 230,
+    "raw_res": "",
+    "prompt_res": "DevicePolicyManager dpm)",
+    "gt": "DevicePolicyManager dpm) {"
+  },
+  {
+    "id": 231,
+    "raw_res": "",
+    "prompt_res": "Context context)",
+    "gt": "Context context) {"
+  },
+  {
+    "id": 232,
+    "raw_res": "",
+    "prompt_res": "Intent data)",
+    "gt": "Intent data) {"
+  },
+  {
+    "id": 233,
+    "raw_res": "",
+    "prompt_res": "IBinder.FIRST_CALL_TRANSACTION;",
+    "gt": "IBinder.FIRST_CALL_TRANSACTION;"
+  },
+  {
+    "id": 234,
+    "raw_res": "",
+    "prompt_res": "Looper.getMainLooper());",
+    "gt": "Looper.getMainLooper());"
+  },
+  {
+    "id": 235,
+    "raw_res": "",
+    "prompt_res": "Binder mBinder = new Binder()",
+    "gt": "IBinder mIUserNoticeUiBinder = new Binder() {"
+  },
+  {
+    "id": 236,
+    "raw_res": "",
+    "prompt_res": "Binder()",
+    "gt": "Binder() {"
+  },
+  {
+    "id": 237,
+    "raw_res": "",
+    "prompt_res": "Override\n        protected boolean onTransact(int code, Parcel data, Parcel reply, int flags)\n                throws RemoteException",
+    "gt": "Override\n        protected boolean onTransact(int code, Parcel data, Parcel reply, int flags)\n                throws RemoteException {"
+  },
+  {
+    "id": 238,
+    "raw_res": "",
+    "prompt_res": "Parcel data, Parcel reply, int flags) throws RemoteException",
+    "gt": "Parcel data, Parcel reply, int flags)\n                throws RemoteException {"
+  },
+  {
+    "id": 239,
+    "raw_res": "",
+    "prompt_res": "RemoteException",
+    "gt": "RemoteException {"
+  },
+  {
+    "id": 240,
+    "raw_res": "",
+    "prompt_res": "super.onTransact(code, data, reply, flags);",
+    "gt": "super.onTransact(code, data, reply, flags);"
+  },
+  {
+    "id": 241,
+    "raw_res": "",
+    "prompt_res": "Override\n    public IBinder onBind(Intent intent)",
+    "gt": "GuardedBy(\"mLock\")\n    private IBinder mIUserNoticeService;"
+  },
+  {
+    "id": 242,
+    "raw_res": "",
+    "prompt_res": "Intent intent)",
+    "gt": "Intent intent) {"
+  },
+  {
+    "id": 243,
+    "raw_res": "",
+    "prompt_res": "RadioAppServiceWrapper mRadioAppService;",
+    "gt": "Context mContext;"
+  },
+  {
+    "id": 244,
+    "raw_res": "",
+    "prompt_res": "RadioAppServiceWrapper mRadioController;",
+    "gt": "View mViewpager;"
+  },
+  {
+    "id": 245,
+    "raw_res": "",
+    "prompt_res": "TextView mStatusMessage;",
+    "gt": "TextView mStatusMessage;"
+  },
+  {
+    "id": 246,
+    "raw_res": "",
+    "prompt_res": "PlayPauseButton mPlayButton;",
+    "gt": "ImageView mBackwardSeekButton;"
+  },
+  {
+    "id": 247,
+    "raw_res": "",
+    "prompt_res": "ValueAnimator mChannelAnimator = ValueAnimator.ofFloat(0f, 1f);",
+    "gt": "ValueAnimator mChannelAnimator = new ValueAnimator();"
+  },
+  {
+    "id": 248,
+    "raw_res": "",
+    "prompt_res": "ProgramSelector mCurrentSelector;",
+    "gt": "ProgramSelector mDisplayedChannel;"
+  },
+  {
+    "id": 249,
+    "raw_res": "",
+    "prompt_res": "FragmentActivity activity, @NonNull RadioAppServiceWrapper wrapper)",
+    "gt": "FragmentActivity activity,\n            @NonNull RadioController radioController) {"
+  },
+  {
+    "id": 250,
+    "raw_res": "",
+    "prompt_res": "OnClickListener listener)",
+    "gt": "OnClickListener listener) {"
+  },
+  {
+    "id": 251,
+    "raw_res": "",
+    "prompt_res": "ViewHolder",
+    "gt": "ViewHolder implements View.OnClickListener {"
+  },
+  {
+    "id": 252,
+    "raw_res": "",
+    "prompt_res": "TextView mLabel;",
+    "gt": "View mPresetsCard;"
+  },
+  {
+    "id": 253,
+    "raw_res": "",
+    "prompt_res": "final TextView mChannel;",
+    "gt": "GradientDrawable mPresetItemChannelBg;"
+  },
+  {
+    "id": 254,
+    "raw_res": "",
+    "prompt_res": "TextView mChannelNum;",
+    "gt": "TextView mPresetItemChannel;"
+  },
+  {
+    "id": 255,
+    "raw_res": "",
+    "prompt_res": "final ImageButton mPresetButton;",
+    "gt": "ImageButton mPresetButton;"
+  },
+  {
+    "id": 256,
+    "raw_res": "",
+    "prompt_res": "Program program, boolean isFavorite)",
+    "gt": "Program program, boolean isActiveStation, int itemCount,\n            boolean isFavorite) {"
+  },
+  {
+    "id": 257,
+    "raw_res": "",
+    "prompt_res": "InsetsChangedListener",
+    "gt": "InsetsChangedListener {"
+  },
+  {
+    "id": 258,
+    "raw_res": "",
+    "prompt_res": "RegionConfig mRegionConfig;",
+    "gt": "ProgramInfo mCurrentProgram;"
+  },
+  {
+    "id": 259,
+    "raw_res": "",
+    "prompt_res": "LiveData<Integer> getConnectionState()",
+    "gt": "LiveData<Integer> getConnectionState() {"
+  },
+  {
+    "id": 260,
+    "raw_res": "",
+    "prompt_res": "@NonNull ProgramSelector sel)",
+    "gt": "ProgramSelector sel) {"
+  },
+  {
+    "id": 261,
+    "raw_res": "",
+    "prompt_res": "Program> favorites)",
+    "gt": "Program> favorites) {"
+  },
+  {
+    "id": 262,
+    "raw_res": "",
+    "prompt_res": "ImageView",
+    "gt": "ImageView {"
+  },
+  {
+    "id": 263,
+    "raw_res": "",
+    "prompt_res": "Rect rect, @NonNull String fieldName, long fieldId)",
+    "gt": "Rect rect,\n            @NonNull String fieldName, long fieldId) {"
+  },
+  {
+    "id": 264,
+    "raw_res": "",
+    "prompt_res": "ComponentName componentName)",
+    "gt": "ComponentName componentName) {"
+  },
+  {
+    "id": 265,
+    "raw_res": "",
+    "prompt_res": "AccessibilityNodeInfo> map)",
+    "gt": "AccessibilityNodeInfo> map) {"
+  },
+  {
+    "id": 266,
+    "raw_res": "",
+    "prompt_res": "AccessibilityNodeInfo node)",
+    "gt": "AccessibilityNodeInfo node) {"
+  },
+  {
+    "id": 267,
+    "raw_res": "",
+    "prompt_res": "DualDumpOutputStream dumpOutputStream)",
+    "gt": "DualDumpOutputStream dumpOutputStream, boolean dumpAsProto,\n            @NonNull String fieldName, long fieldId) {"
+  },
+  {
+    "id": 268,
+    "raw_res": "",
+    "prompt_res": "AccessibilityNodeInfo findNodeOrAncestor(@NonNull AccessibilityNodeInfo node,\n            @NonNull Predicate<AccessibilityNodeInfo> targetPredicate)",
+    "gt": "AccessibilityNodeInfo findNodeOrAncestor(@NonNull AccessibilityNodeInfo node,\n            @NonNull Predicate<AccessibilityNodeInfo> targetPredicate) {"
+  },
+  {
+    "id": 269,
+    "raw_res": "",
+    "prompt_res": "Car mCar;",
+    "gt": "CarOccupantZoneManager mCarOccupantZoneManager;"
+  },
+  {
+    "id": 270,
+    "raw_res": "",
+    "prompt_res": "CarAudioManager mCarAudioManager;",
+    "gt": "CarAudioManager mCarAudioManager = null;"
+  },
+  {
+    "id": 271,
+    "raw_res": "",
+    "prompt_res": "CarWifiManager mCarWifiManager = null;",
+    "gt": "CarWifiManager mCarWifiManager = null;"
+  },
+  {
+    "id": 272,
+    "raw_res": "",
+    "prompt_res": "OccupantZoneConfigChangeListener mOccupantZoneConfigChangeListener =\n            new OccupantZoneConfigChangeListener()",
+    "gt": "OccupantZoneConfigChangeListener mConfigChangeListener = flags -> {"
+  },
+  {
+    "id": 273,
+    "raw_res": "",
+    "prompt_res": "CarServiceLifecycleListener mCarServiceLifecycleListener = (car, ready) ->",
+    "gt": "CarServiceLifecycleListener mCarServiceLifecycleListener = (car, ready) -> {"
+  },
+  {
+    "id": 274,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 275,
+    "raw_res": "",
+    "prompt_res": "final BroadcastReceiver mReceiver = new BroadcastReceiver()",
+    "gt": "BroadcastReceiver mReceiver = new BroadcastReceiver() {"
+  },
+  {
+    "id": 276,
+    "raw_res": "",
+    "prompt_res": "final Handler mHandler = new Handler()",
+    "gt": "Handler mHandler = new Handler() {"
+  },
+  {
+    "id": 277,
+    "raw_res": "",
+    "prompt_res": "Context context, AttributeSet attrs,\n            int defStyleAttr, int defStyleRes)",
+    "gt": "Context context, AttributeSet attrs,\n            int defStyleAttr, int defStyleRes) {"
+  },
+  {
+    "id": 278,
+    "raw_res": "",
+    "prompt_res": "AttributeSet attrs)",
+    "gt": "AttributeSet attrs,\n            int defStyleAttr, int defStyleRes) {"
+  },
+  {
+    "id": 279,
+    "raw_res": "",
+    "prompt_res": "Preference preference)",
+    "gt": "Preference preference) {"
+  },
+  {
+    "id": 280,
+    "raw_res": "",
+    "prompt_res": "Preference> implements DefaultLifecycleObserver, OnUxRestrictionsChangedListener",
+    "gt": "Preference> implements\n        DefaultLifecycleObserver,\n        OnUxRestrictionsChangedListener {"
+  },
+  {
+    "id": 281,
+    "raw_res": "",
+    "prompt_res": "OnUxRestrictionsChangedListener",
+    "gt": "OnUxRestrictionsChangedListener {"
+  },
+  {
+    "id": 282,
+    "raw_res": "",
+    "prompt_res": "boolean mContinuousUpdates;",
+    "gt": "SeekBar mSeekBar;"
+  },
+  {
+    "id": 283,
+    "raw_res": "",
+    "prompt_res": "TextView mSeekBarValueTextView;",
+    "gt": "TextView mSeekBarValueTextView;"
+  },
+  {
+    "id": 284,
+    "raw_res": "",
+    "prompt_res": "OnSeekBarChangeListener mSeekBarChangeListener = new SeekBar.OnSeekBarChangeListener()",
+    "gt": "OnSeekBarChangeListener mSeekBarChangeListener =\n            new SeekBar.OnSeekBarChangeListener() {"
+  },
+  {
+    "id": 285,
+    "raw_res": "",
+    "prompt_res": "OnKeyListener mSeekBarKeyListener =\n            new View.OnKeyListener()",
+    "gt": "OnKeyListener mSeekBarKeyListener = new View.OnKeyListener() {"
+  },
+  {
+    "id": 286,
+    "raw_res": "",
+    "prompt_res": "OnTouchListener mSeekBarTouchListener = new View.OnTouchListener()",
+    "gt": "OnFocusChangeListener mSeekBarFocusChangeListener =\n            (v, hasFocus) -> {"
+  },
+  {
+    "id": 287,
+    "raw_res": "",
+    "prompt_res": "AttributeSet attrs, int defStyleAttr, int defStyleRes)",
+    "gt": "AttributeSet attrs, int defStyleAttr, int defStyleRes) {"
+  },
+  {
+    "id": 288,
+    "raw_res": "",
+    "prompt_res": "PreferenceViewHolder holder)",
+    "gt": "PreferenceViewHolder view) {"
+  },
+  {
+    "id": 289,
+    "raw_res": "",
+    "prompt_res": "TypedArray a, int index)",
+    "gt": "TypedArray a, int index) {"
+  },
+  {
+    "id": 290,
+    "raw_res": "",
+    "prompt_res": "View view, boolean enable)",
+    "gt": "View view, boolean enable) {"
+  },
+  {
+    "id": 291,
+    "raw_res": "",
+    "prompt_res": "Parcelable onSaveInstanceState()",
+    "gt": "Parcelable onSaveInstanceState() {"
+  },
+  {
+    "id": 292,
+    "raw_res": "",
+    "prompt_res": "BaseSavedState",
+    "gt": "BaseSavedState {"
+  },
+  {
+    "id": 293,
+    "raw_res": "",
+    "prompt_res": "Parcel source)",
+    "gt": "Parcel source) {"
+  },
+  {
+    "id": 294,
+    "raw_res": "",
+    "prompt_res": "Creator<SavedState> CREATOR =\n                new Parcelable.Creator<SavedState>()",
+    "gt": "Creator<SeekBarPreference.SavedState> CREATOR =\n                new Parcelable.Creator<SeekBarPreference.SavedState>() {"
+  },
+  {
+    "id": 295,
+    "raw_res": "",
+    "prompt_res": "LocaleInfo parentLocaleInfo)",
+    "gt": "LocaleInfo parentLocaleInfo) {"
+  },
+  {
+    "id": 296,
+    "raw_res": "",
+    "prompt_res": "PreferenceGroup>",
+    "gt": "PreferenceGroup> implements Preference.OnPreferenceClickListener {"
+  },
+  {
+    "id": 297,
+    "raw_res": "",
+    "prompt_res": "CarUxRestrictions uxRestrictions)",
+    "gt": "CarUxRestrictions uxRestrictions) {"
+  },
+  {
+    "id": 298,
+    "raw_res": "",
+    "prompt_res": "LocaleInfo localeInfo)",
+    "gt": "LocaleInfo parentLocaleInfo) {"
+  },
+  {
+    "id": 299,
+    "raw_res": "",
+    "prompt_res": "class FakePreferenceController extends PreferenceController<Preference>",
+    "gt": "class FakePreferenceController extends PreferenceController<Preference> {"
+  },
+  {
+    "id": 300,
+    "raw_res": "",
+    "prompt_res": "Context mContext = ApplicationProvider.getApplicationContext();",
+    "gt": "Context mContext = ApplicationProvider.getApplicationContext();"
+  },
+  {
+    "id": 301,
+    "raw_res": "",
+    "prompt_res": "LifecycleOwner mLifecycleOwner;",
+    "gt": "WifiDetailsPreference mPreference;"
+  },
+  {
+    "id": 302,
+    "raw_res": "",
+    "prompt_res": "LifecycleOwner mLifecycleOwner;",
+    "gt": "LifecycleOwner mLifecycleOwner;"
+  },
+  {
+    "id": 303,
+    "raw_res": "",
+    "prompt_res": "CarUxRestrictions mCarUxRestrictions;",
+    "gt": "CarUxRestrictions mCarUxRestrictions;"
+  },
+  {
+    "id": 304,
+    "raw_res": "",
+    "prompt_res": "WifiEntry mWifiEntry;",
+    "gt": "WifiEntry mMockWifiEntry;"
+  },
+  {
+    "id": 305,
+    "raw_res": "",
+    "prompt_res": "WifiDetailsBasePreferenceController mController;",
+    "gt": "WifiInfoProvider mMockWifiInfoProvider;"
+  },
+  {
+    "id": 306,
+    "raw_res": "",
+    "prompt_res": "WifiDetailsBasePreferenceController getController();",
+    "gt": "WifiDetailsBasePreferenceController<WifiDetailsPreference> getController();"
+  },
+  {
+    "id": 307,
+    "raw_res": "",
+    "prompt_res": "FragmentActivity",
+    "gt": "FragmentActivity {"
+  },
+  {
+    "id": 308,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 309,
+    "raw_res": "",
+    "prompt_res": "PreferenceFragment implements LoaderManager.LoaderCallbacks<List<SearchResult>>",
+    "gt": "PreferenceFragment implements\n        LoaderManager.LoaderCallbacks<List<? extends SearchResult>>, IndexingCallback {"
+  },
+  {
+    "id": 310,
+    "raw_res": "",
+    "prompt_res": "CarSavedQueryController mSavedQueryController;",
+    "gt": "ToolbarController mToolbar;"
+  },
+  {
+    "id": 311,
+    "raw_res": "",
+    "prompt_res": "CarSavedQueryController mSavedQueryController;",
+    "gt": "CarUiRecyclerView mRecyclerView;"
+  },
+  {
+    "id": 312,
+    "raw_res": "",
+    "prompt_res": "OnScrollListener mOnScrollListener = new CarUiRecyclerView.OnScrollListener()",
+    "gt": "OnScrollListener mScrollListener =\n            new CarUiRecyclerView.OnScrollListener() {"
+  },
+  {
+    "id": 313,
+    "raw_res": "",
+    "prompt_res": "MenuItem> getToolbarMenuItems()",
+    "gt": "MenuItem> getToolbarMenuItems() {"
+  },
+  {
+    "id": 314,
+    "raw_res": "",
+    "prompt_res": "Context context)",
+    "gt": "Context context) {"
+  },
+  {
+    "id": 315,
+    "raw_res": "",
+    "prompt_res": "void onIndexingFinished()",
+    "gt": "Loader<List<? extends SearchResult>> onCreateLoader(int id, Bundle args) {"
+  },
+  {
+    "id": 316,
+    "raw_res": "",
+    "prompt_res": "Intent buildSearchTrampolineIntent(Intent intent)",
+    "gt": "Intent buildSearchTrampolineIntent(Intent intent) {"
+  },
+  {
+    "id": 317,
+    "raw_res": "",
+    "prompt_res": "Adapter<CarSearchViewHolder>",
+    "gt": "Adapter<CarSearchViewHolder> {"
+  },
+  {
+    "id": 318,
+    "raw_res": "",
+    "prompt_res": "ViewHolder",
+    "gt": "ViewHolder {"
+  },
+  {
+    "id": 319,
+    "raw_res": "",
+    "prompt_res": "LoaderCallbacks<List<? extends SearchResult>>",
+    "gt": "LoaderCallbacks,\n        MenuItem.OnMenuItemClickListener {"
+  },
+  {
+    "id": 320,
+    "raw_res": "",
+    "prompt_res": "LoaderManager mLoaderManager;",
+    "gt": "LoaderManager mLoaderManager;"
+  },
+  {
+    "id": 321,
+    "raw_res": "",
+    "prompt_res": "ToolbarController mToolbar;",
+    "gt": "ToolbarController mToolbar;"
+  },
+  {
+    "id": 322,
+    "raw_res": "",
+    "prompt_res": "Loader onCreateLoader(int id, Bundle args)",
+    "gt": "Loader onCreateLoader(int id, Bundle args) {"
+  },
+  {
+    "id": 323,
+    "raw_res": "",
+    "prompt_res": "Bundle args)",
+    "gt": "Bundle args) {"
+  },
+  {
+    "id": 324,
+    "raw_res": "",
+    "prompt_res": "MenuItem item)",
+    "gt": "MenuItem item) {"
+  },
+  {
+    "id": 325,
+    "raw_res": "",
+    "prompt_res": "View view)",
+    "gt": "View view) {"
+  },
+  {
+    "id": 326,
+    "raw_res": "",
+    "prompt_res": "SysUISingleton\n@Subcomponent(modules =",
+    "gt": "SysUISingleton\n@Subcomponent(modules = {"
+  },
+  {
+    "id": 327,
+    "raw_res": "",
+    "prompt_res": "Subcomponent(modules =",
+    "gt": "Subcomponent(modules = {"
+  },
+  {
+    "id": 328,
+    "raw_res": "",
+    "prompt_res": "Builder\n    interface Builder extends SysUIComponent.Builder",
+    "gt": "Builder\n    interface Builder extends SysUIComponent.Builder {"
+  },
+  {
+    "id": 329,
+    "raw_res": "",
+    "prompt_res": "Activity bindUserPickerActivity(UserPickerActivity activity);",
+    "gt": "Activity bindUserPickerActivity(UserPickerActivity activity);"
+  },
+  {
+    "id": 330,
+    "raw_res": "",
+    "prompt_res": "StorageManager mStorageManager;",
+    "gt": "StorageManager mStorageManager;"
+  },
+  {
+    "id": 331,
+    "raw_res": "",
+    "prompt_res": "CarUiListItemAdapter mAdapter;",
+    "gt": "CarUiRecyclerView mFolderListView;"
+  },
+  {
+    "id": 332,
+    "raw_res": "",
+    "prompt_res": "CarUiListItemAdapter mAdapter;",
+    "gt": "TextView mCurrentPathView;"
+  },
+  {
+    "id": 333,
+    "raw_res": "",
+    "prompt_res": "StorageEventListener mStorageEventListener = new StorageEventListener()",
+    "gt": "StorageEventListener mListener = new StorageEventListener() {"
+  },
+  {
+    "id": 334,
+    "raw_res": "",
+    "prompt_res": "@NonNull Context context)",
+    "gt": "Context context) {"
+  },
+  {
+    "id": 335,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 336,
+    "raw_res": "",
+    "prompt_res": "View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,\n            Bundle savedInstanceState)",
+    "gt": "View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,\n            Bundle savedInstanceState) {"
+  },
+  {
+    "id": 337,
+    "raw_res": "",
+    "prompt_res": "LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)",
+    "gt": "LayoutInflater inflater, ViewGroup container,\n            Bundle savedInstanceState) {"
+  },
+  {
+    "id": 338,
+    "raw_res": "",
+    "prompt_res": "ViewGroup container, Bundle savedInstanceState)",
+    "gt": "ViewGroup container,\n            Bundle savedInstanceState) {"
+  },
+  {
+    "id": 339,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 340,
+    "raw_res": "",
+    "prompt_res": "MenuItem item)",
+    "gt": "MenuItem item) {"
+  },
+  {
+    "id": 341,
+    "raw_res": "",
+    "prompt_res": "ProgressBarController mProgressBar;",
+    "gt": "TextView mContentTitle;"
+  },
+  {
+    "id": 342,
+    "raw_res": "",
+    "prompt_res": "ProgressBarController mProgressBar;",
+    "gt": "ToolbarController mToolbar;"
+  },
+  {
+    "id": 343,
+    "raw_res": "",
+    "prompt_res": "ProgressBarController mProgressBar;",
+    "gt": "ProgressBarController mProgressBar;"
+  },
+  {
+    "id": 344,
+    "raw_res": "",
+    "prompt_res": "PowerManager.WakeLock mWakeLock;",
+    "gt": "PowerManager mPowerManager;"
+  },
+  {
+    "id": 345,
+    "raw_res": "",
+    "prompt_res": "NotificationManager mNotificationManager;",
+    "gt": "NotificationManager mNotificationManager;"
+  },
+  {
+    "id": 346,
+    "raw_res": "",
+    "prompt_res": "CarUpdateEngineCallback mCarUpdateEngineCallback = new CarUpdateEngineCallback();",
+    "gt": "UpdateEngine mUpdateEngine = new UpdateEngine();"
+  },
+  {
+    "id": 347,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 348,
+    "raw_res": "",
+    "prompt_res": "View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,\n            Bundle savedInstanceState)",
+    "gt": "View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,\n            Bundle savedInstanceState) {"
+  },
+  {
+    "id": 349,
+    "raw_res": "",
+    "prompt_res": "NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)",
+    "gt": "NonNull LayoutInflater inflater, ViewGroup container,\n            Bundle savedInstanceState) {"
+  },
+  {
+    "id": 350,
+    "raw_res": "",
+    "prompt_res": "LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)",
+    "gt": "LayoutInflater inflater, ViewGroup container,\n            Bundle savedInstanceState) {"
+  },
+  {
+    "id": 351,
+    "raw_res": "",
+    "prompt_res": "ViewGroup container, Bundle savedInstanceState)",
+    "gt": "ViewGroup container,\n            Bundle savedInstanceState) {"
+  },
+  {
+    "id": 352,
+    "raw_res": "",
+    "prompt_res": "StringRes int status)",
+    "gt": "StringRes int status) {"
+  },
+  {
+    "id": 353,
+    "raw_res": "",
+    "prompt_res": "AsyncTask<File, Void, UpdateParser.ParsedUpdate>",
+    "gt": "AsyncTask<File, Void, UpdateParser.ParsedUpdate> {"
+  },
+  {
+    "id": 354,
+    "raw_res": "",
+    "prompt_res": "UpdateEngineCallback",
+    "gt": "UpdateEngineCallback {"
+  },
+  {
+    "id": 355,
+    "raw_res": "",
+    "prompt_res": "Notification createNotification(Context context, int contents)",
+    "gt": "Notification createNotification(Context context, @StringRes int contents) {"
+  },
+  {
+    "id": 356,
+    "raw_res": "",
+    "prompt_res": "Context context, int contents)",
+    "gt": "Context context, @StringRes int contents) {"
+  },
+  {
+    "id": 357,
+    "raw_res": "",
+    "prompt_res": "NonNull\n    static ParsedUpdate parse(@NonNull File file) throws IOException",
+    "gt": "Nullable\n    static ParsedUpdate parse(@NonNull File file) throws IOException {"
+  },
+  {
+    "id": 358,
+    "raw_res": "",
+    "prompt_res": "NonNull File file) throws IOException",
+    "gt": "NonNull File file) throws IOException {"
+  },
+  {
+    "id": 359,
+    "raw_res": "",
+    "prompt_res": "Context base)",
+    "gt": "Context base) {"
+  },
+  {
+    "id": 360,
+    "raw_res": "",
+    "prompt_res": "Builder\n  public abstract static class Builder",
+    "gt": "Builder\n  public abstract static class Builder {"
+  },
+  {
+    "id": 361,
+    "raw_res": "",
+    "prompt_res": "Optional<String> getAppSdkVersion();",
+    "gt": "Optional<String> getCarAppSdkVersion();"
+  },
+  {
+    "id": 362,
+    "raw_res": "",
+    "prompt_res": "ComponentName> getComponentName();",
+    "gt": "ComponentName> getComponentName();"
+  },
+  {
+    "id": 363,
+    "raw_res": "",
+    "prompt_res": "UiAction uiAction, ComponentName componentName, CarAppApi carAppApi)",
+    "gt": "ComponentName appName, CarAppApi carAppApi) {"
+  },
+  {
+    "id": 364,
+    "raw_res": "",
+    "prompt_res": "FailureResponse failureResponse)",
+    "gt": "FailureResponse failure) {"
+  },
+  {
+    "id": 365,
+    "raw_res": "",
+    "prompt_res": "MapViewContainer, DefaultLifecycleObserver",
+    "gt": "LifecycleOwner, DefaultLifecycleObserver, MapViewContainer {"
+  },
+  {
+    "id": 366,
+    "raw_res": "",
+    "prompt_res": "DefaultLifecycleObserver, MapViewContainer",
+    "gt": "DefaultLifecycleObserver, MapViewContainer {"
+  },
+  {
+    "id": 367,
+    "raw_res": "",
+    "prompt_res": "MapViewContainer",
+    "gt": "MapViewContainer {"
+  },
+  {
+    "id": 368,
+    "raw_res": "",
+    "prompt_res": "AttributeSet attrs)",
+    "gt": "AttributeSet attrs, int defStyleAttr, int defStyleRes) {"
+  },
+  {
+    "id": 369,
+    "raw_res": "",
+    "prompt_res": "ComponentName appName);",
+    "gt": "ComponentName componentName);"
+  },
+  {
+    "id": 370,
+    "raw_res": "",
+    "prompt_res": "Context context);",
+    "gt": "Context context);"
+  },
+  {
+    "id": 371,
+    "raw_res": "",
+    "prompt_res": "HiltAndroidApp\npublic class TemplatesHostApplication extends Application",
+    "gt": "HiltAndroidApp\npublic class TemplatesHostApplication extends Application {"
+  },
+  {
+    "id": 372,
+    "raw_res": "",
+    "prompt_res": "InstallIn(ServiceComponent.class)\npublic class HostResourceIdsImpl",
+    "gt": "InstallIn(ServiceComponent.class)\npublic class HostResourceIdsImpl implements HostResourceIds {"
+  },
+  {
+    "id": 373,
+    "raw_res": "",
+    "prompt_res": "ComponentName componentName)",
+    "gt": "ComponentName componentName) {"
+  },
+  {
+    "id": 374,
+    "raw_res": "",
+    "prompt_res": "Builder logEventBuilder)",
+    "gt": "Builder logEventBuilder) {"
+  },
+  {
+    "id": 375,
+    "raw_res": "",
+    "prompt_res": "Context context)",
+    "gt": "Context context) {"
+  },
+  {
+    "id": 376,
+    "raw_res": "",
+    "prompt_res": "Override\n    public void onReceive(Context context, Intent intent)",
+    "gt": "Override\n    public void onReceive(Context context, Intent intent)\n    {"
+  },
+  {
+    "id": 377,
+    "raw_res": "",
+    "prompt_res": "Context context, Intent intent)",
+    "gt": "Context context, Intent intent)\n    {"
+  },
+  {
+    "id": 378,
+    "raw_res": "",
+    "prompt_res": "Intent intent)",
+    "gt": "Intent intent)\n    {"
+  },
+  {
+    "id": 379,
+    "raw_res": "",
+    "prompt_res": "Intent intent, int flags, int startId)",
+    "gt": "Intent intent, int flags, int startId)\n    {"
+  },
+  {
+    "id": 380,
+    "raw_res": "",
+    "prompt_res": "Intent intent, int startId)",
+    "gt": "Context context,Intent intent, int startId)\n    {"
+  },
+  {
+    "id": 381,
+    "raw_res": "",
+    "prompt_res": "IBinder onBind(Intent intent)",
+    "gt": "IBinder onBind(Intent intent)\n    {"
+  },
+  {
+    "id": 382,
+    "raw_res": "",
+    "prompt_res": "Activity",
+    "gt": "Activity {"
+  },
+  {
+    "id": 383,
+    "raw_res": "",
+    "prompt_res": "WakeLock wakeLock;",
+    "gt": "WakeLock mWakeLock;"
+  },
+  {
+    "id": 384,
+    "raw_res": "",
+    "prompt_res": "Override\n    protected void onCreate(Bundle savedInstanceState)",
+    "gt": "Override\n    protected void onCreate(Bundle savedInstanceState) {"
+  },
+  {
+    "id": 385,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 386,
+    "raw_res": "",
+    "prompt_res": "PreferenceManager.getDefaultSharedPreferences(getApplicationContext());",
+    "gt": "PreferenceManager.getDefaultSharedPreferences(this);"
+  },
+  {
+    "id": 387,
+    "raw_res": "",
+    "prompt_res": "layout.activity_main);",
+    "gt": "layout.activity_main);"
+  },
+  {
+    "id": 388,
+    "raw_res": "",
+    "prompt_res": "getApplicationContext(), \"Backlight Always On\", Toast.LENGTH_LONG).show();",
+    "gt": "getApplicationContext(), \"Backlight always ON!\", Toast.LENGTH_SHORT).show();"
+  },
+  {
+    "id": 389,
+    "raw_res": "",
+    "prompt_res": "GpsSenderAlarm alarm = new GpsSenderAlarm();",
+    "gt": "AlarmManager alarm = (AlarmManager) getSystemService(Context.ALARM_SERVICE);"
+  },
+  {
+    "id": 390,
+    "raw_res": "",
+    "prompt_res": "Context.ALARM_SERVICE);",
+    "gt": "Context.ALARM_SERVICE);"
+  },
+  {
+    "id": 391,
+    "raw_res": "",
+    "prompt_res": "final ToggleButton toggleButton = (ToggleButton) findViewById(R.id.toggleButton);",
+    "gt": "Intent intentGps = new Intent(this, GpsSenderAlarm.class);"
+  },
+  {
+    "id": 392,
+    "raw_res": "",
+    "prompt_res": "PendingIntent pIntentGps = PendingIntent.getBroadcast(this, 0, intentGps, 0);",
+    "gt": "PendingIntent pendingIntentGps = PendingIntent.getBroadcast(activity, 0, intentGps,\n                PendingIntent.FLAG_CANCEL_CURRENT);"
+  },
+  {
+    "id": 393,
+    "raw_res": "",
+    "prompt_res": "Menu menu)",
+    "gt": "Menu menu) {"
+  },
+  {
+    "id": 394,
+    "raw_res": "",
+    "prompt_res": "MenuItem item)",
+    "gt": "MenuItem item) {"
+  },
+  {
+    "id": 395,
+    "raw_res": "",
+    "prompt_res": "```java\n    @Override\n    public void onReceive(final Context context, Intent intent)",
+    "gt": "PowerManager pm;"
+  },
+  {
+    "id": 396,
+    "raw_res": "",
+    "prompt_res": "WakeLock wl;",
+    "gt": "WakeLock wl;"
+  },
+  {
+    "id": 397,
+    "raw_res": "",
+    "prompt_res": "LocationListener locationListener = new LocationListener()",
+    "gt": "SharedPreferences sharedPreferences;"
+  },
+  {
+    "id": 398,
+    "raw_res": "",
+    "prompt_res": "RequestQueue queue;",
+    "gt": "LocationListener gpsListener = new LocationListener() {"
+  },
+  {
+    "id": 399,
+    "raw_res": "",
+    "prompt_res": "LocationManager locationManager;",
+    "gt": "LocationManager locationManager;"
+  },
+  {
+    "id": 400,
+    "raw_res": "",
+    "prompt_res": "Intent intent)",
+    "gt": "Intent intent) {"
+  },
+  {
+    "id": 401,
+    "raw_res": "",
+    "prompt_res": "",
+    "gt": "PowerManager pm;"
+  },
+  {
+    "id": 402,
+    "raw_res": "",
+    "prompt_res": "WakeLock wl;",
+    "gt": "WakeLock wl;"
+  },
+  {
+    "id": 403,
+    "raw_res": "",
+    "prompt_res": "@Override\n    public void onReceive(Context context, Intent intent)",
+    "gt": "SharedPreferences sharedPreferences;"
+  },
+  {
+    "id": 404,
+    "raw_res": "",
+    "prompt_res": "SensorManager sensorManager;",
+    "gt": "LocationListener gpsListener = new LocationListener() {"
+  },
+  {
+    "id": 405,
+    "raw_res": "",
+    "prompt_res": "SensorEventListener accelerometerListener = new SensorEventListener()",
+    "gt": "SensorEventListener accelerometerListener = new SensorEventListener() {"
+  },
+  {
+    "id": 406,
+    "raw_res": "",
+    "prompt_res": "LocationManager locationManager;",
+    "gt": "LocationManager locationManager;"
+  },
+  {
+    "id": 407,
+    "raw_res": "",
+    "prompt_res": "SensorManager mSensorManager;",
+    "gt": "SensorManager mSensorManager;"
+  },
+  {
+    "id": 408,
+    "raw_res": "",
+    "prompt_res": "Float lastX, lastY, lastZ;",
+    "gt": "Sensor mAccelerometer;"
+  },
+  {
+    "id": 409,
+    "raw_res": "",
+    "prompt_res": "Intent intent)",
+    "gt": "Intent intent)\n    {"
+  },
+  {
+    "id": 410,
+    "raw_res": "",
+    "prompt_res": "LocationListener",
+    "gt": "LocationListener{"
+  },
+  {
+    "id": 411,
+    "raw_res": "",
+    "prompt_res": "LocationManager locationManager;",
+    "gt": "Context mContext;"
+  },
+  {
+    "id": 412,
+    "raw_res": "",
+    "prompt_res": "Location location;",
+    "gt": "Location location;"
+  },
+  {
+    "id": 413,
+    "raw_res": "",
+    "prompt_res": "LocationManager locationManager;",
+    "gt": "LocationManager mlocationManager;"
+  },
+  {
+    "id": 414,
+    "raw_res": "",
+    "prompt_res": "Intent intent, int startId)",
+    "gt": "Intent intent, int startId) {"
+  },
+  {
+    "id": 415,
+    "raw_res": "",
+    "prompt_res": "Nullable\n    @Override\n    public IBinder onBind(Intent intent)",
+    "gt": "Nullable\n    @Override\n    public IBinder onBind(Intent intent) {"
+  },
+  {
+    "id": 416,
+    "raw_res": "",
+    "prompt_res": "IBinder onBind(Intent intent)",
+    "gt": "IBinder onBind(Intent intent) {"
+  },
+  {
+    "id": 417,
+    "raw_res": "",
+    "prompt_res": "Bundle bundle)",
+    "gt": "Bundle bundle) {"
+  },
+  {
+    "id": 418,
+    "raw_res": "",
+    "prompt_res": "Spinner sp;",
+    "gt": "Button mLocationBtn;"
+  },
+  {
+    "id": 419,
+    "raw_res": "",
+    "prompt_res": "Spinner sp;",
+    "gt": "TextView mText;"
+  },
+  {
+    "id": 420,
+    "raw_res": "",
+    "prompt_res": "FirebaseDatabase database;",
+    "gt": "DatabaseReference mDatabaseLocationDetails;"
+  },
+  {
+    "id": 421,
+    "raw_res": "",
+    "prompt_res": "Override\n    protected void onCreate(Bundle savedInstanceState)",
+    "gt": "Override\n    protected void onCreate(Bundle savedInstanceState) {"
+  },
+  {
+    "id": 422,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 423,
+    "raw_res": "",
+    "prompt_res": "id.textView);",
+    "gt": "id.location_tv);"
+  },
+  {
+    "id": 424,
+    "raw_res": "",
+    "prompt_res": "id.location_btn);",
+    "gt": "id.location_btn);"
+  },
+  {
+    "id": 425,
+    "raw_res": "",
+    "prompt_res": "OnItemSelectedListener()",
+    "gt": "OnItemSelectedListener() {"
+  },
+  {
+    "id": 426,
+    "raw_res": "",
+    "prompt_res": "Override\n            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)",
+    "gt": "Override\n            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {"
+  },
+  {
+    "id": 427,
+    "raw_res": "",
+    "prompt_res": "View view, int i, long l)",
+    "gt": "View view, int i, long l) {"
+  },
+  {
+    "id": 428,
+    "raw_res": "",
+    "prompt_res": "Override\n            public void onNothingSelected(AdapterView<?> adapterView)",
+    "gt": "Override\n            public void onNothingSelected(AdapterView<?> adapterView) {"
+  },
+  {
+    "id": 429,
+    "raw_res": "",
+    "prompt_res": "layout.simple_spinner_item, timer);",
+    "gt": "layout.simple_spinner_dropdown_item,timer);"
+  },
+  {
+    "id": 430,
+    "raw_res": "",
+    "prompt_res": "Override\n            public void onClick(View view)",
+    "gt": "Override\n            public void onClick(View view) {"
+  },
+  {
+    "id": 431,
+    "raw_res": "",
+    "prompt_res": "NonNull String[] permissions, @NonNull int[] grantResults)",
+    "gt": "NonNull String[] permissions, @NonNull int[] grantResults) {"
+  },
+  {
+    "id": 432,
+    "raw_res": "",
+    "prompt_res": "Typeface> fonts = new HashMap<>();",
+    "gt": "Typeface> fonts;"
+  },
+  {
+    "id": 433,
+    "raw_res": "",
+    "prompt_res": "Location location);",
+    "gt": "Location location);"
+  },
+  {
+    "id": 434,
+    "raw_res": "",
+    "prompt_res": "LocationListener locationListener = null;",
+    "gt": "LocationListener locationListener = null;"
+  },
+  {
+    "id": 435,
+    "raw_res": "",
+    "prompt_res": "public static void startListening(final Context context)",
+    "gt": "Context mcontext;"
+  },
+  {
+    "id": 436,
+    "raw_res": "",
+    "prompt_res": "LocationManager locationManager;",
+    "gt": "LocationManager locationManager;"
+  },
+  {
+    "id": 437,
+    "raw_res": "",
+    "prompt_res": "TextView txtview;",
+    "gt": "TextView txtview;"
+  },
+  {
+    "id": 438,
+    "raw_res": "",
+    "prompt_res": "KdGaugeView speedoMeterView;",
+    "gt": "KdGaugeView speedoMeterView,speedLimitMeter;"
+  },
+  {
+    "id": 439,
+    "raw_res": "",
+    "prompt_res": "@Override\n    protected void onCreate(Bundle savedInstanceState)",
+    "gt": "LocationListener locationListener;"
+  },
+  {
+    "id": 440,
+    "raw_res": "",
+    "prompt_res": "RequestQueue mQueue;",
+    "gt": "RequestQueue mQueue;"
+  },
+  {
+    "id": 441,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 442,
+    "raw_res": "",
+    "prompt_res": "Location location)",
+    "gt": "Location location) {"
+  },
+  {
+    "id": 443,
+    "raw_res": "",
+    "prompt_res": "PersistableBundle outPersistentState)",
+    "gt": "PersistableBundle outPersistentState) {"
+  },
+  {
+    "id": 444,
+    "raw_res": "",
+    "prompt_res": "@Override\n    protected void onCreate(Bundle savedInstanceState)",
+    "gt": "LinearLayout linearLayout;"
+  },
+  {
+    "id": 445,
+    "raw_res": "",
+    "prompt_res": "AnimationDrawable animationDrawable;",
+    "gt": "AnimationDrawable animationDrawable,animationDrawable2;"
+  },
+  {
+    "id": 446,
+    "raw_res": "",
+    "prompt_res": "@Override\n    protected void onCreate(Bundle savedInstanceState)",
+    "gt": "GifImageView car;"
+  },
+  {
+    "id": 447,
+    "raw_res": "",
+    "prompt_res": "HTextView hTextView;",
+    "gt": "TextView real,driver;"
+  },
+  {
+    "id": 448,
+    "raw_res": "",
+    "prompt_res": "@Override\n    protected void onCreate(Bundle savedInstanceState)",
+    "gt": "HTextView hTextView,hTextView1,hTextView2;"
+  },
+  {
+    "id": 449,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 450,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 451,
+    "raw_res": "",
+    "prompt_res": "EActivity(R.layout.activity_main)\n@RuntimePermissions\npublic class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, OnCommandListener",
+    "gt": "RuntimePermissions\n@EActivity(R.layout.main)\npublic class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, OnCommandListener {"
+  },
+  {
+    "id": 452,
+    "raw_res": "",
+    "prompt_res": "EActivity(R.layout.activity_main)\npublic class MainActivity extends AppCompatActivity implements OnCommandListener, NavigationView.OnNavigationItemSelectedListener",
+    "gt": "EActivity(R.layout.main)\npublic class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, OnCommandListener {"
+  },
+  {
+    "id": 453,
+    "raw_res": "",
+    "prompt_res": "OnNavigationItemSelectedListener, OnCommandListener",
+    "gt": "OnNavigationItemSelectedListener, OnCommandListener {"
+  },
+  {
+    "id": 454,
+    "raw_res": "",
+    "prompt_res": "static final String TAG = \"MainActivity\";",
+    "gt": "ActionBarDrawerToggle mDrawerToggle;"
+  },
+  {
+    "id": 455,
+    "raw_res": "",
+    "prompt_res": "Toolbar toolbar;",
+    "gt": "Toolbar toolbar;"
+  },
+  {
+    "id": 456,
+    "raw_res": "",
+    "prompt_res": "DrawerLayout drawerLayout;",
+    "gt": "DrawerLayout drawer;"
+  },
+  {
+    "id": 457,
+    "raw_res": "",
+    "prompt_res": "NavigationView navigationView;",
+    "gt": "NavigationView navigationView;"
+  },
+  {
+    "id": 458,
+    "raw_res": "",
+    "prompt_res": "FloatingActionButton fab;",
+    "gt": "FloatingActionButton fab;"
+  },
+  {
+    "id": 459,
+    "raw_res": "",
+    "prompt_res": "FrameLayout statusDrop;",
+    "gt": "FrameLayout status_drop;"
+  },
+  {
+    "id": 460,
+    "raw_res": "",
+    "prompt_res": "Subscription updatableLocationSubscription;",
+    "gt": "ReactiveLocationProvider locationProvider;"
+  },
+  {
+    "id": 461,
+    "raw_res": "",
+    "prompt_res": "Subscription updatableLocationSubscription;",
+    "gt": "Observable<Location> lastKnownLocationObservable;"
+  },
+  {
+    "id": 462,
+    "raw_res": "",
+    "prompt_res": "Location> locationUpdatesObservable;",
+    "gt": "Location> lastKnownLocationObservable;"
+  },
+  {
+    "id": 463,
+    "raw_res": "",
+    "prompt_res": "Subscription updatableLocationSubscription;",
+    "gt": "Subscription lastKnownLocationSubscription;"
+  },
+  {
+    "id": 464,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 465,
+    "raw_res": "",
+    "prompt_res": "Fragment getVisibleFragment()",
+    "gt": "Fragment redirectFragment = null;"
+  },
+  {
+    "id": 466,
+    "raw_res": "",
+    "prompt_res": "EActivity(R.layout.message)\npublic class MessageActivity extends Activity",
+    "gt": "EActivity(R.layout.msg_layout)\npublic class MessageActivity extends Activity {"
+  },
+  {
+    "id": 467,
+    "raw_res": "",
+    "prompt_res": "TextView message;",
+    "gt": "TextView msgText;"
+  },
+  {
+    "id": 468,
+    "raw_res": "",
+    "prompt_res": "Button okBtn;",
+    "gt": "Button okButton;"
+  },
+  {
+    "id": 469,
+    "raw_res": "",
+    "prompt_res": "Messages message;",
+    "gt": "Messages messages;"
+  },
+  {
+    "id": 470,
+    "raw_res": "",
+    "prompt_res": "NewRequestDetails newRequestDetails;",
+    "gt": "NewRequestDetails requestDetails;"
+  },
+  {
+    "id": 471,
+    "raw_res": "",
+    "prompt_res": "OnMapReadyCallback",
+    "gt": "OnMapReadyCallback {"
+  },
+  {
+    "id": 472,
+    "raw_res": "",
+    "prompt_res": "GoogleMap mMap;",
+    "gt": "GoogleMap mMap;"
+  },
+  {
+    "id": 473,
+    "raw_res": "",
+    "prompt_res": "MQTTHelper mqttHelper;",
+    "gt": "PublishRelay<LatLng> latLngPublishRelay = PublishRelay.create();"
+  },
+  {
+    "id": 474,
+    "raw_res": "",
+    "prompt_res": "List<LatLng>> pushRelay = PublishRelay.create();",
+    "gt": "LatLng> latLngPublishRelay = PublishRelay.create();"
+  },
+  {
+    "id": 475,
+    "raw_res": "",
+    "prompt_res": "Disposable disposable;",
+    "gt": "Disposable latLngDisposable;"
+  },
+  {
+    "id": 476,
+    "raw_res": "",
+    "prompt_res": "MQTTHelper mqttHelper;",
+    "gt": "Marker marker;"
+  },
+  {
+    "id": 477,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 478,
+    "raw_res": "",
+    "prompt_res": "OnMapReadyCallback",
+    "gt": "OnMapReadyCallback {"
+  },
+  {
+    "id": 479,
+    "raw_res": "",
+    "prompt_res": "GoogleMap mMap;",
+    "gt": "SupportMapFragment mapFragment;"
+  },
+  {
+    "id": 480,
+    "raw_res": "",
+    "prompt_res": "GoogleMap mMap;",
+    "gt": "GoogleMap mMap;"
+  },
+  {
+    "id": 481,
+    "raw_res": "",
+    "prompt_res": "LatLng> polyLineList;",
+    "gt": "LatLng> polyLineList;"
+  },
+  {
+    "id": 482,
+    "raw_res": "",
+    "prompt_res": "Marker marker;",
+    "gt": "Marker marker;"
+  },
+  {
+    "id": 483,
+    "raw_res": "",
+    "prompt_res": "Handler handler;",
+    "gt": "Handler handler;"
+  },
+  {
+    "id": 484,
+    "raw_res": "",
+    "prompt_res": "Button button;",
+    "gt": "Button button;"
+  },
+  {
+    "id": 485,
+    "raw_res": "",
+    "prompt_res": "EditText destination;",
+    "gt": "EditText destinationEditText;"
+  },
+  {
+    "id": 486,
+    "raw_res": "",
+    "prompt_res": "LinearLayout linearLayout;",
+    "gt": "LinearLayout linearLayout;"
+  },
+  {
+    "id": 487,
+    "raw_res": "",
+    "prompt_res": "PolylineOptions polylineOptions, blackPolylineOptions;",
+    "gt": "PolylineOptions polylineOptions, blackPolylineOptions;"
+  },
+  {
+    "id": 488,
+    "raw_res": "",
+    "prompt_res": "Polyline blackPolyline, greyPolyline;",
+    "gt": "Polyline blackPolyline, greyPolyLine;"
+  },
+  {
+    "id": 489,
+    "raw_res": "",
+    "prompt_res": "Disposable disposable;",
+    "gt": "Disposable disposable;"
+  },
+  {
+    "id": 490,
+    "raw_res": "",
+    "prompt_res": "ValueAnimator valueAnimator;",
+    "gt": "FloatingActionButton mDriverModeOpenFB;"
+  },
+  {
+    "id": 491,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 492,
+    "raw_res": "",
+    "prompt_res": "LocationListener",
+    "gt": "LocationListener {"
+  },
+  {
+    "id": 493,
+    "raw_res": "",
+    "prompt_res": "final Context mContext;",
+    "gt": "Context context;"
+  },
+  {
+    "id": 494,
+    "raw_res": "",
+    "prompt_res": "Location location;",
+    "gt": "Location location;"
+  },
+  {
+    "id": 495,
+    "raw_res": "",
+    "prompt_res": "LocationManager locationManager;",
+    "gt": "LocationManager locationManager;"
+  },
+  {
+    "id": 496,
+    "raw_res": "",
+    "prompt_res": "LOCATION_SERVICE);",
+    "gt": "LOCATION_SERVICE);"
+  },
+  {
+    "id": 497,
+    "raw_res": "",
+    "prompt_res": "ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)",
+    "gt": "ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {"
+  },
+  {
+    "id": 498,
+    "raw_res": "",
+    "prompt_res": "PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)",
+    "gt": "PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {"
+  },
+  {
+    "id": 499,
+    "raw_res": "",
+    "prompt_res": "permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)",
+    "gt": "permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {"
+  },
+  {
+    "id": 500,
+    "raw_res": "",
+    "prompt_res": "Bundle extras)",
+    "gt": "Bundle extras) {"
+  },
+  {
+    "id": 501,
+    "raw_res": "",
+    "prompt_res": "IBinder onBind(Intent intent)",
+    "gt": "IBinder onBind(Intent intent) {"
+  },
+  {
+    "id": 502,
+    "raw_res": "",
+    "prompt_res": "Intent intent)",
+    "gt": "Intent intent) {"
+  },
+  {
+    "id": 503,
+    "raw_res": "",
+    "prompt_res": "OnMapReadyCallback,\n        GoogleApiClient.ConnectionCallbacks,\n        GoogleApiClient.OnConnectionFailedListener,\n        LocationListener",
+    "gt": "OnMapReadyCallback,\n        GoogleMap.OnInfoWindowClickListener,GoogleApiClient.ConnectionCallbacks,\n        GoogleApiClient.OnConnectionFailedListener, LocationListener {"
+  },
+  {
+    "id": 504,
+    "raw_res": "",
+    "prompt_res": "OnMapClickListener",
+    "gt": "OnInfoWindowClickListener,GoogleApiClient.ConnectionCallbacks,\n        GoogleApiClient.OnConnectionFailedListener, LocationListener {"
+  },
+  {
+    "id": 505,
+    "raw_res": "",
+    "prompt_res": "ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener",
+    "gt": "ConnectionCallbacks,\n        GoogleApiClient.OnConnectionFailedListener, LocationListener {"
+  },
+  {
+    "id": 506,
+    "raw_res": "",
+    "prompt_res": "Location mLastLocation;",
+    "gt": "Location mLastLocation;"
+  },
+  {
+    "id": 507,
+    "raw_res": "",
+    "prompt_res": "GoogleApiClient mGoogleApiClient;",
+    "gt": "GoogleApiClient mGoogleApiClient;"
+  },
+  {
+    "id": 508,
+    "raw_res": "",
+    "prompt_res": "LocationRequest mLocationRequest;",
+    "gt": "LocationRequest mLocationRequest;"
+  },
+  {
+    "id": 509,
+    "raw_res": "",
+    "prompt_res": "GoogleMap mMap;",
+    "gt": "GoogleMap mMap;"
+  },
+  {
+    "id": 510,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 511,
+    "raw_res": "",
+    "prompt_res": "@Override\n    public void onInfoWindowClick(Marker marker)",
+    "gt": "Marker mk = null;"
+  },
+  {
+    "id": 512,
+    "raw_res": "",
+    "prompt_res": "ConnectionResult result)",
+    "gt": "ConnectionResult result) {"
+  },
+  {
+    "id": 513,
+    "raw_res": "",
+    "prompt_res": "public LatLng interpolate(float fraction, LatLng a, LatLng b);",
+    "gt": "LatLng interpolate(float fraction, LatLng a, LatLng b);"
+  },
+  {
+    "id": 514,
+    "raw_res": "",
+    "prompt_res": "Context ctx;",
+    "gt": "Context ctx;"
+  },
+  {
+    "id": 515,
+    "raw_res": "",
+    "prompt_res": "LatLng> decodePoly(String encoded)",
+    "gt": "LatLng> decodePoly(String encoded) {"
+  },
+  {
+    "id": 516,
+    "raw_res": "",
+    "prompt_res": "LocationListener",
+    "gt": "LocationListener {"
+  },
+  {
+    "id": 517,
+    "raw_res": "",
+    "prompt_res": "Context mContext;",
+    "gt": "Context mContext;"
+  },
+  {
+    "id": 518,
+    "raw_res": "",
+    "prompt_res": "Location location;",
+    "gt": "Location location;"
+  },
+  {
+    "id": 519,
+    "raw_res": "",
+    "prompt_res": "LocationManager locationManager;",
+    "gt": "LocationManager locationManager;"
+  },
+  {
+    "id": 520,
+    "raw_res": "",
+    "prompt_res": "Bundle extras)",
+    "gt": "Bundle extras) {"
+  },
+  {
+    "id": 521,
+    "raw_res": "",
+    "prompt_res": "IBinder onBind(Intent intent)",
+    "gt": "IBinder onBind(Intent arg0) {"
+  },
+  {
+    "id": 522,
+    "raw_res": "",
+    "prompt_res": "Intent intent)",
+    "gt": "Intent arg0) {"
+  },
+  {
+    "id": 523,
+    "raw_res": "",
+    "prompt_res": "LocationListener",
+    "gt": "LocationListener{"
+  },
+  {
+    "id": 524,
+    "raw_res": "",
+    "prompt_res": "GoogleMap map;",
+    "gt": "GoogleMap map;"
+  },
+  {
+    "id": 525,
+    "raw_res": "",
+    "prompt_res": "LatLng> markerPoints;",
+    "gt": "LatLng> markerPoints;"
+  },
+  {
+    "id": 526,
+    "raw_res": "",
+    "prompt_res": "@Override\n    protected void onCreate(Bundle savedInstanceState)",
+    "gt": "Criteria criteria;"
+  },
+  {
+    "id": 527,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 528,
+    "raw_res": "",
+    "prompt_res": "Location location)",
+    "gt": "Location loc) {"
+  },
+  {
+    "id": 529,
+    "raw_res": "",
+    "prompt_res": "AsyncTask<String, Void, String>",
+    "gt": "AsyncTask<String, Void, String>{"
+  },
+  {
+    "id": 530,
+    "raw_res": "",
+    "prompt_res": "Menu menu)",
+    "gt": "Menu menu) {"
+  },
+  {
+    "id": 531,
+    "raw_res": "",
+    "prompt_res": "OnClickListener",
+    "gt": "OnClickListener {"
+  },
+  {
+    "id": 532,
+    "raw_res": "",
+    "prompt_res": "EditText mEmailField;",
+    "gt": "EditText mEmailField;"
+  },
+  {
+    "id": 533,
+    "raw_res": "",
+    "prompt_res": "OnMapReadyCallback",
+    "gt": "OnMapReadyCallback {"
+  },
+  {
+    "id": 534,
+    "raw_res": "",
+    "prompt_res": "GoogleMap mMap;",
+    "gt": "GoogleMap mMap;"
+  },
+  {
+    "id": 535,
+    "raw_res": "",
+    "prompt_res": "void onCreate(Bundle savedInstanceState)",
+    "gt": "FirebaseAuth mAuth= FirebaseAuth.getInstance();"
+  },
+  {
+    "id": 536,
+    "raw_res": "",
+    "prompt_res": "FirebaseDatabase database = FirebaseDatabase.getInstance();",
+    "gt": "FirebaseDatabase database1 = FirebaseDatabase.getInstance();"
+  },
+  {
+    "id": 537,
+    "raw_res": "",
+    "prompt_res": "DatabaseReference myRef = database1.getReference(\"Request\");",
+    "gt": "DatabaseReference ref = database1.getReference(\"Users/EmergencyVehiclePersonnels/\"+mAuth.getCurrentUser().getUid()+\"/Target\");"
+  },
+  {
+    "id": 538,
+    "raw_res": "",
+    "prompt_res": "Polyline newPolyline;",
+    "gt": "Location locationGPS;"
+  },
+  {
+    "id": 539,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 540,
+    "raw_res": "",
+    "prompt_res": "final LatLng source, final LatLng dest, String mode)",
+    "gt": "LatLng sourcePosition, LatLng destPosition, String mode) {"
+  },
+  {
+    "id": 541,
+    "raw_res": "",
+    "prompt_res": "Handler handler;",
+    "gt": "Handler handler;"
+  },
+  {
+    "id": 542,
+    "raw_res": "",
+    "prompt_res": "OnCameraIdleListener, GoogleMap.OnMarkerClickListener, GoogleMap.OnMapClickListener, OnMapReadyCallback, LoaderManager.LoaderCallbacks, BottomSheetStationFragment.OnDirectionsReceivedListener",
+    "gt": "OnCameraMoveListener,\n        GoogleMap.OnCameraIdleListener,\n        GoogleMap.OnMarkerClickListener,\n        GoogleMap.OnMapClickListener, // To clean up polyline from directions\n        GoogleMap.OnInfoWindowClickListener,\n        BottomSheetStationFragment.OnDirectionsReceivedListener,  //to send distance data from map to bottom sheet\n        OnMapReadyCallback,\n        LoaderManager.LoaderCallbacks {"
+  },
+  {
+    "id": 543,
+    "raw_res": "",
+    "prompt_res": "OnCameraIdleListener,\n        GoogleMap.OnMarkerClickListener,\n        OnMapReadyCallback,\n        LoaderManager.LoaderCallbacks,\n        OCMSyncTaskListener,\n        BottomSheetStationFragment.OnDirectionsReceivedListener",
+    "gt": "OnCameraIdleListener,\n        GoogleMap.OnMarkerClickListener,\n        GoogleMap.OnMapClickListener, // To clean up polyline from directions\n        GoogleMap.OnInfoWindowClickListener,\n        BottomSheetStationFragment.OnDirectionsReceivedListener,  //to send distance data from map to bottom sheet\n        OnMapReadyCallback,\n        LoaderManager.LoaderCallbacks {"
+  },
+  {
+    "id": 544,
+    "raw_res": "",
+    "prompt_res": "OnMarkerClickListener,\n        GoogleMap.OnMapClickListener,\n        OnMapReadyCallback,\n        LoaderManager.LoaderCallbacks,\n        BottomSheetStationFragment.OnDirectionsReceivedListener",
+    "gt": "OnMarkerClickListener,\n        GoogleMap.OnMapClickListener, // To clean up polyline from directions\n        GoogleMap.OnInfoWindowClickListener,\n        BottomSheetStationFragment.OnDirectionsReceivedListener,  //to send distance data from map to bottom sheet\n        OnMapReadyCallback,\n        LoaderManager.LoaderCallbacks {"
+  },
+  {
+    "id": 545,
+    "raw_res": "",
+    "prompt_res": "OnMapClickListener,\n        OnMapReadyCallback,\n        LoaderManager.LoaderCallbacks,\n        BottomSheetStationFragment.OnDirectionsReceivedListener,\n        OCMSyncTaskListener",
+    "gt": "OnMapClickListener, // To clean up polyline from directions\n        GoogleMap.OnInfoWindowClickListener,\n        BottomSheetStationFragment.OnDirectionsReceivedListener,  //to send distance data from map to bottom sheet\n        OnMapReadyCallback,\n        LoaderManager.LoaderCallbacks {"
+  },
+  {
+    "id": 546,
+    "raw_res": "",
+    "prompt_res": "OnInfoWindowClickListener,",
+    "gt": "OnInfoWindowClickListener,\n        BottomSheetStationFragment.OnDirectionsReceivedListener,  //to send distance data from map to bottom sheet\n        OnMapReadyCallback,\n        LoaderManager.LoaderCallbacks {"
+  },
+  {
+    "id": 547,
+    "raw_res": "",
+    "prompt_res": "OnMapReadyCallback,\n        LoaderManager.LoaderCallbacks",
+    "gt": "OnMapReadyCallback,\n        LoaderManager.LoaderCallbacks {"
+  },
+  {
+    "id": 548,
+    "raw_res": "",
+    "prompt_res": "LoaderCallbacks",
+    "gt": "LoaderCallbacks {"
+  },
+  {
+    "id": 549,
+    "raw_res": "",
+    "prompt_res": "AppWidgetProvider",
+    "gt": "AppWidgetProvider {"
+  },
+  {
+    "id": 550,
+    "raw_res": "",
+    "prompt_res": "Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds)",
+    "gt": "Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {"
+  },
+  {
+    "id": 551,
+    "raw_res": "",
+    "prompt_res": "Step mStep;",
+    "gt": "Step mStep;"
+  },
+  {
+    "id": 552,
+    "raw_res": "",
+    "prompt_res": "TravelEstimate mTravelEstimate;",
+    "gt": "Distance mStepRemainingDistance;"
+  },
+  {
+    "id": 553,
+    "raw_res": "",
+    "prompt_res": "TravelEstimate mStepTravelEstimate;",
+    "gt": "TravelEstimate mStepTravelEstimate;"
+  },
+  {
+    "id": 554,
+    "raw_res": "",
+    "prompt_res": "CarIcon mNotificationIcon;",
+    "gt": "CarIcon mJunctionImage;"
+  },
+  {
+    "id": 555,
+    "raw_res": "",
+    "prompt_res": "SuppressLint(\"NewApi\")\npublic class BtCommService",
+    "gt": "SuppressLint(\"NewApi\")\npublic class BtCommService extends CommService\n{"
+  },
+  {
+    "id": 556,
+    "raw_res": "",
+    "prompt_res": "Context context, Handler handler)",
+    "gt": "Context context, Handler handler)\n\t{"
+  },
+  {
+    "id": 557,
+    "raw_res": "",
+    "prompt_res": "Handler handler)",
+    "gt": "Handler handler)\n\t{"
+  },
+  {
+    "id": 558,
+    "raw_res": "",
+    "prompt_res": "BluetoothSocket socket, BluetoothDevice device)",
+    "gt": "BluetoothSocket socket, BluetoothDevice\n\t\t                                                            device, final String socketType)\n\t{"
+  },
+  {
+    "id": 559,
+    "raw_res": "",
+    "prompt_res": "BluetoothDevice device)",
+    "gt": "BluetoothDevice\n\t\t                                                            device, final String socketType)\n\t{"
+  },
+  {
+    "id": 560,
+    "raw_res": "",
+    "prompt_res": "protected final Handler mHandler;",
+    "gt": "Context mContext;"
+  },
+  {
+    "id": 561,
+    "raw_res": "",
+    "prompt_res": "final Handler mHandler;",
+    "gt": "Handler mHandler = null;"
+  },
+  {
+    "id": 562,
+    "raw_res": "",
+    "prompt_res": "PvChangeListener",
+    "gt": "PvChangeListener\n{"
+  },
+  {
+    "id": 563,
+    "raw_res": "",
+    "prompt_res": "TextView label;",
+    "gt": "TextView tvDescr;"
+  },
+  {
+    "id": 564,
+    "raw_res": "",
+    "prompt_res": "ProgressBar pbVal;",
+    "gt": "ProgressBar progressBar;"
+  },
+  {
+    "id": 565,
+    "raw_res": "",
+    "prompt_res": "SharedPreferences sharedPrefs;",
+    "gt": "SharedPreferences prefs;"
+  },
+  {
+    "id": 566,
+    "raw_res": "",
+    "prompt_res": "Context context, PvList pvs)",
+    "gt": "Context context, int resource, PvList pvs)\n    {"
+  },
+  {
+    "id": 567,
+    "raw_res": "",
+    "prompt_res": "View getView(int position, View convertView, ViewGroup parent)",
+    "gt": "View getView(int position, View convertView, ViewGroup parent)\n    {"
+  },
+  {
+    "id": 568,
+    "raw_res": "",
+    "prompt_res": "ViewGroup parent)",
+    "gt": "ViewGroup parent)\n    {"
+  },
+  {
+    "id": 569,
+    "raw_res": "",
+    "prompt_res": "JFreeChart chart;",
+    "gt": "TimeSeriesCollection dataset = new TimeSeriesCollection();"
+  },
+  {
+    "id": 570,
+    "raw_res": "",
+    "prompt_res": "JFreeChart chart;",
+    "gt": "JFreeChart chart;"
+  },
+  {
+    "id": 571,
+    "raw_res": "",
+    "prompt_res": "final XYDataset dataset)",
+    "gt": "XYDataset dataset)\n\t{"
+  },
+  {
+    "id": 572,
+    "raw_res": "",
+    "prompt_res": "TimeSeries series)",
+    "gt": "TimeSeries series)\n\t{"
+  },
+  {
+    "id": 573,
+    "raw_res": "",
+    "prompt_res": "PvChangeListener, ActionListener, ListSelectionListener",
+    "gt": "PvChangeListener\n{"
+  },
+  {
+    "id": 574,
+    "raw_res": "",
+    "prompt_res": "ActionListener, PvChangeListener",
+    "gt": "PvChangeListener\n{"
+  },
+  {
+    "id": 575,
+    "raw_res": "",
+    "prompt_res": "TelegramListener, TelegramWriter",
+    "gt": "TelegramListener, TelegramWriter, Runnable\n{"
+  },
+  {
+    "id": 576,
+    "raw_res": "",
+    "prompt_res": "TelegramWriter",
+    "gt": "TelegramWriter, Runnable\n{"
+  },
+  {
+    "id": 577,
+    "raw_res": "",
+    "prompt_res": "TelegramListener, TelegramWriter",
+    "gt": "TelegramListener, TelegramWriter\n{"
+  },
+  {
+    "id": 578,
+    "raw_res": "",
+    "prompt_res": "TelegramWriter",
+    "gt": "TelegramWriter\n{"
+  },
+  {
+    "id": 579,
+    "raw_res": "",
+    "prompt_res": "TelegramListener, TelegramWriter, ActionListener",
+    "gt": "TelegramListener,\n\tTelegramWriter\n{"
+  },
+  {
+    "id": 580,
+    "raw_res": "",
+    "prompt_res": "TelegramWriter, ActionListener",
+    "gt": "TelegramWriter\n{"
+  },
+  {
+    "id": 581,
+    "raw_res": "",
+    "prompt_res": "ActionListener, TelegramWriter",
+    "gt": "TelegramWriter\n{"
+  },
+  {
+    "id": 582,
+    "raw_res": "",
+    "prompt_res": "TelegramWriter, ActionListener",
+    "gt": "TelegramWriter\n{"
+  },
+  {
+    "id": 583,
+    "raw_res": "",
+    "prompt_res": "TelegramWriter, PropertyChangeListener",
+    "gt": "TelegramWriter\n{"
+  },
+  {
+    "id": 584,
+    "raw_res": "",
+    "prompt_res": "TelegramWriter, PropertyChangeListener",
+    "gt": "TelegramWriter\n{"
+  },
+  {
+    "id": 585,
+    "raw_res": "",
+    "prompt_res": "PvChangeListener, Customizer",
+    "gt": "PvChangeListener, Customizer\n{"
+  },
+  {
+    "id": 586,
+    "raw_res": "",
+    "prompt_res": "PvChangeListener",
+    "gt": "PvChangeListener\n{"
+  },
+  {
+    "id": 587,
+    "raw_res": "",
+    "prompt_res": "PvChangeListener",
+    "gt": "PvChangeListener\n{"
+  },
+  {
+    "id": 588,
+    "raw_res": "",
+    "prompt_res": "PvChangeListener",
+    "gt": "PvChangeListener\n{"
+  },
+  {
+    "id": 589,
+    "raw_res": "",
+    "prompt_res": "TAG_FWK + BaseConnectManager.class.getSimpleName();",
+    "gt": "TAG_FWK + getClass().getSimpleName();"
+  },
+  {
+    "id": 590,
+    "raw_res": "",
+    "prompt_res": "protected Context mContext;",
+    "gt": "Application mApplication;"
+  },
+  {
+    "id": 591,
+    "raw_res": "",
+    "prompt_res": "LinkedBlockingQueue<IBinder> mConnectQueue = new LinkedBlockingQueue<>(1);",
+    "gt": "Handler mChildThread;"
+  },
+  {
+    "id": 592,
+    "raw_res": "",
+    "prompt_res": "IBinder.DeathRecipient mDeathRecipient = new IBinder.DeathRecipient()",
+    "gt": "ServiceConnection mServiceConnection = new ServiceConnection() {"
+  },
+  {
+    "id": 593,
+    "raw_res": "",
+    "prompt_res": "Override\n        public void onServiceConnected(ComponentName name, IBinder service)",
+    "gt": "Override\n        public void onServiceConnected(ComponentName name, IBinder service) {"
+  },
+  {
+    "id": 594,
+    "raw_res": "",
+    "prompt_res": "ComponentName name, IBinder service)",
+    "gt": "ComponentName name, IBinder service) {"
+  },
+  {
+    "id": 595,
+    "raw_res": "",
+    "prompt_res": "IBinder service)",
+    "gt": "IBinder service) {"
+  },
+  {
+    "id": 596,
+    "raw_res": "",
+    "prompt_res": "tryExec(() -> service.linkToDeath(mDeathRecipient, 0));",
+    "gt": "tryExec(() -> {"
+  },
+  {
+    "id": 597,
+    "raw_res": "",
+    "prompt_res": "onServiceConnected();",
+    "gt": "onServiceConnected();"
+  },
+  {
+    "id": 598,
+    "raw_res": "",
+    "prompt_res": "HvacInterface>",
+    "gt": "HvacInterface> {"
+  },
+  {
+    "id": 599,
+    "raw_res": "",
+    "prompt_res": "TAG_FWK + HvacManager.class.getSimpleName();",
+    "gt": "TAG_FWK + HvacManager.class.getSimpleName();"
+  },
+  {
+    "id": 600,
+    "raw_res": "",
+    "prompt_res": "Stub()",
+    "gt": "Stub() {"
+  },
+  {
+    "id": 601,
+    "raw_res": "",
+    "prompt_res": "Override\n        public void onHvacChange(int id, int value) throws RemoteException",
+    "gt": "Override\n        public void onTemperatureChanged(double temperature) throws RemoteException {"
+  },
+  {
+    "id": 602,
+    "raw_res": "",
+    "prompt_res": "getMainHandler().post(() ->",
+    "gt": "getMainHandler().post(() -> {"
+  },
+  {
+    "id": 603,
+    "raw_res": "",
+    "prompt_res": "Override\n    protected String getServicePkgName()",
+    "gt": "Override\n    protected String getServicePkgName() {"
+  },
+  {
+    "id": 604,
+    "raw_res": "",
+    "prompt_res": "Override\n    protected String getServiceClassName()",
+    "gt": "Override\n    protected String getServiceClassName() {"
+  },
+  {
+    "id": 605,
+    "raw_res": "",
+    "prompt_res": "Override\n    protected HvacInterface asInterface(IBinder service)",
+    "gt": "Override\n    protected HvacInterface asInterface(IBinder service) {"
+  },
+  {
+    "id": 606,
+    "raw_res": "",
+    "prompt_res": "Stub.asInterface(service);",
+    "gt": "Stub.asInterface(service);"
+  },
+  {
+    "id": 607,
+    "raw_res": "",
+    "prompt_res": "Override\n    protected void onCreate(Bundle savedInstanceState)",
+    "gt": "Override\n    protected void onCreate(Bundle savedInstanceState) {"
+  },
+  {
+    "id": 608,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 609,
+    "raw_res": "",
+    "prompt_res": "Override\n    public void onCreate()",
+    "gt": "Override\n    public void onCreate() {"
+  },
+  {
+    "id": 610,
+    "raw_res": "",
+    "prompt_res": "Override\n    public void onCreate()",
+    "gt": "Override\n    public void onCreate() {"
+  },
+  {
+    "id": 611,
+    "raw_res": "",
+    "prompt_res": "Nullable\n    @Override\n    public IBinder onBind(@NonNull Intent intent)",
+    "gt": "Nullable\n    @Override\n    public IBinder onBind(@NonNull Intent intent) {"
+  },
+  {
+    "id": 612,
+    "raw_res": "",
+    "prompt_res": "IBinder onBind(@NonNull Intent intent)",
+    "gt": "IBinder onBind(@NonNull Intent intent) {"
+  },
+  {
+    "id": 613,
+    "raw_res": "",
+    "prompt_res": "NonNull Intent intent)",
+    "gt": "NonNull Intent intent) {"
+  },
+  {
+    "id": 614,
+    "raw_res": "",
+    "prompt_res": "Intent intent)",
+    "gt": "Intent intent) {"
+  },
+  {
+    "id": 615,
+    "raw_res": "",
+    "prompt_res": "NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);",
+    "gt": "NotificationManager notificationManager = (NotificationManager)\n                getSystemService(Context.NOTIFICATION_SERVICE);"
+  },
+  {
+    "id": 616,
+    "raw_res": "",
+    "prompt_res": "Context.NOTIFICATION_SERVICE);",
+    "gt": "Context.NOTIFICATION_SERVICE);"
+  },
+  {
+    "id": 617,
+    "raw_res": "",
+    "prompt_res": "NotificationChannel channel = new NotificationChannel(CHANNEL_ID_STRING, \"SimpleService\", NotificationManager.IMPORTANCE_DEFAULT);",
+    "gt": "NotificationChannel channel;"
+  },
+  {
+    "id": 618,
+    "raw_res": "",
+    "prompt_res": "string.app_name), NotificationManager.IMPORTANCE_DEFAULT);",
+    "gt": "string.app_name),\n                    NotificationManager.IMPORTANCE_LOW);"
+  },
+  {
+    "id": 619,
+    "raw_res": "",
+    "prompt_res": "Builder(this, CHANNEL_ID_STRING).build();",
+    "gt": "Builder(getApplicationContext(),\n                    CHANNEL_ID_STRING).build();"
+  },
+  {
+    "id": 620,
+    "raw_res": "",
+    "prompt_res": "Stub",
+    "gt": "Stub {"
+  },
+  {
+    "id": 621,
+    "raw_res": "",
+    "prompt_res": "Override\n    public void registerCallback(HvacCallback callback) throws RemoteException",
+    "gt": "Override\n    public void setTemperature(int temperature) throws RemoteException {"
+  },
+  {
+    "id": 622,
+    "raw_res": "",
+    "prompt_res": "RemoteException",
+    "gt": "RemoteException {"
+  },
+  {
+    "id": 623,
+    "raw_res": "",
+    "prompt_res": "Override\n    public void registerCallback(HvacCallback callback) throws RemoteException",
+    "gt": "Override\n    public boolean registerCallback(HvacCallback callback) throws RemoteException {"
+  },
+  {
+    "id": 624,
+    "raw_res": "",
+    "prompt_res": "Override\n    public boolean unregisterCallback(HvacCallback callback) throws RemoteException",
+    "gt": "Override\n    public boolean unregisterCallback(HvacCallback callback) throws RemoteException {"
+  },
+  {
+    "id": 625,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 626,
+    "raw_res": "",
+    "prompt_res": "ServiceConnection mConnection = new ServiceConnection()",
+    "gt": "ServiceConnection mConnection = new ServiceConnection() {"
+  },
+  {
+    "id": 627,
+    "raw_res": "",
+    "prompt_res": "View view)",
+    "gt": "View view) {"
+  },
+  {
+    "id": 628,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 629,
+    "raw_res": "",
+    "prompt_res": "",
+    "gt": "ServiceConnection mConnection = new ServiceConnection() {"
+  },
+  {
+    "id": 630,
+    "raw_res": "",
+    "prompt_res": "View view)",
+    "gt": "View view) {"
+  },
+  {
+    "id": 631,
+    "raw_res": "",
+    "prompt_res": "View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)",
+    "gt": "View onCreateView(LayoutInflater inflater, ViewGroup container,\n                             Bundle savedInstanceState) {"
+  },
+  {
+    "id": 632,
+    "raw_res": "",
+    "prompt_res": "LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)",
+    "gt": "LayoutInflater inflater, ViewGroup container,\n                             Bundle savedInstanceState) {"
+  },
+  {
+    "id": 633,
+    "raw_res": "",
+    "prompt_res": "ViewGroup container, Bundle savedInstanceState)",
+    "gt": "ViewGroup container,\n                             Bundle savedInstanceState) {"
+  },
+  {
+    "id": 634,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 635,
+    "raw_res": "",
+    "prompt_res": "Activity context;",
+    "gt": "Context context;"
+  },
+  {
+    "id": 636,
+    "raw_res": "",
+    "prompt_res": "View getView(int position, View convertView, @NonNull ViewGroup parent)",
+    "gt": "View getView(int pos, View convertView, @NonNull ViewGroup parent) {"
+  },
+  {
+    "id": 637,
+    "raw_res": "",
+    "prompt_res": "ViewGroup parent)",
+    "gt": "ViewGroup parent) {"
+  },
+  {
+    "id": 638,
+    "raw_res": "",
+    "prompt_res": "TextView pretty;",
+    "gt": "TextView pretty;"
+  },
+  {
+    "id": 639,
+    "raw_res": "",
+    "prompt_res": "Bundle savedInstanceState)",
+    "gt": "Bundle savedInstanceState) {"
+  },
+  {
+    "id": 640,
+    "raw_res": "",
+    "prompt_res": "Listener mListener = new VehicleMessage.Listener()",
+    "gt": "Listener mListener = new VehicleMessage.Listener() {"
+  },
+  {
+    "id": 641,
+    "raw_res": "",
+    "prompt_res": "View view)",
+    "gt": "View view){"
+  },
+  {
+    "id": 642,
+    "raw_res": "",
+    "prompt_res": "Application",
+    "gt": "Application {"
+  },
+  {
+    "id": 643,
+    "raw_res": "",
+    "prompt_res": "WindowFunction<PositionEvent, AccidentEvent, Tuple5<String, Integer, Integer, Integer, Integer>, GlobalWindow>",
+    "gt": "WindowFunction<PositionEvent, AccidentEvent,\n            Tuple5<String, Integer, Integer, Integer, Integer>, GlobalWindow> {"
+  },
+  {
+    "id": 644,
+    "raw_res": "",
+    "prompt_res": "Tuple5<String, Integer, Integer, Integer, Integer>, GlobalWindow>",
+    "gt": "Tuple5<String, Integer, Integer, Integer, Integer>, GlobalWindow> {"
+  },
+  {
+    "id": 645,
+    "raw_res": "",
+    "prompt_res": "GlobalWindow>",
+    "gt": "GlobalWindow> {"
+  },
+  {
+    "id": 646,
+    "raw_res": "",
+    "prompt_res": "Collector<AccidentEvent> collector)",
+    "gt": "Collector<AccidentEvent> collector) throws Exception {"
+  },
+  {
+    "id": 647,
+    "raw_res": "",
+    "prompt_res": "Tuple3<String, Integer, Integer>",
+    "gt": "Tuple3<String, Integer, Integer> {"
+  },
+  {
+    "id": 648,
+    "raw_res": "",
+    "prompt_res": "MapFunction<String, PositionEvent>",
+    "gt": "MapFunction<String, PositionEvent> {"
+  },
+  {
+    "id": 649,
+    "raw_res": "",
+    "prompt_res": "SuiteClasses(",
+    "gt": "SuiteClasses({"
+  },
+  {
+    "id": 650,
+    "raw_res": "",
+    "prompt_res": "String inputFile;",
+    "gt": "SingleOutputStreamOperator<PositionEvent> stream;"
+  },
+  {
+    "id": 651,
+    "raw_res": "",
+    "prompt_res": "Logger logger = Logger.getLogger(DBTFindFrame.class);",
+    "gt": "Logger logger = Logger.getLogger(DBTFindFrame.class);"
+  },
+  {
+    "id": 652,
+    "raw_res": "",
+    "prompt_res": "DBTable dbTable = null;",
+    "gt": "DBTable dbTable = null;"
+  },
+  {
+    "id": 653,
+    "raw_res": "",
+    "prompt_res": "JSlider slider = null;",
+    "gt": "DBTable logDataTable = null;"
+  },
+  {
+    "id": 654,
+    "raw_res": "",
+    "prompt_res": "int start, int end)",
+    "gt": "ValueMarker startMarker, ValueMarker endMarker) {"
+  },
+  {
+    "id": 655,
+    "raw_res": "",
+    "prompt_res": "Logger logger = Logger.getLogger(LogView.class);",
+    "gt": "Logger logger = Logger.getLogger(LogView.class);"
+  },
+  {
+    "id": 656,
+    "raw_res": "",
+    "prompt_res": "",
+    "gt": "ChartPanel chartPanel = null;"
+  },
+  {
+    "id": 657,
+    "raw_res": "",
+    "prompt_res": "Stack<Color> colors = new Stack<Color>();",
+    "gt": "XYPlot plot = null;"
+  },
+  {
+    "id": 658,
+    "raw_res": "",
+    "prompt_res": "Plot3DPanel plot3d = null;",
+    "gt": "XYSeriesCollection rpmDataset = null;"
+  },
+  {
+    "id": 659,
+    "raw_res": "",
+    "prompt_res": "XYSeriesCollection wotDataset = null;",
+    "gt": "XYLineAndShapeRenderer rpmPlotRenderer = null;"
+  },
+  {
+    "id": 660,
+    "raw_res": "",
+    "prompt_res": "Stack<Color> colors = new Stack<Color>();",
+    "gt": "Plot3DPanel plot3d = null;"
+  },
+  {
+    "id": 661,
+    "raw_res": "",
+    "prompt_res": "Stack<Color> colors = new Stack<Color>();",
+    "gt": "ChartMouseListener chartMouseListener = null;"
+  },
+  {
+    "id": 662,
+    "raw_res": "",
+    "prompt_res": "Stack<Color> colors = new Stack<Color>();",
+    "gt": "ValueMarker startMarker = null;"
+  },
+  {
+    "id": 663,
+    "raw_res": "",
+    "prompt_res": "RecyclerView implements CarUxRestrictionsUtil.OnUxRestrictionsChangedListener",
+    "gt": "RecyclerView {"
+  },
+  {
+    "id": 664,
+    "raw_res": "",
+    "prompt_res": "OnUxRestrictionsChangedListener mListener = this::updateCarUxRestrictions;",
+    "gt": "OnUxRestrictionsChangedListener mListener =\n            new UxRestrictionChangedListener();"
+  },
+  {
+    "id": 665,
+    "raw_res": "",
+    "prompt_res": "ItemDecoration mDividerItemDecoration;",
+    "gt": "ItemDecoration mTopOffsetItemDecorationLinear;"
+  },
+  {
+    "id": 666,
+    "raw_res": "",
+    "prompt_res": "mBottomOffsetItemDecorationLinear;",
+    "gt": "ItemDecoration mBottomOffsetItemDecorationLinear;"
+  },
+  {
+    "id": 667,
+    "raw_res": "",
+    "prompt_res": "ViewGroup mContainer;",
+    "gt": "LinearLayout mContainer;"
+  },
+  {
+    "id": 668,
+    "raw_res": "",
+    "prompt_res": "void init(Context context, AttributeSet attrs, int defStyleAttr)",
+    "gt": "OnScrollListener mOnScrollListener = new OnScrollListener() {"
+  },
+  {
+    "id": 669,
+    "raw_res": "",
+    "prompt_res": "Context context)",
+    "gt": "Context context) {"
+  },
+  {
+    "id": 670,
+    "raw_res": "",
+    "prompt_res": "AttributeSet attrs)",
+    "gt": "AttributeSet attrs) {"
+  },
+  {
+    "id": 671,
+    "raw_res": "",
+    "prompt_res": "LayoutManager layout)",
+    "gt": "LayoutManager layoutManager) {"
+  },
+  {
+    "id": 672,
+    "raw_res": "",
+    "prompt_res": "TypedArray a)",
+    "gt": "TypedArray styledAttributes) {"
+  },
+  {
+    "id": 673,
+    "raw_res": "",
+    "prompt_res": "Adapter<RecyclerView.ViewHolder>",
+    "gt": "Adapter<CarUiRecyclerViewAdapter.NestedRowViewHolder> {"
+  },
+  {
+    "id": 674,
+    "raw_res": "",
+    "prompt_res": "FrameLayout frame;",
+    "gt": "FrameLayout frameLayout;"
+  },
+  {
+    "id": 675,
+    "raw_res": "",
+    "prompt_res": "View v)",
+    "gt": "View view) {"
+  },
+  {
+    "id": 676,
+    "raw_res": "",
+    "prompt_res": "java.util.Map<String, String> SYSTEM_PROPERTY_CACHE = new java.util.HashMap<>();",
+    "gt": "SparseArray<String> READ_ONLY_SYSTEM_PROPERTY_MAP = new SparseArray<>();"
+  },
+  {
+    "id": 677,
+    "raw_res": "",
+    "prompt_res": "@NonNull Resources res, @DimenRes int resId)",
+    "gt": "Resources res, @DimenRes int resId) {"
+  },
+  {
+    "id": 678,
+    "raw_res": "",
+    "prompt_res": "Context context, int attr)",
+    "gt": "Context context, int attr) {"
+  },
+  {
+    "id": 679,
+    "raw_res": "",
+    "prompt_res": "Activity getActivity(Context context)",
+    "gt": "Activity getActivity(Context context) {"
+  },
+  {
+    "id": 680,
+    "raw_res": "",
+    "prompt_res": "",
+    "gt": "Drawable setPreferenceViewEnabled(boolean viewEnabled, View itemView,\n            Drawable background, boolean shouldShowRippleOnDisabledPreference) {"
+  },
+  {
+    "id": 681,
+    "raw_res": "",
+    "prompt_res": "View itemView, Drawable originalBackground)",
+    "gt": "View itemView,\n            Drawable background, boolean shouldShowRippleOnDisabledPreference) {"
+  },
+  {
+    "id": 682,
+    "raw_res": "",
+    "prompt_res": "Bitmap drawableToBitmap(@NonNull Drawable drawable)",
+    "gt": "Bitmap drawableToBitmap(@NonNull Drawable drawable) {"
+  },
+  {
+    "id": 683,
+    "raw_res": "",
+    "prompt_res": "SysUISingleton\n@Subcomponent(modules =",
+    "gt": "SysUISingleton\n@Subcomponent(modules = {"
+  },
+  {
+    "id": 684,
+    "raw_res": "",
+    "prompt_res": "Subcomponent(modules =",
+    "gt": "Subcomponent(modules = {"
+  },
+  {
+    "id": 685,
+    "raw_res": "",
+    "prompt_res": "Builder\n    interface Builder extends SysUIComponent.Builder",
+    "gt": "Builder\n    interface Builder extends SysUIComponent.Builder {"
+  },
+  {
+    "id": 686,
+    "raw_res": "",
+    "prompt_res": "",
+    "gt": "HeadsUpManagerPhone provideHeadsUpManagerPhone(\n            Context context,\n            StatusBarStateController statusBarStateController,\n            KeyguardBypassController bypassController,\n            GroupMembershipManager groupManager,\n            ConfigurationController configurationController) {"
+  },
+  {
+    "id": 687,
+    "raw_res": "",
+    "prompt_res": "StatusBarStateController statusBarStateController,\n            KeyguardBypassController bypassController,\n            GroupMembershipManager groupMembershipManager,\n            ConfigurationController configurationController)",
+    "gt": "StatusBarStateController statusBarStateController,\n            KeyguardBypassController bypassController,\n            GroupMembershipManager groupManager,\n            ConfigurationController configurationController) {"
+  },
+  {
+    "id": 688,
+    "raw_res": "",
+    "prompt_res": "KeyguardBypassController bypassController,\n            GroupMembershipManager groupMembershipManager,\n            ConfigurationController configurationController)",
+    "gt": "KeyguardBypassController bypassController,\n            GroupMembershipManager groupManager,\n            ConfigurationController configurationController) {"
+  },
+  {
+    "id": 689,
+    "raw_res": "",
+    "prompt_res": "GroupMembershipManager groupMembershipManager,\n            ConfigurationController configurationController)",
+    "gt": "GroupMembershipManager groupManager,\n            ConfigurationController configurationController) {"
+  },
+  {
+    "id": 690,
+    "raw_res": "",
+    "prompt_res": "ConfigurationController configurationController)",
+    "gt": "ConfigurationController configurationController) {"
+  },
+  {
+    "id": 691,
+    "raw_res": "",
+    "prompt_res": "Recents provideRecents(Context context, RecentsImplementation recentsImplementation,\n            CommandQueue commandQueue)",
+    "gt": "Recents provideRecents(Context context, RecentsImplementation recentsImplementation,\n            CommandQueue commandQueue) {"
+  },
+  {
+    "id": 692,
+    "raw_res": "",
+    "prompt_res": "RecentsImplementation recentsImplementation,\n            CommandQueue commandQueue)",
+    "gt": "RecentsImplementation recentsImplementation,\n            CommandQueue commandQueue) {"
+  },
+  {
+    "id": 693,
+    "raw_res": "",
+    "prompt_res": "CommandQueue commandQueue)",
+    "gt": "CommandQueue commandQueue) {"
+  },
+  {
+    "id": 694,
+    "raw_res": "",
+    "prompt_res": "DisplayAreaOrganizer provideDisplayAreaOrganizer(@Main Executor executor)",
+    "gt": "DisplayAreaOrganizer provideDisplayAreaOrganizer(@Main Executor executor) {"
+  },
+  {
+    "id": 695,
+    "raw_res": "",
+    "prompt_res": "NotificationShadeWindowController bindNotificationShadeWindowController(\n            NotificationShadeWindowControllerImpl notificationShadeWindowController);",
+    "gt": "HeadsUpManager bindHeadsUpManagerPhone(HeadsUpManagerPhone headsUpManagerPhone);"
+  },
+  {
+    "id": 696,
+    "raw_res": "",
+    "prompt_res": "NotificationLockscreenUserManager bindNotificationLockscreenUserManager(\n            NotificationLockscreenUserManagerImpl notificationLockscreenUserManager);",
+    "gt": "EnhancedEstimates bindEnhancedEstimates(EnhancedEstimatesImpl enhancedEstimates);"
+  },
+  {
+    "id": 697,
+    "raw_res": "",
+    "prompt_res": "EnhancedEstimatesImpl enhancedEstimates);",
+    "gt": "EnhancedEstimatesImpl enhancedEstimates);"
+  },
+  {
+    "id": 698,
+    "raw_res": "",
+    "prompt_res": "NotificationLockscreenUserManager bindNotificationLockscreenUserManager(\n            NotificationLockscreenUserManagerImpl notificationLockscreenUserManager);",
+    "gt": "NotificationLockscreenUserManager bindNotificationLockscreenUserManager(\n            NotificationLockscreenUserManagerImpl notificationLockscreenUserManager);"
+  },
+  {
+    "id": 699,
+    "raw_res": "",
+    "prompt_res": "NotificationLockscreenUserManagerImpl notificationLockscreenUserManager);",
+    "gt": "NotificationLockscreenUserManagerImpl notificationLockscreenUserManager);"
+  },
+  {
+    "id": 700,
+    "raw_res": "",
+    "prompt_res": "BatteryController provideBatteryController(Context context, EnhancedEstimates enhancedEstimates,\n            PowerManager powerManager, BroadcastDispatcher broadcastDispatcher,\n            DemoModeController demoModeController, @Main Handler mainHandler,\n            @Background Handler bgHandler)",
+    "gt": "BatteryController provideBatteryController(Context context,\n            EnhancedEstimates enhancedEstimates, PowerManager powerManager,\n            BroadcastDispatcher broadcastDispatcher, DemoModeController demoModeController,\n            @Main Handler mainHandler,\n            @Background Handler bgHandler) {"
+  },
+  {
+    "id": 701,
+    "raw_res": "",
+    "prompt_res": "PowerManager powerManager,\n            BroadcastDispatcher broadcastDispatcher,\n            DemoModeController demoModeController,\n            @Main Handler mainHandler,\n            @Background Handler bgHandler)",
+    "gt": "PowerManager powerManager,\n            BroadcastDispatcher broadcastDispatcher, DemoModeController demoModeController,\n            @Main Handler mainHandler,\n            @Background Handler bgHandler) {"
+  },
+  {
+    "id": 702,
+    "raw_res": "",
+    "prompt_res": "BroadcastDispatcher broadcastDispatcher, DemoModeController demoModeController,\n            @Main Handler mainHandler, @Background Handler bgHandler)",
+    "gt": "BroadcastDispatcher broadcastDispatcher, DemoModeController demoModeController,\n            @Main Handler mainHandler,\n            @Background Handler bgHandler) {"
+  },
+  {
+    "id": 703,
+    "raw_res": "",
+    "prompt_res": "DemoModeController demoModeController,\n            @Main Handler mainHandler, @Background Handler bgHandler)",
+    "gt": "DemoModeController demoModeController,\n            @Main Handler mainHandler,\n            @Background Handler bgHandler) {"
+  },
+  {
+    "id": 704,
+    "raw_res": "",
+    "prompt_res": "Handler mainHandler,\n            @Background Handler bgHandler)",
+    "gt": "Handler mainHandler,\n            @Background Handler bgHandler) {"
+  },
+  {
+    "id": 705,
+    "raw_res": "",
+    "prompt_res": "SensorPrivacyController provideSensorPrivacyController(\n            SensorPrivacyManager sensorPrivacyManager)",
+    "gt": "SensorPrivacyController provideSensorPrivacyController(\n            SensorPrivacyManager sensorPrivacyManager) {"
+  },
+  {
+    "id": 706,
+    "raw_res": "",
+    "prompt_res": "SensorPrivacyManager sensorPrivacyManager)",
+    "gt": "SensorPrivacyManager sensorPrivacyManager) {"
+  },
+  {
+    "id": 707,
+    "raw_res": "",
+    "prompt_res": "IndividualSensorPrivacyController provideIndividualSensorPrivacyController(\n            SensorPrivacyManager sensorPrivacyManager)",
+    "gt": "IndividualSensorPrivacyController provideIndividualSensorPrivacyController(\n            SensorPrivacyManager sensorPrivacyManager) {"
+  },
+  {
+    "id": 708,
+    "raw_res": "",
+    "prompt_res": "QSFactoryImpl qsFactoryImpl);",
+    "gt": "QSFactoryImpl qsFactoryImpl);"
+  }
+]
