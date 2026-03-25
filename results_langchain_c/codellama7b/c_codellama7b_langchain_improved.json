@@ -1,0 +1,677 @@
+[
+  {
+    "id": 12,
+    "pkg": "FFmpeg",
+    "fpath": "libavcodec/frame_thread_encoder.c",
+    "input": "/*\n * Copyright (c) 2012 Michael Niedermayer <michaelni@gmx.at>\n *\n * This file is part of FFmpeg.\n *\n * FFmpeg is free software; you can redistribute it and/or\n * modify it under the terms of the GNU Lesser General Public\n * License as published by the Free Software Foundation; either\n * version 2.1 of the License, or (at your option) any later version.\n *\n * FFmpeg is distributed in the hope that it will be useful,\n * but WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n * Lesser General Public License for more details.\n *\n * You should have received a copy of the GNU Lesser General Public\n * License along with FFmpeg; if not, write to the Free Software\n * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA\n */\n\n#include <stdatomic.h>\n\n#include \"frame_thread_encoder.h\"\n\n#include \"libavutil/avassert.h\"\n#include \"libavutil/cpu.h\"\n#include \"libavutil/mem.h\"\n#include \"libavutil/opt.h\"\n#include \"libavutil/thread.h\"\n#include \"avcodec.h\"\n#include \"avcodec_internal.h\"\n#include \"codec_par.h\"\n#include \"encode.h\"\n#include \"internal.h\"\n#include \"pthread_internal.h\"\n\n#define MAX_THREADS 64\n/* There can be as many as MAX_THREADS + 1 outstanding tasks.\n * An additional + 1 is needed so that one can distinguish\n * the case of zero and MAX_THREADS + 1 outstanding tasks modulo\n * the number of buffers. */\n#define BUFFER_SIZE (MAX_THREADS + 2)\n\ntypedef struct{\n    AVFrame  *indata;\n    AVPacket *outdata;\n    int       return_code;\n    int       finished;\n    int       got_packet;\n} Task;\n\ntypedef struct{\n    AVCodecContext *parent_avctx;\n\n    pthread_mutex_t task_fifo_mutex; /* Used to guard (next_)task_index */\n    ",
+    "raw_res": "/* The number of tasks that have been submitted but not yet\n     * completed. */\n    atomic_int outstanding_tasks;",
+    "prompt_res": "pthread_cond_t task_fifo_cond;",
+    "gt": "pthread_cond_t task_fifo_cond;\n"
+  },
+  {
+    "id": 70,
+    "pkg": "FFmpeg",
+    "fpath": "libavcodec/bsf/av1_frame_split.c",
+    "input": "/*\n * Copyright (c) 2019 James Almer <jamrial@gmail.com>\n *\n * This file is part of FFmpeg.\n *\n * FFmpeg is free software; you can redistribute it and/or\n * modify it under the terms of the GNU Lesser General Public\n * License as published by the Free Software Foundation; either\n * version 2.1 of the License, or (at your option) any later version.\n *\n * FFmpeg is distributed in the hope that it will be useful,\n * but WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n * Lesser General Public License for more details.\n *\n * You should have received a copy of the GNU Lesser General Public\n * License along with FFmpeg; if not, write to the Free Software\n * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA\n */\n\n/**\n * @file\n * This bitstream filter splits AV1 Temporal Units into packets containing\n * just one frame, plus any leading and trailing OBUs that may be present at\n * the beginning or end, respectively.\n *\n * Temporal Units already containing only one frame will be passed through\n * unchanged. When splitting can't be performed, the Temporal Unit will be\n * passed through containing only the remaining OBUs starting from the first\n * one after the last successfully split frame.\n */\n\n#include \"libavutil/avassert.h\"\n\n#include \"bsf.h\"\n#include \"bsf_internal.h\"\n#include \"cbs.h\"\n#include \"cbs_av1.h\"\n\ntypedef struct AV1FSplitContext {\n    AVPacket *buffer_pkt;\n    ",
+    "raw_res": "AVBSFContext *bsfc;",
+    "prompt_res": "CodedBitstreamContext *cbc;",
+    "gt": "CodedBitstreamContext *cbc;\n"
+  },
+  {
+    "id": 79,
+    "pkg": "FFmpeg",
+    "fpath": "libavcodec/bsf/h264_redundant_pps.c",
+    "input": "/*\n * This file is part of FFmpeg.\n *\n * FFmpeg is free software; you can redistribute it and/or\n * modify it under the terms of the GNU Lesser General Public\n * License as published by the Free Software Foundation; either\n * version 2.1 of the License, or (at your option) any later version.\n *\n * FFmpeg is distributed in the hope that it will be useful,\n * but WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n * Lesser General Public License for more details.\n *\n * You should have received a copy of the GNU Lesser General Public\n * License along with FFmpeg; if not, write to the Free Software\n * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA\n */\n\n#include <inttypes.h>\n\n#include \"libavutil/log.h\"\n\n#include \"bsf.h\"\n#include \"bsf_internal.h\"\n#include \"cbs.h\"\n#include \"cbs_bsf.h\"\n#include \"cbs_h264.h\"\n#include \"codec_id.h\"\n#include \"h264.h\"\n#include \"packet.h\"\n\n#define NEW_GLOBAL_PIC_INIT_QP 26\n\ntypedef struct H264RedundantPPSContext {\n    ",
+    "raw_res": "AVBSFContext *h;",
+    "prompt_res": "CBSBSFContext common;",
+    "gt": "CBSBSFContext common;\n"
+  },
+  {
+    "id": 98,
+    "pkg": "FFmpeg",
+    "fpath": "libavcodec/bsf/h264_metadata.c",
+    "input": "/*\n * This file is part of FFmpeg.\n *\n * FFmpeg is free software; you can redistribute it and/or\n * modify it under the terms of the GNU Lesser General Public\n * License as published by the Free Software Foundation; either\n * version 2.1 of the License, or (at your option) any later version.\n *\n * FFmpeg is distributed in the hope that it will be useful,\n * but WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n * Lesser General Public License for more details.\n *\n * You should have received a copy of the GNU Lesser General Public\n * License along with FFmpeg; if not, write to the Free Software\n * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA\n */\n\n#include \"libavutil/avstring.h\"\n#include \"libavutil/display.h\"\n#include \"libavutil/common.h\"\n#include \"libavutil/mem.h\"\n#include \"libavutil/opt.h\"\n\n#include \"bsf.h\"\n#include \"bsf_internal.h\"\n#include \"cbs.h\"\n#include \"cbs_bsf.h\"\n#include \"cbs_h264.h\"\n#include \"cbs_sei.h\"\n#include \"h264.h\"\n#include \"h264_levels.h\"\n#include \"h2645data.h\"\n#include \"sei.h\"\n\nenum {\n    FLIP_HORIZONTAL = 1,\n    FLIP_VERTICAL   = 2,\n};\n\nenum {\n    LEVEL_UNSET = -2,\n    LEVEL_AUTO  = -1,\n};\n\ntypedef struct H264MetadataContext {\n    ",
+    "raw_res": "const AVClass *class;",
+    "prompt_res": "CBSBSFContext common;",
+    "gt": "CBSBSFContext common;\n"
+  },
+  {
+    "id": 118,
+    "pkg": "FFmpeg",
+    "fpath": "libavcodec/bsf/apv_metadata.c",
+    "input": "/*\n * This file is part of FFmpeg.\n *\n * FFmpeg is free software; you can redistribute it and/or\n * modify it under the terms of the GNU Lesser General Public\n * License as published by the Free Software Foundation; either\n * version 2.1 of the License, or (at your option) any later version.\n *\n * FFmpeg is distributed in the hope that it will be useful,\n * but WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n * Lesser General Public License for more details.\n *\n * You should have received a copy of the GNU Lesser General Public\n * License along with FFmpeg; if not, write to the Free Software\n * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA\n */\n\n#include \"libavutil/common.h\"\n#include \"libavutil/opt.h\"\n\n#include \"bsf.h\"\n#include \"bsf_internal.h\"\n#include \"cbs.h\"\n#include \"cbs_bsf.h\"\n#include \"cbs_apv.h\"\n\ntypedef struct APVMetadataContext {\n    ",
+    "raw_res": "const AVClass *class;",
+    "prompt_res": "CBSBSFContext common;",
+    "gt": "CBSBSFContext common;\n"
+  },
+  {
+    "id": 126,
+    "pkg": "FFmpeg",
+    "fpath": "libavcodec/bsf/dovi_rpu.c",
+    "input": "/*\n * This file is part of FFmpeg.\n *\n * FFmpeg is free software; you can redistribute it and/or\n * modify it under the terms of the GNU Lesser General Public\n * License as published by the Free Software Foundation; either\n * version 2.1 of the License, or (at your option) any later version.\n *\n * FFmpeg is distributed in the hope that it will be useful,\n * but WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n * Lesser General Public License for more details.\n *\n * You should have received a copy of the GNU Lesser General Public\n * License along with FFmpeg; if not, write to the Free Software\n * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA\n */\n\n#include \"libavutil/common.h\"\n#include \"libavutil/mem.h\"\n#include \"libavutil/opt.h\"\n\n#include \"bsf.h\"\n#include \"bsf_internal.h\"\n#include \"cbs.h\"\n#include \"cbs_bsf.h\"\n#include \"cbs_av1.h\"\n#include \"cbs_h265.h\"\n#include \"dovi_rpu.h\"\n#include \"h2645data.h\"\n#include \"h265_profile_level.h\"\n#include \"itut35.h\"\n\n#include \"hevc/hevc.h\"\n\ntypedef struct DoviRpuContext {\n    ",
+    "raw_res": "const AVClass *class;",
+    "prompt_res": "CBSBSFContext common;",
+    "gt": "CBSBSFContext common;\n"
+  },
+  {
+    "id": 143,
+    "pkg": "FFmpeg",
+    "fpath": "libavcodec/bsf/h266_metadata.c",
+    "input": "/*\n * This file is part of FFmpeg.\n *\n * FFmpeg is free software; you can redistribute it and/or\n * modify it under the terms of the GNU Lesser General Public\n * License as published by the Free Software Foundation; either\n * version 2.1 of the License, or (at your option) any later version.\n *\n * FFmpeg is distributed in the hope that it will be useful,\n * but WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n * Lesser General Public License for more details.\n *\n * You should have received a copy of the GNU Lesser General Public\n * License along with FFmpeg; if not, write to the Free Software\n * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA\n */\n\n#include \"libavutil/common.h\"\n#include \"libavutil/opt.h\"\n\n#include \"bsf.h\"\n#include \"bsf_internal.h\"\n#include \"cbs.h\"\n#include \"cbs_bsf.h\"\n#include \"cbs_h266.h\"\n#include \"vvc.h\"\n\n#define IS_H266_SLICE(nut) (nut <= VVC_RASL_NUT || (nut >= VVC_IDR_W_RADL && nut <= VVC_GDR_NUT))\n\ntypedef struct H266MetadataContext {\n    ",
+    "raw_res": "const AVClass *class;",
+    "prompt_res": "CBSBSFContext common;",
+    "gt": "CBSBSFContext common;\n"
+  },
+  {
+    "id": 154,
+    "pkg": "FFmpeg",
+    "fpath": "libavcodec/bsf/av1_metadata.c",
+    "input": "/*\n * This file is part of FFmpeg.\n *\n * FFmpeg is free software; you can redistribute it and/or\n * modify it under the terms of the GNU Lesser General Public\n * License as published by the Free Software Foundation; either\n * version 2.1 of the License, or (at your option) any later version.\n *\n * FFmpeg is distributed in the hope that it will be useful,\n * but WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n * Lesser General Public License for more details.\n *\n * You should have received a copy of the GNU Lesser General Public\n * License along with FFmpeg; if not, write to the Free Software\n * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA\n */\n\n#include \"libavutil/common.h\"\n#include \"libavutil/opt.h\"\n\n#include \"bsf.h\"\n#include \"bsf_internal.h\"\n#include \"cbs.h\"\n#include \"cbs_bsf.h\"\n#include \"cbs_av1.h\"\n\ntypedef struct AV1MetadataContext {\n    ",
+    "raw_res": "const AVClass *class;",
+    "prompt_res": "CBSBSFContext common;",
+    "gt": "CBSBSFContext common;\n"
+  },
+  {
+    "id": 162,
+    "pkg": "FFmpeg",
+    "fpath": "libavcodec/bsf/h265_metadata.c",
+    "input": "/*\n * This file is part of FFmpeg.\n *\n * FFmpeg is free software; you can redistribute it and/or\n * modify it under the terms of the GNU Lesser General Public\n * License as published by the Free Software Foundation; either\n * version 2.1 of the License, or (at your option) any later version.\n *\n * FFmpeg is distributed in the hope that it will be useful,\n * but WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n * Lesser General Public License for more details.\n *\n * You should have received a copy of the GNU Lesser General Public\n * License along with FFmpeg; if not, write to the Free Software\n * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA\n */\n\n#include \"libavutil/common.h\"\n#include \"libavutil/opt.h\"\n\n#include \"bsf.h\"\n#include \"bsf_internal.h\"\n#include \"cbs.h\"\n#include \"cbs_bsf.h\"\n#include \"cbs_h265.h\"\n#include \"h2645data.h\"\n#include \"h265_profile_level.h\"\n\n#include \"hevc/hevc.h\"\n\nenum {\n    LEVEL_UNSET = -2,\n    LEVEL_AUTO  = -1,\n};\n\ntypedef struct H265MetadataContext {\n    ",
+    "raw_res": "const AVClass *class;",
+    "prompt_res": "CBSBSFContext common;",
+    "gt": "CBSBSFContext common;\n"
+  },
+  {
+    "id": 195,
+    "pkg": "FFmpeg",
+    "fpath": "libavcodec/bsf/vp9_metadata.c",
+    "input": "/*\n * This file is part of FFmpeg.\n *\n * FFmpeg is free software; you can redistribute it and/or\n * modify it under the terms of the GNU Lesser General Public\n * License as published by the Free Software Foundation; either\n * version 2.1 of the License, or (at your option) any later version.\n *\n * FFmpeg is distributed in the hope that it will be useful,\n * but WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n * Lesser General Public License for more details.\n *\n * You should have received a copy of the GNU Lesser General Public\n * License along with FFmpeg; if not, write to the Free Software\n * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA\n */\n\n#include \"libavutil/log.h\"\n#include \"libavutil/opt.h\"\n\n#include \"bsf.h\"\n#include \"bsf_internal.h\"\n#include \"cbs.h\"\n#include \"cbs_bsf.h\"\n#include \"cbs_vp9.h\"\n\ntypedef struct VP9MetadataContext {\n    ",
+    "raw_res": "const AVClass *class;",
+    "prompt_res": "CBSBSFContext common;",
+    "gt": "CBSBSFContext common;\n"
+  },
+  {
+    "id": 229,
+    "pkg": "FFmpeg",
+    "fpath": "libavcodec/bsf/mpeg2_metadata.c",
+    "input": "/*\n * This file is part of FFmpeg.\n *\n * FFmpeg is free software; you can redistribute it and/or\n * modify it under the terms of the GNU Lesser General Public\n * License as published by the Free Software Foundation; either\n * version 2.1 of the License, or (at your option) any later version.\n *\n * FFmpeg is distributed in the hope that it will be useful,\n * but WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n * Lesser General Public License for more details.\n *\n * You should have received a copy of the GNU Lesser General Public\n * License along with FFmpeg; if not, write to the Free Software\n * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA\n */\n\n#include \"libavutil/common.h\"\n#include \"libavutil/opt.h\"\n\n#include \"bsf.h\"\n#include \"bsf_internal.h\"\n#include \"cbs.h\"\n#include \"cbs_bsf.h\"\n#include \"cbs_mpeg2.h\"\n#include \"mpeg12.h\"\n\ntypedef struct MPEG2MetadataContext {\n    ",
+    "raw_res": "const AVClass *class;",
+    "prompt_res": "CBSBSFContext common;",
+    "gt": "CBSBSFContext common;\n"
+  },
+  {
+    "id": 235,
+    "pkg": "FFmpeg",
+    "fpath": "libavcodec/bsf/setts.c",
+    "input": "/*\n * Copyright (c) 2021 Paul B Mahol\n *\n * This file is part of FFmpeg.\n *\n * FFmpeg is free software; you can redistribute it and/or\n * modify it under the terms of the GNU Lesser General Public\n * License as published by the Free Software Foundation; either\n * version 2.1 of the License, or (at your option) any later version.\n *\n * FFmpeg is distributed in the hope that it will be useful,\n * but WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n * Lesser General Public License for more details.\n *\n * You should have received a copy of the GNU Lesser General Public\n * License along with FFmpeg; if not, write to the Free Software\n * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA\n */\n\n/**\n * @file\n * Change the PTS/DTS timestamps.\n */\n\n#include \"libavutil/opt.h\"\n#include \"libavutil/eval.h\"\n\n#include \"bsf.h\"\n#include \"bsf_internal.h\"\n\nstatic const char *const var_names[] = {\n    \"N\",           ///< frame number (starting at zero)\n    \"TS\",\n    \"POS\",         ///< original position in the file of the frame\n    \"PREV_INPTS\",  ///< previous  input PTS\n    \"PREV_INDTS\",  ///< previous  input DTS\n    \"PREV_INDURATION\", ///< previous input duration\n    \"PREV_OUTPTS\", ///< previous output PTS\n    \"PREV_OUTDTS\", ///< previous output DTS\n    \"PREV_OUTDURATION\", ///< previous output duration\n    \"NEXT_PTS\",    ///< next input PTS\n    \"NEXT_DTS\",    ///< next input DTS\n    \"NEXT_DURATION\", ///< next input duration\n    \"PTS\",         ///< original PTS in the file of the frame\n    \"DTS\",         ///< original DTS in the file of the frame\n    \"DURATION\",    ///< original duration in the file of the frame\n    \"STARTPTS\",    ///< PTS at start of movie\n    \"STARTDTS\",    ///< DTS at start of movie\n    \"TB\",          ///< input timebase of the stream\n    \"TB_OUT\",      ///< output timebase of the stream\n    \"SR\",          ///< sample rate of the stream\n    \"NOPTS\",       ///< The AV_NOPTS_VALUE constant\n    NULL\n};\n\nenum var_name {\n    VAR_N,\n    VAR_TS,\n    VAR_POS,\n    VAR_PREV_INPTS,\n    VAR_PREV_INDTS,\n    VAR_PREV_INDUR,\n    VAR_PREV_OUTPTS,\n    VAR_PREV_OUTDTS,\n    VAR_PREV_OUTDUR,\n    VAR_NEXT_PTS,\n    VAR_NEXT_DTS,\n    VAR_NEXT_DUR,\n    VAR_PTS,\n    VAR_DTS,\n    VAR_DURATION,\n    VAR_STARTPTS,\n    VAR_STARTDTS,\n    VAR_TB,\n    VAR_TB_OUT,\n    VAR_SR,\n    VAR_NOPTS,\n    VAR_VARS_NB\n};\n\ntypedef struct SetTSContext {\n    const AVClass *class;\n\n    char *ts_str;\n    char *pts_str;\n    char *dts_str;\n    char *duration_str;\n\n    AVRational time_base;\n\n    int64_t frame_number;\n\n    double var_values[VAR_VARS_NB];\n\n    AVExpr *ts_expr;\n    AVExpr *pts_expr;\n    AVExpr *dts_expr;\n    AVExpr *duration_expr;\n\n    AVPacket *prev_inpkt;\n    ",
+    "raw_res": "int64_t prev_inpts;",
+    "prompt_res": "AVPacket *prev_outpkt;",
+    "gt": "AVPacket *prev_outpkt;\n"
+  },
+  {
+    "id": 278,
+    "pkg": "FreeRTOS-Kernel",
+    "fpath": "portable/IAR/MSP430X/port.c",
+    "input": "/*\n * FreeRTOS Kernel <DEVELOPMENT BRANCH>\n * Copyright (C) 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.\n *\n * SPDX-License-Identifier: MIT\n *\n * Permission is hereby granted, free of charge, to any person obtaining a copy of\n * this software and associated documentation files (the \"Software\"), to deal in\n * the Software without restriction, including without limitation the rights to\n * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\n * the Software, and to permit persons to whom the Software is furnished to do so,\n * subject to the following conditions:\n *\n * The above copyright notice and this permission notice shall be included in all\n * copies or substantial portions of the Software.\n *\n * THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\n * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\n * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\n * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\n * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n *\n * https://www.FreeRTOS.org\n * https://github.com/FreeRTOS\n *\n */\n\n/* Scheduler includes. */\n#include \"FreeRTOS.h\"\n#include \"task.h\"\n\n/* Hardware includes. */\n#include \"msp430.h\"\n\n/*-----------------------------------------------------------\n* Implementation of functions defined in portable.h for the MSP430X port.\n*----------------------------------------------------------*/\n\n/* Constants required for hardware setup.  The tick ISR runs off the ACLK,\n * not the MCLK. */\n#define portACLK_FREQUENCY_HZ           ( ( TickType_t ) 32768 )\n#define portINITIAL_CRITICAL_NESTING    ( ( uint16_t ) 10 )\n#define portFLAGS_INT_ENABLED           ( ( StackType_t ) 0x08 )\n\n/* We require the address of the pxCurrentTCB variable, but don't want to know\n * any details of its type. */\ntypedef void TCB_t;\nextern volatile TCB_t * volatile pxCurrentTCB;\n\n/* Each task maintains a count of the critical section nesting depth.  Each\n * time a critical section is entered the count is incremented.  Each time a\n * critical section is exited the count is decremented - with interrupts only\n * being re-enabled if the count is zero.\n *\n * usCriticalNesting will get set to zero when the scheduler starts, but must\n * not be initialised to zero as this will cause problems during the startup\n * sequence. */\nvolatile ",
+    "raw_res": "uint16_t usCriticalNesting = 9999;",
+    "prompt_res": "uint16_t usCriticalNesting = portINITIAL_CRITICAL_NESTING;",
+    "gt": "uint16_t usCriticalNesting = portINITIAL_CRITICAL_NESTING;\n"
+  },
+  {
+    "id": 330,
+    "pkg": "FreeRTOS-Kernel",
+    "fpath": "portable/IAR/MSP430/port.c",
+    "input": "/*\n * FreeRTOS Kernel <DEVELOPMENT BRANCH>\n * Copyright (C) 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.\n *\n * SPDX-License-Identifier: MIT\n *\n * Permission is hereby granted, free of charge, to any person obtaining a copy of\n * this software and associated documentation files (the \"Software\"), to deal in\n * the Software without restriction, including without limitation the rights to\n * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\n * the Software, and to permit persons to whom the Software is furnished to do so,\n * subject to the following conditions:\n *\n * The above copyright notice and this permission notice shall be included in all\n * copies or substantial portions of the Software.\n *\n * THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\n * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\n * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\n * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\n * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n *\n * https://www.FreeRTOS.org\n * https://github.com/FreeRTOS\n *\n */\n\n/* Scheduler includes. */\n#include \"FreeRTOS.h\"\n#include \"task.h\"\n\n/*-----------------------------------------------------------\n* Implementation of functions defined in portable.h for the MSP430 port.\n*----------------------------------------------------------*/\n\n/* Constants required for hardware setup.  The tick ISR runs off the ACLK,\n * not the MCLK. */\n#define portACLK_FREQUENCY_HZ           ( ( TickType_t ) 32768 )\n#define portINITIAL_CRITICAL_NESTING    ( ( uint16_t ) 10 )\n#define portFLAGS_INT_ENABLED           ( ( StackType_t ) 0x08 )\n\n/* We require the address of the pxCurrentTCB variable, but don't want to know\n * any details of its type. */\ntypedef void TCB_t;\nextern volatile TCB_t * volatile pxCurrentTCB;\n\n/* Each task maintains a count of the critical section nesting depth.  Each\n * time a critical section is entered the count is incremented.  Each time a\n * critical section is exited the count is decremented - with interrupts only\n * being re-enabled if the count is zero.\n *\n * usCriticalNesting will get set to zero when the scheduler starts, but must\n * not be initialised to zero as this will cause problems during the startup\n * sequence. */\nvolatile ",
+    "raw_res": "uint16_t usCriticalNesting = 99;",
+    "prompt_res": "uint16_t usCriticalNesting = portINITIAL_CRITICAL_NESTING;",
+    "gt": "uint16_t usCriticalNesting = portINITIAL_CRITICAL_NESTING;\n"
+  },
+  {
+    "id": 564,
+    "pkg": "FreeRTOS-Kernel",
+    "fpath": "portable/RVDS/ARM_CM0/port.c",
+    "input": "/*\n * FreeRTOS Kernel <DEVELOPMENT BRANCH>\n * Copyright (C) 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.\n *\n * SPDX-License-Identifier: MIT\n *\n * Permission is hereby granted, free of charge, to any person obtaining a copy of\n * this software and associated documentation files (the \"Software\"), to deal in\n * the Software without restriction, including without limitation the rights to\n * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\n * the Software, and to permit persons to whom the Software is furnished to do so,\n * subject to the following conditions:\n *\n * The above copyright notice and this permission notice shall be included in all\n * copies or substantial portions of the Software.\n *\n * THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\n * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\n * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\n * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\n * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n *\n * https://www.FreeRTOS.org\n * https://github.com/FreeRTOS\n *\n */\n\n/*-----------------------------------------------------------\n* Implementation of functions defined in portable.h for the ARM CM0 port.\n*----------------------------------------------------------*/\n\n/* Scheduler includes. */\n#include \"FreeRTOS.h\"\n#include \"task.h\"\n\n/* Constants required to manipulate the NVIC. */\n#define portNVIC_SYSTICK_CTRL_REG             ( *( ( volatile uint32_t * ) 0xe000e010 ) )\n#define portNVIC_SYSTICK_LOAD_REG             ( *( ( volatile uint32_t * ) 0xe000e014 ) )\n#define portNVIC_SYSTICK_CURRENT_VALUE_REG    ( *( ( volatile uint32_t * ) 0xe000e018 ) )\n#define portNVIC_INT_CTRL_REG                 ( *( ( volatile uint32_t * ) 0xe000ed04 ) )\n#define portNVIC_SHPR3_REG                    ( *( ( volatile uint32_t * ) 0xe000ed20 ) )\n#define portNVIC_SYSTICK_CLK_BIT              ( 1UL << 2UL )\n#define portNVIC_SYSTICK_INT_BIT              ( 1UL << 1UL )\n#define portNVIC_SYSTICK_ENABLE_BIT           ( 1UL << 0UL )\n#define portNVIC_SYSTICK_COUNT_FLAG_BIT       ( 1UL << 16UL )\n#define portNVIC_PENDSVSET_BIT                ( 1UL << 28UL )\n#define portNVIC_PEND_SYSTICK_SET_BIT         ( 1UL << 26UL )\n#define portNVIC_PEND_SYSTICK_CLEAR_BIT       ( 1UL << 25UL )\n#define portMIN_INTERRUPT_PRIORITY            ( 255UL )\n#define portNVIC_PENDSV_PRI                   ( portMIN_INTERRUPT_PRIORITY << 16UL )\n#define portNVIC_SYSTICK_PRI                  ( portMIN_INTERRUPT_PRIORITY << 24UL )\n\n/* Constants required to set up the initial stack. */\n#define portINITIAL_XPSR                      ( 0x01000000 )\n\n/* The systick is a 24-bit counter. */\n#define portMAX_24_BIT_NUMBER                 ( 0xffffffUL )\n\n/* A fiddle factor to estimate the number of SysTick counts that would have\n * occurred while the SysTick counter is stopped during tickless idle\n * calculations. */\n#ifndef portMISSED_COUNTS_FACTOR\n    #define portMISSED_COUNTS_FACTOR    ( 94UL )\n#endif\n\n/* Constants used with memory barrier intrinsics. */\n#define portSY_FULL_READ_WRITE    ( 15 )\n\n/* Let the user override the default SysTick clock rate.  If defined by the\n * user, this symbol must equal the SysTick clock rate when the CLK bit is 0 in the\n * configuration register. */\n#ifndef configSYSTICK_CLOCK_HZ\n    #define configSYSTICK_CLOCK_HZ             ( configCPU_CLOCK_HZ )\n    /* Ensure the SysTick is clocked at the same frequency as the core. */\n    #define portNVIC_SYSTICK_CLK_BIT_CONFIG    ( portNVIC_SYSTICK_CLK_BIT )\n#else\n    /* Select the option to clock SysTick not at the same frequency as the core. */\n    #define portNVIC_SYSTICK_CLK_BIT_CONFIG    ( 0 )\n#endif\n\n/* Legacy macro for backward compatibility only.  This macro used to be used to\n * replace the function that configures the clock used to generate the tick\n * interrupt (prvSetupTimerInterrupt()), but now the function is declared weak so\n * the application writer can override it by simply defining a function of the\n * same name (vApplicationSetupTickInterrupt()). */\n#ifndef configOVERRIDE_DEFAULT_TICK_CONFIGURATION\n    #define configOVERRIDE_DEFAULT_TICK_CONFIGURATION    0\n#endif\n\n/* Each task maintains its own interrupt status in the critical nesting\n * variable. */\nstatic ",
+    "raw_res": "volatile uint32_t ulCriticalNesting = 0;",
+    "prompt_res": "UBaseType_t uxCriticalNesting = 0xaaaaaaaa;",
+    "gt": "UBaseType_t uxCriticalNesting = 0xaaaaaaaa;\n"
+  },
+  {
+    "id": 657,
+    "pkg": "FreeRTOS-Kernel",
+    "fpath": "portable/Renesas/SH2A_FPU/port.c",
+    "input": "/*\n * FreeRTOS Kernel <DEVELOPMENT BRANCH>\n * Copyright (C) 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.\n *\n * SPDX-License-Identifier: MIT\n *\n * Permission is hereby granted, free of charge, to any person obtaining a copy of\n * this software and associated documentation files (the \"Software\"), to deal in\n * the Software without restriction, including without limitation the rights to\n * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\n * the Software, and to permit persons to whom the Software is furnished to do so,\n * subject to the following conditions:\n *\n * The above copyright notice and this permission notice shall be included in all\n * copies or substantial portions of the Software.\n *\n * THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\n * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\n * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\n * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\n * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n *\n * https://www.FreeRTOS.org\n * https://github.com/FreeRTOS\n *\n */\n\n/*-----------------------------------------------------------\n* Implementation of functions defined in portable.h for the SH2A port.\n*----------------------------------------------------------*/\n\n/* Scheduler includes. */\n#include \"FreeRTOS.h\"\n#include \"task.h\"\n\n/* Library includes. */\n#include \"string.h\"\n\n/*-----------------------------------------------------------*/\n\n/* The SR assigned to a newly created task.  The only important thing in this\n * value is for all interrupts to be enabled. */\n#define portINITIAL_SR                 ( 0UL )\n\n/* Dimensions the array into which the floating point context is saved.\n * Allocate enough space for FPR0 to FPR15, FPUL and FPSCR, each of which is 4\n * bytes big.  If this number is changed then the 72 in portasm.src also needs\n * changing. */\n#define portFLOP_REGISTERS_TO_STORE    ( 18 )\n#define portFLOP_STORAGE_SIZE          ( portFLOP_REGISTERS_TO_STORE * 4 )\n\n#if ( configSUPPORT_DYNAMIC_ALLOCATION == 0 )\n    #error configSUPPORT_DYNAMIC_ALLOCATION must be 1 to use this port.\n#endif\n\n/*-----------------------------------------------------------*/\n\n/*\n * The TRAPA handler used to force a context switch.\n */\nvoid vPortYield( void );\n\n/*\n * Function to start the first task executing - defined in portasm.src.\n */\nextern void vPortStartFirstTask( void );\n\n/*\n * Obtains the current GBR value - defined in portasm.src.\n */\nextern ",
+    "raw_res": "unsigned long ulPortGetGBR( void );",
+    "prompt_res": "uint32_t ulPortGetGBR( void );",
+    "gt": "uint32_t ulPortGetGBR( void );\n"
+  },
+  {
+    "id": 681,
+    "pkg": "FreeRTOS-Kernel",
+    "fpath": "portable/CodeWarrior/ColdFire_V2/port.c",
+    "input": "/*\n * FreeRTOS Kernel <DEVELOPMENT BRANCH>\n * Copyright (C) 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.\n *\n * SPDX-License-Identifier: MIT\n *\n * Permission is hereby granted, free of charge, to any person obtaining a copy of\n * this software and associated documentation files (the \"Software\"), to deal in\n * the Software without restriction, including without limitation the rights to\n * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\n * the Software, and to permit persons to whom the Software is furnished to do so,\n * subject to the following conditions:\n *\n * The above copyright notice and this permission notice shall be included in all\n * copies or substantial portions of the Software.\n *\n * THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\n * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\n * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\n * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\n * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n *\n * https://www.FreeRTOS.org\n * https://github.com/FreeRTOS\n *\n */\n\n/* Kernel includes. */\n#include \"FreeRTOS.h\"\n#include \"task.h\"\n\n\n#define portINITIAL_FORMAT_VECTOR       ( ( StackType_t ) 0x4000 )\n\n/* Supervisor mode set. */\n#define portINITIAL_STATUS_REGISTER     ( ( StackType_t ) 0x2000)\n\n/* Used to keep track of the number of nested calls to taskENTER_CRITICAL().  This\nwill be set to 0 prior to the first task being started. */\nstatic ",
+    "raw_res": "UBaseType_t uxCriticalNesting = 0;",
+    "prompt_res": "uint32_t ulCriticalNesting = 0x9999UL;",
+    "gt": "uint32_t ulCriticalNesting = 0x9999UL;\n"
+  },
+  {
+    "id": 708,
+    "pkg": "FreeRTOS-Kernel",
+    "fpath": "portable/ThirdParty/GCC/ARC_v1/port.c",
+    "input": "/*\n * FreeRTOS Kernel <DEVELOPMENT BRANCH>\n * Copyright (C) 2020 Synopsys, Inc. or its affiliates.  All Rights Reserved.\n *\n * SPDX-License-Identifier: MIT\n *\n * Permission is hereby granted, free of charge, to any person obtaining a copy of\n * this software and associated documentation files (the \"Software\"), to deal in\n * the Software without restriction, including without limitation the rights to\n * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\n * the Software, and to permit persons to whom the Software is furnished to do so,\n * subject to the following conditions:\n *\n * The above copyright notice and this permission notice shall be included in all\n * copies or substantial portions of the Software.\n *\n * THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\n * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\n * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\n * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\n * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n *\n * https://www.FreeRTOS.org\n * https://github.com/FreeRTOS\n *\n */\n\n/*\n * Implementation of functions defined in portable.h\n */\n\n#include \"FreeRTOS.h\"\n#include \"task.h\"\n#include \"FreeRTOSConfig.h\"\n\n#include \"arc/arc_exception.h\"\n#include \"arc/arc_timer.h\"\n#include \"board.h\"\n\n#include \"arc_freertos_exceptions.h\"\n\nvolatile unsigned int ulCriticalNesting = 999UL;\nvolatile unsigned int context_switch_reqflg; /* task context switch request flag in exceptions and interrupts handling */\n\n/**\n * \\var exc_nest_count\n * \\brief the counter for exc/int processing, =0 no int/exc\n * >1 in int/exc processing\n * @}\n */\n",
+    "raw_res": "volatile unsigned int exc_nest_count;",
+    "prompt_res": "uint32_t exc_nest_count;",
+    "gt": "uint32_t exc_nest_count;\n"
+  },
+  {
+    "id": 715,
+    "pkg": "FreeRTOS-Kernel",
+    "fpath": "portable/MSVC-MingW/port.c",
+    "input": "/*\n * FreeRTOS Kernel <DEVELOPMENT BRANCH>\n * Copyright (C) 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.\n *\n * SPDX-License-Identifier: MIT\n *\n * Permission is hereby granted, free of charge, to any person obtaining a copy of\n * this software and associated documentation files (the \"Software\"), to deal in\n * the Software without restriction, including without limitation the rights to\n * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\n * the Software, and to permit persons to whom the Software is furnished to do so,\n * subject to the following conditions:\n *\n * The above copyright notice and this permission notice shall be included in all\n * copies or substantial portions of the Software.\n *\n * THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\n * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\n * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\n * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\n * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n *\n * https://www.FreeRTOS.org\n * https://github.com/FreeRTOS\n *\n */\n\n/* Standard includes. */\n#include <stdio.h>\n\n/* Scheduler includes. */\n#include \"FreeRTOS.h\"\n#include \"task.h\"\n\n#ifdef __GNUC__\n    #include \"mmsystem.h\"\n#else\n    #pragma comment(lib, \"winmm.lib\")\n#endif\n\n#define portMAX_INTERRUPTS                          ( ( uint32_t ) sizeof( uint32_t ) * 8UL ) /* The number of bits in an uint32_t. */\n#define portNO_CRITICAL_NESTING                     ( ( uint32_t ) 0 )\n\n/* The priorities at which the various components of the simulation execute. */\n#define portDELETE_SELF_THREAD_PRIORITY             THREAD_PRIORITY_TIME_CRITICAL /* Must be highest. */\n#define portSIMULATED_INTERRUPTS_THREAD_PRIORITY    THREAD_PRIORITY_TIME_CRITICAL\n#define portSIMULATED_TIMER_THREAD_PRIORITY         THREAD_PRIORITY_HIGHEST\n#define portTASK_THREAD_PRIORITY                    THREAD_PRIORITY_ABOVE_NORMAL\n\n/*\n * Created as a high priority thread, this function uses a timer to simulate\n * a tick interrupt being generated on an embedded target.  In this Windows\n * environment the timer does not achieve anything approaching real time\n * performance though.\n */\nstatic DWORD WINAPI prvSimulatedPeripheralTimer( LPVOID lpParameter );\n\n/*\n * Process all the simulated interrupts - each represented by a bit in\n * ulPendingInterrupts variable.\n */\nstatic void prvProcessSimulatedInterrupts( void );\n\n/*\n * Interrupt handlers used by the kernel itself.  These are executed from the\n * simulated interrupt handler thread.\n */\nstatic uint32_t prvProcessYieldInterrupt( void );\nstatic uint32_t prvProcessTickInterrupt( void );\n\n/*\n * Exiting a critical section will cause the calling task to block on yield\n * event to wait for an interrupt to process if an interrupt was pended while\n * inside the critical section.  This variable protects against a recursive\n * attempt to obtain pvInterruptEventMutex if a critical section is used inside\n * an interrupt handler itself.\n */\nvolatile BaseType_t xInsideInterrupt = pdFALSE;\n\n/*\n * Called when the process exits to let Windows know the high timer resolution\n * is no longer required.\n */\nstatic BOOL WINAPI prvEndProcess( DWORD dwCtrlType );\n\n/*-----------------------------------------------------------*/\n\n/* The WIN32 simulator runs each task in a thread.  The context switching is\n * managed by the threads, so the task stack does not have to be managed directly,\n * although the task stack is still used to hold an xThreadState structure this is\n * the only thing it will ever hold.  The structure indirectly maps the task handle\n * to a thread handle. */\ntypedef struct\n{\n    /* Handle of the thread that executes the task. */\n    void * pvThread;\n\n    /* Event used to make sure the thread does not execute past a yield point\n     * between the call to SuspendThread() to suspend the thread and the\n     * asynchronous SuspendThread() operation actually being performed. */\n    void * pvYieldEvent;\n} ThreadState_t;\n\n/* Simulated interrupts waiting to be processed.  This is a bit mask where each\n * bit represents one interrupt, so a maximum of 32 interrupts can be simulated. */\nstatic volatile ",
+    "raw_res": "uint32_t ulPendingInterrupts = pdFALSE;",
+    "prompt_res": "uint32_t ulPendingInterrupts = 0UL;",
+    "gt": "uint32_t ulPendingInterrupts = 0UL;\n"
+  },
+  {
+    "id": 802,
+    "pkg": "cairo",
+    "fpath": "perf/micro/many-curves.c",
+    "input": "/*\n * Copyright © 2011 Intel Corporation\n *\n * Permission is hereby granted, free of charge, to any person\n * obtaining a copy of this software and associated documentation\n * files (the \"Software\"), to deal in the Software without\n * restriction, including without limitation the rights to use, copy,\n * modify, merge, publish, distribute, sublicense, and/or sell copies\n * of the Software, and to permit persons to whom the Software is\n * furnished to do so, subject to the following conditions:\n *\n * The above copyright notice and this permission notice shall be\n * included in all copies or substantial portions of the Software.\n *\n * THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\n * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\n * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\n * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS\n * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN\n * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\n * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n * SOFTWARE.\n *\n * Author: Chris Wilson <chris@chris-wilson.co.uk>\n */\n\n#include \"cairo-perf.h\"\n\nstatic uint32_t state;\n\nstatic double\nuniform_random (double minval, double maxval)\n{\n    static ",
+    "raw_res": "uint32_t seed = 1;",
+    "prompt_res": "uint32_t const poly = 0x9a795537U;",
+    "gt": "uint32_t const poly = 0x9a795537U;\n"
+  },
+  {
+    "id": 810,
+    "pkg": "cairo",
+    "fpath": "perf/micro/curve.c",
+    "input": "/*\n * Copyright © 2011 Intel Corporation\n *\n * Permission is hereby granted, free of charge, to any person\n * obtaining a copy of this software and associated documentation\n * files (the \"Software\"), to deal in the Software without\n * restriction, including without limitation the rights to use, copy,\n * modify, merge, publish, distribute, sublicense, and/or sell copies\n * of the Software, and to permit persons to whom the Software is\n * furnished to do so, subject to the following conditions:\n *\n * The above copyright notice and this permission notice shall be\n * included in all copies or substantial portions of the Software.\n *\n * THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\n * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\n * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\n * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS\n * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN\n * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\n * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n * SOFTWARE.\n *\n * Author: Chris Wilson <chris@chris-wilson.co.uk>\n */\n\n#include \"cairo-perf.h\"\n\nstatic uint32_t state;\n\nstatic double\nuniform_random (double minval, double maxval)\n{\n    static ",
+    "raw_res": "uint32_t seed = 1;",
+    "prompt_res": "uint32_t const poly = 0x9a795537U;",
+    "gt": "uint32_t const poly = 0x9a795537U;\n"
+  },
+  {
+    "id": 834,
+    "pkg": "cairo",
+    "fpath": "perf/micro/many-fills.c",
+    "input": "/*\n * Copyright © 2011 Intel Corporation\n *\n * Permission is hereby granted, free of charge, to any person\n * obtaining a copy of this software and associated documentation\n * files (the \"Software\"), to deal in the Software without\n * restriction, including without limitation the rights to use, copy,\n * modify, merge, publish, distribute, sublicense, and/or sell copies\n * of the Software, and to permit persons to whom the Software is\n * furnished to do so, subject to the following conditions:\n *\n * The above copyright notice and this permission notice shall be\n * included in all copies or substantial portions of the Software.\n *\n * THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\n * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\n * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\n * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS\n * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN\n * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\n * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n * SOFTWARE.\n *\n * Author: Chris Wilson <chris@chris-wilson.co.uk>\n */\n\n\n/* This is a variant on many strokes where we precompute\n * a simplified stroke-to-path.\n * When we have a real stroke-to-path, it would useful to compare the cost\n * of stroking vs filling the \"identical\" paths.\n */\n\n#include \"cairo-perf.h\"\n\nstatic uint32_t state;\n\nstatic double\nuniform_random (double minval, double maxval)\n{\n    static ",
+    "raw_res": "uint32_t seed = 1;",
+    "prompt_res": "uint32_t const poly = 0x9a795537U;",
+    "gt": "uint32_t const poly = 0x9a795537U;\n"
+  },
+  {
+    "id": 844,
+    "pkg": "cairo",
+    "fpath": "perf/micro/many-strokes.c",
+    "input": "/*\n * Copyright © 2011 Intel Corporation\n *\n * Permission is hereby granted, free of charge, to any person\n * obtaining a copy of this software and associated documentation\n * files (the \"Software\"), to deal in the Software without\n * restriction, including without limitation the rights to use, copy,\n * modify, merge, publish, distribute, sublicense, and/or sell copies\n * of the Software, and to permit persons to whom the Software is\n * furnished to do so, subject to the following conditions:\n *\n * The above copyright notice and this permission notice shall be\n * included in all copies or substantial portions of the Software.\n *\n * THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\n * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\n * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\n * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS\n * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN\n * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\n * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n * SOFTWARE.\n *\n * Author: Chris Wilson <chris@chris-wilson.co.uk>\n */\n\n#include \"cairo-perf.h\"\n\nstatic uint32_t state;\n\nstatic double\nuniform_random (double minval, double maxval)\n{\n    static ",
+    "raw_res": "uint32_t seed = 1;",
+    "prompt_res": "uint32_t const poly = 0x9a795537U;",
+    "gt": "uint32_t const poly = 0x9a795537U;\n"
+  },
+  {
+    "id": 850,
+    "pkg": "cairo",
+    "fpath": "perf/micro/wide-fills.c",
+    "input": "/*\n * Copyright © 2011 Intel Corporation\n *\n * Permission is hereby granted, free of charge, to any person\n * obtaining a copy of this software and associated documentation\n * files (the \"Software\"), to deal in the Software without\n * restriction, including without limitation the rights to use, copy,\n * modify, merge, publish, distribute, sublicense, and/or sell copies\n * of the Software, and to permit persons to whom the Software is\n * furnished to do so, subject to the following conditions:\n *\n * The above copyright notice and this permission notice shall be\n * included in all copies or substantial portions of the Software.\n *\n * THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\n * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\n * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\n * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS\n * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN\n * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\n * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n * SOFTWARE.\n *\n * Author: Chris Wilson <chris@chris-wilson.co.uk>\n */\n\n\n/* This is a variant on wide strokes where we precompute\n * a simplified stroke-to-path.\n * When we have a real stroke-to-path, it would useful to compare the cost\n * of stroking vs filling the \"identical\" paths.\n */\n\n#include \"cairo-perf.h\"\n\nstatic uint32_t state;\n\nstatic double\nuniform_random (double minval, double maxval)\n{\n    static ",
+    "raw_res": "uint32_t seed = 1;",
+    "prompt_res": "uint32_t const poly = 0x9a795537U;",
+    "gt": "uint32_t const poly = 0x9a795537U;\n"
+  },
+  {
+    "id": 960,
+    "pkg": "cairo",
+    "fpath": "perf/micro/wide-strokes.c",
+    "input": "/*\n * Copyright © 2011 Intel Corporation\n *\n * Permission is hereby granted, free of charge, to any person\n * obtaining a copy of this software and associated documentation\n * files (the \"Software\"), to deal in the Software without\n * restriction, including without limitation the rights to use, copy,\n * modify, merge, publish, distribute, sublicense, and/or sell copies\n * of the Software, and to permit persons to whom the Software is\n * furnished to do so, subject to the following conditions:\n *\n * The above copyright notice and this permission notice shall be\n * included in all copies or substantial portions of the Software.\n *\n * THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\n * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\n * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\n * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS\n * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN\n * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\n * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n * SOFTWARE.\n *\n * Author: Chris Wilson <chris@chris-wilson.co.uk>\n */\n\n#include \"cairo-perf.h\"\n\nstatic uint32_t state;\n\nstatic double\nuniform_random (double minval, double maxval)\n{\n    static ",
+    "raw_res": "uint32_t seed = 1;",
+    "prompt_res": "uint32_t const poly = 0x9a795537U;",
+    "gt": "uint32_t const poly = 0x9a795537U;\n"
+  },
+  {
+    "id": 991,
+    "pkg": "cairo",
+    "fpath": "perf/micro/a1-curve.c",
+    "input": "/*\n * Copyright © 2011 Intel Corporation\n *\n * Permission is hereby granted, free of charge, to any person\n * obtaining a copy of this software and associated documentation\n * files (the \"Software\"), to deal in the Software without\n * restriction, including without limitation the rights to use, copy,\n * modify, merge, publish, distribute, sublicense, and/or sell copies\n * of the Software, and to permit persons to whom the Software is\n * furnished to do so, subject to the following conditions:\n *\n * The above copyright notice and this permission notice shall be\n * included in all copies or substantial portions of the Software.\n *\n * THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\n * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\n * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\n * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS\n * BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN\n * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\n * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n * SOFTWARE.\n *\n * Author: Chris Wilson <chris@chris-wilson.co.uk>\n */\n\n#include \"cairo-perf.h\"\n\nstatic uint32_t state;\n\nstatic double\nuniform_random (double minval, double maxval)\n{\n    static ",
+    "raw_res": "uint32_t seed = 1;",
+    "prompt_res": "uint32_t const poly = 0x9a795537U;",
+    "gt": "uint32_t const poly = 0x9a795537U;\n"
+  },
+  {
+    "id": 1013,
+    "pkg": "gazebo",
+    "fpath": "deps/opende/src/fastlsolve.c",
+    "input": "/* generated code, do not edit. */\n\n#include \"gazebo/ode/matrix.h\"\n\n/* solve L*X=B, with B containing 1 right hand sides.\n * L is an n*n lower triangular matrix with ones on the diagonal.\n * L is stored by rows and its leading dimension is lskip.\n * B is an n*1 matrix that contains the right hand sides.\n * B is stored by columns and its leading dimension is also lskip.\n * B is overwritten with X.\n * this processes blocks of 4*4.\n * if this is in the factorizer source file, n must be a multiple of 4.\n */\n\nvoid _dSolveL1 (const dReal *L, dReal *B, int n, int lskip1)\n{\n  /* declare variables - Z matrix, p and q vectors, etc */\n  dReal Z11,Z21,Z31,Z41,p1,q1,p2,p3,p4,*ex;\n  const ",
+    "raw_res": "dReal *ex1;",
+    "prompt_res": "dReal *ell;",
+    "gt": "dReal *ell;\n"
+  },
+  {
+    "id": 1018,
+    "pkg": "gazebo",
+    "fpath": "deps/opende/src/fastldlt.c",
+    "input": "/* generated code, do not edit. */\n\n#include <assert.h>\n#include \"gazebo/ode/matrix.h\"\n\n/* solve L*X=B, with B containing 1 right hand sides.\n * L is an n*n lower triangular matrix with ones on the diagonal.\n * L is stored by rows and its leading dimension is lskip.\n * B is an n*1 matrix that contains the right hand sides.\n * B is stored by columns and its leading dimension is also lskip.\n * B is overwritten with X.\n * this processes blocks of 2*2.\n * if this is in the factorizer source file, n must be a multiple of 2.\n */\n\nstatic void dSolveL1_1 (const dReal *L, dReal *B, int n, int lskip1)\n{\n  /* declare variables - Z matrix, p and q vectors, etc */\n  dReal Z11,m11,Z21,m21,p1,q1,p2,*ex;\n  const ",
+    "raw_res": "dReal *ex1;",
+    "prompt_res": "dReal *ell;",
+    "gt": "dReal *ell;\n"
+  },
+  {
+    "id": 1164,
+    "pkg": "lwip",
+    "fpath": "contrib/ports/unix/port/sys_arch.c",
+    "input": "/*\n * Copyright (c) 2001-2003 Swedish Institute of Computer Science.\n * All rights reserved.\n *\n * Redistribution and use in source and binary forms, with or without modification,\n * are permitted provided that the following conditions are met:\n *\n * 1. Redistributions of source code must retain the above copyright notice,\n *    this list of conditions and the following disclaimer.\n * 2. Redistributions in binary form must reproduce the above copyright notice,\n *    this list of conditions and the following disclaimer in the documentation\n *    and/or other materials provided with the distribution.\n * 3. The name of the author may not be used to endorse or promote products\n *    derived from this software without specific prior written permission.\n *\n * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED\n * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF\n * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT\n * SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,\n * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT\n * OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS\n * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN\n * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING\n * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY\n * OF SUCH DAMAGE.\n *\n * This file is part of the lwIP TCP/IP stack.\n *\n * Author: Adam Dunkels <adam@sics.se>\n *\n */\n\n/*\n * Wed Apr 17 16:05:29 EDT 2002 (James Roth)\n *\n *  - Fixed an unlikely sys_thread_new() race condition.\n *\n *  - Made current_thread() work with threads which where\n *    not created with sys_thread_new().  This includes\n *    the main thread and threads made with pthread_create().\n *\n *  - Catch overflows where more than SYS_MBOX_SIZE messages\n *    are waiting to be read.  The sys_mbox_post() routine\n *    will block until there is more room instead of just\n *    leaking messages.\n */\n#define _GNU_SOURCE /* pull in pthread_setname_np() on Linux */\n\n#include \"lwip/debug.h\"\n\n#include <string.h>\n#include <sys/time.h>\n#include <sys/types.h>\n#include <stdlib.h>\n#include <unistd.h>\n#include <pthread.h>\n#include <errno.h>\n\n#include \"lwip/def.h\"\n\n#ifdef LWIP_UNIX_MACH\n#include <mach/mach.h>\n#include <mach/mach_time.h>\n#endif\n\n#include \"lwip/sys.h\"\n#include \"lwip/opt.h\"\n#include \"lwip/stats.h\"\n#include \"lwip/tcpip.h\"\n\n#if LWIP_NETCONN_SEM_PER_THREAD\n/* pthread key to *our* thread local storage entry */\nstatic pthread_key_t sys_thread_sem_key;\n#endif\n\n/* Return code for an interrupted timed wait */\n#define SYS_ARCH_INTR 0xfffffffeUL\n\nu32_t\nlwip_port_rand(void)\n{\n  return (u32_t)rand();\n}\n\nstatic void\nget_monotonic_time(struct timespec *ts)\n{\n#ifdef LWIP_UNIX_MACH\n  /* darwin impl (no CLOCK_MONOTONIC) */\n  u64_t t = mach_absolute_time();\n  mach_timebase_info_data_t timebase_info = {0, 0};\n  mach_timebase_info(&timebase_info);\n  u64_t nano = (t * timebase_info.numer) / (timebase_info.denom);\n  u64_t sec = nano/1000000000L;\n  nano -= sec * 1000000000L;\n  ts->tv_sec = sec;\n  ts->tv_nsec = nano;\n#else\n  clock_gettime(CLOCK_MONOTONIC, ts);\n#endif\n}\n\n#if SYS_LIGHTWEIGHT_PROT\nstatic pthread_mutex_t lwprot_mutex = PTHREAD_MUTEX_INITIALIZER;\nstatic pthread_t lwprot_thread = (pthread_t)0xDEAD;\nstatic int lwprot_count = 0;\n#endif /* SYS_LIGHTWEIGHT_PROT */\n\n#if !NO_SYS\n\nstatic struct sys_thread *threads = NULL;\nstatic pthread_mutex_t threads_mutex = PTHREAD_MUTEX_INITIALIZER;\n\nstruct sys_mbox_msg {\n  struct sys_mbox_msg *next;\n  void *msg;\n};\n\n#define SYS_MBOX_SIZE 128\n\nstruct sys_mbox {\n  int first, last;\n  void *msgs[SYS_MBOX_SIZE];\n  struct sys_sem *not_empty;\n  struct sys_sem *not_full;\n  struct sys_sem *mutex;\n  int wait_send;\n};\n\nstruct sys_sem {\n  unsigned int c;\n  pthread_condattr_t condattr;\n  pthread_cond_t cond;\n  pthread_mutex_t mutex;\n};\n\nstruct sys_mutex {\n  pthread_mutex_t mutex;\n};\n\nstruct sys_thread {\n  struct sys_thread *next;\n  pthread_t pthread;\n};\n\nstatic struct sys_sem *sys_sem_new_internal(u8_t count);\nstatic void sys_sem_free_internal(struct sys_sem *sem);\n\nstatic u32_t cond_wait(pthread_cond_t * cond, pthread_mutex_t * mutex,\n                       ",
+    "raw_res": "struct timespec *ts);",
+    "prompt_res": "u32_t timeout);",
+    "gt": "u32_t timeout);\n"
+  },
+  {
+    "id": 1613,
+    "pkg": "openssl",
+    "fpath": "ssl/quic/quic_rcidm.c",
+    "input": "/*\n * Copyright 2023-2024 The OpenSSL Project Authors. All Rights Reserved.\n *\n * Licensed under the Apache License 2.0 (the \"License\").  You may not use\n * this file except in compliance with the License.  You can obtain a copy\n * in the file LICENSE in the source distribution or at\n * https://www.openssl.org/source/license.html\n */\n\n#include \"internal/quic_rcidm.h\"\n#include \"internal/priority_queue.h\"\n#include \"internal/list.h\"\n#include \"internal/common.h\"\n\n/*\n * QUIC Remote Connection ID Manager\n * =================================\n *\n * We can receive an arbitrary number of RCIDs via NCID frames. Periodically, we\n * may desire (for example for anti-connection fingerprinting reasons, etc.)\n * to switch to a new RCID according to some arbitrary policy such as the number\n * of packets we have sent.\n *\n * When we do this we should move to the next RCID in the sequence of received\n * RCIDs ordered by sequence number. For example, if a peer sends us three NCID\n * frames with sequence numbers 10, 11, 12, we should seek to consume these\n * RCIDs in order.\n *\n * However, due to the possibility of packet reordering in the network, NCID\n * frames might be received out of order. Thus if a peer sends us NCID frames\n * with sequence numbers 12, 10, 11, we should still consume the RCID with\n * sequence number 10 before consuming the RCIDs with sequence numbers 11 or 12.\n *\n * We use a priority queue for this purpose.\n */\nstatic void rcidm_update(QUIC_RCIDM *rcidm);\nstatic void rcidm_set_preferred_rcid(QUIC_RCIDM *rcidm,\n                                     const QUIC_CONN_ID *rcid);\n\n#define PACKETS_PER_RCID        10000\n\n#define INITIAL_SEQ_NUM         0\n#define PREF_ADDR_SEQ_NUM       1\n\n/*\n * RCID\n * ====\n *\n * The RCID structure is used to track RCIDs which have sequence numbers (i.e.,\n * INITIAL, PREF_ADDR and NCID type RCIDs). The RCIDs without sequence numbers\n * (Initial ODCIDs and Retry ODCIDs), hereafter referred to as unnumbered RCIDs,\n * can logically be viewed as their own type of RCID but are tracked separately\n * as singletons without needing a discrete structure.\n *\n * At any given time an RCID object is in one of these states:\n *\n *\n *      (start)\n *         |\n *       [add]\n *         |\n *    _____v_____                 ___________                 ____________\n *   |           |               |           |               |            |\n *   |  PENDING  | --[select]--> |  CURRENT  | --[retire]--> |  RETIRING  |\n *   |___________|               |___________|               |____________|\n *                                                                  |\n *                                                                [pop]\n *                                                                  |\n *                                                                  v\n *                                                                (fin)\n *\n *   The transition through the states is monotonic and irreversible.\n *   The RCID object is freed when it is popped.\n *\n *   PENDING\n *     Invariants:\n *       rcid->state == RCID_STATE_PENDING;\n *       rcid->pq_idx != SIZE_MAX (debug assert only);\n *       the RCID is not the current RCID, rcidm->cur_rcid != rcid;\n *       the RCID is in the priority queue;\n *       the RCID is not in the retiring_list.\n *\n *   CURRENT\n *     Invariants:\n *       rcid->state == RCID_STATE_CUR;\n *       rcid->pq_idx == SIZE_MAX (debug assert only);\n *       the RCID is the current RCID, rcidm->cur_rcid == rcid;\n *       the RCID is not in the priority queue;\n *       the RCID is not in the retiring_list.\n *\n *   RETIRING\n *     Invariants:\n *       rcid->state == RCID_STATE_RETIRING;\n *       rcid->pq_idx == SIZE_MAX (debug assert only);\n *       the RCID is not the current RCID, rcidm->cur_rcid != rcid;\n *       the RCID is not in the priority queue;\n *       the RCID is in the retiring_list.\n *\n *   Invariant: At most one RCID object is in the CURRENT state at any one time.\n *\n *      (If no RCID object is in the CURRENT state, this means either\n *       an unnumbered RCID is being used as the preferred RCID\n *       or we currently have no preferred RCID.)\n *\n *   All of the above states can be considered substates of the 'ACTIVE' state\n *   for an RCID as specified in RFC 9000. A CID only ceases to be active\n *   when we send a RETIRE_CONN_ID frame, which is the responsibility of the\n *   user of the RCIDM and happens after the above state machine is terminated.\n */\nenum {\n    RCID_STATE_PENDING,\n    RCID_STATE_CUR,\n    RCID_STATE_RETIRING\n};\n\nenum {\n    RCID_TYPE_INITIAL,      /* CID is from an peer INITIAL packet     (seq 0) */\n    RCID_TYPE_PREF_ADDR,    /* CID is from a preferred_address TPARAM (seq 1) */\n    RCID_TYPE_NCID          /* CID is from a NCID frame */\n    /*\n     * INITIAL_ODCID and RETRY_ODCID also conceptually exist but are tracked\n     * separately.\n     */\n};\n\ntypedef struct rcid_st {\n    OSSL_LIST_MEMBER(retiring, struct rcid_st); /* valid iff RETIRING */\n\n    QUIC_CONN_ID    cid;        /* The actual CID string for this RCID */\n    ",
+    "raw_res": "qlist_t         retiring_list;",
+    "prompt_res": "uint64_t        seq_num;",
+    "gt": "uint64_t        seq_num;\n"
+  },
+  {
+    "id": 1680,
+    "pkg": "pcl",
+    "fpath": "surface/src/3rdparty/opennurbs/compress.c",
+    "input": "/* compress.c -- compress a memory buffer\n * Copyright (C) 1995-2003 Jean-loup Gailly.\n * For conditions of distribution and use, see copyright notice in zlib.h\n */\n\n/* @(#) $Id$ */\n\n#define ZLIB_INTERNAL\n#include \"pcl/surface/3rdparty/opennurbs/zlib.h\"\n\n/* ===========================================================================\n     Compresses the source buffer into the destination buffer. The level\n   parameter has the same meaning as in deflateInit.  sourceLen is the byte\n   length of the source buffer. Upon entry, destLen is the total size of the\n   destination buffer, which must be at least 0.1% larger than sourceLen plus\n   12 bytes. Upon exit, destLen is the actual size of the compressed buffer.\n\n     compress2 returns Z_OK if success, Z_MEM_ERROR if there was not enough\n   memory, Z_BUF_ERROR if there was not enough room in the output buffer,\n   Z_STREAM_ERROR if the level parameter is invalid.\n*/\nint ZEXPORT compress2 (dest, destLen, source, sourceLen, level)\n    Bytef *dest;\n    ",
+    "raw_res": "unsigned long *destLen;",
+    "prompt_res": "uLongf *destLen;",
+    "gt": "uLongf *destLen;\n"
+  },
+  {
+    "id": 1717,
+    "pkg": "pcl",
+    "fpath": "surface/src/3rdparty/opennurbs/uncompr.c",
+    "input": "/* uncompr.c -- decompress a memory buffer\n * Copyright (C) 1995-2003 Jean-loup Gailly.\n * For conditions of distribution and use, see copyright notice in zlib.h\n */\n\n/* @(#) $Id$ */\n\n#define ZLIB_INTERNAL\n#include \"pcl/surface/3rdparty/opennurbs/zlib.h\"\n\n/* ===========================================================================\n     Decompresses the source buffer into the destination buffer.  sourceLen is\n   the byte length of the source buffer. Upon entry, destLen is the total\n   size of the destination buffer, which must be large enough to hold the\n   entire uncompressed data. (The size of the uncompressed data must have\n   been saved previously by the compressor and transmitted to the decompressor\n   by some mechanism outside the scope of this compression library.)\n   Upon exit, destLen is the actual size of the compressed buffer.\n     This function can be used to decompress a whole file at once if the\n   input file is mmap'ed.\n\n     uncompress returns Z_OK if success, Z_MEM_ERROR if there was not\n   enough memory, Z_BUF_ERROR if there was not enough room in the output\n   buffer, or Z_DATA_ERROR if the input data was corrupted.\n*/\nint ZEXPORT uncompress (dest, destLen, source, sourceLen)\n    Bytef *dest;\n    ",
+    "raw_res": "unsigned long *destLen;",
+    "prompt_res": "uLongf *destLen;",
+    "gt": "uLongf *destLen;\n"
+  },
+  {
+    "id": 1754,
+    "pkg": "pupnp",
+    "fpath": "upnp/src/api/UpnpEvent.c",
+    "input": "/*!\n * \\file\n *\n * \\brief Source file for UpnpEvent methods.\n *\n * Do not edit this file, it is automatically generated. Please look at\n * generator.c.\n *\n * \\author Marcelo Roberto Jimenez\n */\n#include \"config.h\" // IWYU pragma: keep\n\n#include <stdlib.h> /* for calloc(), free() */\t\t   // IWYU pragma: keep\n#include <string.h> /* for strlen(), strdup(), memset() */ // IWYU pragma: keep\n\n#include \"UpnpEvent.h\"\n\nstruct s_UpnpEvent\n{\n\tint m_EventKey;\n\tIXML_Document *m_ChangedVariables;\n\t",
+    "raw_res": "char *m_SID;",
+    "prompt_res": "UpnpString *m_SID;",
+    "gt": "UpnpString *m_SID;\n"
+  },
+  {
+    "id": 1759,
+    "pkg": "pupnp",
+    "fpath": "upnp/src/api/UpnpActionRequest.c",
+    "input": "/*!\n * \\file\n *\n * \\brief Source file for UpnpActionRequest methods.\n *\n * Do not edit this file, it is automatically generated. Please look at\n * generator.c.\n *\n * \\author Marcelo Roberto Jimenez\n */\n#include \"config.h\" // IWYU pragma: keep\n\n#include <stdlib.h> /* for calloc(), free() */\t\t   // IWYU pragma: keep\n#include <string.h> /* for strlen(), strdup(), memset() */ // IWYU pragma: keep\n\n#include \"UpnpActionRequest.h\"\n\nstruct s_UpnpActionRequest\n{\n\tint m_ErrCode;\n\tint m_Socket;\n\t",
+    "raw_res": "char *m_ActionName;",
+    "prompt_res": "UpnpString *m_ErrStr;",
+    "gt": "UpnpString *m_ErrStr;\n"
+  },
+  {
+    "id": 1761,
+    "pkg": "pupnp",
+    "fpath": "upnp/src/api/UpnpActionRequest.c",
+    "input": "/*!\n * \\file\n *\n * \\brief Source file for UpnpActionRequest methods.\n *\n * Do not edit this file, it is automatically generated. Please look at\n * generator.c.\n *\n * \\author Marcelo Roberto Jimenez\n */\n#include \"config.h\" // IWYU pragma: keep\n\n#include <stdlib.h> /* for calloc(), free() */\t\t   // IWYU pragma: keep\n#include <string.h> /* for strlen(), strdup(), memset() */ // IWYU pragma: keep\n\n#include \"UpnpActionRequest.h\"\n\nstruct s_UpnpActionRequest\n{\n\tint m_ErrCode;\n\tint m_Socket;\n\tUpnpString *m_ErrStr;\n\tUpnpString *m_ActionName;\n\t",
+    "raw_res": "UpnpString *m_ServiceType;",
+    "prompt_res": "UpnpString *m_DevUDN;",
+    "gt": "UpnpString *m_DevUDN;\n"
+  },
+  {
+    "id": 1762,
+    "pkg": "pupnp",
+    "fpath": "upnp/src/api/UpnpActionRequest.c",
+    "input": "/*!\n * \\file\n *\n * \\brief Source file for UpnpActionRequest methods.\n *\n * Do not edit this file, it is automatically generated. Please look at\n * generator.c.\n *\n * \\author Marcelo Roberto Jimenez\n */\n#include \"config.h\" // IWYU pragma: keep\n\n#include <stdlib.h> /* for calloc(), free() */\t\t   // IWYU pragma: keep\n#include <string.h> /* for strlen(), strdup(), memset() */ // IWYU pragma: keep\n\n#include \"UpnpActionRequest.h\"\n\nstruct s_UpnpActionRequest\n{\n\tint m_ErrCode;\n\tint m_Socket;\n\tUpnpString *m_ErrStr;\n\tUpnpString *m_ActionName;\n\tUpnpString *m_DevUDN;\n\t",
+    "raw_res": "UpnpString *m_ServiceType;",
+    "prompt_res": "UpnpString *m_ServiceID;",
+    "gt": "UpnpString *m_ServiceID;\n"
+  },
+  {
+    "id": 1779,
+    "pkg": "pupnp",
+    "fpath": "upnp/src/api/UpnpStateVarRequest.c",
+    "input": "/*!\n * \\file\n *\n * \\brief Source file for UpnpStateVarRequest methods.\n *\n * Do not edit this file, it is automatically generated. Please look at\n * generator.c.\n *\n * \\author Marcelo Roberto Jimenez\n */\n#include \"config.h\" // IWYU pragma: keep\n\n#include <stdlib.h> /* for calloc(), free() */\t\t   // IWYU pragma: keep\n#include <string.h> /* for strlen(), strdup(), memset() */ // IWYU pragma: keep\n\n#include \"UpnpStateVarRequest.h\"\n\nstruct s_UpnpStateVarRequest\n{\n\tint m_ErrCode;\n\tint m_Socket;\n\tUpnpString *m_ErrStr;\n\tUpnpString *m_DevUDN;\n\t",
+    "raw_res": "UpnpString *m_ServUDN;",
+    "prompt_res": "UpnpString *m_ServiceID;",
+    "gt": "UpnpString *m_ServiceID;\n"
+  },
+  {
+    "id": 1780,
+    "pkg": "pupnp",
+    "fpath": "upnp/src/api/UpnpStateVarRequest.c",
+    "input": "/*!\n * \\file\n *\n * \\brief Source file for UpnpStateVarRequest methods.\n *\n * Do not edit this file, it is automatically generated. Please look at\n * generator.c.\n *\n * \\author Marcelo Roberto Jimenez\n */\n#include \"config.h\" // IWYU pragma: keep\n\n#include <stdlib.h> /* for calloc(), free() */\t\t   // IWYU pragma: keep\n#include <string.h> /* for strlen(), strdup(), memset() */ // IWYU pragma: keep\n\n#include \"UpnpStateVarRequest.h\"\n\nstruct s_UpnpStateVarRequest\n{\n\tint m_ErrCode;\n\tint m_Socket;\n\tUpnpString *m_ErrStr;\n\tUpnpString *m_DevUDN;\n\tUpnpString *m_ServiceID;\n\t",
+    "raw_res": "UpnpString *m_ServiceType;",
+    "prompt_res": "UpnpString *m_StateVarName;",
+    "gt": "UpnpString *m_StateVarName;\n"
+  },
+  {
+    "id": 1785,
+    "pkg": "pupnp",
+    "fpath": "upnp/src/api/UpnpEventSubscribe.c",
+    "input": "/*!\n * \\file\n *\n * \\brief Source file for UpnpEventSubscribe methods.\n *\n * Do not edit this file, it is automatically generated. Please look at\n * generator.c.\n *\n * \\author Marcelo Roberto Jimenez\n */\n#include \"config.h\" // IWYU pragma: keep\n\n#include <stdlib.h> /* for calloc(), free() */\t\t   // IWYU pragma: keep\n#include <string.h> /* for strlen(), strdup(), memset() */ // IWYU pragma: keep\n\n#include \"UpnpEventSubscribe.h\"\n\nstruct s_UpnpEventSubscribe\n{\n\tint m_ErrCode;\n\tint m_TimeOut;\n\t",
+    "raw_res": "char *m_SID;",
+    "prompt_res": "UpnpString *m_SID;",
+    "gt": "UpnpString *m_SID;\n"
+  },
+  {
+    "id": 1827,
+    "pkg": "pupnp",
+    "fpath": "upnp/src/api/UpnpStateVarComplete.c",
+    "input": "/*!\n * \\file\n *\n * \\brief Source file for UpnpStateVarComplete methods.\n *\n * Do not edit this file, it is automatically generated. Please look at\n * generator.c.\n *\n * \\author Marcelo Roberto Jimenez\n */\n#include \"config.h\" // IWYU pragma: keep\n\n#include <stdlib.h> /* for calloc(), free() */\t\t   // IWYU pragma: keep\n#include <string.h> /* for strlen(), strdup(), memset() */ // IWYU pragma: keep\n\n#include \"UpnpStateVarComplete.h\"\n\nstruct s_UpnpStateVarComplete\n{\n\tint m_ErrCode;\n\tUpnpString *m_CtrlUrl;\n\t",
+    "raw_res": "UpnpString *m_ActionName;",
+    "prompt_res": "UpnpString *m_StateVarName;",
+    "gt": "UpnpString *m_StateVarName;\n"
+  },
+  {
+    "id": 1840,
+    "pkg": "pupnp",
+    "fpath": "upnp/src/api/UpnpActionComplete.c",
+    "input": "/*!\n * \\file\n *\n * \\brief Source file for UpnpActionComplete methods.\n *\n * Do not edit this file, it is automatically generated. Please look at\n * generator.c.\n *\n * \\author Marcelo Roberto Jimenez\n */\n#include \"config.h\" // IWYU pragma: keep\n\n#include <stdlib.h> /* for calloc(), free() */\t\t   // IWYU pragma: keep\n#include <string.h> /* for strlen(), strdup(), memset() */ // IWYU pragma: keep\n\n#include \"UpnpActionComplete.h\"\n\nstruct s_UpnpActionComplete\n{\n\tint m_ErrCode;\n\t",
+    "raw_res": "char *m_ErrDesc;",
+    "prompt_res": "UpnpString *m_CtrlUrl;",
+    "gt": "UpnpString *m_CtrlUrl;\n"
+  },
+  {
+    "id": 1842,
+    "pkg": "pupnp",
+    "fpath": "upnp/src/api/UpnpActionComplete.c",
+    "input": "/*!\n * \\file\n *\n * \\brief Source file for UpnpActionComplete methods.\n *\n * Do not edit this file, it is automatically generated. Please look at\n * generator.c.\n *\n * \\author Marcelo Roberto Jimenez\n */\n#include \"config.h\" // IWYU pragma: keep\n\n#include <stdlib.h> /* for calloc(), free() */\t\t   // IWYU pragma: keep\n#include <string.h> /* for strlen(), strdup(), memset() */ // IWYU pragma: keep\n\n#include \"UpnpActionComplete.h\"\n\nstruct s_UpnpActionComplete\n{\n\tint m_ErrCode;\n\tUpnpString *m_CtrlUrl;\n\tIXML_Document *m_ActionRequest;\n\t",
+    "raw_res": "IXML_Document *m_ActionResponse;",
+    "prompt_res": "IXML_Document *m_ActionResult;",
+    "gt": "IXML_Document *m_ActionResult;\n"
+  },
+  {
+    "id": 1972,
+    "pkg": "raylib",
+    "fpath": "examples/core/core_random_sequence.c",
+    "input": "/*******************************************************************************************\n*\n*   raylib [core] example - Generates a random sequence\n*\n*   Example complexity rating: [★☆☆☆] 1/4\n*\n*   Example originally created with raylib 5.0, last time updated with raylib 5.0\n*\n*   Example contributed by Dalton Overmyer (@REDl3east) and reviewed by Ramon Santamaria (@raysan5)\n*\n*   Example licensed under an unmodified zlib/libpng license, which is an OSI-certified,\n*   BSD-like license that allows static linking with closed source software\n*\n*   Copyright (c) 2023-2025 Dalton Overmyer (@REDl3east)\n*\n********************************************************************************************/\n\n#include \"raylib.h\"\n#include \"raymath.h\"\n\n#include <stdlib.h> // Required for: malloc() and free()\n\ntypedef struct ColorRect {\n    Color c;\n    Rectangle r;\n} ColorRect;\n\n//------------------------------------------------------------------------------------\n// Module functions declaration\n//------------------------------------------------------------------------------------\nstatic Color GenerateRandomColor();\nstatic ColorRect *GenerateRandomColorRectSequence(float rectCount, float rectWidth, float screenWidth, float screenHeight);\nstatic void ShuffleColorRectSequence(ColorRect *rectangles, int rectCount);\nstatic void DrawTextCenterKeyHelp(const char *key, const char *text, int posX, int posY, int fontSize, ",
+    "raw_res": "Color textColor);",
+    "prompt_res": "Color color);",
+    "gt": "Color color);\n"
+  },
+  {
+    "id": 1975,
+    "pkg": "raylib",
+    "fpath": "examples/core/core_automation_events.c",
+    "input": "/*******************************************************************************************\n*\n*   raylib [core] example - automation events\n*\n*   Example complexity rating: [★★★☆] 3/4\n*\n*   Example originally created with raylib 5.0, last time updated with raylib 5.0\n*\n*   Example based on 2d_camera_platformer example by arvyy (@arvyy)\n*\n*   Example licensed under an unmodified zlib/libpng license, which is an OSI-certified,\n*   BSD-like license that allows static linking with closed source software\n*\n*   Copyright (c) 2023-2025 Ramon Santamaria (@raysan5)\n*\n********************************************************************************************/\n\n#include \"raylib.h\"\n#include \"raymath.h\"\n\n#define GRAVITY 400\n#define PLAYER_JUMP_SPD 350.0f\n#define PLAYER_HOR_SPD 200.0f\n\n#define MAX_ENVIRONMENT_ELEMENTS    5\n\ntypedef struct Player {\n    Vector2 position;\n    float speed;\n    ",
+    "raw_res": "float gravity;",
+    "prompt_res": "bool canJump;",
+    "gt": "bool canJump;\n"
+  },
+  {
+    "id": 1976,
+    "pkg": "raylib",
+    "fpath": "examples/core/core_automation_events.c",
+    "input": "/*******************************************************************************************\n*\n*   raylib [core] example - automation events\n*\n*   Example complexity rating: [★★★☆] 3/4\n*\n*   Example originally created with raylib 5.0, last time updated with raylib 5.0\n*\n*   Example based on 2d_camera_platformer example by arvyy (@arvyy)\n*\n*   Example licensed under an unmodified zlib/libpng license, which is an OSI-certified,\n*   BSD-like license that allows static linking with closed source software\n*\n*   Copyright (c) 2023-2025 Ramon Santamaria (@raysan5)\n*\n********************************************************************************************/\n\n#include \"raylib.h\"\n#include \"raymath.h\"\n\n#define GRAVITY 400\n#define PLAYER_JUMP_SPD 350.0f\n#define PLAYER_HOR_SPD 200.0f\n\n#define MAX_ENVIRONMENT_ELEMENTS    5\n\ntypedef struct Player {\n    Vector2 position;\n    float speed;\n    bool canJump;\n} Player;\n\ntypedef struct EnvElement {\n    ",
+    "raw_res": "// EnvElement type\n    int type;",
+    "prompt_res": "Rectangle rect;",
+    "gt": "Rectangle rect;\n"
+  },
+  {
+    "id": 1977,
+    "pkg": "raylib",
+    "fpath": "examples/core/core_automation_events.c",
+    "input": "/*******************************************************************************************\n*\n*   raylib [core] example - automation events\n*\n*   Example complexity rating: [★★★☆] 3/4\n*\n*   Example originally created with raylib 5.0, last time updated with raylib 5.0\n*\n*   Example based on 2d_camera_platformer example by arvyy (@arvyy)\n*\n*   Example licensed under an unmodified zlib/libpng license, which is an OSI-certified,\n*   BSD-like license that allows static linking with closed source software\n*\n*   Copyright (c) 2023-2025 Ramon Santamaria (@raysan5)\n*\n********************************************************************************************/\n\n#include \"raylib.h\"\n#include \"raymath.h\"\n\n#define GRAVITY 400\n#define PLAYER_JUMP_SPD 350.0f\n#define PLAYER_HOR_SPD 200.0f\n\n#define MAX_ENVIRONMENT_ELEMENTS    5\n\ntypedef struct Player {\n    Vector2 position;\n    float speed;\n    bool canJump;\n} Player;\n\ntypedef struct EnvElement {\n    Rectangle rect;\n    int blocking;\n    ",
+    "raw_res": "int type;",
+    "prompt_res": "Color color;",
+    "gt": "Color color;\n"
+  },
+  {
+    "id": 1986,
+    "pkg": "raylib",
+    "fpath": "examples/core/core_2d_camera_platformer.c",
+    "input": "/*******************************************************************************************\n*\n*   raylib [core] example - 2D Camera platformer\n*\n*   Example complexity rating: [★★★☆] 3/4\n*\n*   Example originally created with raylib 2.5, last time updated with raylib 3.0\n*\n*   Example contributed by arvyy (@arvyy) and reviewed by Ramon Santamaria (@raysan5)\n*\n*   Example licensed under an unmodified zlib/libpng license, which is an OSI-certified,\n*   BSD-like license that allows static linking with closed source software\n*\n*   Copyright (c) 2019-2025 arvyy (@arvyy)\n*\n********************************************************************************************/\n\n#include \"raylib.h\"\n#include \"raymath.h\"\n\n#define G 400\n#define PLAYER_JUMP_SPD 350.0f\n#define PLAYER_HOR_SPD 200.0f\n\ntypedef struct Player {\n    Vector2 position;\n    float speed;\n    ",
+    "raw_res": "Rectangle hitbox;",
+    "prompt_res": "bool canJump;",
+    "gt": "bool canJump;\n"
+  },
+  {
+    "id": 1987,
+    "pkg": "raylib",
+    "fpath": "examples/core/core_2d_camera_platformer.c",
+    "input": "/*******************************************************************************************\n*\n*   raylib [core] example - 2D Camera platformer\n*\n*   Example complexity rating: [★★★☆] 3/4\n*\n*   Example originally created with raylib 2.5, last time updated with raylib 3.0\n*\n*   Example contributed by arvyy (@arvyy) and reviewed by Ramon Santamaria (@raysan5)\n*\n*   Example licensed under an unmodified zlib/libpng license, which is an OSI-certified,\n*   BSD-like license that allows static linking with closed source software\n*\n*   Copyright (c) 2019-2025 arvyy (@arvyy)\n*\n********************************************************************************************/\n\n#include \"raylib.h\"\n#include \"raymath.h\"\n\n#define G 400\n#define PLAYER_JUMP_SPD 350.0f\n#define PLAYER_HOR_SPD 200.0f\n\ntypedef struct Player {\n    Vector2 position;\n    float speed;\n    bool canJump;\n} Player;\n\ntypedef struct EnvItem {\n    ",
+    "raw_res": "} EnvItem;",
+    "prompt_res": "Rectangle rect;",
+    "gt": "Rectangle rect;\n"
+  },
+  {
+    "id": 1988,
+    "pkg": "raylib",
+    "fpath": "examples/core/core_2d_camera_platformer.c",
+    "input": "/*******************************************************************************************\n*\n*   raylib [core] example - 2D Camera platformer\n*\n*   Example complexity rating: [★★★☆] 3/4\n*\n*   Example originally created with raylib 2.5, last time updated with raylib 3.0\n*\n*   Example contributed by arvyy (@arvyy) and reviewed by Ramon Santamaria (@raysan5)\n*\n*   Example licensed under an unmodified zlib/libpng license, which is an OSI-certified,\n*   BSD-like license that allows static linking with closed source software\n*\n*   Copyright (c) 2019-2025 arvyy (@arvyy)\n*\n********************************************************************************************/\n\n#include \"raylib.h\"\n#include \"raymath.h\"\n\n#define G 400\n#define PLAYER_JUMP_SPD 350.0f\n#define PLAYER_HOR_SPD 200.0f\n\ntypedef struct Player {\n    Vector2 position;\n    float speed;\n    bool canJump;\n} Player;\n\ntypedef struct EnvItem {\n    Rectangle rect;\n    int blocking;\n    ",
+    "raw_res": "int type;",
+    "prompt_res": "Color color;",
+    "gt": "Color color;\n"
+  },
+  {
+    "id": 2018,
+    "pkg": "raylib",
+    "fpath": "examples/audio/audio_module_playing.c",
+    "input": "/*******************************************************************************************\n*\n*   raylib [audio] example - Module playing (streaming)\n*\n*   Example complexity rating: [★☆☆☆] 1/4\n*\n*   Example originally created with raylib 1.5, last time updated with raylib 3.5\n*\n*   Example licensed under an unmodified zlib/libpng license, which is an OSI-certified,\n*   BSD-like license that allows static linking with closed source software\n*\n*   Copyright (c) 2016-2025 Ramon Santamaria (@raysan5)\n*\n********************************************************************************************/\n\n#include \"raylib.h\"\n\n#define MAX_CIRCLES  64\n\ntypedef struct {\n    Vector2 position;\n    float radius;\n    float alpha;\n    float speed;\n    ",
+    "raw_res": "int index;",
+    "prompt_res": "Color color;",
+    "gt": "Color color;\n"
+  },
+  {
+    "id": 2099,
+    "pkg": "redis",
+    "fpath": "tests/modules/mallocsize.c",
+    "input": "#include \"redismodule.h\"\n#include <string.h>\n#include <assert.h>\n#include <unistd.h>\n\n#define UNUSED(V) ((void) V)\n\n/* Registered type */\nRedisModuleType *mallocsize_type = NULL;\n\ntypedef enum {\n    UDT_RAW,\n    UDT_STRING,\n    UDT_DICT\n} udt_type_t;\n\ntypedef struct {\n    void *ptr;\n    size_t len;\n} raw_t;\n\ntypedef struct {\n    udt_type_t type;\n    union {\n        raw_t raw;\n        ",
+    "raw_res": "struct {\n            RedisModuleString *str;",
+    "prompt_res": "RedisModuleString *str;",
+    "gt": "RedisModuleString *str;\n"
+  },
+  {
+    "id": 2179,
+    "pkg": "redis",
+    "fpath": "tests/modules/hooks.c",
+    "input": "/* This module is used to test the server events hooks API.\n *\n * -----------------------------------------------------------------------------\n *\n * Copyright (c) 2019-Present, Redis Ltd.\n * All rights reserved.\n *\n * Licensed under your choice of (a) the Redis Source Available License 2.0\n * (RSALv2); or (b) the Server Side Public License v1 (SSPLv1); or (c) the\n * GNU Affero General Public License v3 (AGPLv3).\n */\n\n#include \"redismodule.h\"\n#include <stdio.h>\n#include <string.h>\n#include <strings.h>\n#include <assert.h>\n\n/* We need to store events to be able to test and see what we got, and we can't\n * store them in the key-space since that would mess up rdb loading (duplicates)\n * and be lost of flushdb. */\nRedisModuleDict *event_log = NULL;\n/* stores all the keys on which we got 'removed' event */\n",
+    "raw_res": "RedisModuleDict *removed_keys = NULL;",
+    "prompt_res": "RedisModuleDict *removed_event_log = NULL;",
+    "gt": "RedisModuleDict *removed_event_log = NULL;\n"
+  },
+  {
+    "id": 2237,
+    "pkg": "redis",
+    "fpath": "deps/jemalloc/test/unit/witness.c",
+    "input": "#include \"test/jemalloc_test.h\"\n\nstatic witness_lock_error_t *witness_lock_error_orig;\nstatic witness_owner_error_t *witness_owner_error_orig;\nstatic witness_not_owner_error_t *witness_not_owner_error_orig;\nstatic ",
+    "raw_res": "nd_error_t *nd_error_orig;",
+    "prompt_res": "witness_depth_error_t *witness_depth_error_orig;",
+    "gt": "witness_depth_error_t *witness_depth_error_orig;\n"
+  },
+  {
+    "id": 2254,
+    "pkg": "redis",
+    "fpath": "deps/jemalloc/test/unit/size_check.c",
+    "input": "#include \"test/jemalloc_test.h\"\n\n#include \"jemalloc/internal/safety_check.h\"\n\n",
+    "raw_res": "TEST_BEGIN(test_safety_check_fail) {\n\tassert_d_eq(0, opt_abort, \"\");",
+    "prompt_res": "bool fake_abort_called;",
+    "gt": "bool fake_abort_called;\n"
+  },
+  {
+    "id": 2268,
+    "pkg": "redis",
+    "fpath": "deps/jemalloc/test/unit/hpa.c",
+    "input": "#include \"test/jemalloc_test.h\"\n\n#include \"jemalloc/internal/hpa.h\"\n#include \"jemalloc/internal/nstime.h\"\n\n#define SHARD_IND 111\n\n#define ALLOC_MAX (HUGEPAGE / 4)\n\ntypedef struct test_data_s test_data_t;\nstruct test_data_s {\n\t/*\n\t * Must be the first member -- we convert back and forth between the\n\t * test_data_t and the hpa_shard_t;\n\t */\n\thpa_shard_t shard;\n\thpa_central_t central;\n\t",
+    "raw_res": "unsigned n_alloc;",
+    "prompt_res": "base_t *base;",
+    "gt": "base_t *base;\n"
+  },
+  {
+    "id": 2338,
+    "pkg": "redis",
+    "fpath": "deps/jemalloc/test/unit/double_free.c",
+    "input": "#include \"test/jemalloc_test.h\"\n#include \"test/san.h\"\n\n#include \"jemalloc/internal/safety_check.h\"\n\n",
+    "raw_res": "TEST_BEGIN(test_safety_check_basic) {\n\tassert_d_eq(0, safety_check_run(), \"safety_check_run() failed\");",
+    "prompt_res": "bool fake_abort_called;",
+    "gt": "bool fake_abort_called;\n"
+  },
+  {
+    "id": 2355,
+    "pkg": "redis",
+    "fpath": "deps/jemalloc/test/unit/hook.c",
+    "input": "#include \"test/jemalloc_test.h\"\n\n#include \"jemalloc/internal/hook.h\"\n\nstatic void *arg_extra;\nstatic int arg_type;\nstatic void *arg_result;\nstatic void *arg_address;\nstatic ",
+    "raw_res": "size_t arg_size;",
+    "prompt_res": "size_t arg_old_usize;",
+    "gt": "size_t arg_old_usize;\n"
+  },
+  {
+    "id": 2358,
+    "pkg": "redis",
+    "fpath": "deps/jemalloc/test/unit/hook.c",
+    "input": "#include \"test/jemalloc_test.h\"\n\n#include \"jemalloc/internal/hook.h\"\n\nstatic void *arg_extra;\nstatic int arg_type;\nstatic void *arg_result;\nstatic void *arg_address;\nstatic size_t arg_old_usize;\nstatic size_t arg_new_usize;\nstatic uintptr_t arg_result_raw;\nstatic ",
+    "raw_res": "bool arg_retained;",
+    "prompt_res": "uintptr_t arg_args_raw[4];",
+    "gt": "uintptr_t arg_args_raw[4];\n"
+  },
+  {
+    "id": 2379,
+    "pkg": "redis",
+    "fpath": "deps/jemalloc/test/integration/smallocx.c",
+    "input": "#include \"test/jemalloc_test.h\"\n#include \"jemalloc/jemalloc_macros.h\"\n\n#define STR_HELPER(x) #x\n#define STR(x) STR_HELPER(x)\n\n#ifndef JEMALLOC_VERSION_GID_IDENT\n  #error \"JEMALLOC_VERSION_GID_IDENT not defined\"\n#endif\n\n#define JOIN(x, y) x ## y\n#define JOIN2(x, y) JOIN(x, y)\n#define smallocx JOIN2(smallocx_, JEMALLOC_VERSION_GID_IDENT)\n\ntypedef struct {\n\tvoid *ptr;\n\tsize_t size;\n} smallocx_return_t;\n\nextern smallocx_return_t\nsmallocx(",
+    "raw_res": "size_t size, int flags, void *chunksize, void *alignment,\n    void *prefault);",
+    "prompt_res": "size_t size, int flags);",
+    "gt": "size_t size, int flags);\n"
+  },
+  {
+    "id": 2403,
+    "pkg": "redis",
+    "fpath": "deps/jemalloc/test/stress/batch_alloc.c",
+    "input": "#include \"test/jemalloc_test.h\"\n#include \"test/bench.h\"\n\n#define MIBLEN 8\nstatic size_t mib[MIBLEN];\nstatic size_t miblen = MIBLEN;\n\n#define TINY_BATCH 10\n#define TINY_BATCH_ITER (10 * 1000 * 1000)\n#define HUGE_BATCH (1000 * 1000)\n#define HUGE_BATCH_ITER 100\n#define LEN (100 * 1000 * 1000)\nstatic void *batch_ptrs[LEN];\nstatic size_t batch_ptrs_next = 0;\nstatic void *item_ptrs[LEN];\nstatic size_t item_ptrs_next = 0;\n\n#define SIZE 7\n\ntypedef struct batch_alloc_packet_s batch_alloc_packet_t;\nstruct batch_alloc_packet_s {\n\tvoid **ptrs;\n\t",
+    "raw_res": "size_t count;",
+    "prompt_res": "size_t num;",
+    "gt": "size_t num;\n"
+  },
+  {
+    "id": 2427,
+    "pkg": "redis",
+    "fpath": "deps/jemalloc/test/src/test.c",
+    "input": "#include \"test/jemalloc_test.h\"\n\n/* Test status state. */\n\nstatic unsigned\t\ttest_count = 0;\nstatic test_status_t\ttest_counts[test_status_count] = {0, 0, 0};\nstatic test_status_t\ttest_status = test_status_pass;\nstatic const char *\ttest_name = \"\";\n\n/* Reentrancy testing helpers. */\n\n#define NUM_REENTRANT_ALLOCS 20\ntypedef enum {\n\tnon_reentrant = 0,\n\tlibc_reentrant = 1,\n\tarena_new_reentrant = 2\n} reentrancy_t;\nstatic reentrancy_t reentrancy;\n\nstatic bool libc_hook_ran = false;\nstatic ",
+    "raw_res": "bool libc_hook_ran_reentrant = false;",
+    "prompt_res": "bool arena_new_hook_ran = false;",
+    "gt": "bool arena_new_hook_ran = false;\n"
+  },
+  {
+    "id": 2542,
+    "pkg": "redis",
+    "fpath": "deps/jemalloc/src/hpa.c",
+    "input": "#include \"jemalloc/internal/jemalloc_preamble.h\"\n#include \"jemalloc/internal/jemalloc_internal_includes.h\"\n\n#include \"jemalloc/internal/hpa.h\"\n\n#include \"jemalloc/internal/fb.h\"\n#include \"jemalloc/internal/witness.h\"\n\n#define HPA_EDEN_SIZE (128 * HUGEPAGE)\n\nstatic edata_t *hpa_alloc(tsdn_t *tsdn, pai_t *self, size_t size,\n    size_t alignment, bool zero, bool guarded, bool frequent_reuse,\n    ",
+    "raw_res": "xtree_t *edata_tree, edata_tree_szind_t szind, bool *commit,\n    bool *zeroed);",
+    "prompt_res": "bool *deferred_work_generated);",
+    "gt": "bool *deferred_work_generated);\n"
+  },
+  {
+    "id": 2566,
+    "pkg": "redis",
+    "fpath": "deps/jemalloc/src/prof_log.c",
+    "input": "#include \"jemalloc/internal/jemalloc_preamble.h\"\n#include \"jemalloc/internal/jemalloc_internal_includes.h\"\n\n#include \"jemalloc/internal/assert.h\"\n#include \"jemalloc/internal/buf_writer.h\"\n#include \"jemalloc/internal/ckh.h\"\n#include \"jemalloc/internal/emitter.h\"\n#include \"jemalloc/internal/hash.h\"\n#include \"jemalloc/internal/malloc_io.h\"\n#include \"jemalloc/internal/mutex.h\"\n#include \"jemalloc/internal/prof_data.h\"\n#include \"jemalloc/internal/prof_log.h\"\n#include \"jemalloc/internal/prof_sys.h\"\n\nbool opt_prof_log = false;\ntypedef enum prof_logging_state_e prof_logging_state_t;\nenum prof_logging_state_e {\n\tprof_logging_state_stopped,\n\tprof_logging_state_started,\n\tprof_logging_state_dumping\n};\n\n/*\n * - stopped: log_start never called, or previous log_stop has completed.\n * - started: log_start called, log_stop not called yet. Allocations are logged.\n * - dumping: log_stop called but not finished; samples are not logged anymore.\n */\nprof_logging_state_t prof_logging_state = prof_logging_state_stopped;\n\n/* Used in unit tests. */\nstatic bool prof_log_dummy = false;\n\n/* Incremented for every log file that is output. */\nstatic uint64_t log_seq = 0;\nstatic char log_filename[\n    /* Minimize memory bloat for non-prof builds. */\n#ifdef JEMALLOC_PROF\n    PATH_MAX +\n#endif\n    1];\n\n/* Timestamp for most recent call to log_start(). */\nstatic nstime_t log_start_timestamp;\n\n/* Increment these when adding to the log_bt and log_thr linked lists. */\nstatic size_t log_bt_index = 0;\nstatic ",
+    "raw_res": "ql_elm_t *log_bt_head = NULL;",
+    "prompt_res": "size_t log_thr_index = 0;",
+    "gt": "size_t log_thr_index = 0;\n"
+  },
+  {
+    "id": 2582,
+    "pkg": "redis",
+    "fpath": "deps/jemalloc/src/prof.c",
+    "input": "#include \"jemalloc/internal/jemalloc_preamble.h\"\n#include \"jemalloc/internal/jemalloc_internal_includes.h\"\n\n#include \"jemalloc/internal/ctl.h\"\n#include \"jemalloc/internal/assert.h\"\n#include \"jemalloc/internal/mutex.h\"\n#include \"jemalloc/internal/counter.h\"\n#include \"jemalloc/internal/prof_data.h\"\n#include \"jemalloc/internal/prof_log.h\"\n#include \"jemalloc/internal/prof_recent.h\"\n#include \"jemalloc/internal/prof_stats.h\"\n#include \"jemalloc/internal/prof_sys.h\"\n#include \"jemalloc/internal/prof_hook.h\"\n#include \"jemalloc/internal/thread_event.h\"\n\n/*\n * This file implements the profiling \"APIs\" needed by other parts of jemalloc,\n * and also manages the relevant \"operational\" data, mainly options and mutexes;\n * the core profiling data structures are encapsulated in prof_data.c.\n */\n\n/******************************************************************************/\n\n/* Data. */\n\nbool opt_prof = false;\nbool opt_prof_active = true;\nbool opt_prof_thread_active_init = true;\nsize_t opt_lg_prof_sample = LG_PROF_SAMPLE_DEFAULT;\n",
+    "raw_res": "/*\n * The following mutex protects opt_prof_active, opt_prof_thread_active_init,\n * and opt_lg_prof_sample.  It is also used to protect prof_gdump",
+    "prompt_res": "ssize_t opt_lg_prof_interval = LG_PROF_INTERVAL_DEFAULT;",
+    "gt": "ssize_t opt_lg_prof_interval = LG_PROF_INTERVAL_DEFAULT;\n"
+  },
+  {
+    "id": 2585,
+    "pkg": "redis",
+    "fpath": "deps/jemalloc/src/prof.c",
+    "input": "#include \"jemalloc/internal/jemalloc_preamble.h\"\n#include \"jemalloc/internal/jemalloc_internal_includes.h\"\n\n#include \"jemalloc/internal/ctl.h\"\n#include \"jemalloc/internal/assert.h\"\n#include \"jemalloc/internal/mutex.h\"\n#include \"jemalloc/internal/counter.h\"\n#include \"jemalloc/internal/prof_data.h\"\n#include \"jemalloc/internal/prof_log.h\"\n#include \"jemalloc/internal/prof_recent.h\"\n#include \"jemalloc/internal/prof_stats.h\"\n#include \"jemalloc/internal/prof_sys.h\"\n#include \"jemalloc/internal/prof_hook.h\"\n#include \"jemalloc/internal/thread_event.h\"\n\n/*\n * This file implements the profiling \"APIs\" needed by other parts of jemalloc,\n * and also manages the relevant \"operational\" data, mainly options and mutexes;\n * the core profiling data structures are encapsulated in prof_data.c.\n */\n\n/******************************************************************************/\n\n/* Data. */\n\nbool opt_prof = false;\nbool opt_prof_active = true;\nbool opt_prof_thread_active_init = true;\nsize_t opt_lg_prof_sample = LG_PROF_SAMPLE_DEFAULT;\nssize_t opt_lg_prof_interval = LG_PROF_INTERVAL_DEFAULT;\nbool opt_prof_gdump = false;\nbool opt_prof_final = false;\n",
+    "raw_res": "bool opt_prof_log = false;",
+    "prompt_res": "bool opt_prof_leak = false;",
+    "gt": "bool opt_prof_leak = false;\n"
+  },
+  {
+    "id": 2586,
+    "pkg": "redis",
+    "fpath": "deps/jemalloc/src/prof.c",
+    "input": "#include \"jemalloc/internal/jemalloc_preamble.h\"\n#include \"jemalloc/internal/jemalloc_internal_includes.h\"\n\n#include \"jemalloc/internal/ctl.h\"\n#include \"jemalloc/internal/assert.h\"\n#include \"jemalloc/internal/mutex.h\"\n#include \"jemalloc/internal/counter.h\"\n#include \"jemalloc/internal/prof_data.h\"\n#include \"jemalloc/internal/prof_log.h\"\n#include \"jemalloc/internal/prof_recent.h\"\n#include \"jemalloc/internal/prof_stats.h\"\n#include \"jemalloc/internal/prof_sys.h\"\n#include \"jemalloc/internal/prof_hook.h\"\n#include \"jemalloc/internal/thread_event.h\"\n\n/*\n * This file implements the profiling \"APIs\" needed by other parts of jemalloc,\n * and also manages the relevant \"operational\" data, mainly options and mutexes;\n * the core profiling data structures are encapsulated in prof_data.c.\n */\n\n/******************************************************************************/\n\n/* Data. */\n\nbool opt_prof = false;\nbool opt_prof_active = true;\nbool opt_prof_thread_active_init = true;\nsize_t opt_lg_prof_sample = LG_PROF_SAMPLE_DEFAULT;\nssize_t opt_lg_prof_interval = LG_PROF_INTERVAL_DEFAULT;\nbool opt_prof_gdump = false;\nbool opt_prof_final = false;\nbool opt_prof_leak = false;\n",
+    "raw_res": "bool opt_prof_accum = false;",
+    "prompt_res": "bool opt_prof_leak_error = false;",
+    "gt": "bool opt_prof_leak_error = false;\n"
+  },
+  {
+    "id": 2628,
+    "pkg": "redis",
+    "fpath": "deps/jemalloc/src/sec.c",
+    "input": "#include \"jemalloc/internal/jemalloc_preamble.h\"\n#include \"jemalloc/internal/jemalloc_internal_includes.h\"\n\n#include \"jemalloc/internal/sec.h\"\n\nstatic edata_t *sec_alloc(tsdn_t *tsdn, pai_t *self, size_t size,\n    size_t alignment, bool zero, bool guarded, bool frequent_reuse,\n    ",
+    "raw_res": "xtree_t *slab_tree, edata_t *slab_edata, bool *zeroed, bool *commit,\n    bool *purged) {\n\tedata_t *ret;",
+    "prompt_res": "bool *deferred_work_generated);",
+    "gt": "bool *deferred_work_generated);\n"
+  },
+  {
+    "id": 2630,
+    "pkg": "redis",
+    "fpath": "deps/jemalloc/src/sec.c",
+    "input": "#include \"jemalloc/internal/jemalloc_preamble.h\"\n#include \"jemalloc/internal/jemalloc_internal_includes.h\"\n\n#include \"jemalloc/internal/sec.h\"\n\nstatic edata_t *sec_alloc(tsdn_t *tsdn, pai_t *self, size_t size,\n    size_t alignment, bool zero, bool guarded, bool frequent_reuse,\n    bool *deferred_work_generated);\nstatic bool sec_expand(tsdn_t *tsdn, pai_t *self, edata_t *edata,\n    ",
+    "raw_res": "size_t size, bool *deferred_work_generated);",
+    "prompt_res": "size_t old_size, size_t new_size, bool zero, bool *deferred_work_generated);",
+    "gt": "size_t old_size, size_t new_size, bool zero, bool *deferred_work_generated);\n"
+  },
+  {
+    "id": 2636,
+    "pkg": "redis",
+    "fpath": "deps/jemalloc/src/pac.c",
+    "input": "#include \"jemalloc/internal/jemalloc_preamble.h\"\n#include \"jemalloc/internal/jemalloc_internal_includes.h\"\n\n#include \"jemalloc/internal/pac.h\"\n#include \"jemalloc/internal/san.h\"\n\nstatic edata_t *pac_alloc_impl(tsdn_t *tsdn, pai_t *self, size_t size,\n    size_t alignment, bool zero, bool guarded, bool frequent_reuse,\n    ",
+    "raw_res": "xtree_t *slab_tree, edata_t *edata_fallback, bool *zeroed_ret,\n    bool *committed_ret);",
+    "prompt_res": "bool *deferred_work_generated);",
+    "gt": "bool *deferred_work_generated);\n"
+  },
+  {
+    "id": 2638,
+    "pkg": "redis",
+    "fpath": "deps/jemalloc/src/pac.c",
+    "input": "#include \"jemalloc/internal/jemalloc_preamble.h\"\n#include \"jemalloc/internal/jemalloc_internal_includes.h\"\n\n#include \"jemalloc/internal/pac.h\"\n#include \"jemalloc/internal/san.h\"\n\nstatic edata_t *pac_alloc_impl(tsdn_t *tsdn, pai_t *self, size_t size,\n    size_t alignment, bool zero, bool guarded, bool frequent_reuse,\n    bool *deferred_work_generated);\nstatic bool pac_expand_impl(tsdn_t *tsdn, pai_t *self, edata_t *edata,\n    ",
+    "raw_res": "size_t size, bool *deferred_work_generated);",
+    "prompt_res": "size_t old_size, size_t new_size, bool zero, bool *deferred_work_generated);",
+    "gt": "size_t old_size, size_t new_size, bool zero, bool *deferred_work_generated);\n"
+  },
+  {
+    "id": 2749,
+    "pkg": "redis",
+    "fpath": "deps/jemalloc/src/prof_data.c",
+    "input": "#include \"jemalloc/internal/jemalloc_preamble.h\"\n#include \"jemalloc/internal/jemalloc_internal_includes.h\"\n\n#include \"jemalloc/internal/assert.h\"\n#include \"jemalloc/internal/ckh.h\"\n#include \"jemalloc/internal/hash.h\"\n#include \"jemalloc/internal/malloc_io.h\"\n#include \"jemalloc/internal/prof_data.h\"\n\n/*\n * This file defines and manages the core profiling data structures.\n *\n * Conceptually, profiling data can be imagined as a table with three columns:\n * thread, stack trace, and current allocation size.  (When prof_accum is on,\n * there's one additional column which is the cumulative allocation size.)\n *\n * Implementation wise, each thread maintains a hash recording the stack trace\n * to allocation size correspondences, which are basically the individual rows\n * in the table.  In addition, two global \"indices\" are built to make data\n * aggregation efficient (for dumping): bt2gctx and tdatas, which are basically\n * the \"grouped by stack trace\" and \"grouped by thread\" views of the same table,\n * respectively.  Note that the allocation size is only aggregated to the two\n * indices at dumping time, so as to optimize for performance.\n */\n\n/******************************************************************************/\n\nmalloc_mutex_t bt2gctx_mtx;\nmalloc_mutex_t tdatas_mtx;\n",
+    "raw_res": "/*\n * The following two data structures are used to build the bt2gctx and tdatas\n * indices.  The bt2gctx index is built by iterating over the bt2gctx_lock",
+    "prompt_res": "malloc_mutex_t prof_dump_mtx;",
+    "gt": "malloc_mutex_t prof_dump_mtx;\n"
+  },
+  {
+    "id": 2750,
+    "pkg": "redis",
+    "fpath": "deps/jemalloc/src/prof_data.c",
+    "input": "#include \"jemalloc/internal/jemalloc_preamble.h\"\n#include \"jemalloc/internal/jemalloc_internal_includes.h\"\n\n#include \"jemalloc/internal/assert.h\"\n#include \"jemalloc/internal/ckh.h\"\n#include \"jemalloc/internal/hash.h\"\n#include \"jemalloc/internal/malloc_io.h\"\n#include \"jemalloc/internal/prof_data.h\"\n\n/*\n * This file defines and manages the core profiling data structures.\n *\n * Conceptually, profiling data can be imagined as a table with three columns:\n * thread, stack trace, and current allocation size.  (When prof_accum is on,\n * there's one additional column which is the cumulative allocation size.)\n *\n * Implementation wise, each thread maintains a hash recording the stack trace\n * to allocation size correspondences, which are basically the individual rows\n * in the table.  In addition, two global \"indices\" are built to make data\n * aggregation efficient (for dumping): bt2gctx and tdatas, which are basically\n * the \"grouped by stack trace\" and \"grouped by thread\" views of the same table,\n * respectively.  Note that the allocation size is only aggregated to the two\n * indices at dumping time, so as to optimize for performance.\n */\n\n/******************************************************************************/\n\nmalloc_mutex_t bt2gctx_mtx;\nmalloc_mutex_t tdatas_mtx;\nmalloc_mutex_t prof_dump_mtx;\n\n/*\n * Table of mutexes that are shared among gctx's.  These are leaf locks, so\n * there is no problem with using them for more than one gctx at the same time.\n * The primary motivation for this sharing though is that gctx's are ephemeral,\n * and destroying mutexes causes complications for systems that allocate when\n * creating/destroying mutexes.\n */\n",
+    "raw_res": "static malloc_mutex_t *gctx_mutexes;",
+    "prompt_res": "malloc_mutex_t *gctx_locks;",
+    "gt": "malloc_mutex_t *gctx_locks;\n"
+  },
+  {
+    "id": 2756,
+    "pkg": "redis",
+    "fpath": "deps/jemalloc/src/prof_data.c",
+    "input": "#include \"jemalloc/internal/jemalloc_preamble.h\"\n#include \"jemalloc/internal/jemalloc_internal_includes.h\"\n\n#include \"jemalloc/internal/assert.h\"\n#include \"jemalloc/internal/ckh.h\"\n#include \"jemalloc/internal/hash.h\"\n#include \"jemalloc/internal/malloc_io.h\"\n#include \"jemalloc/internal/prof_data.h\"\n\n/*\n * This file defines and manages the core profiling data structures.\n *\n * Conceptually, profiling data can be imagined as a table with three columns:\n * thread, stack trace, and current allocation size.  (When prof_accum is on,\n * there's one additional column which is the cumulative allocation size.)\n *\n * Implementation wise, each thread maintains a hash recording the stack trace\n * to allocation size correspondences, which are basically the individual rows\n * in the table.  In addition, two global \"indices\" are built to make data\n * aggregation efficient (for dumping): bt2gctx and tdatas, which are basically\n * the \"grouped by stack trace\" and \"grouped by thread\" views of the same table,\n * respectively.  Note that the allocation size is only aggregated to the two\n * indices at dumping time, so as to optimize for performance.\n */\n\n/******************************************************************************/\n\nmalloc_mutex_t bt2gctx_mtx;\nmalloc_mutex_t tdatas_mtx;\nmalloc_mutex_t prof_dump_mtx;\n\n/*\n * Table of mutexes that are shared among gctx's.  These are leaf locks, so\n * there is no problem with using them for more than one gctx at the same time.\n * The primary motivation for this sharing though is that gctx's are ephemeral,\n * and destroying mutexes causes complications for systems that allocate when\n * creating/destroying mutexes.\n */\nmalloc_mutex_t *gctx_locks;\nstatic atomic_u_t cum_gctxs; /* Atomic counter. */\n\n/*\n * Table of mutexes that are shared among tdata's.  No operations require\n * holding multiple tdata locks, so there is no problem with using them for more\n * than one tdata at the same time, even though a gctx lock may be acquired\n * while holding a tdata lock.\n */\nmalloc_mutex_t *tdata_locks;\n\n/*\n * Global hash of (prof_bt_t *)-->(prof_gctx_t *).  This is the master data\n * structure that knows about all backtraces currently captured.\n */\nstatic ckh_t bt2gctx;\n\n/*\n * Tree of all extant prof_tdata_t structures, regardless of state,\n * {attached,detached,expired}.\n */\nstatic prof_tdata_tree_t tdatas;\n\nsize_t prof_unbiased_sz[PROF_SC_NSIZES];\n",
+    "raw_res": "/******************************************************************************/\n\nstatic void\nprof_tdata_tree_insert(prof_tdata_t *tdata) {\n\tprof_tdata_tree_sz_t *",
+    "prompt_res": "size_t prof_shifted_unbiased_cnt[PROF_SC_NSIZES];",
+    "gt": "size_t prof_shifted_unbiased_cnt[PROF_SC_NSIZES];\n"
+  },
+  {
+    "id": 3196,
+    "pkg": "stm32-usart-uart-dma-rx-tx",
+    "fpath": "middlewares/FreeRTOS/Source/portable/IAR/ARM_CM7_MPU/r0p1/port.c",
+    "input": "/*\n    FreeRTOS V9.0.0 - Copyright (C) 2016 Real Time Engineers Ltd.\n    All rights reserved\n\n    VISIT http://www.FreeRTOS.org TO ENSURE YOU ARE USING THE LATEST VERSION.\n\n    This file is part of the FreeRTOS distribution.\n\n    FreeRTOS is free software; you can redistribute it and/or modify it under\n    the terms of the GNU General Public License (version 2) as published by the\n    Free Software Foundation >>>> AND MODIFIED BY <<<< the FreeRTOS exception.\n\n    ***************************************************************************\n    >>!   NOTE: The modification to the GPL is included to allow you to     !<<\n    >>!   distribute a combined work that includes FreeRTOS without being   !<<\n    >>!   obliged to provide the source code for proprietary components     !<<\n    >>!   outside of the FreeRTOS kernel.                                   !<<\n    ***************************************************************************\n\n    FreeRTOS is distributed in the hope that it will be useful, but WITHOUT ANY\n    WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS\n    FOR A PARTICULAR PURPOSE.  Full license text is available on the following\n    link: http://www.freertos.org/a00114.html\n\n    ***************************************************************************\n     *                                                                       *\n     *    FreeRTOS provides completely free yet professionally developed,    *\n     *    robust, strictly quality controlled, supported, and cross          *\n     *    platform software that is more than just the market leader, it     *\n     *    is the industry's de facto standard.                               *\n     *                                                                       *\n     *    Help yourself get started quickly while simultaneously helping     *\n     *    to support the FreeRTOS project by purchasing a FreeRTOS           *\n     *    tutorial book, reference manual, or both:                          *\n     *    http://www.FreeRTOS.org/Documentation                              *\n     *                                                                       *\n    ***************************************************************************\n\n    http://www.FreeRTOS.org/FAQHelp.html - Having a problem?  Start by reading\n    the FAQ page \"My application does not run, what could be wrong?\".  Have you\n    defined configASSERT()?\n\n    http://www.FreeRTOS.org/support - In return for receiving this top quality\n    embedded software for free we request you assist our global community by\n    participating in the support forum.\n\n    http://www.FreeRTOS.org/training - Investing in training allows your team to\n    be as productive as possible as early as possible.  Now you can receive\n    FreeRTOS training directly from Richard Barry, CEO of Real Time Engineers\n    Ltd, and the world's leading authority on the world's leading RTOS.\n\n    http://www.FreeRTOS.org/plus - A selection of FreeRTOS ecosystem products,\n    including FreeRTOS+Trace - an indispensable productivity tool, a DOS\n    compatible FAT file system, and our tiny thread aware UDP/IP stack.\n\n    http://www.FreeRTOS.org/labs - Where new FreeRTOS products go to incubate.\n    Come and try FreeRTOS+TCP, our new open source TCP/IP stack for FreeRTOS.\n\n    http://www.OpenRTOS.com - Real Time Engineers ltd. license FreeRTOS to High\n    Integrity Systems ltd. to sell under the OpenRTOS brand.  Low cost OpenRTOS\n    licenses offer ticketed support, indemnification and commercial middleware.\n\n    http://www.SafeRTOS.com - High Integrity Systems also provide a safety\n    engineered and independently SIL3 certified version for use in safety and\n    mission critical applications that require provable dependability.\n\n    1 tab == 4 spaces!\n*/\n\n/*-----------------------------------------------------------\n * Implementation of functions defined in portable.h for the ARM CM4F port.\n *----------------------------------------------------------*/\n\n/* Compiler includes. */\n#include <intrinsics.h>\n\n/* Defining MPU_WRAPPERS_INCLUDED_FROM_API_FILE prevents task.h from redefining\nall the API functions to use the MPU wrappers.  That should only be done when\ntask.h is included from an application file. */\n#define MPU_WRAPPERS_INCLUDED_FROM_API_FILE\n\n/* Scheduler includes. */\n#include \"FreeRTOS.h\"\n#include \"queue.h\"\n#include \"event_groups.h\"\n#include \"mpu_prototypes.h\"\n\n#ifndef __ARMVFP__\n\t#error This port can only be used when the project options are configured to enable hardware floating point support.\n#endif\n\n#if configMAX_SYSCALL_INTERRUPT_PRIORITY == 0\n\t#error configMAX_SYSCALL_INTERRUPT_PRIORITY must not be set to 0.  See http://www.FreeRTOS.org/RTOS-Cortex-M3-M4.html\n#endif\n\n#undef MPU_WRAPPERS_INCLUDED_FROM_API_FILE\n\n#ifndef configSYSTICK_CLOCK_HZ\n\t#define configSYSTICK_CLOCK_HZ configCPU_CLOCK_HZ\n\t/* Ensure the SysTick is clocked at the same frequency as the core. */\n\t#define portNVIC_SYSTICK_CLK_BIT\t( 1UL << 2UL )\n#else\n\t/* The way the SysTick is clocked is not modified in case it is not the same\n\tas the core. */\n\t#define portNVIC_SYSTICK_CLK_BIT\t( 0 )\n#endif\n\n/* Constants required to manipulate the core.  Registers first... */\n#define portNVIC_SYSTICK_CTRL_REG\t\t\t( * ( ( volatile uint32_t * ) 0xe000e010 ) )\n#define portNVIC_SYSTICK_LOAD_REG\t\t\t( * ( ( volatile uint32_t * ) 0xe000e014 ) )\n#define portNVIC_SYSTICK_CURRENT_VALUE_REG\t( * ( ( volatile uint32_t * ) 0xe000e018 ) )\n#define portNVIC_SYSPRI2_REG\t\t\t\t( * ( ( volatile uint32_t * ) 0xe000ed20 ) )\n#define portNVIC_SYSPRI1_REG\t\t\t\t\t( * ( ( volatile uint32_t * ) 0xe000ed1c ) )\n#define portNVIC_SYS_CTRL_STATE_REG\t\t\t\t( * ( ( volatile uint32_t * ) 0xe000ed24 ) )\n#define portNVIC_MEM_FAULT_ENABLE\t\t\t\t( 1UL << 16UL )\n/* ...then bits in the registers. */\n#define portNVIC_SYSTICK_INT_BIT\t\t\t( 1UL << 1UL )\n#define portNVIC_SYSTICK_ENABLE_BIT\t\t\t( 1UL << 0UL )\n#define portNVIC_SYSTICK_COUNT_FLAG_BIT\t\t( 1UL << 16UL )\n#define portNVIC_PENDSVCLEAR_BIT \t\t\t( 1UL << 27UL )\n#define portNVIC_PEND_SYSTICK_CLEAR_BIT\t\t( 1UL << 25UL )\n\n#define portNVIC_PENDSV_PRI\t\t\t\t\t( ( ( uint32_t ) configKERNEL_INTERRUPT_PRIORITY ) << 16UL )\n#define portNVIC_SYSTICK_PRI\t\t\t\t( ( ( uint32_t ) configKERNEL_INTERRUPT_PRIORITY ) << 24UL )\n#define portNVIC_SVC_PRI\t\t\t\t\t\t( ( ( uint32_t ) configMAX_SYSCALL_INTERRUPT_PRIORITY - 1UL ) << 24UL )\n\n/* Constants required to check the validity of an interrupt priority. */\n#define portFIRST_USER_INTERRUPT_NUMBER\t\t( 16 )\n#define portNVIC_IP_REGISTERS_OFFSET_16 \t( 0xE000E3F0 )\n#define portAIRCR_REG\t\t\t\t\t\t( * ( ( volatile uint32_t * ) 0xE000ED0C ) )\n#define portMAX_8_BIT_VALUE\t\t\t\t\t( ( uint8_t ) 0xff )\n#define portTOP_BIT_OF_BYTE\t\t\t\t\t( ( uint8_t ) 0x80 )\n#define portMAX_PRIGROUP_BITS\t\t\t\t( ( uint8_t ) 7 )\n#define portPRIORITY_GROUP_MASK\t\t\t\t( 0x07UL << 8UL )\n#define portPRIGROUP_SHIFT\t\t\t\t\t( 8UL )\n\n/* Masks off all bits but the VECTACTIVE bits in the ICSR register. */\n#define portVECTACTIVE_MASK\t\t\t\t\t( 0xFFUL )\n\n/* Constants required to access and manipulate the MPU. */\n#define portMPU_TYPE_REG\t\t\t\t\t\t( * ( ( volatile uint32_t * ) 0xe000ed90 ) )\n#define portMPU_REGION_BASE_ADDRESS_REG\t\t\t( * ( ( volatile uint32_t * ) 0xe000ed9C ) )\n#define portMPU_REGION_ATTRIBUTE_REG\t\t\t( * ( ( volatile uint32_t * ) 0xe000edA0 ) )\n#define portMPU_CTRL_REG\t\t\t\t\t\t( * ( ( volatile uint32_t * ) 0xe000ed94 ) )\n#define portEXPECTED_MPU_TYPE_VALUE\t\t\t\t( 8UL << 8UL ) /* 8 regions, unified. */\n#define portMPU_ENABLE\t\t\t\t\t\t\t( 0x01UL )\n#define portMPU_BACKGROUND_ENABLE\t\t\t\t( 1UL << 2UL )\n#define portPRIVILEGED_EXECUTION_START_ADDRESS\t( 0UL )\n#define portMPU_REGION_VALID\t\t\t\t\t( 0x10UL )\n#define portMPU_REGION_ENABLE\t\t\t\t\t( 0x01UL )\n#define portPERIPHERALS_START_ADDRESS\t\t\t0x40000000UL\n#define portPERIPHERALS_END_ADDRESS\t\t\t\t0x5FFFFFFFUL\n\n/* Constants required to manipulate the VFP. */\n#define portFPCCR\t\t\t\t\t\t\t( ( volatile uint32_t * ) 0xe000ef34 ) /* Floating point context control register. */\n#define portASPEN_AND_LSPEN_BITS\t\t\t( 0x3UL << 30UL )\n\n/* Constants required to set up the initial stack. */\n#define portINITIAL_XPSR\t\t\t\t\t\t( 0x01000000UL )\n#define portINITIAL_EXEC_RETURN\t\t\t\t\t( 0xfffffffdUL )\n#define portINITIAL_CONTROL_IF_UNPRIVILEGED\t\t( 0x03 )\n#define portINITIAL_CONTROL_IF_PRIVILEGED\t\t( 0x02 )\n\n/* Offsets in the stack to the parameters when inside the SVC handler. */\n#define portOFFSET_TO_PC\t\t\t\t\t\t( 6 )\n\n/* The systick is a 24-bit counter. */\n#define portMAX_24_BIT_NUMBER\t\t\t\t( 0xffffffUL )\n\n/* A fiddle factor to estimate the number of SysTick counts that would have\noccurred while the SysTick counter is stopped during tickless idle\ncalculations. */\n#define portMISSED_COUNTS_FACTOR\t\t\t( 45UL )\n\n/* For strict compliance with the Cortex-M spec the task start address should\nhave bit-0 clear, as it is loaded into the PC on exit from an ISR. */\n#define portSTART_ADDRESS_MASK\t\t\t\t( ( StackType_t ) 0xfffffffeUL )\n\n/* Each task maintains its own interrupt status in the critical nesting\nvariable. */\nstatic ",
+    "raw_res": "volatile uint32_t ulCriticalNesting = 0UL;",
+    "prompt_res": "UBaseType_t uxCriticalNesting = 0xaaaaaaaa;",
+    "gt": "UBaseType_t uxCriticalNesting = 0xaaaaaaaa;\n"
+  },
+  {
+    "id": 3206,
+    "pkg": "stm32-usart-uart-dma-rx-tx",
+    "fpath": "middlewares/FreeRTOS/Source/portable/IAR/ARM_CM4_MPU/port.c",
+    "input": "/*\n    FreeRTOS V9.0.0 - Copyright (C) 2016 Real Time Engineers Ltd.\n    All rights reserved\n\n    VISIT http://www.FreeRTOS.org TO ENSURE YOU ARE USING THE LATEST VERSION.\n\n    This file is part of the FreeRTOS distribution.\n\n    FreeRTOS is free software; you can redistribute it and/or modify it under\n    the terms of the GNU General Public License (version 2) as published by the\n    Free Software Foundation >>>> AND MODIFIED BY <<<< the FreeRTOS exception.\n\n    ***************************************************************************\n    >>!   NOTE: The modification to the GPL is included to allow you to     !<<\n    >>!   distribute a combined work that includes FreeRTOS without being   !<<\n    >>!   obliged to provide the source code for proprietary components     !<<\n    >>!   outside of the FreeRTOS kernel.                                   !<<\n    ***************************************************************************\n\n    FreeRTOS is distributed in the hope that it will be useful, but WITHOUT ANY\n    WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS\n    FOR A PARTICULAR PURPOSE.  Full license text is available on the following\n    link: http://www.freertos.org/a00114.html\n\n    ***************************************************************************\n     *                                                                       *\n     *    FreeRTOS provides completely free yet professionally developed,    *\n     *    robust, strictly quality controlled, supported, and cross          *\n     *    platform software that is more than just the market leader, it     *\n     *    is the industry's de facto standard.                               *\n     *                                                                       *\n     *    Help yourself get started quickly while simultaneously helping     *\n     *    to support the FreeRTOS project by purchasing a FreeRTOS           *\n     *    tutorial book, reference manual, or both:                          *\n     *    http://www.FreeRTOS.org/Documentation                              *\n     *                                                                       *\n    ***************************************************************************\n\n    http://www.FreeRTOS.org/FAQHelp.html - Having a problem?  Start by reading\n    the FAQ page \"My application does not run, what could be wrong?\".  Have you\n    defined configASSERT()?\n\n    http://www.FreeRTOS.org/support - In return for receiving this top quality\n    embedded software for free we request you assist our global community by\n    participating in the support forum.\n\n    http://www.FreeRTOS.org/training - Investing in training allows your team to\n    be as productive as possible as early as possible.  Now you can receive\n    FreeRTOS training directly from Richard Barry, CEO of Real Time Engineers\n    Ltd, and the world's leading authority on the world's leading RTOS.\n\n    http://www.FreeRTOS.org/plus - A selection of FreeRTOS ecosystem products,\n    including FreeRTOS+Trace - an indispensable productivity tool, a DOS\n    compatible FAT file system, and our tiny thread aware UDP/IP stack.\n\n    http://www.FreeRTOS.org/labs - Where new FreeRTOS products go to incubate.\n    Come and try FreeRTOS+TCP, our new open source TCP/IP stack for FreeRTOS.\n\n    http://www.OpenRTOS.com - Real Time Engineers ltd. license FreeRTOS to High\n    Integrity Systems ltd. to sell under the OpenRTOS brand.  Low cost OpenRTOS\n    licenses offer ticketed support, indemnification and commercial middleware.\n\n    http://www.SafeRTOS.com - High Integrity Systems also provide a safety\n    engineered and independently SIL3 certified version for use in safety and\n    mission critical applications that require provable dependability.\n\n    1 tab == 4 spaces!\n*/\n\n/*-----------------------------------------------------------\n * Implementation of functions defined in portable.h for the ARM CM4F port.\n *----------------------------------------------------------*/\n\n/* Compiler includes. */\n#include <intrinsics.h>\n\n/* Defining MPU_WRAPPERS_INCLUDED_FROM_API_FILE prevents task.h from redefining\nall the API functions to use the MPU wrappers.  That should only be done when\ntask.h is included from an application file. */\n#define MPU_WRAPPERS_INCLUDED_FROM_API_FILE\n\n/* Scheduler includes. */\n#include \"FreeRTOS.h\"\n#include \"queue.h\"\n#include \"event_groups.h\"\n#include \"mpu_prototypes.h\"\n\n#ifndef __ARMVFP__\n\t#error This port can only be used when the project options are configured to enable hardware floating point support.\n#endif\n\n#if configMAX_SYSCALL_INTERRUPT_PRIORITY == 0\n\t#error configMAX_SYSCALL_INTERRUPT_PRIORITY must not be set to 0.  See http://www.FreeRTOS.org/RTOS-Cortex-M3-M4.html\n#endif\n\n#undef MPU_WRAPPERS_INCLUDED_FROM_API_FILE\n\n#ifndef configSYSTICK_CLOCK_HZ\n\t#define configSYSTICK_CLOCK_HZ configCPU_CLOCK_HZ\n\t/* Ensure the SysTick is clocked at the same frequency as the core. */\n\t#define portNVIC_SYSTICK_CLK_BIT\t( 1UL << 2UL )\n#else\n\t/* The way the SysTick is clocked is not modified in case it is not the same\n\tas the core. */\n\t#define portNVIC_SYSTICK_CLK_BIT\t( 0 )\n#endif\n\n/* Constants required to manipulate the core.  Registers first... */\n#define portNVIC_SYSTICK_CTRL_REG\t\t\t( * ( ( volatile uint32_t * ) 0xe000e010 ) )\n#define portNVIC_SYSTICK_LOAD_REG\t\t\t( * ( ( volatile uint32_t * ) 0xe000e014 ) )\n#define portNVIC_SYSTICK_CURRENT_VALUE_REG\t( * ( ( volatile uint32_t * ) 0xe000e018 ) )\n#define portNVIC_SYSPRI2_REG\t\t\t\t( * ( ( volatile uint32_t * ) 0xe000ed20 ) )\n#define portNVIC_SYSPRI1_REG\t\t\t\t\t( * ( ( volatile uint32_t * ) 0xe000ed1c ) )\n#define portNVIC_SYS_CTRL_STATE_REG\t\t\t\t( * ( ( volatile uint32_t * ) 0xe000ed24 ) )\n#define portNVIC_MEM_FAULT_ENABLE\t\t\t\t( 1UL << 16UL )\n/* ...then bits in the registers. */\n#define portNVIC_SYSTICK_INT_BIT\t\t\t( 1UL << 1UL )\n#define portNVIC_SYSTICK_ENABLE_BIT\t\t\t( 1UL << 0UL )\n#define portNVIC_SYSTICK_COUNT_FLAG_BIT\t\t( 1UL << 16UL )\n#define portNVIC_PENDSVCLEAR_BIT \t\t\t( 1UL << 27UL )\n#define portNVIC_PEND_SYSTICK_CLEAR_BIT\t\t( 1UL << 25UL )\n\n/* Constants used to detect a Cortex-M7 r0p1 core, which should use the ARM_CM7\nr0p1 port. */\n#define portCPUID\t\t\t\t\t\t\t( * ( ( volatile uint32_t * ) 0xE000ed00 ) )\n#define portCORTEX_M7_r0p1_ID\t\t\t\t( 0x410FC271UL )\n#define portCORTEX_M7_r0p0_ID\t\t\t\t( 0x410FC270UL )\n\n#define portNVIC_PENDSV_PRI\t\t\t\t\t( ( ( uint32_t ) configKERNEL_INTERRUPT_PRIORITY ) << 16UL )\n#define portNVIC_SYSTICK_PRI\t\t\t\t( ( ( uint32_t ) configKERNEL_INTERRUPT_PRIORITY ) << 24UL )\n#define portNVIC_SVC_PRI\t\t\t\t\t\t( ( ( uint32_t ) configMAX_SYSCALL_INTERRUPT_PRIORITY - 1UL ) << 24UL )\n\n/* Constants required to check the validity of an interrupt priority. */\n#define portFIRST_USER_INTERRUPT_NUMBER\t\t( 16 )\n#define portNVIC_IP_REGISTERS_OFFSET_16 \t( 0xE000E3F0 )\n#define portAIRCR_REG\t\t\t\t\t\t( * ( ( volatile uint32_t * ) 0xE000ED0C ) )\n#define portMAX_8_BIT_VALUE\t\t\t\t\t( ( uint8_t ) 0xff )\n#define portTOP_BIT_OF_BYTE\t\t\t\t\t( ( uint8_t ) 0x80 )\n#define portMAX_PRIGROUP_BITS\t\t\t\t( ( uint8_t ) 7 )\n#define portPRIORITY_GROUP_MASK\t\t\t\t( 0x07UL << 8UL )\n#define portPRIGROUP_SHIFT\t\t\t\t\t( 8UL )\n\n/* Masks off all bits but the VECTACTIVE bits in the ICSR register. */\n#define portVECTACTIVE_MASK\t\t\t\t\t( 0xFFUL )\n\n/* Constants required to access and manipulate the MPU. */\n#define portMPU_TYPE_REG\t\t\t\t\t\t( * ( ( volatile uint32_t * ) 0xe000ed90 ) )\n#define portMPU_REGION_BASE_ADDRESS_REG\t\t\t( * ( ( volatile uint32_t * ) 0xe000ed9C ) )\n#define portMPU_REGION_ATTRIBUTE_REG\t\t\t( * ( ( volatile uint32_t * ) 0xe000edA0 ) )\n#define portMPU_CTRL_REG\t\t\t\t\t\t( * ( ( volatile uint32_t * ) 0xe000ed94 ) )\n#define portEXPECTED_MPU_TYPE_VALUE\t\t\t\t( 8UL << 8UL ) /* 8 regions, unified. */\n#define portMPU_ENABLE\t\t\t\t\t\t\t( 0x01UL )\n#define portMPU_BACKGROUND_ENABLE\t\t\t\t( 1UL << 2UL )\n#define portPRIVILEGED_EXECUTION_START_ADDRESS\t( 0UL )\n#define portMPU_REGION_VALID\t\t\t\t\t( 0x10UL )\n#define portMPU_REGION_ENABLE\t\t\t\t\t( 0x01UL )\n#define portPERIPHERALS_START_ADDRESS\t\t\t0x40000000UL\n#define portPERIPHERALS_END_ADDRESS\t\t\t\t0x5FFFFFFFUL\n\n/* Constants required to manipulate the VFP. */\n#define portFPCCR\t\t\t\t\t\t\t( ( volatile uint32_t * ) 0xe000ef34 ) /* Floating point context control register. */\n#define portASPEN_AND_LSPEN_BITS\t\t\t( 0x3UL << 30UL )\n\n/* Constants required to set up the initial stack. */\n#define portINITIAL_XPSR\t\t\t\t\t\t( 0x01000000UL )\n#define portINITIAL_EXEC_RETURN\t\t\t\t\t( 0xfffffffdUL )\n#define portINITIAL_CONTROL_IF_UNPRIVILEGED\t\t( 0x03 )\n#define portINITIAL_CONTROL_IF_PRIVILEGED\t\t( 0x02 )\n\n/* Offsets in the stack to the parameters when inside the SVC handler. */\n#define portOFFSET_TO_PC\t\t\t\t\t\t( 6 )\n\n/* The systick is a 24-bit counter. */\n#define portMAX_24_BIT_NUMBER\t\t\t\t( 0xffffffUL )\n\n/* A fiddle factor to estimate the number of SysTick counts that would have\noccurred while the SysTick counter is stopped during tickless idle\ncalculations. */\n#define portMISSED_COUNTS_FACTOR\t\t\t( 45UL )\n\n/* For strict compliance with the Cortex-M spec the task start address should\nhave bit-0 clear, as it is loaded into the PC on exit from an ISR. */\n#define portSTART_ADDRESS_MASK\t\t\t\t( ( StackType_t ) 0xfffffffeUL )\n\n/* Each task maintains its own interrupt status in the critical nesting\nvariable. */\nstatic ",
+    "raw_res": "volatile uint32_t ulCriticalNesting = 0UL;",
+    "prompt_res": "UBaseType_t uxCriticalNesting = 0xaaaaaaaa;",
+    "gt": "UBaseType_t uxCriticalNesting = 0xaaaaaaaa;\n"
+  }
+]
