@@ -1,0 +1,1502 @@
+[
+  {
+    "id": 36,
+    "raw_res": "JNIEnv *ff_jni_get_env(void *log_ctx)",
+    "prompt_res": "JNIEnv *ff_jni_get_env(void *log_ctx)",
+    "gt": "JNIEnv *ff_jni_get_env(void *log_ctx)\n"
+  },
+  {
+    "id": 48,
+    "raw_res": "GSMContext *ctx, int16_t *samples, GetBitContext *gb, int mode)",
+    "prompt_res": "GSMContext *ctx, int16_t *samples, GetBitContext *gb, int mode)",
+    "gt": "AVCodecContext *avctx, int16_t *samples,\n"
+  },
+  {
+    "id": 65,
+    "raw_res": "v8i16 src0 = LD_SH(src);",
+    "prompt_res": "v8i16 src0 = LD_SH(src);",
+    "gt": "v8i16 src0 = LD_SH(src);\n"
+  },
+  {
+    "id": 71,
+    "raw_res": "CodedBitstreamFragment temporal_unit;",
+    "prompt_res": "CodedBitstreamFragment temporal_unit;",
+    "gt": "CodedBitstreamFragment temporal_unit;\n"
+  },
+  {
+    "id": 95,
+    "raw_res": "int *type_list;",
+    "prompt_res": "int *type_list;",
+    "gt": "CodedBitstreamUnitType *type_list;\n"
+  },
+  {
+    "id": 101,
+    "raw_res": "int level;",
+    "prompt_res": "int level;",
+    "gt": "H264RawSEIDisplayOrientation display_orientation_payload;\n"
+  },
+  {
+    "id": 119,
+    "raw_res": "APVMetadataContext *ctx, CodedBitstreamFragment *frag)",
+    "prompt_res": "APVMetadataContext *ctx, APVRawFrameHeader *fh)",
+    "gt": "AVBSFContext *bsf,\n"
+  },
+  {
+    "id": 127,
+    "raw_res": "DOVIContext dec;",
+    "prompt_res": "DOVIContext dec, enc;",
+    "gt": "DOVIContext dec;\n"
+  },
+  {
+    "id": 142,
+    "raw_res": "EVCParserPoc *poc, enum EVCNALUnitType nalu_type)",
+    "prompt_res": "EVCParserPoc *poc, enum EVCNALUnitType nalu_type, int tid)",
+    "gt": "EVCParserPoc *poc, enum EVCNALUnitType nalu_type)\n"
+  },
+  {
+    "id": 148,
+    "raw_res": "H266RawPH *ph = NULL;",
+    "prompt_res": "H266RawPH *ph = NULL;",
+    "gt": "H266RawPictureHeader *ph = NULL;\n"
+  },
+  {
+    "id": 172,
+    "raw_res": "H265RawPPS *pps = unit->content;",
+    "prompt_res": "H265RawPPS *pps = unit->content;",
+    "gt": "H265RawPPS *pps = unit->content;\n"
+  },
+  {
+    "id": 174,
+    "raw_res": "AVBSFContext *bsf,\n                                     H265RawVPS *vps)",
+    "prompt_res": "AVBSFContext *bsf,\n                                    H265RawVPS *vps)",
+    "gt": "AVBSFContext *bsf,\n"
+  },
+  {
+    "id": 193,
+    "raw_res": "AVBSFContext *bsf)",
+    "prompt_res": "AVBSFContext *bsf)",
+    "gt": "AVBSFContext *bsf)\n"
+  },
+  {
+    "id": 196,
+    "raw_res": "AVBSFContext *bsf, AVPacket *pkt,\n                                         CodedBitstreamFragment *frag)",
+    "prompt_res": "AVBSFContext *bsf, AVPacket *pkt,\n                                        CodedBitstreamFragment *frag)",
+    "gt": "AVBSFContext *bsf, AVPacket *pkt,\n"
+  },
+  {
+    "id": 198,
+    "raw_res": "int sample_rate;",
+    "prompt_res": "int sample_size;",
+    "gt": "AVPacket *in_pkt;\n"
+  },
+  {
+    "id": 201,
+    "raw_res": "AVBSFContext *ctx)",
+    "prompt_res": "AVBSFContext *ctx)",
+    "gt": "AVBSFContext *ctx)\n"
+  },
+  {
+    "id": 236,
+    "raw_res": "AVPacket *cur_pkt;",
+    "prompt_res": "AVPacket *cur_pkt;",
+    "gt": "AVPacket *cur_pkt;\n"
+  },
+  {
+    "id": 245,
+    "raw_res": "UBaseType_t uxRecursiveCallCount;",
+    "prompt_res": "UBaseType_t uxRecursiveCallCount;",
+    "gt": "TaskHandle_t xMutexHolder;        /**< The handle of the task that holds the mutex. */\n"
+  },
+  {
+    "id": 249,
+    "raw_res": "UBaseType_t uxMessagesWaiting;",
+    "prompt_res": "UBaseType_t uxMessagesWaiting;",
+    "gt": "UBaseType_t uxMessagesWaiting; /**< The number of items currently in the queue. */\n"
+  },
+  {
+    "id": 259,
+    "raw_res": "ListItem_t xStateListItem;",
+    "prompt_res": "ListItem_t xStateListItem;",
+    "gt": "ListItem_t xStateListItem;                  /**< The list that the state list item of a task is reference from denotes the state of that task (Ready, Blocked, Suspended ). */\n"
+  },
+  {
+    "id": 294,
+    "raw_res": "TaskFunction_t pxCode,\n                                          void * pvParameters )",
+    "prompt_res": "TaskFunction_t pxCode,\n                                     void * pvParameters )",
+    "gt": "TaskFunction_t pxCode,\n"
+  },
+  {
+    "id": 306,
+    "raw_res": "portFPCCR ) |= portASPEN_AND_LSPEN_BITS;",
+    "prompt_res": "portFPCCR ) |= portASPEN_AND_LSPEN_BITS;",
+    "gt": "portFPCCR ) |= portASPEN_AND_LSPEN_BITS;\n"
+  },
+  {
+    "id": 307,
+    "raw_res": "void vPortNonPreemptiveTick( void ) __attribute__( ( __interrupt__( \"IRQ\" ) ) );",
+    "prompt_res": "void vPortNonPreemptiveTick( void );",
+    "gt": "__arm __irq void vPortNonPreemptiveTick( void );\n"
+  },
+  {
+    "id": 314,
+    "raw_res": "StackType_t * pxPortInitialiseStack( StackType_t * pxTopOfStack,\n                                       TaskFunction_t pxCode,\n                                       void * pvParameters )",
+    "prompt_res": "StackType_t * pxPortInitialiseStack( StackType_t * pxTopOfStack,\n                                       TaskFunction_t pxCode,\n                                       void * pvParameters )",
+    "gt": "StackType_t * pxPortInitialiseStack( StackType_t * pxTopOfStack,\n"
+  },
+  {
+    "id": 319,
+    "raw_res": "StackType_t * pxPortInitialiseStack( StackType_t * pxTopOfStack,\n                                       TaskFunction_t pxCode,\n                                       void * pvParameters )",
+    "prompt_res": "StackType_t * pxPortInitialiseStack( StackType_t * pxTopOfStack,\n                                       TaskFunction_t pxCode,\n                                       void * pvParameters )",
+    "gt": "StackType_t * pxPortInitialiseStack( StackType_t * pxTopOfStack,\n"
+  },
+  {
+    "id": 347,
+    "raw_res": "StackType_t * pxPortInitialiseStack( StackType_t * pxTopOfStack,\n                                       TaskFunction_t pxCode,\n                                       void * pvParameters )",
+    "prompt_res": "StackType_t * pxPortInitialiseStack( StackType_t * pxTopOfStack,\n                                       TaskFunction_t pxCode,\n                                       void * pvParameters )",
+    "gt": "StackType_t * pxPortInitialiseStack( StackType_t * pxTopOfStack,\n"
+  },
+  {
+    "id": 364,
+    "raw_res": "BaseType_t xPortIsInsideInterrupt( void );",
+    "prompt_res": "BaseType_t xPortIsInsideInterrupt( void );",
+    "gt": "BaseType_t xPortIsInsideInterrupt( void );\n"
+  },
+  {
+    "id": 389,
+    "raw_res": "void vPortYield( void )",
+    "prompt_res": "StackType_t * pxPortInitialiseStack( StackType_t * pxTopOfStack,\n                                        TaskFunction_t pxCode,\n                                        void * pvParameters )",
+    "gt": "StackType_t * pxPortInitialiseStack( StackType_t * pxTopOfStack,\n"
+  },
+  {
+    "id": 413,
+    "raw_res": "portNVIC_SHPR3_REG |= portNVIC_SYSTICK_PRI;",
+    "prompt_res": "portNVIC_SHPR3_REG |= portNVIC_SYSTICK_PRI;",
+    "gt": "portNVIC_SHPR3_REG |= portNVIC_SYSTICK_PRI;\n"
+  },
+  {
+    "id": 425,
+    "raw_res": "uint32_t ulCriticalNesting = 9999UL;",
+    "prompt_res": "uint32_t ulCriticalNesting = 9999UL;",
+    "gt": "uint32_t ulCriticalNesting = 9999UL;\n"
+  },
+  {
+    "id": 431,
+    "raw_res": "StackType_t * pxPortInitialiseStack( StackType_t * pxTopOfStack,\n                                       TaskFunction_t pxCode,\n                                       void * pvParameters )",
+    "prompt_res": "StackType_t * pxPortInitialiseStack( StackType_t * pxTopOfStack,\n                                     TaskFunction_t pxCode,\n                                     void * pvParameters )",
+    "gt": "StackType_t * pxPortInitialiseStack( StackType_t * pxTopOfStack,\n"
+  },
+  {
+    "id": 440,
+    "raw_res": "BaseType_t prvCheckValidityOfVectorNumber( uint32_t ulVectorNumber );",
+    "prompt_res": "BaseType_t prvCheckValidityOfVectorNumber( uint32_t ulVectorNumber );",
+    "gt": "BaseType_t prvCheckValidityOfVectorNumber( uint32_t ulVectorNumber );\n"
+  },
+  {
+    "id": 443,
+    "raw_res": "uint16_t usSegmentSelector;",
+    "prompt_res": "uint16_t usSegmentSelector;",
+    "gt": "uint16_t usSegmentSelector; /* Flat model means this is not changed. */\n"
+  },
+  {
+    "id": 454,
+    "raw_res": "unsigned long * ulValue )",
+    "prompt_res": "uint32_t * ulValue )",
+    "gt": "uint32_t * ulValue )\n"
+  },
+  {
+    "id": 455,
+    "raw_res": "StackType_t * pxPortInitialiseStack( StackType_t * pxTopOfStack,\n                                       TaskFunction_t pxCode,\n                                       void * pvParameters )",
+    "prompt_res": "StackType_t * pxPortInitialiseStack( StackType_t * pxTopOfStack,\n                                     TaskFunction_t pxCode,\n                                     void * pvParameters )",
+    "gt": "StackType_t * pxPortInitialiseStack( StackType_t * pxTopOfStack,\n"
+  },
+  {
+    "id": 461,
+    "raw_res": "TaskFunction_t pxCode,\n                                         void * pvParameters )",
+    "prompt_res": "TaskFunction_t pxCode,\n                                          void * pvParameters )",
+    "gt": "TaskFunction_t pxCode,\n"
+  },
+  {
+    "id": 473,
+    "raw_res": "BaseType_t xPortIsInsideInterrupt( void );",
+    "prompt_res": "BaseType_t xPortIsInsideInterrupt( void );",
+    "gt": "BaseType_t xPortIsInsideInterrupt( void );\n"
+  },
+  {
+    "id": 485,
+    "raw_res": "BaseType_t xPortStartScheduler( void )",
+    "prompt_res": "BaseType_t xPortStartScheduler( void )",
+    "gt": "BaseType_t xPortStartScheduler( void )\n"
+  },
+  {
+    "id": 492,
+    "raw_res": "uint32_t ulDummy;",
+    "prompt_res": "uint32_t ulDummy;",
+    "gt": "uint32_t ulDummy;\n"
+  },
+  {
+    "id": 513,
+    "raw_res": "BaseType_t xIsPrivileged( void ) __attribute__( ( naked ) );",
+    "prompt_res": "BaseType_t xIsPrivileged( void ) __attribute__( ( naked ) );",
+    "gt": "BaseType_t xIsPrivileged( void ) __attribute__( ( naked ) );\n"
+  },
+  {
+    "id": 515,
+    "raw_res": "uint32_t ulR0,\n                                  uint32_t ucSystemCallNumber ) PRIVILEGED_FUNCTION;",
+    "prompt_res": "uint32_t ulR0,\n                                  uint32_t ucSystemCallNumber ) PRIVILEGED_FUNCTION;",
+    "gt": "uint8_t ucSystemCallNumber ) PRIVILEGED_FUNCTION;\n"
+  },
+  {
+    "id": 572,
+    "raw_res": "StackType_t * pxPortInitialiseStack( StackType_t * pxTopOfStack,\n                                       TaskFunction_t pxCode,\n                                       void * pvParameters )",
+    "prompt_res": "StackType_t * pxPortInitialiseStack( StackType_t * pxTopOfStack,\n                                        TaskFunction_t pxCode,\n                                        void * pvParameters )",
+    "gt": "StackType_t * pxPortInitialiseStack( StackType_t * pxTopOfStack,\n"
+  },
+  {
+    "id": 576,
+    "raw_res": "StackType_t * pxPortInitialiseStack( StackType_t * pxTopOfStack,\n                                        TaskFunction_t pxCode,\n                                        void * pvParameters )",
+    "prompt_res": "StackType_t * pxPortInitialiseStack( StackType_t * pxTopOfStack,\n                                        TaskFunction_t pxCode,\n                                        void * pvParameters )",
+    "gt": "StackType_t * pxPortInitialiseStack( StackType_t * pxTopOfStack,\n"
+  },
+  {
+    "id": 577,
+    "raw_res": "TaskFunction_t pxCode,\n                                          void * pvParameters )",
+    "prompt_res": "TaskFunction_t pxCode,\n                                          void * pvParameters )",
+    "gt": "TaskFunction_t pxCode,\n"
+  },
+  {
+    "id": 580,
+    "raw_res": "StackType_t * pxPortInitialiseStack( StackType_t * pxTopOfStack,\n                                       TaskFunction_t pxCode,\n                                       void * pvParameters )",
+    "prompt_res": "StackType_t * pxPortInitialiseStack( StackType_t * pxTopOfStack,\n                                       TaskFunction_t pxCode,\n                                       void * pvParameters )",
+    "gt": "StackType_t * pxPortInitialiseStack( StackType_t * pxTopOfStack,\n"
+  },
+  {
+    "id": 592,
+    "raw_res": "uint32_t prvGetMPURegionSizeSetting( uint32_t ulActualSizeInBytes ) PRIVILEGED_FUNCTION;",
+    "prompt_res": "uint32_t prvGetMPURegionSizeSetting( uint32_t ulActualSizeInBytes ) PRIVILEGED_FUNCTION;",
+    "gt": "uint32_t prvGetMPURegionSizeSetting( uint32_t ulActualSizeInBytes ) PRIVILEGED_FUNCTION;\n"
+  },
+  {
+    "id": 631,
+    "raw_res": "uint32_t ulCriticalNesting = 0;",
+    "prompt_res": "uint32_t ulCriticalNesting = 9999;",
+    "gt": "uint32_t ulCriticalNesting = 9999;\n"
+  },
+  {
+    "id": 646,
+    "raw_res": "uint32_t ulMatchValueForOneTick = ( ( configPERIPHERAL_CLOCK_HZ / portCLOCK_DIVISOR ) / configTICK_RATE_HZ );",
+    "prompt_res": "uint32_t ulMatchValueForOneTick = ( ( configPERIPHERAL_CLOCK_HZ / portCLOCK_DIVISOR ) / configTICK_RATE_HZ );",
+    "gt": "uint32_t ulMatchValueForOneTick = ( ( configPERIPHERAL_CLOCK_HZ / portCLOCK_DIVISOR ) / configTICK_RATE_HZ );\n"
+  },
+  {
+    "id": 656,
+    "raw_res": "BaseType_t xPortStartScheduler( void )",
+    "prompt_res": "BaseType_t xPortStartScheduler( void )",
+    "gt": "BaseType_t xPortStartScheduler( void )\n"
+  },
+  {
+    "id": 700,
+    "raw_res": "portNVIC_SHPR3_REG |= portNVIC_SYSTICK_PRI;",
+    "prompt_res": "portNVIC_SHPR3_REG |= portNVIC_SYSTICK_PRI;",
+    "gt": "portNVIC_SHPR3_REG |= portNVIC_SYSTICK_PRI;\n"
+  },
+  {
+    "id": 705,
+    "raw_res": "/*\n * This file contains the implementation of the FreeRTOS tick timer setup\n * and interrupt handling for ESP32 platforms.\n */\n\n_Static_assert(googletag_INCLUDE_xTaskGetIdleTaskHandle == 1, \"configUSE_TICKLESS_IDLE requires xTaskGetIdleTaskHandle\");",
+    "prompt_res": "BaseType_t xPortSysTickHandler( void )",
+    "gt": "BaseType_t xPortSysTickHandler( void );\n"
+  },
+  {
+    "id": 707,
+    "raw_res": "uint32_t exc_nest_count = 0;",
+    "prompt_res": "uint32_t exc_nest_count = 0;",
+    "gt": "uint32_t exc_nest_count;\n"
+  },
+  {
+    "id": 715,
+    "raw_res": "uint32_t ulPendingInterrupts = 0UL;",
+    "prompt_res": "uint32_t ulPendingInterrupts = 0UL;",
+    "gt": "uint32_t ulPendingInterrupts = 0UL;\n"
+  },
+  {
+    "id": 723,
+    "raw_res": "u16_t\nlwip_standard_chksum(const void *dataptr, int len)",
+    "prompt_res": "u16_t\nlwip_standard_chksum(const void *dataptr, int len)",
+    "gt": "u16_t\n"
+  },
+  {
+    "id": 733,
+    "raw_res": "u8_t *ram;",
+    "prompt_res": "u8_t *ram;",
+    "gt": "u8_t *ram;\n"
+  },
+  {
+    "id": 743,
+    "raw_res": "netif_init_fn init, netif_input_fn input)",
+    "prompt_res": "netif_init_fn init, netif_input_fn input)",
+    "gt": "netif_init_fn init, netif_input_fn input)\n"
+  },
+  {
+    "id": 761,
+    "raw_res": "BReactor *reactor, btime_t interval, PacketPassInactivityMonitor_handler handler, void *user)",
+    "prompt_res": "BReactor *reactor, btime_t interval, PacketPassInactivityMonitor_handler handler, void *user)",
+    "gt": "BReactor *reactor, btime_t interval, PacketPassInactivityMonitor_handler handler, void *user)\n"
+  },
+  {
+    "id": 773,
+    "raw_res": "cairo_bool_t _error;",
+    "prompt_res": "cairo_bool_t _error;",
+    "gt": "cairo_bool_t _error;\n"
+  },
+  {
+    "id": 820,
+    "raw_res": "cairo_t *cr, int width, int height, int loops)",
+    "prompt_res": "cairo_t *cr, int width, int height, int loops)",
+    "gt": "cairo_t *cr, int width, int height, int loops)\n"
+  },
+  {
+    "id": 822,
+    "raw_res": "cairo_t *cr, int width, int height, int loops)",
+    "prompt_res": "cairo_t *cr, int width, int height, int loops)",
+    "gt": "cairo_t *cr, int width, int height, int loops)\n"
+  },
+  {
+    "id": 835,
+    "raw_res": "cairo_time_t\ndo_many_fills_real (cairo_t *cr, int width, int height, int loops)",
+    "prompt_res": "cairo_time_t\ndo_many_fills_ha (cairo_t *cr, int width, int height, int loops)",
+    "gt": "cairo_time_t\n"
+  },
+  {
+    "id": 841,
+    "raw_res": "cairo_time_t\ndo_paint (cairo_t *cr, int width, int height, int loops)",
+    "prompt_res": "cairo_time_t\ndo_wave (cairo_t *cr, int width, int height, int loops)",
+    "gt": "cairo_surface_t *\n"
+  },
+  {
+    "id": 848,
+    "raw_res": "cairo_t *cr, int width, int height, int loops)",
+    "prompt_res": "cairo_t *cr, int width, int height, int loops)",
+    "gt": "cairo_t *cr, int width, int height, int loops)\n"
+  },
+  {
+    "id": 862,
+    "raw_res": "cairo_t *cr, int width, int height, int loops)",
+    "prompt_res": "cairo_t *cr, int width, int height, int loops)",
+    "gt": "cairo_t *cr, int width, int height, int loops)\n"
+  },
+  {
+    "id": 876,
+    "raw_res": "cairo_t *cr, int width, int height, int loops)",
+    "prompt_res": "cairo_t *cr, int width, int height, int loops)",
+    "gt": "cairo_t *cr, int width, int height, int loops)\n"
+  },
+  {
+    "id": 897,
+    "raw_res": "cairo_t *cr, int width, int height)",
+    "prompt_res": "cairo_t *cr, int width, int height)",
+    "gt": "cairo_t *cr, unsigned int width, unsigned int height)\n"
+  },
+  {
+    "id": 915,
+    "raw_res": "cairo_t *cr, int width, int height, int loops)",
+    "prompt_res": "cairo_t *cr, int width, int height, int loops)",
+    "gt": "cairo_t *cr, int width, int height, int loops)\n"
+  },
+  {
+    "id": 921,
+    "raw_res": "cairo_bool_t\ncairo_perf_can_run (cairo_perf_t *perf,\n\t\t    const char\t *name);",
+    "prompt_res": "cairo_bool_t\ncairo_perf_can_run (cairo_perf_t *perf, const char *name, cairo_bool_t *is_explicit);",
+    "gt": "cairo_bool_t\n"
+  },
+  {
+    "id": 934,
+    "raw_res": "cairo_time_t\ndo_stroke (cairo_t *cr, int width, int height, int loops)",
+    "prompt_res": "cairo_time_t\ndo_tessellate (cairo_t *cr, int width, int height, int loops)",
+    "gt": "cairo_time_t\n"
+  },
+  {
+    "id": 941,
+    "raw_res": "cairo_t *cr, int width, int height, int loops)",
+    "prompt_res": "cairo_t *cr, int width, int height, int loops)",
+    "gt": "cairo_t *cr, int width, int height, int loops)\n"
+  },
+  {
+    "id": 942,
+    "raw_res": "cairo_bool_t\ncairo_perf_can_run (cairo_perf_t *perf, const char *name);",
+    "prompt_res": "cairo_bool_t\ncairo_perf_enabled (void)",
+    "gt": "cairo_bool_t\n"
+  },
+  {
+    "id": 954,
+    "raw_res": "cairo_t *cr,\n                   double x, double y, double w, double h,\n                   double radius)",
+    "prompt_res": "cairo_t *cr,\n\t\t   double x, double y, double w, double h,\n\t\t   double radius)",
+    "gt": "cairo_t *cr,\n"
+  },
+  {
+    "id": 955,
+    "raw_res": "cairo_time_t\ndo_rectangles (cairo_t *cr,\n\t       int width, int height, int loops)",
+    "prompt_res": "cairo_time_t\ndo_rounded_rectangles (cairo_t *cr, int width, int height, int loops)",
+    "gt": "cairo_time_t\n"
+  },
+  {
+    "id": 965,
+    "raw_res": "cairo_time_t\ndo_tiger (cairo_t *cr, int width, int height, int loops)",
+    "prompt_res": "cairo_time_t\ndo_tiger (cairo_t *cr, int width, int height, int loops)",
+    "gt": "cairo_time_t\n"
+  },
+  {
+    "id": 994,
+    "raw_res": "cairo_time_t\ndo_curve_fill (cairo_t *cr, int width, int height, int loops)",
+    "prompt_res": "cairo_time_t\ndo_curve_fill (cairo_t *cr, int width, int height, int loops)",
+    "gt": "cairo_time_t\n"
+  },
+  {
+    "id": 1000,
+    "raw_res": "CURLcode unit_setup(void)",
+    "prompt_res": "CURLcode unit_setup(void)",
+    "gt": "CURLcode unit_setup(void)\n"
+  },
+  {
+    "id": 1012,
+    "raw_res": "dReal *L, dReal *B, int n, int lskip1)",
+    "prompt_res": "dReal *L, dReal *B, int n, int lskip1)",
+    "gt": "dReal *L, dReal *B, int n, int lskip1)\n"
+  },
+  {
+    "id": 1025,
+    "raw_res": "json_object *src, json_object *parent, const char *key, size_t index, json_object **dst)",
+    "prompt_res": "json_object *src, json_object *parent, const char *key, size_t index,\n                    json_object **dst)",
+    "gt": "json_object *src, json_object *parent, const char *key, size_t index,\n"
+  },
+  {
+    "id": 1033,
+    "raw_res": "if (list->end == NULL)",
+    "prompt_res": "if (list->end == NULL)",
+    "gt": "node_t last = list->end;\n"
+  },
+  {
+    "id": 1043,
+    "raw_res": "libusb_device_handle *device, uint32_t addr, bool doRun)",
+    "prompt_res": "libusb_device_handle *device, uint32_t addr, bool doRun)",
+    "gt": "libusb_device_handle *device, uint32_t addr, bool doRun)\n"
+  },
+  {
+    "id": 1058,
+    "raw_res": "uint8_t iface)",
+    "prompt_res": "uint8_t interface_number)",
+    "gt": "uint8_t iface)\n"
+  },
+  {
+    "id": 1080,
+    "raw_res": "lv_img_dsc_t test_RGB565_RLE_align1 =",
+    "prompt_res": "lv_image_dsc_t test_RGB565_RLE_align1 =",
+    "gt": "lv_image_dsc_t test_RGB565_RLE_align1 = {\n"
+  },
+  {
+    "id": 1089,
+    "raw_res": "lv_image_dsc_t test_A2_RLE_align1 =",
+    "prompt_res": "lv_image_dsc_t test_A2_RLE_align1 =",
+    "gt": "lv_image_dsc_t test_A2_RLE_align1 = {\n"
+  },
+  {
+    "id": 1095,
+    "raw_res": "lv_image_dsc_t test_A8_NONE_align1 =",
+    "prompt_res": "lv_image_dsc_t test_A8_NONE_align1 =",
+    "gt": "lv_image_dsc_t test_A8_NONE_align1 = {\n"
+  },
+  {
+    "id": 1112,
+    "raw_res": "lv_image_dsc_t test_I2_LZ4_align64 =",
+    "prompt_res": "lv_image_dsc_t test_I2_LZ4_align64 =",
+    "gt": "lv_image_dsc_t test_I2_LZ4_align64 = {\n"
+  },
+  {
+    "id": 1120,
+    "raw_res": "lv_image_dsc_t test_L8_RLE_align64 =",
+    "prompt_res": "lv_image_dsc_t test_L8_RLE_align64 =",
+    "gt": "lv_image_dsc_t test_L8_RLE_align64 = {\n"
+  },
+  {
+    "id": 1125,
+    "raw_res": "lv_image_dsc_t test_XRGB8888_RLE_align64 =",
+    "prompt_res": "lv_image_dsc_t test_XRGB8888_RLE_align64 =",
+    "gt": "lv_image_dsc_t test_XRGB8888_RLE_align64 = {\n"
+  },
+  {
+    "id": 1154,
+    "raw_res": "u32_t bytes_transferred, u32_t ms_duration, u32_t bandwidth_kbitpsec)",
+    "prompt_res": "u32_t bytes_transferred, u32_t ms_duration, u32_t bandwidth_kbitpsec)",
+    "gt": "u32_t bytes_transferred, u32_t ms_duration, u32_t bandwidth_kbitpsec)\n"
+  },
+  {
+    "id": 1158,
+    "raw_res": "u32_t delay_ms)",
+    "prompt_res": "u32_t delay_ms)",
+    "gt": "u32_t delay_ms)\n"
+  },
+  {
+    "id": 1159,
+    "raw_res": "err_t\nsys_mutex_new(sys_mutex_t *mutex)",
+    "prompt_res": "err_t\nsys_mutex_new(sys_mutex_t *mutex)",
+    "gt": "err_t\n"
+  },
+  {
+    "id": 1167,
+    "raw_res": "lwip_thread_fn function, void *arg, int stacksize, int prio)",
+    "prompt_res": "lwip_thread_fn function, void *arg, int stacksize, int prio)",
+    "gt": "lwip_thread_fn function, void *arg, int stacksize, int prio)\n"
+  },
+  {
+    "id": 1177,
+    "raw_res": "u32_t len;",
+    "prompt_res": "};",
+    "gt": "u32_t len;\n"
+  },
+  {
+    "id": 1187,
+    "raw_res": "u16_t *)(const void *)pb;",
+    "prompt_res": "u16_t *)(const void *)pb;",
+    "gt": "u16_t *)(const void *)pb;\n"
+  },
+  {
+    "id": 1216,
+    "raw_res": "u8_t port;",
+    "prompt_res": "u8_t port;",
+    "gt": "u8_t port;\n"
+  },
+  {
+    "id": 1246,
+    "raw_res": "bool reload)",
+    "prompt_res": "bool reload)",
+    "gt": "bool reload)\n"
+  },
+  {
+    "id": 1260,
+    "raw_res": "SharpYuvTransferFunctionType transfer_type)",
+    "prompt_res": "",
+    "gt": "SharpYuvTransferFunctionType transfer_type) {\n"
+  },
+  {
+    "id": 1262,
+    "raw_res": "SharpYuvConversionMatrix* yuv_matrix,\n                            SharpYuvTransferFunctionType transfer_type)",
+    "prompt_res": "SharpYuvConversionMatrix* yuv_matrix,\n                            SharpYuvTransferFunctionType transfer_type)",
+    "gt": "SharpYuvConversionMatrix* yuv_matrix,\n"
+  },
+  {
+    "id": 1274,
+    "raw_res": "WebPMuxError MuxGet(const WebPMux* const mux, CHUNK_INDEX idx,\n                     uint32_t nth, WebPData* const data)",
+    "prompt_res": "WebPMuxError MuxGet(const WebPMux* const mux, CHUNK_INDEX idx,\n                         uint32_t nth, WebPData* const data)",
+    "gt": "WebPMuxError MuxGet(const WebPMux* const mux, CHUNK_INDEX idx,\n"
+  },
+  {
+    "id": 1277,
+    "raw_res": "SWITCH_ID_LIST(IDX_ICCP, mux->iccp_);",
+    "prompt_res": "SWITCH_ID_LIST(IDX_ICCP, mux->iccp_);",
+    "gt": "SWITCH_ID_LIST(IDX_ICCP, mux->iccp_);\n"
+  },
+  {
+    "id": 1286,
+    "raw_res": "WebPPicture prev_canvas_;",
+    "prompt_res": "WebPPicture prev_canvas_;",
+    "gt": "WebPPicture prev_canvas_;           // Previous canvas.\n"
+  },
+  {
+    "id": 1310,
+    "raw_res": "VP8LBitWriter* const bw, size_t expected_size)",
+    "prompt_res": "VP8LBitWriter* const bw, size_t expected_size)",
+    "gt": "VP8LBitWriter* const bw, size_t expected_size) {\n"
+  },
+  {
+    "id": 1324,
+    "raw_res": "WebPRescaler* const rescaler, int max_num_lines)",
+    "prompt_res": "WebPRescaler* const rescaler,\n                           int max_num_lines)",
+    "gt": "WebPRescaler* const rescaler,\n"
+  },
+  {
+    "id": 1326,
+    "raw_res": "WebPRescaler* const rescaler)",
+    "prompt_res": "WebPRescaler* const rescaler)",
+    "gt": "WebPRescaler* const rescaler) {\n"
+  },
+  {
+    "id": 1330,
+    "raw_res": "HuffmanCode code)",
+    "prompt_res": "HuffmanCode code)",
+    "gt": "HuffmanCode code) {\n"
+  },
+  {
+    "id": 1335,
+    "raw_res": "HuffmanTree* const pool,\n                         uint8_t* const bit_depths, int level)",
+    "prompt_res": "HuffmanTree* const pool,\n                         uint8_t* const bit_depths, int level)",
+    "gt": "HuffmanTree* const pool,\n"
+  },
+  {
+    "id": 1371,
+    "raw_res": "VP8Encoder* const enc = it->enc_;",
+    "prompt_res": "VP8Encoder* const enc = it->enc_;",
+    "gt": "VP8Encoder* const enc = it->enc_;\n"
+  },
+  {
+    "id": 1389,
+    "raw_res": "uint8_t kLevelsFromDelta[8][MAX_DELTA_SIZE] =",
+    "prompt_res": "uint8_t kLevelsFromDelta[8][MAX_DELTA_SIZE] =",
+    "gt": "uint8_t kLevelsFromDelta[8][MAX_DELTA_SIZE] = {\n"
+  },
+  {
+    "id": 1397,
+    "raw_res": "uint64_t target_size = (uint64_t)enc->config_->target_size;",
+    "prompt_res": "uint64_t target_size = (uint64_t)enc->config_->target_size;",
+    "gt": "uint64_t target_size = (uint64_t)enc->config_->target_size;\n"
+  },
+  {
+    "id": 1416,
+    "raw_res": "int upper_row, int bottom_row, int row, int col,\n    const uint32_t* const current_row, const uint32_t* const upper_row_data,\n    int mode, int x_start, int x_end, int y,\n    uint32_t* const out,\n    int near_lossless_quality, int used_subtract_green,\n    const uint8_t* const max_diffs)",
+    "prompt_res": "int upper_row, int bottom_row, int row, int x_start, int count,\n    const uint32_t* const current_row, const uint32_t* const upper_row_data,\n    int mode, uint32_t* const out,\n    int near_lossless, int max_quantization, int exact,\n    int used_subtract_green, const uint8_t* const max_diffs)",
+    "gt": "uint32_t* const upper_row,\n"
+  },
+  {
+    "id": 1429,
+    "raw_res": "VP8LBackwardRefs* const refs)",
+    "prompt_res": "VP8LBackwardRefs* const refs)",
+    "gt": "VP8LBackwardRefs* const refs) {\n"
+  },
+  {
+    "id": 1445,
+    "raw_res": "VP8LHistogram** const A, VP8LHistogram** const B)",
+    "prompt_res": "VP8LHistogram** const A, VP8LHistogram** const B)",
+    "gt": "VP8LHistogram** const A, VP8LHistogram** const B) {\n"
+  },
+  {
+    "id": 1484,
+    "raw_res": "WebPDecoderConfig config_;",
+    "prompt_res": "WebPAnimDecoderOptions options_;",
+    "gt": "WebPDecoderConfig config_;       // Decoder config.\n"
+  },
+  {
+    "id": 1485,
+    "raw_res": "uint8_t* curr_frame_;",
+    "prompt_res": "uint8_t* curr_frame_;",
+    "gt": "WebPAnimInfo info_;              // Global info about the animation.\n"
+  },
+  {
+    "id": 1494,
+    "raw_res": "VP8Io* const io, WebPDecParams* const p)",
+    "prompt_res": "VP8Io* const io, WebPDecParams* const p)",
+    "gt": "VP8Io* const io, WebPDecParams* const p) {\n"
+  },
+  {
+    "id": 1568,
+    "raw_res": "TPInitialize FUNC_Initialize=NULL;",
+    "prompt_res": "TPInitialize FUNC_Initialize=NULL;",
+    "gt": "TPInitialize FUNC_Initialize=NULL;\n"
+  },
+  {
+    "id": 1575,
+    "raw_res": "uint64_t xgetbv(unsigned int xcr)",
+    "prompt_res": "uint64_t xgetbv(unsigned int xcr)",
+    "gt": "uint64_t xgetbv(unsigned int xcr) {\n"
+  },
+  {
+    "id": 1577,
+    "raw_res": "crc32_fold *crc, const uint8_t *src, size_t len, uint32_t init_crc)",
+    "prompt_res": "crc32_fold *crc, const uint8_t *src, size_t len, uint32_t init_crc)",
+    "gt": "crc32_fold *crc, const uint8_t *src, size_t len, uint32_t init_crc) {\n"
+  },
+  {
+    "id": 1578,
+    "raw_res": "uint64_t chunk_t;",
+    "prompt_res": "uint64_t chunk_t;",
+    "gt": "uint64_t chunk_t;\n"
+  },
+  {
+    "id": 1582,
+    "raw_res": "uint8_t *out, chunk_t *chunk)",
+    "prompt_res": "uint8_t *out, chunk_t *chunk)",
+    "gt": "uint8_t *out, chunk_t *chunk) {\n"
+  },
+  {
+    "id": 1585,
+    "raw_res": "deflate_state *s)",
+    "prompt_res": "deflate_state *s)",
+    "gt": "deflate_state *s) {\n"
+  },
+  {
+    "id": 1604,
+    "raw_res": "uint64_t stream_id,\n                                              QUIC_TXPIM_PKT *pkt,\n                                              void *arg),\n                        void *confirm_frame_arg,\n                        void (*sstream_updated)(uint64_t stream_id,\n                                                void *arg),\n                        void *sstream_updated_arg,\n                        QLOG *(*get_qlog)(void *arg),\n                        void *get_qlog_arg)",
+    "prompt_res": "uint64_t stream_id,\n                                             QUIC_TXPIM_PKT *pkt,\n                                             void *arg),\n                        void *confirm_frame_arg,\n                        void (*sstream_updated)(uint64_t stream_id,\n                                                void *arg),\n                        void *sstream_updated_arg,\n                        QLOG *(*get_qlog_cb)(void *arg),\n                        void *get_qlog_cb_arg)",
+    "gt": "uint64_t stream_id,\n"
+  },
+  {
+    "id": 1632,
+    "raw_res": "size_t                  encoded_len;",
+    "prompt_res": "uint32_t                priority;",
+    "gt": "size_t                  encoded_len;\n"
+  },
+  {
+    "id": 1634,
+    "raw_res": "uint32_t ossl_quic_cfq_item_get_pn_space(const QUIC_CFQ_ITEM *item)",
+    "prompt_res": "```c\nuint64_t ossl_quic_cfq_item_get_frame_type(const QUIC_CFQ_ITEM *item)",
+    "gt": "uint64_t ossl_quic_cfq_item_get_frame_type(const QUIC_CFQ_ITEM *item)\n"
+  },
+  {
+    "id": 1638,
+    "raw_res": "QUIC_REACTOR_FLAGS flags)",
+    "prompt_res": "uint64_t flags)",
+    "gt": "uint64_t flags)\n"
+  },
+  {
+    "id": 1672,
+    "raw_res": "size_t keybits)",
+    "prompt_res": "size_t keybits)",
+    "gt": "size_t keybits)\n"
+  },
+  {
+    "id": 1675,
+    "raw_res": "size_t bufsz, const OSSL_PARAM *param)",
+    "prompt_res": "size_t bufsz, const OSSL_PARAM *param)",
+    "gt": "size_t bufsz, const OSSL_PARAM *param)\n"
+  },
+  {
+    "id": 1677,
+    "raw_res": "local int updatewindow OF((z_streamp strm, unsigned out));",
+    "prompt_res": "local int updatewindow OF((z_streamp strm, unsigned out));",
+    "gt": "local int updatewindow OF((z_streamp strm, unsigned out));\n"
+  },
+  {
+    "id": 1707,
+    "raw_res": "uInt  len;",
+    "prompt_res": "uInt  len;",
+    "gt": "uInt  len;\n"
+  },
+  {
+    "id": 1716,
+    "raw_res": "code FAR * FAR *table;",
+    "prompt_res": "code FAR * FAR *table;",
+    "gt": "code FAR * FAR *table;\n"
+  },
+  {
+    "id": 1726,
+    "raw_res": "local uch _dist_code[DIST_CODE_LEN];",
+    "prompt_res": "local uch _dist_code[DIST_CODE_LEN];",
+    "gt": "uch _dist_code[DIST_CODE_LEN];\n"
+  },
+  {
+    "id": 1736,
+    "raw_res": "kiss_fft_cpx * Fout,\n        const size_t fstride,\n        const kiss_fft_cfg st,\n        int m\n        )",
+    "prompt_res": "kiss_fft_cpx * Fout,\n        const size_t fstride,\n        const kiss_fft_cfg st,\n        int m\n        )",
+    "gt": "kiss_fft_cpx * Fout,\n"
+  },
+  {
+    "id": 1761,
+    "raw_res": "UpnpString *m_DevUDN;",
+    "prompt_res": "UpnpString *m_DevUDN;",
+    "gt": "UpnpString *m_DevUDN;\n"
+  },
+  {
+    "id": 1764,
+    "raw_res": "IXML_Document *m_ActionResult;",
+    "prompt_res": "IXML_Document *m_ActionResult;",
+    "gt": "IXML_Document *m_ActionResult;\n"
+  },
+  {
+    "id": 1765,
+    "raw_res": "IXML_Document *m_SoapHeader;",
+    "prompt_res": "IXML_Document *m_SoapHeader;",
+    "gt": "IXML_Document *m_SoapHeader;\n"
+  },
+  {
+    "id": 1776,
+    "raw_res": "UpnpExtraHeaders *p, const UpnpExtraHeaders *q)",
+    "prompt_res": "UpnpExtraHeaders *p, const UpnpExtraHeaders *q)",
+    "gt": "UpnpExtraHeaders *p, const UpnpExtraHeaders *q)\n"
+  },
+  {
+    "id": 1786,
+    "raw_res": "UpnpString *m_PublisherUrl;",
+    "prompt_res": "UpnpString *m_PublisherUrl;",
+    "gt": "UpnpString *m_PublisherUrl;\n"
+  },
+  {
+    "id": 1802,
+    "raw_res": "UpnpString *p, const char *s)",
+    "prompt_res": "UpnpString *p, const char *s)",
+    "gt": "UpnpString *p, const char *s)\n"
+  },
+  {
+    "id": 1818,
+    "raw_res": "ithread_mutex_t gSDKInitMutex = PTHREAD_MUTEX_INITIALIZER;",
+    "prompt_res": "ithread_mutex_t gSDKInitMutex = PTHREAD_MUTEX_INITIALIZER;",
+    "gt": "ithread_mutex_t gSDKInitMutex = PTHREAD_MUTEX_INITIALIZER;\n"
+  },
+  {
+    "id": 1826,
+    "raw_res": "",
+    "prompt_res": "UpnpString *m_CtrlUrl;",
+    "gt": "UpnpString *m_CtrlUrl;\n"
+  },
+  {
+    "id": 1846,
+    "raw_res": "SsdpEvent *Evt)",
+    "prompt_res": "SsdpEvent *Evt)",
+    "gt": "SsdpEvent *Evt)\n"
+  },
+  {
+    "id": 1862,
+    "raw_res": "uint8_t *input = inputptr;",
+    "prompt_res": "uint8_t *input = (const uint8_t *)inputptr;",
+    "gt": "uint8_t *input = inputptr;\n"
+  },
+  {
+    "id": 1880,
+    "raw_res": "str_int_entry Http_Header_Names[NUM_HTTP_HEADER_NAMES];",
+    "prompt_res": "str_int_entry Http_Header_Names[NUM_HTTP_HEADER_NAMES];",
+    "gt": "str_int_entry Http_Header_Names[NUM_HTTP_HEADER_NAMES];\n"
+  },
+  {
+    "id": 1899,
+    "raw_res": "membuffer *m)",
+    "prompt_res": "membuffer *m)",
+    "gt": "membuffer *m)\n"
+  },
+  {
+    "id": 1920,
+    "raw_res": "IXML_Node *ixmlNamedNodeMap_getNamedItem(\n\tIXML_NamedNodeMap *nnMap,\n\tconst DOMString name)",
+    "prompt_res": "IXML_Node *ixmlNamedNodeMap_getNamedItem(\n\tIXML_NamedNodeMap *nnMap,\n\tconst DOMString name)",
+    "gt": "IXML_Node *ixmlNamedNodeMap_getNamedItem(\n"
+  },
+  {
+    "id": 1933,
+    "raw_res": "ixml_membuf *m,\n\t/*! [in] The string to append */\n\tconst char *c_str)",
+    "prompt_res": "ixml_membuf *m,\n\t/*! [in] The input string to append */\n\tconst char *c_str)",
+    "gt": "ixml_membuf *m,\n"
+  },
+  {
+    "id": 1936,
+    "raw_res": "IXML_Attr *attr)",
+    "prompt_res": "IXML_Attr *attrNode)",
+    "gt": "IXML_Attr *attr)\n"
+  },
+  {
+    "id": 1942,
+    "raw_res": "Parser *xmlParser)",
+    "prompt_res": "Parser *xmlParser)",
+    "gt": "Parser *xmlParser)\n"
+  },
+  {
+    "id": 1944,
+    "raw_res": "IXML_CDATASection *nodeptr)",
+    "prompt_res": "IXML_CDATASection *nodeptr)",
+    "gt": "IXML_CDATASection *nodeptr)\n"
+  },
+  {
+    "id": 1963,
+    "raw_res": "Color color;",
+    "prompt_res": "Color color;",
+    "gt": "Color color;\n"
+  },
+  {
+    "id": 1982,
+    "raw_res": "// Touch variables definitions\n//--------------------------------------------------------------------------------------\nVector2 touchPosition =",
+    "prompt_res": "// Protractor variables definitions\n//--------------------------------------------------------------------------------------\nfloat currentAngle = 0.0f;",
+    "gt": "Rectangle logButton1 = { 53, 7, 48, 26 };\n"
+  },
+  {
+    "id": 1989,
+    "raw_res": "Camera2D *camera, Player *player, EnvItem *envItems, int envItemsLength, float delta, int width, int height);",
+    "prompt_res": "Camera2D *camera, Player *player, EnvItem *envItems, int envItemsLength, float delta, int width, int height);",
+    "gt": "Camera2D *camera, Player *player, EnvItem *envItems, int envItemsLength, float delta, int width, int height);\n"
+  },
+  {
+    "id": 2002,
+    "raw_res": "Vector2 vertices[4];",
+    "prompt_res": "Vector2 vertices[4];",
+    "gt": "Vector2 vertices[4];\n"
+  },
+  {
+    "id": 2013,
+    "raw_res": "Texture2D texture, Vector3 position, float width, float height, float length, Color color);",
+    "prompt_res": "Texture2D texture, Vector3 position, float width, float height, float length, Color color);",
+    "gt": "Texture2D texture, Vector3 position, float width, float height, float length, Color color); // Draw cube textured\n"
+  },
+  {
+    "id": 2034,
+    "raw_res": "int main(void)",
+    "prompt_res": "int main(void)",
+    "gt": "RenderTexture2D LoadRenderTextureWithDepth(int width, int height);\n"
+  },
+  {
+    "id": 2051,
+    "raw_res": "Vector3 waveOffset;",
+    "prompt_res": "Vector3 waveOffset;",
+    "gt": "Vector3 waveOffset;\n"
+  },
+  {
+    "id": 2052,
+    "raw_res": "Font font, int codepoint, Vector3 position, float fontSize, bool backface, Color tint);",
+    "prompt_res": "Font font, int codepoint, Vector2 position, float fontSize, bool backface, Color tint);",
+    "gt": "Font font, int codepoint, Vector3 position, float fontSize, bool backface, Color tint);\n"
+  },
+  {
+    "id": 2063,
+    "raw_res": "CoreData CORE;",
+    "prompt_res": "CoreData CORE;",
+    "gt": "CoreData CORE;                   // Global CORE state context\n"
+  },
+  {
+    "id": 2080,
+    "raw_res": "GLFWwindow *window, int enter);",
+    "prompt_res": "GLFWwindow *window, int enter);",
+    "gt": "GLFWwindow *window, int enter);                            // GLFW3 Cursor Enter Callback, cursor enters client area\n"
+  },
+  {
+    "id": 2084,
+    "raw_res": "RedisModuleBlockedClient *bc, BlockPrivdata *block_privdata)",
+    "prompt_res": "RedisModuleBlockedClient *bc, BlockPrivdata *block_privdata)",
+    "gt": "RedisModuleBlockedClient *bc, BlockPrivdata *block_privdata, int completed) {\n"
+  },
+  {
+    "id": 2107,
+    "raw_res": "RedisModuleCtx *ctx, RedisModuleString **argv, int argc, RMCallMode mode)",
+    "prompt_res": "RedisModuleCtx *ctx, RedisModuleString **argv, int argc, RMCallMode mode)",
+    "gt": "RedisModuleCtx *ctx, RedisModuleString **argv, int argc, RMCallMode mode) {\n"
+  },
+  {
+    "id": 2110,
+    "raw_res": "RedisModuleType *FragType = NULL;",
+    "prompt_res": "RedisModuleType *FragType = NULL;",
+    "gt": "RedisModuleType *FragType;\n"
+  },
+  {
+    "id": 2112,
+    "raw_res": "RedisModuleDict **global_dicts = NULL;",
+    "prompt_res": "RedisModuleDict **global_dicts = NULL;",
+    "gt": "RedisModuleDict **global_dicts = NULL;\n"
+  },
+  {
+    "id": 2113,
+    "raw_res": "RedisModuleCtx *ctx, unsigned long count)",
+    "prompt_res": "RedisModuleCtx *ctx, unsigned long count)",
+    "gt": "RedisModuleCtx *ctx, unsigned long count)\n"
+  },
+  {
+    "id": 2116,
+    "raw_res": "RedisModuleDict *loaded_event_log = NULL;",
+    "prompt_res": "RedisModuleDict *loaded_event_log = NULL;",
+    "gt": "RedisModuleDict *loaded_event_log = NULL;\n"
+  },
+  {
+    "id": 2138,
+    "raw_res": "```c\n#define MEM_BLOCK_SIZE 4096\n\ntypedef struct MemBlock",
+    "prompt_res": "```c\ntypedef struct MemBlock",
+    "gt": "RedisModuleDict *mem_pool[MAX_DB];\n"
+  },
+  {
+    "id": 2153,
+    "raw_res": "RedisModuleCtx *ctx, RedisModuleString **argv, int argc)",
+    "prompt_res": "RedisModuleCtx *ctx, RedisModuleString **argv, int argc)",
+    "gt": "RedisModuleCtx *ctx, RedisModuleString **argv, int argc) {\n"
+  },
+  {
+    "id": 2154,
+    "raw_res": "RedisModuleCtx *ctx, RedisModuleString **argv, int argc)",
+    "prompt_res": "RedisModuleCtx *ctx, RedisModuleString **argv, int argc)",
+    "gt": "RedisModuleCtx *ctx, RedisModuleString **argv, int argc) {\n"
+  },
+  {
+    "id": 2175,
+    "raw_res": "RedisModuleString **err)",
+    "prompt_res": "RedisModuleString **err)",
+    "gt": "RedisModuleString **err) {\n"
+  },
+  {
+    "id": 2186,
+    "raw_res": "RedisModuleType *MemAllocType = NULL;",
+    "prompt_res": "RedisModuleType *MemAllocType;",
+    "gt": "RedisModuleType *datatype = NULL;\n"
+  },
+  {
+    "id": 2191,
+    "raw_res": "RedisModuleCtx *ctx)",
+    "prompt_res": "RedisModuleCtx *ctx)",
+    "gt": "RedisModuleCtx *ctx) {\n"
+  },
+  {
+    "id": 2200,
+    "raw_res": "RedisModuleCtx *ctx, RedisModuleString **argv, int argc)",
+    "prompt_res": "RedisModuleCtx *ctx, RedisModuleString **argv, int argc)",
+    "gt": "RedisModuleCtx *ctx, RedisModuleString **argv, int argc) {\n"
+  },
+  {
+    "id": 2215,
+    "raw_res": "size_t limit)",
+    "prompt_res": "size_t limit)",
+    "gt": "size_t limit) {\n"
+  },
+  {
+    "id": 2245,
+    "raw_res": "witness_t *witness)",
+    "prompt_res": "witness_t *witness)",
+    "gt": "witness_t *witness) {\n"
+  },
+  {
+    "id": 2255,
+    "raw_res": "size_t sz)",
+    "prompt_res": "size_t sz)",
+    "gt": "size_t sz) {\n"
+  },
+  {
+    "id": 2258,
+    "raw_res": "fxp_t\ndouble2fxp(double a)",
+    "prompt_res": "bool\nfxp_close(fxp_t a, fxp_t b)",
+    "gt": "bool\n"
+  },
+  {
+    "id": 2263,
+    "raw_res": "uint32_t magic;",
+    "prompt_res": "uint32_t magic;",
+    "gt": "uint32_t magic;\n"
+  },
+  {
+    "id": 2269,
+    "raw_res": "emap_t emap;",
+    "prompt_res": "emap_t emap;",
+    "gt": "edata_cache_t shard_edata_cache;\n"
+  },
+  {
+    "id": 2286,
+    "raw_res": "void)",
+    "prompt_res": "void)",
+    "gt": "extent_hooks_t *h) {\n"
+  },
+  {
+    "id": 2291,
+    "raw_res": "void *\ntest_alloc(size_t sz)",
+    "prompt_res": "void\ntest_use_after_free(size_t alloc_size, bool write_after_free)",
+    "gt": "size_t san_uaf_align;\n"
+  },
+  {
+    "id": 2364,
+    "raw_res": "bool did_prof_dump_open;",
+    "prompt_res": "bool\ndid_prof_dump_open;",
+    "gt": "bool did_prof_dump_open;\n"
+  },
+  {
+    "id": 2366,
+    "raw_res": "bool fake_abort_called;",
+    "prompt_res": "bool fake_abort_called;",
+    "gt": "bool fake_abort_called;\n"
+  },
+  {
+    "id": 2408,
+    "raw_res": "uint64_t\ntimer_usec(const timedelta_t *timer)",
+    "prompt_res": "uint64_t\ntimer_usec(const timedelta_t *timer)",
+    "gt": "uint64_t\n"
+  },
+  {
+    "id": 2429,
+    "raw_res": "eset_bin_t *bin)",
+    "prompt_res": "eset_bin_t *bin)",
+    "gt": "eset_bin_t *bin) {\n"
+  },
+  {
+    "id": 2437,
+    "raw_res": "malloc_mutex_t background_thread_lock;",
+    "prompt_res": "malloc_mutex_t background_thread_lock;",
+    "gt": "malloc_mutex_t background_thread_lock;\n"
+  },
+  {
+    "id": 2458,
+    "raw_res": "tsdn_t *tsdn, edata_cache_t *edata_cache)",
+    "prompt_res": "tsdn_t *tsdn, edata_cache_t *edata_cache)",
+    "gt": "tsdn_t *tsdn, edata_cache_t *edata_cache) {\n"
+  },
+  {
+    "id": 2481,
+    "raw_res": "bool\tckh_grow(tsd_t *tsd, ckh_t *ckh);",
+    "prompt_res": "bool\tckh_grow(tsd_t *tsd, ckh_t *ckh);",
+    "gt": "bool\tckh_grow(tsd_t *tsd, ckh_t *ckh);\n"
+  },
+  {
+    "id": 2494,
+    "raw_res": "uint64_t\ntcache_gc_dalloc_fetch_elapsed(tsd_t *tsd)",
+    "prompt_res": "uint64_t\ntcache_gc_dalloc_fetch_elapsed(tsd_t *tsd)",
+    "gt": "uint64_t\n"
+  },
+  {
+    "id": 2507,
+    "raw_res": "prof_bt_t *bt, void **vec)",
+    "prompt_res": "prof_bt_t *bt, void **vec)",
+    "gt": "prof_bt_t *bt, void **vec) {\n"
+  },
+  {
+    "id": 2522,
+    "raw_res": "edata_t *edata = emap_edata_lookup(tsdn, &arena_emap_global, ptr);",
+    "prompt_res": "edata_t *edata = emap_edata_lookup(tsdn, &arena_emap_global, ptr);",
+    "gt": "edata_t *edata = emap_edata_lookup(tsdn, &arena_emap_global, ptr);\n"
+  },
+  {
+    "id": 2527,
+    "raw_res": "tsdn_t *tsdn, pa_shard_t *shard)",
+    "prompt_res": "tsdn_t *tsdn, pa_shard_t *shard)",
+    "gt": "tsdn_t *tsdn, pa_shard_t *shard) {\n"
+  },
+  {
+    "id": 2541,
+    "raw_res": "size_t alignment, bool zero, bool guarded, bool frequent_reuse,\n    bool *deferred_work_generated);",
+    "prompt_res": "size_t alignment, bool zero, bool guarded, bool *deferred_work_generated);",
+    "gt": "size_t alignment, bool zero, bool guarded, bool frequent_reuse,\n"
+  },
+  {
+    "id": 2542,
+    "raw_res": "bool *deferred_work_generated);",
+    "prompt_res": "bool *deferred_work_generated);",
+    "gt": "bool *deferred_work_generated);\n"
+  },
+  {
+    "id": 2558,
+    "raw_res": "tsdn_t *tsdn, ehooks_t *ehooks, unsigned ind, size_t size)",
+    "prompt_res": "tsdn_t *tsdn, ehooks_t *ehooks, unsigned ind, size_t size)",
+    "gt": "tsdn_t *tsdn, ehooks_t *ehooks, unsigned ind, size_t size) {\n"
+  },
+  {
+    "id": 2582,
+    "raw_res": "/*\n * This option is not publicly documented, but is used for testing purposes.\n */\n\nconst char *opt_prof_prefix = NULL;",
+    "prompt_res": "/*\n * prof_sample_threshold is the number of bytes between samples. It's not a\n * simple \"opt_lg_prof_sample\" because we use a geometric distribution.\n */",
+    "gt": "ssize_t opt_lg_prof_interval = LG_PROF_INTERVAL_DEFAULT;\n"
+  },
+  {
+    "id": 2595,
+    "raw_res": "const char *opt_percpu_arena = OPT_PERCPU_ARENA_DEFAULT;",
+    "prompt_res": "const char *opt_percpu_arena = OPT_PERCPU_ARENA_DEFAULT;",
+    "gt": "percpu_arena_mode_t opt_percpu_arena = PERCPU_ARENA_DEFAULT;\n"
+  },
+  {
+    "id": 2607,
+    "raw_res": "hpdata_t *hpdata, void *addr, uint64_t age)",
+    "prompt_res": "hpdata_t *hpdata, void *addr, uint64_t age)",
+    "gt": "hpdata_t *hpdata, void *addr, uint64_t age) {\n"
+  },
+  {
+    "id": 2626,
+    "raw_res": "edata_t *\nsec_alloc(tsdn_t *tsdn, pai_t *self, size_t size, size_t alignment, bool zero,\n    bool guarded, bool frequent_reuse, bool *deferred_work_generated)",
+    "prompt_res": "void\nsec_bin_init(sec_bin_t *bin)",
+    "gt": "edata_t *sec_alloc(tsdn_t *tsdn, pai_t *self, size_t size,\n"
+  },
+  {
+    "id": 2635,
+    "raw_res": "size_t alignment, bool zero, bool guarded, bool frequent_reuse,\n\tbool *deferred_work_generated);",
+    "prompt_res": "size_t alignment, bool zero, bool guarded, bool frequent_reuse,\n\tbool *deferred_work_generated);",
+    "gt": "size_t alignment, bool zero, bool guarded, bool frequent_reuse,\n"
+  },
+  {
+    "id": 2641,
+    "raw_res": "tsdn_t *tsdn, pai_t *self, size_t size, size_t nallocs,\n    edata_list_active_t *results)",
+    "prompt_res": "tsdn_t *tsdn, pai_t *self, size_t size, size_t nallocs,\n    edata_list_active_t *results, bool *deferred_work_generated)",
+    "gt": "tsdn_t *tsdn, pai_t *self, size_t size, size_t nallocs,\n"
+  },
+  {
+    "id": 2654,
+    "raw_res": "size_t\t\ttcache_maxclass;",
+    "prompt_res": "size_t\t\t\ttcache_maxclass;",
+    "gt": "size_t\t\t\ttcache_maxclass;\n"
+  },
+  {
+    "id": 2664,
+    "raw_res": "malloc_mutex_t lock;",
+    "prompt_res": "malloc_mutex_t lock;",
+    "gt": "malloc_mutex_t lock;\n"
+  },
+  {
+    "id": 2675,
+    "raw_res": "uint64_t decay_epoch_duration_ns = BILLION;",
+    "prompt_res": "uint64_t h_steps[SMOOTHSTEP_NSTEPS] =",
+    "gt": "uint64_t h_steps[SMOOTHSTEP_NSTEPS] = {\n"
+  },
+  {
+    "id": 2677,
+    "raw_res": "decay_t *decay, nstime_t *cur_time, ssize_t decay_ms)",
+    "prompt_res": "decay_t *decay, nstime_t *cur_time, ssize_t decay_ms)",
+    "gt": "decay_t *decay, nstime_t *cur_time, ssize_t decay_ms) {\n"
+  },
+  {
+    "id": 2698,
+    "raw_res": "ctl_named_node_t *children = ctl_named_node(node->children);",
+    "prompt_res": "ctl_named_node_t *children = ctl_named_node(node->children);",
+    "gt": "ctl_named_node_t *children = ctl_named_node(node->children);\n"
+  },
+  {
+    "id": 2701,
+    "raw_res": "ctl_indexed_node_t *)node : NULL);",
+    "prompt_res": "ctl_indexed_node_t *)node : NULL);",
+    "gt": "ctl_indexed_node_t *)node : NULL);\n"
+  },
+  {
+    "id": 2708,
+    "raw_res": "bool in_use;",
+    "prompt_res": "bool in_use;",
+    "gt": "bool in_use;\n"
+  },
+  {
+    "id": 2716,
+    "raw_res": "ssize_t prof_recent_alloc_max = PROF_RECENT_ALLOC_MAX_DEFAULT;",
+    "prompt_res": "atomic_zd_t prof_recent_alloc_max;",
+    "gt": "atomic_zd_t prof_recent_alloc_max;\n"
+  },
+  {
+    "id": 2730,
+    "raw_res": "nstime_t *time, uint64_t sec, uint64_t nsec)",
+    "prompt_res": "nstime_t *time, uint64_t sec, uint64_t nsec)",
+    "gt": "nstime_t *time, uint64_t sec, uint64_t nsec) {\n"
+  },
+  {
+    "id": 2762,
+    "raw_res": "intptr_t increment)",
+    "prompt_res": "intptr_t increment)",
+    "gt": "intptr_t increment) {\n"
+  },
+  {
+    "id": 2781,
+    "raw_res": "redisAsyncContext *context;",
+    "prompt_res": "int reading, writing;",
+    "gt": "redisAsyncContext *context;\n"
+  },
+  {
+    "id": 2798,
+    "raw_res": "uint32_t UTILS_GetPLLOutputFrequency(uint32_t PLL_InputFrequency,\n                                          LL_UTILS_PLLInitTypeDef *UTILS_PLLInitStruct);",
+    "prompt_res": "uint32_t UTILS_GetPLLOutputFrequency(uint32_t PLL_InputFrequency,\n                                                LL_UTILS_PLLInitTypeDef *UTILS_PLLInitStruct);",
+    "gt": "uint32_t    UTILS_GetPLLOutputFrequency(uint32_t PLL_InputFrequency,\n"
+  },
+  {
+    "id": 2813,
+    "raw_res": "HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)",
+    "prompt_res": "HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)",
+    "gt": "HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)\n"
+  },
+  {
+    "id": 2837,
+    "raw_res": "HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)",
+    "prompt_res": "HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)",
+    "gt": "HAL_StatusTypeDef HAL_InitTick (uint32_t TickPriority)\n"
+  },
+  {
+    "id": 2851,
+    "raw_res": "LL_UTILS_PLLInitTypeDef *UTILS_PLLInitStruct);",
+    "prompt_res": "LL_UTILS_PLLInitTypeDef *UTILS_PLLInitStruct);",
+    "gt": "LL_UTILS_PLLInitTypeDef *UTILS_PLLInitStruct);\n"
+  },
+  {
+    "id": 2852,
+    "raw_res": "ErrorStatus UTILS_EnablePLLAndSwitchSystem(uint32_t SYSCLK_Frequency, LL_UTILS_ClkInitTypeDef *UTILS_ClkInitStruct);",
+    "prompt_res": "ErrorStatus UTILS_EnablePLLAndSwitchSystem(uint32_t SYSCLK_Frequency, LL_UTILS_ClkInitTypeDef *UTILS_ClkInitStruct);",
+    "gt": "ErrorStatus UTILS_EnablePLLAndSwitchSystem(uint32_t SYSCLK_Frequency, LL_UTILS_ClkInitTypeDef *UTILS_ClkInitStruct);\n"
+  },
+  {
+    "id": 2865,
+    "raw_res": "uint32_t HCLKFrequency)",
+    "prompt_res": "uint32_t HCLKFrequency)",
+    "gt": "uint32_t HCLKFrequency)\n"
+  },
+  {
+    "id": 2892,
+    "raw_res": "HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)",
+    "prompt_res": "HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)",
+    "gt": "HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)\n"
+  },
+  {
+    "id": 2906,
+    "raw_res": "uint8_t PLLMulTable[9] =",
+    "prompt_res": "uint8_t PLLMulTable[9] =",
+    "gt": "uint8_t PLLMulTable[9] = {3U, 4U, 6U, 8U, 12U, 16U, 24U, 32U, 48U};\n"
+  },
+  {
+    "id": 2908,
+    "raw_res": "uint8_t  AHBPrescTable[16] =",
+    "prompt_res": "uint8_t  AHBPrescTable[16] =",
+    "gt": "uint8_t  AHBPrescTable[16] = {0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 1U, 2U, 3U, 4U, 6U, 7U, 8U, 9U};\n"
+  },
+  {
+    "id": 2911,
+    "raw_res": "uint32_t SystemCoreClock = 16000000;",
+    "prompt_res": "uint32_t SystemCoreClock = 16000000;",
+    "gt": "uint32_t SystemCoreClock = 16000000;\n"
+  },
+  {
+    "id": 2922,
+    "raw_res": "uint8_t D1CorePrescTable[16] =",
+    "prompt_res": "uint8_t D1CorePrescTable[16] =",
+    "gt": "uint8_t D1CorePrescTable[16] = {0, 0, 0, 0, 1, 2, 3, 4, 1, 2, 3, 4, 6, 7, 8, 9};\n"
+  },
+  {
+    "id": 2938,
+    "raw_res": "uint32_t SystemCoreClock = 4000000UL;",
+    "prompt_res": "uint32_t SystemCoreClock = 4000000UL;",
+    "gt": "uint32_t SystemCoreClock  = 4000000UL; /*CPU1: M4 on MSI clock after startup (4MHz)*/\n"
+  },
+  {
+    "id": 2940,
+    "raw_res": "uint32_t APBPrescTable[8UL] =",
+    "prompt_res": "uint32_t APBPrescTable[8UL] =",
+    "gt": "uint32_t APBPrescTable[8UL]  = {0UL, 0UL, 0UL, 0UL, 1UL, 2UL, 3UL, 4UL};\n"
+  },
+  {
+    "id": 2969,
+    "raw_res": "uint8_t  AHBPrescTable[16] =",
+    "prompt_res": "uint8_t AHBPrescTable[16] =",
+    "gt": "uint8_t  AHBPrescTable[16] = {0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 1U, 2U, 3U, 4U, 6U, 7U, 8U, 9U};\n"
+  },
+  {
+    "id": 2971,
+    "raw_res": "uint32_t MSIRangeTable[16] =",
+    "prompt_res": "uint32_t MSIRangeTable[16] =",
+    "gt": "uint32_t MSIRangeTable[16] = {100000U,   200000U,   400000U,   800000U,  1000000U,  2000000U, \\\n"
+  },
+  {
+    "id": 2976,
+    "raw_res": "ErrorStatus UTILS_PLL_IsBusy(void);",
+    "prompt_res": "ErrorStatus UTILS_PLL_IsBusy(void);",
+    "gt": "ErrorStatus UTILS_PLL_IsBusy(void);\n"
+  },
+  {
+    "id": 2977,
+    "raw_res": "uint32_t HCLKFrequency)",
+    "prompt_res": "uint32_t HCLKFrequency)",
+    "gt": "uint32_t HCLKFrequency)\n"
+  },
+  {
+    "id": 2996,
+    "raw_res": "uint32_t HCLKFrequency)",
+    "prompt_res": "uint32_t HCLKFrequency)",
+    "gt": "uint32_t HCLKFrequency)\n"
+  },
+  {
+    "id": 3018,
+    "raw_res": "ErrorStatus UTILS_EnablePLLAndSwitchSystem(uint32_t SYSCLK_Frequency, LL_UTILS_ClkInitTypeDef *UTILS_ClkInitStruct);",
+    "prompt_res": "ErrorStatus UTILS_EnablePLLAndSwitchSystem(uint32_t SYSCLK_Frequency, LL_UTILS_ClkInitTypeDef *UTILS_ClkInitStruct);",
+    "gt": "ErrorStatus UTILS_EnablePLLAndSwitchSystem(uint32_t SYSCLK_Frequency, LL_UTILS_ClkInitTypeDef *UTILS_ClkInitStruct);\n"
+  },
+  {
+    "id": 3024,
+    "raw_res": "TIM_HandleTypeDef        TimHandle;",
+    "prompt_res": "TIM_HandleTypeDef        TimHandle;",
+    "gt": "TIM_HandleTypeDef        TimHandle;\n"
+  },
+  {
+    "id": 3031,
+    "raw_res": "HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)",
+    "prompt_res": "HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)",
+    "gt": "HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)\n"
+  },
+  {
+    "id": 3070,
+    "raw_res": "lwrb_t usart_tx_rb;",
+    "prompt_res": "lwrb_t\nusart_rx_rb;",
+    "gt": "lwrb_t\n"
+  },
+  {
+    "id": 3082,
+    "raw_res": "uint32_t SystemCoreClock = 16000000U;",
+    "prompt_res": "uint32_t SystemCoreClock = 16000000U;",
+    "gt": "uint32_t SystemCoreClock = HSI_VALUE;\n"
+  },
+  {
+    "id": 3084,
+    "raw_res": "uint8_t APBPrescTable[8] =",
+    "prompt_res": "uint8_t APBPrescTable[8] =",
+    "gt": "uint8_t APBPrescTable[8] =  {0U, 0U, 0U, 0U, 1U, 2U, 3U, 4U};\n"
+  },
+  {
+    "id": 3088,
+    "raw_res": "uint32_t baudrate;",
+    "prompt_res": "```c\n    uint32_t uart_irqn;",
+    "gt": "GPIO_TypeDef* uart_tx_port;\n"
+  },
+  {
+    "id": 3098,
+    "raw_res": "uint8_t  AHBPrescTable[16] =",
+    "prompt_res": "uint8_t  AHBPrescTable[16] =",
+    "gt": "uint8_t  AHBPrescTable[16] = {0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 1U, 2U, 3U, 4U, 6U, 7U, 8U, 9U};\n"
+  },
+  {
+    "id": 3105,
+    "raw_res": "uint8_t  AHBPrescTable[16] =",
+    "prompt_res": "uint8_t  AHBPrescTable[16] =",
+    "gt": "uint8_t  AHBPrescTable[16] = {0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 1U, 2U, 3U, 4U, 6U, 7U, 8U, 9U};\n"
+  },
+  {
+    "id": 3118,
+    "raw_res": "UART_HandleTypeDef huart1;",
+    "prompt_res": "DMA_HandleTypeDef handle_GPDMA1_Channel0;",
+    "gt": "LL_DMA_LinkNodeTypeDef Node_GPDMA1_Channel0;\n"
+  },
+  {
+    "id": 3119,
+    "raw_res": "uint32_t SystemCoreClock = 16000000;",
+    "prompt_res": "uint32_t SystemCoreClock = 16000000;",
+    "gt": "uint32_t SystemCoreClock = 16000000;\n"
+  },
+  {
+    "id": 3145,
+    "raw_res": "ListItem_t * const pxItem )",
+    "prompt_res": "ListItem_t * const pxItem )",
+    "gt": "ListItem_t * const pxItem )\n"
+  },
+  {
+    "id": 3152,
+    "raw_res": "UBaseType_t uxRecursiveCallCount;",
+    "prompt_res": "UBaseType_t uxRecursiveCallCount;",
+    "gt": "UBaseType_t uxRecursiveCallCount;/*< Maintains a count of the number of times a recursive mutex has been recursively 'taken' when the structure is used as a mutex. */\n"
+  },
+  {
+    "id": 3185,
+    "raw_res": "UBaseType_t uxCriticalNesting = 0xaaaaaaaa;",
+    "prompt_res": "UBaseType_t uxCriticalNesting = 0xaaaaaaaa;",
+    "gt": "UBaseType_t uxCriticalNesting = 0xaaaaaaaa;\n"
+  },
+  {
+    "id": 3191,
+    "raw_res": "uint32_t *pulParam ) PRIVILEGED_FUNCTION;",
+    "prompt_res": "uint32_t *pulParam ) PRIVILEGED_FUNCTION;",
+    "gt": "uint32_t *pulParam );\n"
+  },
+  {
+    "id": 3207,
+    "raw_res": "StackType_t *pxPortInitialiseStack( StackType_t *pxTopOfStack, TaskFunction_t pxCode, void *pvParameters, BaseType_t xRunPrivileged )",
+    "prompt_res": "StackType_t *pxPortInitialiseStack( StackType_t *pxTopOfStack, TaskFunction_t pxCode, void *pvParameters, BaseType_t xRunPrivileged )",
+    "gt": "StackType_t *pxPortInitialiseStack( StackType_t *pxTopOfStack, TaskFunction_t pxCode, void *pvParameters, BaseType_t xRunPrivileged )\n"
+  },
+  {
+    "id": 3240,
+    "raw_res": "StackType_t *pxPortInitialiseStack( StackType_t *pxTopOfStack, TaskFunction_t pxCode, void *pvParameters, BaseType_t xRunPrivileged )",
+    "prompt_res": "StackType_t *pxPortInitialiseStack( StackType_t *pxTopOfStack, TaskFunction_t pxCode, void *pvParameters, BaseType_t xRunPrivileged )",
+    "gt": "StackType_t *pxPortInitialiseStack( StackType_t *pxTopOfStack, TaskFunction_t pxCode, void *pvParameters, BaseType_t xRunPrivileged )\n"
+  },
+  {
+    "id": 3246,
+    "raw_res": "portDONT_DISCARD void vPortSVCHandler_C( uint32_t *pulCallerStackAddress ) PRIVILEGED_FUNCTION;",
+    "prompt_res": "void vPortSVCHandler_C( uint32_t *pulCallerStackAddress ) PRIVILEGED_FUNCTION;",
+    "gt": "portDONT_DISCARD void vPortSVCHandler_C( uint32_t *pulCallerStackAddress ) PRIVILEGED_FUNCTION;\n"
+  },
+  {
+    "id": 3254,
+    "raw_res": "portNVIC_SYSPRI2_REG |= portNVIC_PENDSV_PRI;",
+    "prompt_res": "portNVIC_SYSPRI2_REG |= portNVIC_PENDSV_PRI;",
+    "gt": "portNVIC_SYSPRI2_REG |= portNVIC_PENDSV_PRI;\n"
+  },
+  {
+    "id": 3278,
+    "raw_res": "portNVIC_INT_CTRL ) = portNVIC_PENDSVSET;",
+    "prompt_res": "portNVIC_INT_CTRL ) = portNVIC_PENDSVSET;",
+    "gt": "portNVIC_INT_CTRL ) = portNVIC_PENDSVSET;\n"
+  },
+  {
+    "id": 3286,
+    "raw_res": "BaseType_t xPortStartScheduler( void )",
+    "prompt_res": "BaseType_t xPortStartScheduler( void )",
+    "gt": "BaseType_t xPortStartScheduler( void )\n"
+  },
+  {
+    "id": 3297,
+    "raw_res": "uint32_t prvPortGetIPSR( void );",
+    "prompt_res": "uint32_t prvPortGetIPSR( void );",
+    "gt": "uint32_t prvPortGetIPSR( void );\n"
+  }
+]

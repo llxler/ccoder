@@ -121,7 +121,7 @@ def process_c_completion(completion: str, add_log: bool = False) -> str:
 def main():
     parser = argparse.ArgumentParser(description="Calculate EM and ES from a JSON result file.")
     # TODO
-    parser.add_argument("file_path", nargs='?', default=r"/home/lxl/ccoder/results_gemini_c/gemini/c_gemini_graph_result.json", help="Path to the JSON file containing results.")
+    parser.add_argument("file_path", nargs='?', default=r"/home/sub4-wy/lxl/ccoder/results_claude_java/claude/java_claude_langchain_result.json", help="Path to the JSON file containing results.")
     args = parser.parse_args()
 
     file_path = args.file_path
