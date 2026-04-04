@@ -9,8 +9,8 @@ Compared with `evaluation_gpt5.py`, this script:
 2. lets the model act like a standard repository-aware agent through tool calls;
 3. evaluates the final completion with exact match and edit similarity.
 
-The agent can optionally inspect a local repository root such as `c_repo/` or
-`java_repo/`. Repository paths are configurable via CLI flags.
+The agent can optionally inspect a local repository root such as `agent/c/` or
+`agent/java/`. Repository paths are configurable via CLI flags.
 """
 
 from __future__ import annotations
@@ -25,9 +25,8 @@ import subprocess
 import time
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Optional, Sequence
-from urllib import error as urllib_error
-from urllib import request as urllib_request
+from typing import Any, Dict, Iterable, List, Optional, Sequence, Set
+from openai import OpenAI
 
 try:
     from tqdm import tqdm
@@ -40,12 +39,13 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent
 DATASET_DIR = PROJECT_ROOT / "CEval"
 
-DEFAULT_MODEL = os.getenv("OPENAI_MODEL", "gpt-5")
-DEFAULT_BASE_URL = os.getenv("OPENAI_BASE_URL", "https://api.openai.com/v1")
-DEFAULT_API_KEY_ENV = "OPENAI_API_KEY"
+DEFAULT_MODEL = os.getenv("OPENROUTER_MODEL", "openai/gpt-5.1")
+DEFAULT_BASE_URL = os.getenv("OPENROUTER_URL", "https://openrouter.ai/api/v1")
+DEFAULT_API_KEY_ENV = "OPENROUTER_API_KEY"
 DEFAULT_MAX_STEPS = 8
 DEFAULT_MAX_OUTPUT_TOKENS = 256
 DEFAULT_TIMEOUT_SECONDS = 180
+DEFAULT_MAX_RELATED_FILES = 12
 
 SYSTEM_PROMPT_TEMPLATE = """You are a repository-aware code completion agent.
 
@@ -62,6 +62,8 @@ Rules:
 Current language: {language}
 Current repository root: {repo_root}
 Current target file: {target_file}
+Likely related reference files:
+{related_files}
 """
 
 
@@ -93,37 +95,79 @@ class ResponsesAPIClient:
         self.base_url = base_url.rstrip("/")
         self.api_key = api_key
         self.timeout_seconds = timeout_seconds
-
-    def create_response(self, payload: Dict[str, Any]) -> Dict[str, Any]:
-        body = json.dumps(payload).encode("utf-8")
-        req = urllib_request.Request(
-            url=f"{self.base_url}/responses",
-            data=body,
-            method="POST",
-            headers={
-                "Authorization": f"Bearer {self.api_key}",
-                "Content-Type": "application/json",
-            },
+        self.client = OpenAI(
+            base_url=self.base_url,
+            api_key=self.api_key,
+            timeout=self.timeout_seconds,
         )
 
+    def create_chat_completion(
+        self,
+        *,
+        model: str,
+        messages: List[Dict[str, Any]],
+        tool_specs: List[Dict[str, Any]],
+        max_output_tokens: int,
+    ) -> Any:
+        request_kwargs: Dict[str, Any] = {
+            "model": model,
+            "messages": messages,
+        }
+        if max_output_tokens > 0:
+            request_kwargs["max_tokens"] = max_output_tokens
+        if tool_specs:
+            request_kwargs["tools"] = build_chat_tools(tool_specs)
+
         try:
-            with urllib_request.urlopen(req, timeout=self.timeout_seconds) as resp:
-                return json.loads(resp.read().decode("utf-8"))
-        except urllib_error.HTTPError as exc:
-            error_body = exc.read().decode("utf-8", errors="replace")
-            raise RuntimeError(f"Responses API HTTP {exc.code}: {error_body}") from exc
-        except urllib_error.URLError as exc:
-            raise RuntimeError(f"Responses API request failed: {exc}") from exc
+            return self.client.chat.completions.create(**request_kwargs)
+        except Exception as exc:
+            error_text = str(exc)
+            if (
+                "openrouter.ai" in self.base_url
+                and "Incorrect API key provided" in error_text
+            ):
+                error_text = (
+                    f"{error_text}\n"
+                    "Hint: this request is already going through OpenRouter. "
+                    "A 401 like this usually means OpenRouter routed to an upstream provider "
+                    "that rejected its provider key (often BYOK), or the model name should be "
+                    "an OpenRouter slug such as 'openai/gpt-5.1'. Check OpenRouter Activity "
+                    "-> Raw Metadata -> provider_responses."
+                )
+            raise RuntimeError(f"Chat Completions API request failed: {error_text}") from exc
 
 
 class RepoTools:
-    def __init__(self, repo_root: Path, sample: Sample) -> None:
-        self.repo_root = repo_root
+    def __init__(self, repo_root: Path, sample: Sample, language: str) -> None:
+        self.base_repo_root = repo_root
         self.sample = sample
+        self.language = language
+        self.repo_root = self._resolve_sample_repo_root()
         self.target_file = self._resolve_target_file()
+        self.related_files = self._discover_related_files()
 
     def specs(self) -> List[Dict[str, Any]]:
         return [
+            {
+                "type": "function",
+                "name": "get_related_files",
+                "description": (
+                    "Return likely related reference files for the current sample within the "
+                    "package repository."
+                ),
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "max_files": {
+                            "type": "integer",
+                            "description": "Maximum files to return.",
+                            "minimum": 1,
+                            "maximum": 40,
+                        },
+                    },
+                    "additionalProperties": False,
+                },
+            },
             {
                 "type": "function",
                 "name": "get_target_file_context",
@@ -222,6 +266,8 @@ class RepoTools:
         ]
 
     def invoke(self, name: str, arguments: Dict[str, Any]) -> Dict[str, Any]:
+        if name == "get_related_files":
+            return self.get_related_files(max_files=int(arguments.get("max_files", DEFAULT_MAX_RELATED_FILES)))
         if name == "get_target_file_context":
             return self.get_target_file_context(
                 before_lines=int(arguments.get("before_lines", 80)),
@@ -244,6 +290,31 @@ class RepoTools:
                 max_entries=int(arguments.get("max_entries", 100)),
             )
         return {"ok": False, "error": f"Unknown tool: {name}"}
+
+    def prompt_target_file(self) -> str:
+        if self.target_file is None:
+            return self.sample.fpath
+        try:
+            return str(self.target_file.relative_to(self.repo_root))
+        except Exception:
+            return str(self.target_file)
+
+    def prompt_related_files(self) -> str:
+        if not self.related_files:
+            return "(none found)"
+        return "\n".join(f"- {path}" for path in self.related_files)
+
+    def _resolve_sample_repo_root(self) -> Path:
+        candidates: List[Path] = []
+        if self.sample.pkg:
+            candidates.append(self.base_repo_root / self.sample.pkg)
+        candidates.append(self.base_repo_root)
+
+        for path in candidates:
+            if path.exists() and path.is_dir():
+                return path.resolve()
+
+        return candidates[0].resolve()
 
     def _resolve_target_file(self) -> Optional[Path]:
         candidates = [self.repo_root / self.sample.fpath]
@@ -269,6 +340,127 @@ class RepoTools:
             return None
 
         return None
+
+    def _to_relative_path(self, path: Path) -> str:
+        try:
+            return str(path.resolve().relative_to(self.repo_root.resolve()))
+        except Exception:
+            return str(path)
+
+    def _add_related_path(self, path: Path, collected: List[str], seen: Set[str], limit: int) -> None:
+        if len(collected) >= limit:
+            return
+        try:
+            resolved = path.resolve()
+        except Exception:
+            return
+        if not resolved.exists() or not resolved.is_file():
+            return
+        if self.target_file is not None and resolved == self.target_file:
+            return
+
+        relative_path = self._to_relative_path(resolved)
+        if relative_path in seen:
+            return
+        seen.add(relative_path)
+        collected.append(relative_path)
+
+    def _extract_java_import_targets(self) -> List[str]:
+        imports: List[str] = []
+        for line in self.sample.input.splitlines():
+            match = re.match(r"\s*import\s+(?:static\s+)?([A-Za-z0-9_.]+)(?:\.\*)?\s*;", line)
+            if not match:
+                continue
+            imports.append(f"{match.group(1).replace('.', '/')}.java")
+        return imports
+
+    def _extract_c_include_targets(self) -> List[str]:
+        includes: List[str] = []
+        for line in self.sample.input.splitlines():
+            match = re.match(r'\s*#\s*include\s*[<"]([^>"]+)[>"]', line)
+            if not match:
+                continue
+            includes.append(match.group(1))
+        return includes
+
+    def _discover_related_files(self, limit: int = DEFAULT_MAX_RELATED_FILES) -> List[str]:
+        if not self.repo_root.exists():
+            return []
+
+        collected: List[str] = []
+        seen: Set[str] = set()
+
+        if self.target_file is not None:
+            same_dir = sorted(
+                (
+                    entry
+                    for entry in self.target_file.parent.iterdir()
+                    if entry.is_file() and entry != self.target_file
+                ),
+                key=lambda item: item.name,
+            )
+            same_suffix = self.target_file.suffix.lower()
+            for entry in same_dir:
+                if same_suffix and entry.suffix.lower() != same_suffix:
+                    continue
+                self._add_related_path(entry, collected, seen, limit)
+                if len(collected) >= min(limit, 6):
+                    break
+
+            stem = self.target_file.stem
+            for sibling_suffix in (".h", ".hpp", ".c", ".cc", ".cpp", ".java"):
+                if len(collected) >= limit:
+                    break
+                candidate_name = f"{stem}{sibling_suffix}"
+                for path in self.repo_root.rglob(candidate_name):
+                    self._add_related_path(path, collected, seen, limit)
+                    if len(collected) >= limit:
+                        break
+
+        if self.language == "java":
+            for import_target in self._extract_java_import_targets():
+                if len(collected) >= limit:
+                    break
+                direct = self.repo_root / import_target
+                if direct.exists():
+                    self._add_related_path(direct, collected, seen, limit)
+                    continue
+                for path in self.repo_root.rglob(Path(import_target).name):
+                    self._add_related_path(path, collected, seen, limit)
+                    if len(collected) >= limit:
+                        break
+        else:
+            include_roots: List[Path] = []
+            if self.target_file is not None:
+                include_roots.append(self.target_file.parent)
+            include_roots.append(self.repo_root)
+
+            for include_target in self._extract_c_include_targets():
+                if len(collected) >= limit:
+                    break
+                include_name = Path(include_target).name
+                for root in include_roots:
+                    candidate = (root / include_target).resolve()
+                    if candidate.exists():
+                        self._add_related_path(candidate, collected, seen, limit)
+                if len(collected) >= limit:
+                    break
+                for path in self.repo_root.rglob(include_name):
+                    self._add_related_path(path, collected, seen, limit)
+                    if len(collected) >= limit:
+                        break
+
+        return collected[:limit]
+
+    def get_related_files(self, max_files: int = DEFAULT_MAX_RELATED_FILES) -> Dict[str, Any]:
+        max_files = max(1, min(max_files, 40))
+        return {
+            "ok": True,
+            "repo_root": str(self.repo_root),
+            "pkg": self.sample.pkg,
+            "target_file": self.prompt_target_file(),
+            "related_files": self.related_files[:max_files],
+        }
 
     def _ensure_repo_path(self, relative_path: str) -> Path:
         path = (self.repo_root / relative_path).resolve()
@@ -471,10 +663,15 @@ def save_json(file_path: Path, data: Any) -> None:
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Evaluate CEval with an agent workflow.")
-    parser.add_argument("--lang", choices=["c", "java"], default="c", help="Dataset language.")
+    parser.add_argument("--lang", choices=["c", "java"], default="java", help="Dataset language.")
     parser.add_argument("--dataset_file", type=str, default="", help="Optional dataset jsonl path.")
     parser.add_argument("--repo_root", type=str, default="", help="Repository root for agent tools.")
-    parser.add_argument("--model", type=str, default=DEFAULT_MODEL, help="Responses API model.")
+    parser.add_argument(
+        "--model",
+        type=str,
+        default=DEFAULT_MODEL,
+        help="Responses API model. For OpenRouter use the full model slug, e.g. openai/gpt-5.1.",
+    )
     parser.add_argument("--base_url", type=str, default=DEFAULT_BASE_URL, help="Responses API base URL.")
     parser.add_argument("--api_key_env", type=str, default=DEFAULT_API_KEY_ENV, help="API key env var name.")
     parser.add_argument("--batch_size", type=int, default=1, help="Number of parallel samples.")
@@ -508,11 +705,11 @@ def parse_args() -> argparse.Namespace:
 
 
 def resolve_default_dataset(lang: str) -> Path:
-    return DATASET_DIR / f"{lang}_metadata.jsonl"
+    return DATASET_DIR / f"{lang}_metadata_sample10_test.jsonl"
 
 
 def resolve_repo_root(lang: str, raw_repo_root: str) -> Path:
-    repo_name = raw_repo_root or f"{lang}_repo"
+    repo_name = raw_repo_root or f"agent/{lang}"
     raw_path = Path(repo_name)
     if raw_path.is_absolute():
         return raw_path
@@ -802,85 +999,102 @@ def compute_edit_similarity(prediction: str, ground_truth: str) -> float:
     return 1.0 - (distance / max_len)
 
 
-def build_initial_payload(
-    config: AgentConfig,
-    sample: Sample,
-    tool_specs: List[Dict[str, Any]],
-) -> Dict[str, Any]:
-    payload: Dict[str, Any] = {
-        "model": config.model,
-        "input": [
+def build_chat_tools(tool_specs: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    tools: List[Dict[str, Any]] = []
+    for spec in tool_specs:
+        if spec.get("type") != "function":
+            continue
+        tools.append(
             {
-                "role": "system",
-                "content": SYSTEM_PROMPT_TEMPLATE.format(
-                    language=config.language,
-                    repo_root=str(config.repo_root),
-                    target_file=sample.fpath,
-                ),
-            },
-            {
-                "role": "user",
-                "content": sample.input,
-            },
-        ],
-        "max_output_tokens": config.max_output_tokens,
-        "parallel_tool_calls": False,
-    }
-    if tool_specs:
-        payload["tools"] = tool_specs
-    if config.reasoning_effort:
-        payload["reasoning"] = {"effort": config.reasoning_effort}
-    return payload
+                "type": "function",
+                "function": {
+                    "name": spec["name"],
+                    "description": spec.get("description", ""),
+                    "parameters": spec.get("parameters", {"type": "object", "properties": {}}),
+                },
+            }
+        )
+    return tools
 
 
-def build_follow_up_payload(
-    config: AgentConfig,
-    previous_response_id: str,
-    tool_outputs: List[Dict[str, Any]],
-    tool_specs: List[Dict[str, Any]],
-) -> Dict[str, Any]:
-    payload: Dict[str, Any] = {
-        "model": config.model,
-        "previous_response_id": previous_response_id,
-        "input": tool_outputs,
-        "max_output_tokens": config.max_output_tokens,
-        "parallel_tool_calls": False,
-    }
-    if tool_specs:
-        payload["tools"] = tool_specs
-    if config.reasoning_effort:
-        payload["reasoning"] = {"effort": config.reasoning_effort}
-    return payload
+def build_initial_messages(config: AgentConfig, sample: Sample, repo_tools: RepoTools) -> List[Dict[str, Any]]:
+    return [
+        {
+            "role": "system",
+            "content": SYSTEM_PROMPT_TEMPLATE.format(
+                language=config.language,
+                repo_root=str(repo_tools.repo_root),
+                target_file=repo_tools.prompt_target_file(),
+                related_files=repo_tools.prompt_related_files(),
+            ),
+        },
+        {
+            "role": "user",
+            "content": sample.input,
+        },
+    ]
 
 
-def extract_response_text(response: Dict[str, Any]) -> str:
-    output_text = response.get("output_text")
-    if isinstance(output_text, str) and output_text.strip():
-        return output_text
+def extract_response_text(response: Any) -> str:
+    if not getattr(response, "choices", None):
+        return ""
+
+    message = response.choices[0].message
+    content = getattr(message, "content", "")
+    if isinstance(content, str):
+        return content.strip()
+    if content is None:
+        return ""
 
     chunks: List[str] = []
-    for item in response.get("output", []):
-        if item.get("type") == "message":
-            for content in item.get("content", []):
-                if content.get("type") in {"output_text", "text"} and content.get("text"):
-                    chunks.append(content["text"])
-        elif item.get("type") in {"output_text", "text"} and item.get("text"):
-            chunks.append(item["text"])
+    for part in content:
+        text = getattr(part, "text", None)
+        if text:
+            chunks.append(text)
     return "\n".join(chunks).strip()
 
 
-def extract_function_calls(response: Dict[str, Any]) -> List[Dict[str, Any]]:
+def extract_function_calls(response: Any) -> List[Dict[str, Any]]:
+    if not getattr(response, "choices", None):
+        return []
+
+    message = response.choices[0].message
+    tool_calls = getattr(message, "tool_calls", None) or []
     calls: List[Dict[str, Any]] = []
-    for item in response.get("output", []):
-        if item.get("type") == "function_call":
-            calls.append(
-                {
-                    "call_id": item.get("call_id") or item.get("id"),
-                    "name": item.get("name"),
-                    "arguments": item.get("arguments", "{}"),
-                }
-            )
+    for tool_call in tool_calls:
+        function = getattr(tool_call, "function", None)
+        calls.append(
+            {
+                "call_id": getattr(tool_call, "id", ""),
+                "name": getattr(function, "name", ""),
+                "arguments": getattr(function, "arguments", "{}"),
+            }
+        )
     return calls
+
+
+def build_assistant_message(response: Any) -> Dict[str, Any]:
+    message = response.choices[0].message
+    assistant_message: Dict[str, Any] = {
+        "role": "assistant",
+        "content": getattr(message, "content", None),
+    }
+
+    tool_calls = getattr(message, "tool_calls", None) or []
+    if tool_calls:
+        assistant_message["tool_calls"] = [
+            {
+                "id": getattr(tool_call, "id", ""),
+                "type": "function",
+                "function": {
+                    "name": getattr(tool_call.function, "name", ""),
+                    "arguments": getattr(tool_call.function, "arguments", "{}"),
+                },
+            }
+            for tool_call in tool_calls
+        ]
+
+    return assistant_message
 
 
 def parse_function_arguments(raw_arguments: Any) -> Dict[str, Any]:
@@ -896,10 +1110,16 @@ def run_agent_completion(
     config: AgentConfig,
     sample: Sample,
 ) -> Dict[str, Any]:
-    repo_tools = RepoTools(config.repo_root, sample)
+    repo_tools = RepoTools(config.repo_root, sample, config.language)
     tool_specs = repo_tools.specs() if config.allow_tools else []
+    messages = build_initial_messages(config, sample, repo_tools)
 
-    response = client.create_response(build_initial_payload(config, sample, tool_specs))
+    response = client.create_chat_completion(
+        model=config.model,
+        messages=messages,
+        tool_specs=tool_specs,
+        max_output_tokens=config.max_output_tokens,
+    )
     tool_trace: List[Dict[str, Any]] = []
     raw_output = ""
     error_message = ""
@@ -910,7 +1130,7 @@ def run_agent_completion(
             raw_output = extract_response_text(response)
             break
 
-        tool_outputs = []
+        messages.append(build_assistant_message(response))
         for call in function_calls:
             call_name = call.get("name") or ""
             call_id = call.get("call_id") or ""
@@ -929,21 +1149,19 @@ def run_agent_completion(
                     "ok": bool(tool_result.get("ok", False)),
                 }
             )
-            tool_outputs.append(
+            messages.append(
                 {
-                    "type": "function_call_output",
-                    "call_id": call_id,
-                    "output": json.dumps(tool_result, ensure_ascii=False),
+                    "role": "tool",
+                    "tool_call_id": call_id,
+                    "content": json.dumps(tool_result, ensure_ascii=False),
                 }
             )
 
-        response = client.create_response(
-            build_follow_up_payload(
-                config=config,
-                previous_response_id=response["id"],
-                tool_outputs=tool_outputs,
-                tool_specs=tool_specs,
-            )
+        response = client.create_chat_completion(
+            model=config.model,
+            messages=messages,
+            tool_specs=tool_specs,
+            max_output_tokens=config.max_output_tokens,
         )
     else:
         raw_output = extract_response_text(response)
@@ -1120,5 +1338,5 @@ def main() -> None:
 if __name__ == "__main__":
     main()
 
-# python src/evaluation_agent.py --lang c --repo_root c_repo --model gpt-5
-# python src/evaluation_agent.py --lang java --repo_root java_repo --model gpt-5
+# python src/evaluation_agent.py --lang c --repo_root agent/c --model gpt-5
+# python src/evaluation_agent.py --lang java --repo_root agent/java --model gpt-5

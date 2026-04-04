@@ -1,6 +1,13 @@
 # codex
 .codex*
 
+# rebuttal
+RepoBench/
+hfd.sh
+reviewer_response*
+agent/
+CEval/oracle_*
+
 __MACOSX/
 .vscode/
 CEval/c_repo/
